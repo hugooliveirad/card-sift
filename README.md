@@ -1,0 +1,71 @@
+# Card Sift
+
+Sort a Magic: The Gathering collection into **Keep**, **Bulk**, and **Needs review**, with a reason for every copy.
+
+**Live:** https://hugobessa.com.br/card-sift/
+
+Inspired by [Jumpstart Atlas](https://hugobessa.com.br/jumpstart-atlas/). A separate, static app with no account, backend, or build dependencies. Your collection stays in your browser.
+
+## Use it
+
+1. Import a CSV, TSV, text decklist, Card Sift backup, or Jumpstart Atlas JSON backup. Review column mappings and excluded rows before applying it. Replace a full collection or add new copies. The previous inventory can be restored with Undo last import until you leave the page.
+2. Choose formats and whether you want tournament evidence (default) or any legal card. Set a minimum deck share, a playset target, a basic land reserve, protected rarities, and a USD/EUR price floor.
+3. Review the table or image grid. Search names, types, and rules text; filter by recommendation, color, or rarity; sort by name, price, quantity, bulk, or review.
+4. Open a card for all reasons, current legalities, source links, and a manual keep/bulk override. Correct a card identifier or quantity if needed.
+5. Export a CSV sorting plan for your current view or the entire collection. Export a JSON backup to preserve your inventory, rules, and decisions.
+
+Try the example collection without replacing your own inventory. The example uses real Scryfall printings and is clearly labeled.
+
+## How decisions work
+
+- Manual Keep/Bulk overrides take priority for that printing.
+- Matching **rarity or price protects every copy** of that printing and finish.
+- A playset is shared across printings using Oracle identity (normalized English name before resolution). Copies protected by other rules count toward that reserve. Default: four copies of cards with evidence in Pauper, Modern, or Premodern, plus rare/mythic printings and copies worth at least USD 2.
+- Basic lands use a separate reserve, default 20 per card name.
+- Least expensive copies satisfy playsets first; optionally prefer nonfoil copies.
+- Remaining copies go to Bulk only when the enabled rules have sufficient data. Unknown cards, conflicting names and printing identifiers, missing prices, uncertain printings, missing format evidence, or stale data go to Needs review. A row can be split among piles; owned always equals keep + bulk + review.
+- Format evidence requires current `legal` or `restricted` status. The copy target is a storage preference, not a claim that every stored copy fits into one legal deck.
+
+### Tournament evidence
+
+[`data/metagame.json`](data/metagame.json) contains linked, dated [MTGTop8](https://www.mtgtop8.com/) statistics for Pauper, Standard, Modern, Premodern, Pioneer, Legacy, and Vintage. The refresh script discovers the current **Last 2 Months** window, collects up to 100 mainboard and 100 sideboard cards per format, and includes cards appearing in at least 1% of decks in either section. Percentages from the two sections are never added together. Basic lands are excluded by the source and use the separate reserve.
+
+**This is a bounded tournament sample, not every card that sees play.** Absence means no qualifying evidence in this sample. Source dates, sample limits, format availability, and links are visible in the app. Evidence older than 35 days can still protect known positive matches, but absent matches are uncertain and cannot automatically become bulk.
+
+Commander supports legality mode. There is no bundled Commander tournament source. Tournament mode treats legal Commander cards without evidence as uncertain.
+
+### Scryfall and prices
+
+[Scryfall collection API](https://scryfall.com/docs/api/cards/collection) lookups batch up to 75 distinct identifiers, with at least 600 ms between requests, bounded retries, cancellation, and timeouts. This respects the documented collection endpoint limit of two requests per second. Metadata and prices are cached for 24 hours in IndexedDB; Refresh card data bypasses the cache. Data older than seven days requires review before bulk recommendations.
+
+An exact printing is identified by Scryfall ID or set code + collector number. Name-only and name + set imports use reference printings. Price protection can optionally use those reference prices; rarity protection requires exact printings. Missing prices are unknown, never zero. Nonfoil, foil, and etched prices are distinct. Prices are market references, not quotes for a card's condition or language.
+
+Files and quantities stay local. Scryfall receives identifiers to resolve cards; its image host receives image requests. Google Fonts supplies the interface fonts. There is no collection server, analytics, or account. Different tabs/devices do not automatically synchronize. Export a backup before clearing browser storage. Restored backups re-fetch metadata rather than trusting embedded prices or remote URLs.
+
+## Develop
+
+```sh
+python3 -m http.server 8001
+# Open http://localhost:8001
+npm test
+python3 scripts/update-metagame.py
+node scripts/update-example.mjs
+```
+
+No package install or bundler needed. Native ES modules require HTTP rather than `file://`. Node 22+ runs tests and the example refresh. Python 3.12+ runs the evidence refresh using only its standard library.
+
+- `index.html`, `styles.css`: interface shell and visual design.
+- `src/core.js`: pure allocation rules, price lookup, and grouping.
+- `src/import.js`: CSV/decklist parsing, import validation, backup validation, and CSV output.
+- `src/data.js`: IndexedDB and Scryfall lookup/cache.
+- `src/app.js`: interaction and rendering.
+- `scripts/`: refresh published evidence and example data.
+- `tests/`: allocation invariants and import regression cases.
+
+## Deployment
+
+GitHub Pages uses [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Pushes to `main`, manual dispatches, and a weekly Monday schedule run tests, refresh evidence and example prices, and deploy a static artifact. The source repo does not accumulate automated data commits. A failed source refresh fails the deployment and leaves the previous site available. GitHub may suspend scheduled workflows after 60 days without repository activity; re-enable a suspended workflow in Actions or with `gh workflow enable pages.yml`. Old evidence is labeled and handled conservatively in the app.
+
+The committed snapshots support immediate local use. The deployed snapshots are generated afresh by the workflow, so their timestamps may differ from the files in git.
+
+Magic: The Gathering card text and art are owned by Wizards of the Coast. Card Sift is an independent fan project. Data and images are attributed to Scryfall and tournament statistics to MTGTop8.

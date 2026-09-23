@@ -1,0 +1,50 @@
+name: Publish Card Sift
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "27 8 * * 1"
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Check allocation and imports
+        run: |
+          npm test
+          node --check src/app.js
+          node --check src/data.js
+      - name: Refresh tournament evidence
+        run: python3 scripts/update-metagame.py
+      - name: Refresh example prices and card details
+        run: node scripts/update-example.mjs
+      - uses: actions/configure-pages@v5
+      - name: Assemble static site
+        run: |
+          mkdir _site
+          cp index.html styles.css favicon.svg _site/
+          cp -R src data _site/
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy
+        id: deploy
+        uses: actions/deploy-pages@v4

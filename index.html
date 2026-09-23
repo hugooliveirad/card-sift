@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#151a18" />
+    <meta
+      name="description"
+      content="Find the cards worth keeping. Sort your Magic collection with tournament evidence, playset reserves, rarity, and price rules."
+    />
+    <title>Card Sift · Make room for what you play</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#collection">Skip to collection</a>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="./"
+          ><span class="brand-mark" aria-hidden="true"
+            ><i></i><i></i><i></i></span
+          >card sift<span class="brand-dot">.</span></a
+        >
+        <div class="eyebrow sidebar-eyebrow">YOUR WORKSPACE</div>
+        <nav aria-label="Workspace">
+          <button class="nav-link active" data-action="collection">
+            <span data-icon="layers"></span> Collection
+            <span id="nav-count" class="count">0</span></button
+          ><button class="nav-link" data-action="sources">
+            <span data-icon="activity"></span> Play evidence</button
+          ><button class="nav-link" data-action="guide">
+            <span data-icon="help"></span> How sorting works
+          </button>
+        </nav>
+        <div class="sidebar-rule"></div>
+        <div class="row between">
+          <h2 class="eyebrow">KEEP RULES</h2>
+          <button class="text-button" data-action="reset-rules">Reset</button>
+        </div>
+        <p class="muted rule-intro">
+          A match keeps the card close.<br />Everything else gets a second look.
+        </p>
+        <form id="rules" aria-label="Keep rules">
+          <fieldset>
+            <legend>01 <span>Your formats</span></legend>
+            <div id="format-options" class="format-options"></div>
+            <label class="field"
+              >Keep cards that<select name="formatMode">
+                <option value="played">See tournament play</option>
+                <option value="legal">Are legal in these formats</option>
+              </select></label
+            >
+            <label class="field" id="share-field"
+              >Minimum deck share
+              <div class="input-unit">
+                <input
+                  name="minShare"
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="100"
+                  step="0.1"
+                /><span>%</span>
+              </div></label
+            >
+            <p class="hint" id="format-hint">
+              Mainboard or sideboard evidence from the last two months.
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>02 <span>Copies to keep</span></legend>
+            <label class="field"
+              >Reserve playsets for<select name="playsets">
+                <option value="matched">Cards matching my formats</option>
+                <option value="all">Every card name</option>
+                <option value="off">No playset reserve</option>
+              </select></label
+            >
+            <div class="two-fields">
+              <label class="field"
+                >Copies per name<input
+                  name="copies"
+                  type="number"
+                  min="0"
+                  max="100"
+                  value="4" /></label
+              ><label class="field"
+                >Basic lands<input
+                  name="basics"
+                  type="number"
+                  min="0"
+                  max="10000"
+                  value="20"
+              /></label>
+            </div>
+            <p class="hint">
+              Shared across sets and finishes. Basics have their own reserve.
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>03 <span>Always protect</span></legend>
+            <label class="field"
+              >Rarity<select name="rarity">
+                <option value="none">No rarity rule</option>
+                <option value="common">Common and above</option>
+                <option value="uncommon">Uncommon and above</option>
+                <option value="rare">Rare and mythic</option>
+                <option value="mythic">Mythic only</option>
+              </select></label
+            >
+            <label class="check"
+              ><input name="priceEnabled" type="checkbox" checked /> Keep every
+              copy worth at least</label
+            >
+            <div class="price-fields">
+              <label class="sr-only" for="threshold">Price threshold</label
+              ><input
+                id="threshold"
+                name="threshold"
+                type="number"
+                min="0"
+                max="1000000"
+                step="0.01"
+                value="2"
+              /><label class="sr-only" for="currency">Price currency</label
+              ><select id="currency" name="currency">
+                <option value="usd">USD</option>
+                <option value="eur">EUR</option>
+              </select>
+            </div>
+            <p class="hint">
+              Rarity and value protect all matching copies, including extras.
+            </p>
+          </fieldset>
+          <details class="advanced">
+            <summary>Printing preferences</summary>
+            <label class="field"
+              >Choose playset copies<select name="preference">
+                <option value="cheapest">Least expensive first</option>
+                <option value="nonfoil">Nonfoil first</option>
+              </select></label
+            ><label class="check"
+              ><input name="trustReference" type="checkbox" /> Allow reference
+              printing prices</label
+            >
+            <p class="hint">
+              Without a set and collector number, Scryfall returns a reference
+              printing. Its price may differ from your copy. Rarity still
+              requires an exact printing.
+            </p>
+          </details>
+        </form>
+        <div class="local-note">
+          <span data-icon="shield"></span>
+          <div>
+            Yours, on this device.<small id="save-status"
+              >Collection saved in your browser.</small
+            >
+          </div>
+        </div>
+      </aside>
+      <div class="workspace">
+        <header class="topbar">
+          <div class="breadcrumb">
+            Workspace <span>/</span> <strong>Collection</strong>
+          </div>
+          <div class="row">
+            <button class="button quiet small" data-action="backup">
+              <span data-icon="download"></span> Backup</button
+            ><button class="button primary small" data-action="import">
+              <span data-icon="plus"></span> Import cards
+            </button>
+          </div>
+        </header>
+        <main>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">LESS BULK. MORE MAGIC.</div>
+              <h1>Make room for what you play.</h1>
+              <p class="muted">
+                Turn a collection into a plan. Keep the useful cards within
+                reach.
+              </p>
+            </div>
+            <span class="status-dot" id="collection-status"
+              >Ready for your collection</span
+            >
+          </div>
+          <div
+            id="storage-warning"
+            class="notice warning"
+            hidden
+            role="alert"
+          ></div>
+          <div id="demo-notice" class="notice demo" hidden>
+            <span
+              ><strong>You’re exploring an example collection.</strong> Import
+              your cards when you’re ready.</span
+            ><button class="text-button" data-action="exit-demo">
+              Exit example
+            </button>
+          </div>
+          <section class="hero" id="welcome" aria-labelledby="welcome-title">
+            <div class="hero-copy">
+              <div class="eyebrow">A HOME FOR EVERY CARD</div>
+              <h2 id="welcome-title">
+                Your next deck could be<br />hiding in your bulk.
+              </h2>
+              <p>
+                Bring your collection. Pick the formats you love.<br />Find your
+                playsets, protect the gems, and sort the rest.
+              </p>
+              <div class="row wrap">
+                <button class="button primary" data-action="import">
+                  <span data-icon="upload"></span> Import collection</button
+                ><button class="button subtle" data-action="demo">
+                  Explore an example <span data-icon="arrow"></span>
+                </button>
+              </div>
+              <small
+                >CSV, decklists, or a Jumpstart Atlas backup · No account
+                needed</small
+              >
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit"></div>
+              <div class="art-card one">
+                <img id="hero-one" alt="" loading="lazy" /><span
+                  >THE PLAYSET</span
+                >
+              </div>
+              <div class="art-card two">
+                <img id="hero-two" alt="" loading="lazy" /><span
+                  >THE KEEPER</span
+                >
+              </div>
+              <div class="art-label">
+                <i></i>A little order. A lot of possibilities.
+              </div>
+            </div>
+          </section>
+          <section class="stats" aria-label="Collection summary">
+            <article class="stat">
+              <span>Total collection <span data-icon="layers"></span></span
+              ><strong id="stat-total">0</strong
+              ><small id="stat-distinct">Your cards, all in one place</small>
+            </article>
+            <article class="stat keep-stat">
+              <span>Keep close <span data-icon="check"></span></span
+              ><strong id="stat-keep">0</strong
+              ><small>Playsets and protected copies</small>
+            </article>
+            <article class="stat">
+              <span>Bulk storage <span data-icon="box"></span></span
+              ><strong id="stat-bulk">0</strong
+              ><small>Copies beyond your keep rules</small>
+            </article>
+            <article class="stat">
+              <span>Needs review <span data-icon="eye"></span></span
+              ><strong id="stat-review">0</strong
+              ><small id="stat-review-detail"
+                >Uncertain matches or missing data</small
+              >
+            </article>
+          </section>
+          <section
+            id="collection"
+            tabindex="-1"
+            aria-labelledby="collection-title"
+          >
+            <div class="section-heading">
+              <div>
+                <h2 id="collection-title">
+                  Your collection
+                  <span id="row-count" class="count">0 printings</span>
+                </h2>
+                <p id="collection-subtitle" class="muted">
+                  A clear reason behind every decision.
+                </p>
+              </div>
+              <div class="row wrap">
+                <button
+                  class="button quiet small mobile-rules"
+                  data-action="rules"
+                >
+                  <span data-icon="sliders"></span> Keep rules</button
+                ><button
+                  class="button quiet small"
+                  id="sync-button"
+                  data-action="sync"
+                >
+                  <span data-icon="refresh"></span> Refresh card data</button
+                ><button class="button quiet small" data-action="export">
+                  <span data-icon="download"></span> Export sorting plan
+                </button>
+              </div>
+            </div>
+            <div class="collection-tools">
+              <div
+                class="segments decision-tabs"
+                role="group"
+                aria-label="Filter by recommendation"
+              >
+                <button data-filter="all" aria-pressed="true">All cards</button
+                ><button data-filter="keep" aria-pressed="false">
+                  Keep <span id="tab-keep">0</span></button
+                ><button data-filter="bulk" aria-pressed="false">
+                  Bulk <span id="tab-bulk">0</span></button
+                ><button data-filter="review" aria-pressed="false">
+                  Review <span id="tab-review">0</span>
+                </button>
+              </div>
+              <div
+                class="segments view-toggle"
+                role="group"
+                aria-label="Collection view"
+              >
+                <button data-view="table" aria-pressed="true">
+                  <span data-icon="list"></span> Table</button
+                ><button data-view="grid" aria-pressed="false">
+                  <span data-icon="grid"></span> Grid
+                </button>
+              </div>
+            </div>
+            <div class="search-tools">
+              <label class="search"
+                ><span data-icon="search"></span
+                ><input
+                  type="search"
+                  id="search"
+                  placeholder="Search cards, types, or rules text…"
+                  aria-label="Search collection"
+                /><kbd>/</kbd></label
+              ><label class="sr-only" for="color-filter">Filter by color</label
+              ><select id="color-filter">
+                <option value="">All colors</option>
+                <option value="W">White</option>
+                <option value="U">Blue</option>
+                <option value="B">Black</option>
+                <option value="R">Red</option>
+                <option value="G">Green</option>
+                <option value="C">Colorless</option>
+                <option value="M">Multicolor</option></select
+              ><label class="sr-only" for="rarity-filter"
+                >Filter by rarity</label
+              ><select id="rarity-filter">
+                <option value="">All rarities</option>
+                <option value="common">Common</option>
+                <option value="uncommon">Uncommon</option>
+                <option value="rare">Rare</option>
+                <option value="mythic">Mythic</option></select
+              ><label class="sr-only" for="sort">Sort collection</label
+              ><select id="sort">
+                <option value="name">Name A–Z</option>
+                <option value="price">Price: high to low</option>
+                <option value="quantity">Most owned</option>
+                <option value="bulk">Most bulk</option>
+                <option value="review">Needs review first</option>
+              </select>
+            </div>
+            <div
+              id="sync-status"
+              class="sync-status"
+              role="status"
+              hidden
+            ></div>
+            <div id="results"></div>
+            <div id="pagination" class="pagination"></div>
+          </section>
+          <footer>
+            <span
+              ><span class="footer-mark">◈</span> A considered collection, one
+              card at a time.</span
+            ><button class="text-button" data-action="sources">
+              Data & sources <span data-icon="external"></span>
+            </button>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <dialog id="dialog"><div id="dialog-content"></div></dialog>
+    <div id="toast" role="status" hidden></div>
+    <noscript
+      ><p class="notice">
+        Enable JavaScript to import and analyze your collection.
+      </p></noscript
+    >
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
