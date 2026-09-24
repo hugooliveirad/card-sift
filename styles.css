@@ -2324,6 +2324,14 @@ dialog::backdrop {
 .collection-filter-row > .text-button {
   min-height: 37px;
 }
+.land-toggle {
+  min-height: 37px;
+  white-space: nowrap;
+}
+.land-toggle[data-hidden="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 .set-search {
   flex: 1;
   min-width: 180px;

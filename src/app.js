@@ -668,6 +668,13 @@ function renderResults() {
     typeInclude.length + typeExclude.length
       ? `(${typeInclude.length + typeExclude.length} active)`
       : "";
+  const landsHidden = typeExclude.includes("Land");
+  const landToggle = $('[data-action="toggle-lands"]');
+  landToggle.textContent = landsHidden ? "Show lands" : "Hide lands";
+  landToggle.dataset.hidden = String(landsHidden);
+  landToggle.title = landsHidden
+    ? "Allow lands with your other filters"
+    : "Exclude lands from this view";
 
   const rows = displayedRows();
   const pages = Math.max(1, Math.ceil(rows.length / 48));
@@ -1245,6 +1252,12 @@ async function action(name) {
     case "clear-filters":
       resetFilters();
       break;
+    case "toggle-lands": {
+      const select = $('[data-type="Land"]');
+      select.value = typeExclude.includes("Land") ? "" : "exclude";
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+      break;
+    }
     case "sync":
       await sync(true);
       break;
@@ -1415,6 +1428,28 @@ document.addEventListener("submit", (event) => {
   }
 });
 $("#dialog").addEventListener("close", restoreModalOrigin);
+let pointerStartedOnBackdrop = false;
+function isDialogBackdrop(event) {
+  const dialog = $("#dialog");
+  const rect = dialog.getBoundingClientRect();
+  return (
+    event.target === dialog &&
+    (event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom)
+  );
+}
+$("#dialog").addEventListener("pointerdown", (event) => {
+  pointerStartedOnBackdrop = event.button === 0 && isDialogBackdrop(event);
+});
+$("#dialog").addEventListener("click", (event) => {
+  if (pointerStartedOnBackdrop && isDialogBackdrop(event)) closeModal();
+  pointerStartedOnBackdrop = false;
+});
+$("#dialog").addEventListener("pointercancel", () => {
+  pointerStartedOnBackdrop = false;
+});
 $("#dialog").addEventListener("cancel", (event) => {
   const openLinks = $("#dialog .links-menu[open]");
   if (openLinks) {

@@ -387,7 +387,8 @@
                   type="search"
                   list="owned-sets"
                   placeholder="Set code or name, e.g. J25"
-                  autocomplete="off" />
+                  autocomplete="off"
+                />
               </div>
               <datalist id="owned-sets"></datalist>
               <details class="type-filter-panel" id="type-filters">
@@ -400,6 +401,12 @@
                 </p>
                 <div id="type-options" class="type-options"></div>
               </details>
+              <button
+                class="button quiet small land-toggle"
+                data-action="toggle-lands"
+              >
+                Hide lands
+              </button>
               <button class="text-button" data-action="clear-filters">
                 Clear filters
               </button>
