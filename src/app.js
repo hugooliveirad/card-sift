@@ -31,6 +31,7 @@ import {
   csvText,
 } from "./import.js";
 import { read, write, enrich } from "./data.js";
+import { buildArchetypeIndex, archetypesFor } from "./archetypes.js";
 import {
   CARD_TYPES,
   compileQuery,
@@ -109,6 +110,8 @@ const money = (value) =>
 let state = { rows: [], rules: structuredClone(DEFAULT_RULES) },
   snapshot = null,
   j25 = null,
+  archetypes = null,
+  archetypeIndex = new Map(),
   example = null,
   results = [],
   previousState = null;
@@ -537,7 +540,7 @@ function deckMembership(row) {
           })
           .join("")}</div>`
       : `<p class="hint">${j25?.membership ? "Not in the J25 deck catalog." : "Deck membership data is unavailable. Reload to retry."}</p>`
-  }<h4>Tournament decklists</h4><p class="hint">Browse matching decklists on MTGTop8. The percentages above are aggregate card usage, not archetype shares.</p><div class="tournament-decks">${Object.entries(
+  }${archetypesHTML(row)}<h4>More tournament decklists</h4><div class="tournament-decks">${Object.entries(
     FORMATS,
   )
     .filter(
@@ -552,6 +555,38 @@ function deckMembership(row) {
     .join(
       "",
     )}<a href="${e(tournamentURL(name))}" target="_blank" rel="noopener noreferrer">All tournament decks ${icon("external")}</a></div></section>`;
+}
+
+function archetypesHTML(row) {
+  if (!archetypes)
+    return '<h4>Tournament archetypes</h4><p class="hint">Archetype evidence is unavailable. Reload to retry, or use the decklist searches below.</p>';
+  const groups = archetypesFor(row, archetypeIndex);
+  const stale = Date.now() - Date.parse(archetypes.fetchedAt) > 35 * 86400000;
+  return `<h4>Tournament archetypes</h4><p class="hint">Observed in up to ${archetypes.maxDecksPerFormat} recent lists per format, within ${date(archetypes.from + "T12:00:00Z")}–${date(archetypes.through + "T12:00:00Z")}. Refreshed ${date(archetypes.fetchedAt)}.${stale ? " This sample is over 35 days old." : ""} These examples do not measure archetype popularity or affect your keep rules.</p>${
+    groups.length
+      ? `<div class="archetype-formats">${Object.entries(FORMATS)
+          .map(([format, label]) => {
+            const matches = groups.filter((group) => group.format === format);
+            if (!matches.length) return "";
+            const status = row.card?.legalities?.[format];
+            return `<section class="archetype-format"><h5>${e(label)} <span>${archetypes.formats[format].decks.length} lists sampled${status && !["legal", "restricted"].includes(status) ? ` · currently ${e(status.replaceAll("_", " "))}` : ""}</span></h5>${matches
+              .map((group) => {
+                const main = group.matches.filter(
+                  (hit) => hit.mainboard > 0,
+                ).length;
+                const side = group.matches.filter(
+                  (hit) => hit.sideboard > 0,
+                ).length;
+                const commanders = group.matches.filter(
+                  (hit) => hit.commander > 0,
+                ).length;
+                return `<details class="archetype-card"><summary><span><strong>${e(group.name)}</strong><small>${group.matches.length} matching ${group.matches.length === 1 ? "list" : "lists"} · ${[main ? `mainboard in ${main}` : "", side ? `sideboard in ${side}` : "", commanders ? `commander in ${commanders}` : ""].filter(Boolean).join(" · ")}</small></span></summary><div class="archetype-evidence"><a class="archetype-source" href="${e(safeURL(group.url))}" target="_blank" rel="noopener noreferrer">${e(group.name)} on MTGTop8 ${icon("external")}</a>${group.matches.map(({ deck, mainboard, sideboard, commander }) => `<a class="archetype-deck" href="${e(safeURL(deck.url))}" target="_blank" rel="noopener noreferrer"><strong>${e(deck.name)} ${icon("external")}</strong><span>${e(deck.event)} · ${date(deck.playedAt + "T12:00:00Z")}</span><small>${[mainboard ? `${mainboard} mainboard` : "", sideboard ? `${sideboard} sideboard` : "", commander ? `${commander} commander` : ""].filter(Boolean).join(" · ")}</small></a>`).join("")}</div></details>`;
+              })
+              .join("")}</section>`;
+          })
+          .join("")}</div>`
+      : '<p class="hint">No matching card in this recent decklist sample. This does not mean the card sees no tournament play.</p>'
+  }`;
 }
 
 function versionsHTML(row) {
@@ -1037,6 +1072,7 @@ function showSources() {
           `<div class="source-row"><div>${label}<small>${snapshot?.formats?.[format] ? count(snapshot.formats[format].cards.length) + " sampled card names" : "No tournament source bundled · legality mode available"}</small></div>${snapshot?.formats?.[format] ? `<a href="${e(safeURL(snapshot.formats[format].url))}" target="_blank" rel="noopener noreferrer">View MTGTop8 ${icon("external")}</a>` : ""}</div>`,
       )
       .join("")}
+    <div class="info-copy" style="margin-top:24px"><h3>Tournament archetypes · MTGTop8</h3><p>Up to 25 recent decklists per format from the preceding 60 days, labeled with MTGTop8’s archetype names. Card details show matching lists, section-specific copy counts, dates, and event links. This sample provides examples of use; it does not measure archetype popularity or change your keep rules. ${archetypes ? `Snapshot fetched: ${date(archetypes.fetchedAt)}.` : "Archetype data unavailable; reload to retry."}</p></div>
     <div class="info-copy" style="margin-top:24px"><h3>J25 deck membership · Jumpstart Atlas</h3><p>${j25 ? `${j25.names.length} unique English card names from ${j25.decks} Foundations Jumpstart decks. Updated ${date(j25.fetchedAt)}.` : "Membership data unavailable; reload to retry."} Membership matches names across all printings, including cards you own from other sets. It qualifies a card for the playset reserve, rather than protecting unlimited duplicates. The catalog is derived automatically from <a href="https://github.com/hugooliveirad/jumpstart-atlas" target="_blank" rel="noopener noreferrer">Jumpstart Atlas</a>.</p></div><div class="info-copy" style="margin-top:24px"><h3>Card details · Scryfall</h3><p>Names, images, rarity, legality, and USD / EUR prices come from <a href="https://scryfall.com/docs/api" target="_blank" rel="noopener noreferrer">Scryfall</a>. Refresh card data to update prices and legality. Data is cached for 24 hours; data older than 7 days requires review before bulk recommendations.</p><p>Prices describe the selected printing and finish. They are market references, not a quote for the condition or language of your copy. Missing prices are never treated as zero. Set + collector number or Scryfall ID identifies a printing; a name alone gives a reference printing.</p><p>Collection files, quantities, and preferences stay in this browser. Scryfall receives card identifiers during lookup and any online search query, and its image host receives image requests. Export a backup before clearing browser storage. Other tabs and devices do not automatically sync.</p><p>Magic: The Gathering and card imagery belong to Wizards of the Coast. Card Sift is an independent fan project, inspired by <a href="https://hugobessa.com.br/jumpstart-atlas/">Jumpstart Atlas</a>.</p></div>`,
   );
 }
@@ -1460,6 +1496,10 @@ async function init() {
       if (!r.ok) throw new Error();
       return r.json();
     }),
+    fetch("./data/archetypes.json").then((r) => {
+      if (!r.ok) throw new Error();
+      return r.json();
+    }),
   ]);
   if (loaded[0].status === "fulfilled" && loaded[0].value) {
     try {
@@ -1489,6 +1529,14 @@ async function init() {
     storageWarning(loaded[0].reason.message);
   if (loaded[1].status === "fulfilled") snapshot = loaded[1].value;
   if (loaded[2].status === "fulfilled") j25 = loaded[2].value;
+  if (loaded[4].status === "fulfilled") {
+    try {
+      archetypeIndex = buildArchetypeIndex(loaded[4].value);
+      archetypes = loaded[4].value;
+    } catch {
+      archetypes = null;
+    }
+  }
   if (loaded[3].status === "fulfilled") {
     example = loaded[3].value;
     const arts = example.rows.filter((r) => r.card?.image);

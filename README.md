@@ -11,7 +11,7 @@ Inspired by [Jumpstart Atlas](https://hugobessa.com.br/jumpstart-atlas/). A sepa
 1. Import a CSV, TSV, text decklist, Card Sift backup, or Jumpstart Atlas JSON backup. Review column mappings and excluded rows before applying it. Replace a full collection or add new copies. The previous inventory can be restored with Undo last import until you leave the page.
 2. Choose formats and whether you want tournament evidence (default) or any legal card. Set a minimum deck share, a playset target, separate reserves per land printing, J25 deck membership, protected rarities, and a USD/EUR price floor.
 3. Review the table or image grid. Search names or use advanced query syntax; include/exclude card types, search owned sets, and filter by recommendation, color, or rarity. Sort by tournament play, name, price, quantity, bulk, or review.
-4. Open a card for all owned versions, a format matrix with legality and tournament usage, named J25 decks, and links to matching tournament decklists. Each owned version has a link menu for Scryfall printing/set pages, LigaMagic prices, and MTGTop8. Select a version to edit its quantity or override that printing and finish. Previous/Next and arrow keys follow the filtered, sorted collection across pages; switching owned versions preserves your position. Back or Escape from editing restores the card and scroll position.
+4. Open a card for all owned versions, a format matrix with legality and tournament usage, named J25 decks and tournament archetypes, and links to matching decklists. Each owned version has a link menu for Scryfall printing/set pages, LigaMagic prices, and MTGTop8. Select a version to edit its quantity or override that printing and finish. Previous/Next and arrow keys follow the filtered, sorted collection across pages; switching owned versions preserves your position. Back or Escape from editing restores the card and scroll position.
 5. Export a CSV sorting plan for your current view or the entire collection. Export a JSON backup to preserve your inventory, rules, and decisions.
 
 Try the example collection without replacing your own inventory. The example uses real Scryfall printings and is clearly labeled.
@@ -37,7 +37,11 @@ The table joins finishes of the same known printing, showing separate finish qua
 
 Commander supports legality mode. There is no bundled Commander tournament source. Tournament mode treats legal Commander cards without evidence as uncertain.
 
-Card details show every supported format, independently of the keep-rule selections. Green circles indicate legal/restricted status; gray circles indicate nonlegal/unknown status, with text labels distinguishing each. Usage is the higher section share, with mainboard/sideboard breakdown on hover and links to the source. Missing sampled evidence is never displayed as 0%. Tournament deck links open MTGTop8 searches by card and format; the app does not infer archetype shares from aggregate card statistics.
+Card details show every supported format, independently of the keep-rule selections. Green circles indicate legal/restricted status; gray circles indicate nonlegal/unknown status, with text labels distinguishing each. Usage is the higher section share, with mainboard/sideboard breakdown on hover and links to the source. Missing sampled evidence is never displayed as 0%.
+
+**Named tournament archetypes** come from `data/archetypes.json`, refreshed by `scripts/update-archetypes.py`. For each of the eight supported tournament formats it reads the first 25 results of MTGTop8's recent deck search, restricted to the preceding 60 days, then reads those actual decklists and their source-assigned archetypes. It publishes only after every requested page succeeds and passes identity, format, date, and decklist checks. Commander entries in Duel Commander are distinguished from mainboard and sideboard cards using the source's section headings.
+
+The card dialog groups matches by format and archetype, shows how many sampled lists contain the card, and expands to dated event/deck links with copy counts by section. Matching follows English card identity across sets and finishes, including split-card name notation. This small recency sample provides examples of use; it is not a representative metagame breakdown. No archetype popularity percentages are inferred, and it does not change allocation rules or the broader tournament statistics above. Empty samples, unavailable data, and snapshots older than 35 days are labeled. Links to full MTGTop8 searches remain available.
 
 ### J25 membership and search
 
@@ -64,6 +68,7 @@ python3 -m http.server 8001
 # Open http://localhost:8001
 npm test
 python3 scripts/update-metagame.py
+python3 scripts/update-archetypes.py
 python3 scripts/update-j25.py
 node scripts/update-example.mjs
 ```
@@ -75,13 +80,14 @@ No package install or bundler needed. Native ES modules require HTTP rather than
 - `src/import.js`: CSV/decklist parsing, import validation, backup validation, and CSV output.
 - `src/data.js`: IndexedDB and Scryfall lookup/cache.
 - `src/search.js`: query parsing, local matching, advanced-field composition, and online search.
+- `src/archetypes.js`: card-to-deck evidence indexing and grouping by tournament archetype.
 - `src/app.js`: interaction and rendering.
 - `scripts/`: refresh published evidence and example data.
 - `tests/`: allocation invariants and import regression cases.
 
 ## Deployment
 
-GitHub Pages uses [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Pushes to `main`, manual dispatches, and a weekly Monday schedule run tests, refresh evidence, J25 membership, and example prices, and deploy a static artifact. The source repo does not accumulate automated data commits. A failed source refresh fails the deployment and leaves the previous site available. GitHub may suspend scheduled workflows after 60 days without repository activity; re-enable a suspended workflow in Actions or with `gh workflow enable pages.yml`. Old evidence is labeled and handled conservatively in the app.
+GitHub Pages uses [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Pushes to `main`, manual dispatches, and a weekly Monday schedule run tests, refresh tournament statistics, archetype decklists, J25 membership, and example prices, and deploy a static artifact. The source repo does not accumulate automated data commits. A failed source refresh fails the deployment and leaves the previous site available. GitHub may suspend scheduled workflows after 60 days without repository activity; re-enable a suspended workflow in Actions or with `gh workflow enable pages.yml`. Old evidence is labeled and handled conservatively in the app.
 
 The committed snapshots support immediate local use. The deployed snapshots are generated afresh by the workflow, so their timestamps may differ from the files in git.
 

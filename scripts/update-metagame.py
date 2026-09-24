@@ -6,30 +6,14 @@ import html
 import json
 from pathlib import Path
 import re
-import time
 import urllib.parse
-import urllib.request
+from mtgtop8 import FORMATS, fetch_url
 
-FORMATS = {'pauper': 'PAU', 'standard': 'ST', 'modern': 'MO', 'premodern': 'PREM',
-           'pioneer': 'PI', 'legacy': 'LE', 'vintage': 'VI', 'duel': 'EDH'}
 BASE = 'https://www.mtgtop8.com/topcards'
 
 
 def fetch(params):
-    url = BASE + '?' + urllib.parse.urlencode(params)
-    for attempt in range(3):
-        time.sleep(0.65 * (attempt + 1))
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'CardSift/1.0 (collection organizer; github.com/hugooliveirad/card-sift)'})
-            with urllib.request.urlopen(req, timeout=30) as response:
-                raw = response.read()
-                try:
-                    return raw.decode('utf-8')
-                except UnicodeDecodeError:
-                    return raw.decode('windows-1252')
-        except Exception:
-            if attempt == 2:
-                raise
+    return fetch_url(BASE + '?' + urllib.parse.urlencode(params))
 
 
 def parse_cards(text):
