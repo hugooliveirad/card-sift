@@ -1059,6 +1059,13 @@ tbody tr:hover {
   font-size: 13px;
   font-variant-numeric: tabular-nums;
 }
+.format-breakdown {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
 .grid-formats {
   margin-top: 10px;
 }

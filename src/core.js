@@ -207,8 +207,16 @@ export function analyze(rows, rules, snapshot, now = Date.now(), j25 = null) {
               Math.max(hit.mainboard, hit.sideboard) >= rules.minShare
             ) {
               item.eligible = true;
+              const sections = [
+                hit.mainboard >= rules.minShare
+                  ? `${hit.mainboard}% of mainboards`
+                  : "",
+                hit.sideboard >= rules.minShare
+                  ? `${hit.sideboard}% of sideboards`
+                  : "",
+              ].filter(Boolean);
               item.reasons.push(
-                `${FORMATS[format]}: ${Math.max(hit.mainboard, hit.sideboard)}% of ${hit.mainboard >= hit.sideboard ? "mainboards" : "sideboards"}${evidenceFresh ? "" : " (older evidence)"}`,
+                `${FORMATS[format]}: ${sections.join(" · ")}${evidenceFresh ? "" : " (older evidence)"}`,
               );
             } else if (!evidenceFresh || !evidence[format])
               item.uncertainties.push(

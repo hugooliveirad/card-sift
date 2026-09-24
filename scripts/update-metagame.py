@@ -34,17 +34,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', default='data/metagame.json')
     args = parser.parse_args()
+    now = dt.datetime.now(dt.timezone.utc)
+    period = f'All {now.year} Decks'
     menu = fetch({'f': 'PAU'})
-    snapshot = {'schema': 1, 'fetchedAt': dt.datetime.now(dt.timezone.utc).isoformat(),
-                'source': 'MTGTop8', 'window': 'Last 2 Months', 'maxPerSection': 100,
+    snapshot = {'schema': 1, 'fetchedAt': now.isoformat(),
+                'source': 'MTGTop8', 'window': f'{now.year} year to date',
+                'from': f'{now.year}-01-01', 'through': now.date().isoformat(), 'maxPerSection': 100,
                 'minimumPercent': 1, 'formats': {}}
     for name, code in FORMATS.items():
         select = re.search(r'id=meta_' + code + r'\s[^>]*>(.*?)</select>', menu, re.S)
         if not select:
             raise ValueError('Missing format menu: ' + name)
-        meta = re.search(r'<option value=(\d+)\s[^>]*>Last 2 Months</option>', select[1])
+        meta = re.search(r'<option value=(\d+)\s[^>]*>' + re.escape(period) + r'</option>', select[1], re.I)
         if not meta:
-            raise ValueError('Missing two-month window: ' + name)
+            raise ValueError('Missing ' + period + ' window: ' + name)
         cards = {}
         sections = ('MD',) if name == 'duel' else ('MD', 'SB')
         for section in sections:

@@ -186,7 +186,7 @@ function syncRules() {
   $("#share-field").hidden = state.rules.formatMode !== "played";
   $("#format-hint").textContent =
     state.rules.formatMode === "played"
-      ? "MTGTop8: up to 100 mainboard and 100 sideboard cards, from the last two months."
+      ? `Mainboard or sideboard usage qualifies for your playset reserve. MTGTop8 · ${snapshot?.window || "Loading date range…"}.`
       : "Any legal or restricted card qualifies, even with no tournament evidence.";
 }
 function changeRules() {
@@ -440,7 +440,7 @@ function tournamentLabel(row) {
   const hit = row.played.find(
     (h) => Math.max(h.mainboard, h.sideboard) === row.tournamentShare,
   );
-  return `<span class="number">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[hit.format])}</span>`;
+  return `<span class="number">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[hit.format])} · ${hit.sideboard > hit.mainboard ? "sideboard" : "mainboard"}</span>`;
 }
 
 function displayedRows() {
@@ -468,10 +468,17 @@ function formatMatrix(row) {
       const playable = ["legal", "restricted"].includes(status);
       const hit = evidenceFor(row, format, evidence);
       const statusLabel = status.replaceAll("_", " ");
+      const source = safeURL(snapshot?.formats?.[format]?.url);
+      const sourceURL = source ? new URL(source) : null;
+      if (hit && sourceURL)
+        sourceURL.searchParams.set(
+          "maindeck",
+          hit.sideboard > hit.mainboard ? "SB" : "MD",
+        );
       const usage = hit
-        ? `Mainboard ${hit.mainboard}%${snapshot.formats[format].sections?.includes("sideboard") === false ? "" : ` · Sideboard ${hit.sideboard}%`}`
+        ? `Mainboard ${hit.mainboard > 0 ? hit.mainboard + "%" : "—"}${snapshot.formats[format].sections?.includes("sideboard") === false ? "" : ` · Sideboard ${hit.sideboard > 0 ? hit.sideboard + "%" : "—"}`}`
         : "";
-      return `<div class="format-tag ${playable ? "is-legal" : ""}"><span class="format-name"><i class="legality-dot" aria-hidden="true"></i>${e(label)}</span><span class="format-status">${e(statusLabel)}</span>${hit ? `<a class="format-share" href="${e(safeURL(snapshot.formats[format].url))}" target="_blank" rel="noopener noreferrer" title="${e(usage)}"><strong>${Math.max(hit.mainboard, hit.sideboard)}%</strong> of decks<span class="sr-only"> · ${e(usage)} · ${e(label)} source</span></a>` : `<span class="format-share muted">${snapshot?.formats?.[format] ? "No sampled play" : "No usage data"}</span>`}</div>`;
+      return `<div class="format-tag ${playable ? "is-legal" : ""}"><span class="format-name"><i class="legality-dot" aria-hidden="true"></i>${e(label)}</span><span class="format-status">${e(statusLabel)}</span>${hit ? `<a class="format-share" href="${e(sourceURL?.href)}" target="_blank" rel="noopener noreferrer" title="${e(usage)}"><strong>${Math.max(hit.mainboard, hit.sideboard)}%</strong> of decks<span class="format-breakdown">${e(usage)}</span><span class="sr-only">${e(label)} source</span></a>` : `<span class="format-share muted">${snapshot?.formats?.[format] ? "No sampled play" : "No usage data"}</span>`}</div>`;
     })
     .join("")}</div>`;
 }
@@ -1019,7 +1026,7 @@ function showDetail(id, options = {}) {
     row.name,
     printing(row),
     `<div class="detail-layout"><div><div class="detail-art ${isFoil(row) ? "foil-image" : ""}">${img ? `<img class="detail-image" src="${e(img)}" alt="${e(row.name)}">` : '<div class="no-image">Card image unavailable</div>'}${isFoil(row) ? `<span class="foil-label">✦ ${e(finishName(row.finish))}</span>` : ""}</div><div class="detail-price">${money(row.price)}</div><p class="hint">${row.exact ? "Exact printing" : "Reference printing"} · ${e(finishName(row.finish))}<br>${c ? `Scryfall price · ${date(row.fetchedAt)}` : "Refresh card data to look up this card."}</p>${cardLinks(row)}</div><div><div class="detail-meta">${e(c?.type_line || "Card details unavailable")}<br>${e(c?.mana_cost || "")} ${c ? " · " + e(c.rarity) : ""} · ${count(row.quantity)} owned in this finish</div>${pills(row)}<h3>Why these copies go here</h3><ul class="detail-reasons">${[...new Set(row.reasons)].map((reason) => `<li>${e(reason)}</li>`).join("")}${row.review ? row.uncertainties.map((reason) => `<li>${e(reason)}</li>`).join("") : ""}</ul>
-    <h3>Formats &amp; tournament use</h3>${formatMatrix(row)}<p class="hint">Green: legal or restricted · gray: not legal or unknown. Status is also written on each tag.</p><p class="hint">Usage is the higher of mainboard / sideboard deck share; sections are never added. ${snapshot ? `MTGTop8 · ${e(snapshot.window)} · fetched ${date(snapshot.fetchedAt)}.` : "Tournament data unavailable."} No sampled play does not mean 0%. All formats are shown, independently of your keep rules.</p>
+    <h3>Formats &amp; tournament use</h3>${formatMatrix(row)}<p class="hint">Green: legal or restricted · gray: not legal or unknown. Status is also written on each tag.</p><p class="hint">Usage is the higher of mainboard / sideboard deck share; sections are never added. ${snapshot ? `MTGTop8 · ${e(snapshot.window)} · fetched ${date(snapshot.fetchedAt)}.` : "Tournament data unavailable."} A dash means no qualifying evidence in that section, not 0%. All formats are shown, independently of your keep rules.</p>
     <h3>Your decision</h3><label class="field">Override for this printing and finish<select id="row-override"><option value="" ${!row.override ? "selected" : ""}>Follow my keep rules</option><option value="keep" ${row.override === "keep" ? "selected" : ""}>Keep every copy</option><option value="bulk" ${row.override === "bulk" ? "selected" : ""}>Put every copy in bulk</option></select></label><div class="detail-actions"><button class="button quiet small" data-action="edit-card">Edit card / quantity</button><button class="button quiet small" data-action="copy-card">Copy decklist line</button></div></div></div>
     ${versionsHTML(row)}${deckMembership(row)}
     ${c ? `<details class="native-details"><summary>Card text</summary><p class="oracle-text" style="margin:15px 0">${e(c.oracle_text)}</p></details>` : ""}`,
@@ -1072,7 +1079,7 @@ function showSources() {
   modal(
     "Where the recommendations come from",
     "Facts, dates, and the limits of each source.",
-    `<div class="info-copy"><h3>Tournament play · MTGTop8</h3><p>A dated snapshot of the ${snapshot?.window?.toLowerCase() || "last two months"} of tournament deck statistics. We include up to 100 mainboard and 100 sideboard cards per format, each appearing in at least 1% of decks in that section. Basic lands are excluded from this sample and use your separate reserve. Duel Commander uses mainboard evidence only.</p><p><strong>Absence from this sample does not mean a card never sees play.</strong> Your selected minimum share is checked against either section. A card must also be currently legal or restricted according to Scryfall to qualify.</p><p>Snapshot fetched: <strong>${date(snapshot?.fetchedAt)}</strong>. The hosted site refreshes weekly. ${old ? "Missing or old evidence sends uncertain copies to Needs review." : "The snapshot is current. Tournament sorting uses the highest section percentage among your selected formats; percentages are never added across formats."}</p></div>
+    `<div class="info-copy"><h3>Tournament play · MTGTop8</h3><p>Tournament deck statistics for ${e(snapshot?.window || "the configured date range")}. We include up to 100 mainboard and 100 sideboard cards per format, each appearing in at least 1% of decks in that section. Basic lands are excluded from this sample and use your separate reserve. Duel Commander uses mainboard evidence only.</p><p><strong>Absence from this sample does not mean a card never sees play.</strong> Your selected minimum share is checked against either section. A card must also be currently legal or restricted according to Scryfall to qualify.</p><p>Snapshot fetched: <strong>${date(snapshot?.fetchedAt)}</strong>. The hosted site refreshes weekly. ${old ? "Missing or old evidence sends uncertain copies to Needs review." : "The snapshot is current. Tournament sorting uses the highest section percentage among your selected formats; percentages are never added across formats."}</p></div>
     ${Object.entries(FORMATS)
       .map(
         ([format, label]) =>
