@@ -2324,7 +2324,7 @@ dialog::backdrop {
 .collection-filter-row > .text-button {
   min-height: 37px;
 }
-.land-toggle {
+.button.land-toggle {
   min-height: 37px;
   white-space: nowrap;
 }
