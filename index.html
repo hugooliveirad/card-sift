@@ -69,23 +69,33 @@
           </fieldset>
           <fieldset>
             <legend>02 <span>Copies to keep</span></legend>
+            <label class="check"
+              ><input name="keepJ25" type="checkbox" /> Keep cards in
+              Foundations Jumpstart (J25) decks</label
+            >
+            <p class="hint">
+              Matches names across all sets, then reserves the copies below.
+              Includes all 121 Atlas deck variants.
+            </p>
             <label class="field"
               >Reserve playsets for<select name="playsets">
-                <option value="matched">Cards matching my formats</option>
+                <option value="matched">
+                  Cards matching my formats or J25
+                </option>
                 <option value="all">Every card name</option>
                 <option value="off">No playset reserve</option>
               </select></label
             >
             <div class="two-fields">
               <label class="field"
-                >Copies per name<input
+                >Nonland copies per name<input
                   name="copies"
                   type="number"
                   min="0"
                   max="100"
                   value="4" /></label
               ><label class="field"
-                >Basic lands<input
+                >Basic copies per printing<input
                   name="basics"
                   type="number"
                   min="0"
@@ -93,8 +103,18 @@
                   value="20"
               /></label>
             </div>
+            <label class="field"
+              >Nonbasic land copies per printing<input
+                name="landCopies"
+                type="number"
+                min="0"
+                max="10000"
+                value="4"
+            /></label>
             <p class="hint">
-              Shared across sets and finishes. Basics have their own reserve.
+              Nonlands share a reserve across sets. Lands count only the same
+              Scryfall ID or set + collector number; finishes share that
+              printing's reserve.
             </p>
           </fieldset>
           <fieldset>
@@ -328,7 +348,7 @@
                 ><input
                   type="search"
                   id="search"
-                  placeholder="Search cards, types, or rules text…"
+                  placeholder="Search names or use t:creature -t:land mv&lt;=3"
                   aria-label="Search collection"
                 /><kbd>/</kbd></label
               ><label class="sr-only" for="color-filter">Filter by color</label
@@ -354,10 +374,62 @@
                 <option value="name">Name A–Z</option>
                 <option value="price">Price: high to low</option>
                 <option value="quantity">Most owned</option>
+                <option value="played">Most tournament play</option>
                 <option value="bulk">Most bulk</option>
                 <option value="review">Needs review first</option>
               </select>
             </div>
+            <div class="collection-filter-row">
+              <label class="field set-search"
+                >Set search<input
+                  id="set-search"
+                  type="search"
+                  list="owned-sets"
+                  placeholder="Set code or name, e.g. J25"
+                  autocomplete="off" /></label
+              ><datalist id="owned-sets"></datalist>
+              <details class="type-filter-panel" id="type-filters">
+                <summary>
+                  Card types <span id="type-filter-count"></span>
+                </summary>
+                <p class="hint">
+                  Include any selected type; exclude every selected type.
+                  Unknown card types are omitted while a type filter is active.
+                </p>
+                <div id="type-options" class="type-options"></div>
+              </details>
+              <button class="text-button" data-action="clear-filters">
+                Clear filters
+              </button>
+            </div>
+            <details id="advanced-search" class="native-details">
+              <summary>Advanced search filters</summary>
+              <p class="hint">
+                Build a query with fields, like Jumpstart Atlas. Apply replaces
+                the search box. Card types and set search above remain
+                additional filters.
+              </p>
+              <form id="advanced-form">
+                <div id="advanced-fields" class="advanced-fields"></div>
+                <div class="row between wrap">
+                  <button
+                    class="text-button"
+                    type="button"
+                    data-action="search-help"
+                  >
+                    Search syntax guide</button
+                  ><button class="button quiet small" type="submit">
+                    Apply advanced fields
+                  </button>
+                </div>
+              </form>
+            </details>
+            <p
+              id="search-status"
+              class="hint search-status"
+              role="status"
+              hidden
+            ></p>
             <div
               id="sync-status"
               class="sync-status"

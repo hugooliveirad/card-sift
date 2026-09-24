@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "fetchedAt": "2026-09-23T20:37:44.365847+00:00",
+  "fetchedAt": "2026-09-24T18:18:30.079727+00:00",
   "source": "MTGTop8",
   "window": "Last 2 Months",
   "maxPerSection": 100,
@@ -8,6 +8,10 @@
   "formats": {
     "pauper": {
       "url": "https://www.mtgtop8.com/topcards?f=PAU&meta=145",
+      "sections": [
+        "mainboard",
+        "sideboard"
+      ],
       "cards": [
         {
           "name": "Accursed Marauder",
@@ -17,31 +21,41 @@
         {
           "name": "Ancient Grudge",
           "mainboard": 0,
-          "sideboard": 6.6
+          "sideboard": 6.5
         },
         {
           "name": "Annul",
           "mainboard": 0,
-          "sideboard": 15.7
+          "sideboard": 16.2
+        },
+        {
+          "name": "Arbor Elf",
+          "mainboard": 5.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Archaeomancer",
+          "mainboard": 5.0,
+          "sideboard": 0
         },
         {
           "name": "Arms of Hadar",
           "mainboard": 0,
-          "sideboard": 6.4
+          "sideboard": 6.7
         },
         {
           "name": "Augur of Bolas",
-          "mainboard": 5.7,
+          "mainboard": 5.4,
           "sideboard": 0
         },
         {
           "name": "Avenging Hunter",
           "mainboard": 12.6,
-          "sideboard": 2.6
+          "sideboard": 2.5
         },
         {
           "name": "Barrels of Blasting Jelly",
-          "mainboard": 6.3,
+          "mainboard": 6.4,
           "sideboard": 0
         },
         {
@@ -52,12 +66,12 @@
         {
           "name": "Blue Elemental Blast",
           "mainboard": 0,
-          "sideboard": 27.7
+          "sideboard": 28.0
         },
         {
           "name": "Bojuka Bog",
-          "mainboard": 17.2,
-          "sideboard": 1.4
+          "mainboard": 17.7,
+          "sideboard": 1.3
         },
         {
           "name": "Bonder's Ornament",
@@ -66,18 +80,18 @@
         },
         {
           "name": "Brainstorm",
-          "mainboard": 15.4,
+          "mainboard": 15.2,
           "sideboard": 0
         },
         {
           "name": "Bramble Wurm",
-          "mainboard": 6.9,
+          "mainboard": 7.1,
           "sideboard": 1.0
         },
         {
           "name": "Breath Weapon",
           "mainboard": 0,
-          "sideboard": 24.0
+          "sideboard": 23.6
         },
         {
           "name": "Call Damage Control",
@@ -87,31 +101,26 @@
         {
           "name": "Campfire",
           "mainboard": 0,
-          "sideboard": 4.9
+          "sideboard": 5.0
         },
         {
           "name": "Cast Down",
-          "mainboard": 15.7,
+          "mainboard": 15.5,
           "sideboard": 3.0
         },
         {
           "name": "Cast into the Fire",
           "mainboard": 0,
-          "sideboard": 17.2
-        },
-        {
-          "name": "Chain Lightning",
-          "mainboard": 5.0,
-          "sideboard": 0
+          "sideboard": 16.9
         },
         {
           "name": "Cleansing Wildfire",
-          "mainboard": 5.9,
-          "sideboard": 3.9
+          "mainboard": 5.7,
+          "sideboard": 4.0
         },
         {
           "name": "Clockwork Percussionist",
-          "mainboard": 5.5,
+          "mainboard": 5.2,
           "sideboard": 0
         },
         {
@@ -126,38 +135,38 @@
         },
         {
           "name": "Counterspell",
-          "mainboard": 21.8,
+          "mainboard": 22.0,
           "sideboard": 0
         },
         {
           "name": "Crop Rotation",
-          "mainboard": 7.2,
+          "mainboard": 7.4,
           "sideboard": 0
         },
         {
           "name": "Cryoshatter",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 1.9
         },
         {
           "name": "Cryptic Serpent",
-          "mainboard": 7.5,
+          "mainboard": 7.6,
           "sideboard": 0
         },
         {
           "name": "Deem Inferior",
-          "mainboard": 5.8,
+          "mainboard": 5.9,
           "sideboard": 0
         },
         {
           "name": "Deep Analysis",
-          "mainboard": 6.5,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
           "name": "Deglamer",
           "mainboard": 0,
-          "sideboard": 5.2
+          "sideboard": 5.0
         },
         {
           "name": "Delver of Secrets",
@@ -167,32 +176,32 @@
         {
           "name": "Destroy Evil",
           "mainboard": 0,
-          "sideboard": 1.8
+          "sideboard": 1.9
         },
         {
           "name": "Dispel",
           "mainboard": 14.2,
-          "sideboard": 7.1
+          "sideboard": 7.0
         },
         {
           "name": "Drossforge Bridge",
-          "mainboard": 12.7,
+          "mainboard": 12.3,
           "sideboard": 0
         },
         {
           "name": "Drown in Sorrow",
           "mainboard": 0,
-          "sideboard": 4.0
+          "sideboard": 3.9
         },
         {
           "name": "Duress",
           "mainboard": 0,
-          "sideboard": 12.3
+          "sideboard": 12.1
         },
         {
           "name": "Dust to Dust",
           "mainboard": 0,
-          "sideboard": 11.4
+          "sideboard": 11.7
         },
         {
           "name": "Earth Rift",
@@ -202,56 +211,56 @@
         {
           "name": "Electrickery",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 3.1
         },
         {
           "name": "End the Festivities",
           "mainboard": 0,
-          "sideboard": 11.1
+          "sideboard": 11.0
         },
         {
           "name": "Envelop",
           "mainboard": 0,
-          "sideboard": 9.8
+          "sideboard": 9.9
         },
         {
           "name": "Ephemerate",
-          "mainboard": 5.5,
+          "mainboard": 5.6,
           "sideboard": 0
         },
         {
           "name": "Eviscerator's Insight",
-          "mainboard": 11.1,
+          "mainboard": 11.0,
           "sideboard": 0
         },
         {
           "name": "Expedition Map",
-          "mainboard": 8.4,
+          "mainboard": 8.5,
           "sideboard": 0
         },
         {
           "name": "Extract a Confession",
           "mainboard": 0,
-          "sideboard": 10.3
+          "sideboard": 10.1
         },
         {
           "name": "Faerie Macabre",
           "mainboard": 0,
-          "sideboard": 19.4
+          "sideboard": 19.0
         },
         {
           "name": "Faerie Seer",
-          "mainboard": 7.5,
+          "mainboard": 7.7,
           "sideboard": 0
         },
         {
           "name": "Faithless Looting",
-          "mainboard": 13.6,
+          "mainboard": 13.8,
           "sideboard": 0
         },
         {
           "name": "Fanatical Offering",
-          "mainboard": 9.9,
+          "mainboard": 9.7,
           "sideboard": 0
         },
         {
@@ -266,7 +275,7 @@
         },
         {
           "name": "Fiery Temper",
-          "mainboard": 12.8,
+          "mainboard": 13.1,
           "sideboard": 0
         },
         {
@@ -276,63 +285,63 @@
         },
         {
           "name": "Fireblast",
-          "mainboard": 13.6,
+          "mainboard": 13.7,
           "sideboard": 0
         },
         {
           "name": "Flaring Pain",
           "mainboard": 0,
-          "sideboard": 12.2
+          "sideboard": 12.1
         },
         {
           "name": "Galvanic Blast",
-          "mainboard": 14.6,
+          "mainboard": 14.2,
           "sideboard": 0
         },
         {
           "name": "Generous Ent",
-          "mainboard": 17.9,
+          "mainboard": 17.8,
           "sideboard": 0
         },
         {
           "name": "Giant's Boulder",
-          "mainboard": 8.4,
+          "mainboard": 9.0,
           "sideboard": 0
         },
         {
           "name": "Goblin Bushwhacker",
-          "mainboard": 5.3,
+          "mainboard": 5.1,
           "sideboard": 0
         },
         {
           "name": "Goblin Tomb Raider",
-          "mainboard": 5.6,
+          "mainboard": 5.3,
           "sideboard": 0
         },
         {
           "name": "Goliath Paladin",
           "mainboard": 0,
-          "sideboard": 1.0
+          "sideboard": 1.1
         },
         {
           "name": "Gorilla Shaman",
           "mainboard": 0,
-          "sideboard": 3.7
+          "sideboard": 3.5
         },
         {
           "name": "Grab the Prize",
-          "mainboard": 12.8,
+          "mainboard": 13.0,
           "sideboard": 0
         },
         {
           "name": "Great Furnace",
-          "mainboard": 14.6,
+          "mainboard": 14.2,
           "sideboard": 0
         },
         {
           "name": "Guardian of the Guildpact",
           "mainboard": 0,
-          "sideboard": 1.6
+          "sideboard": 1.3
         },
         {
           "name": "Gut Shot",
@@ -341,7 +350,7 @@
         },
         {
           "name": "Guttersnipe",
-          "mainboard": 11.3,
+          "mainboard": 11.5,
           "sideboard": 0
         },
         {
@@ -352,11 +361,11 @@
         {
           "name": "Heritage Reclamation",
           "mainboard": 0,
-          "sideboard": 1.4
+          "sideboard": 1.3
         },
         {
           "name": "Highway Robbery",
-          "mainboard": 12.9,
+          "mainboard": 13.1,
           "sideboard": 0
         },
         {
@@ -367,41 +376,41 @@
         {
           "name": "Hydroblast",
           "mainboard": 0,
-          "sideboard": 32.2
+          "sideboard": 32.5
         },
         {
           "name": "Ichor Wellspring",
-          "mainboard": 15.1,
+          "mainboard": 14.6,
           "sideboard": 0
         },
         {
           "name": "Jack-o'-Lantern",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Journey to Nowhere",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 3.2
         },
         {
           "name": "Kaervek's Torch",
           "mainboard": 0,
-          "sideboard": 1.1
+          "sideboard": 1.2
         },
         {
           "name": "Kessig Flamebreather",
-          "mainboard": 10.3,
+          "mainboard": 10.5,
           "sideboard": 0
         },
         {
           "name": "Kor Skyfisher",
-          "mainboard": 5.3,
+          "mainboard": 5.7,
           "sideboard": 0
         },
         {
           "name": "Krark-Clan Shaman",
-          "mainboard": 11.2,
+          "mainboard": 10.7,
           "sideboard": 5.2
         },
         {
@@ -416,12 +425,12 @@
         },
         {
           "name": "Lava Dart",
-          "mainboard": 11.6,
+          "mainboard": 11.8,
           "sideboard": 0
         },
         {
           "name": "Lead the Stampede",
-          "mainboard": 9.8,
+          "mainboard": 9.7,
           "sideboard": 0
         },
         {
@@ -431,27 +440,22 @@
         },
         {
           "name": "Lightning Bolt",
-          "mainboard": 23.2,
+          "mainboard": 23.1,
           "sideboard": 0
         },
         {
-          "name": "Lignify",
-          "mainboard": 0,
-          "sideboard": 1.0
-        },
-        {
           "name": "Lórien Revealed",
-          "mainboard": 19.8,
+          "mainboard": 20.0,
           "sideboard": 0
         },
         {
           "name": "Makeshift Munitions",
-          "mainboard": 12.2,
+          "mainboard": 11.8,
           "sideboard": 0
         },
         {
           "name": "Malevolent Rumble",
-          "mainboard": 11.5,
+          "mainboard": 11.3,
           "sideboard": 0
         },
         {
@@ -466,13 +470,8 @@
         },
         {
           "name": "Masked Vandal",
-          "mainboard": 8.7,
-          "sideboard": 4.0
-        },
-        {
-          "name": "Melded Moxite",
-          "mainboard": 5.1,
-          "sideboard": 0
+          "mainboard": 8.6,
+          "sideboard": 3.9
         },
         {
           "name": "Mental Note",
@@ -482,17 +481,17 @@
         {
           "name": "Mesmeric Fiend",
           "mainboard": 0,
-          "sideboard": 4.7
+          "sideboard": 4.6
         },
         {
           "name": "Mistvault Bridge",
-          "mainboard": 9.0,
+          "mainboard": 9.3,
           "sideboard": 0
         },
         {
           "name": "Moment's Peace",
           "mainboard": 0,
-          "sideboard": 3.3
+          "sideboard": 3.2
         },
         {
           "name": "Monstrous Emergence",
@@ -501,13 +500,13 @@
         },
         {
           "name": "Moon-Circuit Hacker",
-          "mainboard": 7.1,
+          "mainboard": 7.2,
           "sideboard": 0
         },
         {
           "name": "Mukotai Ambusher",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.6
         },
         {
           "name": "Mulldrifter",
@@ -516,13 +515,18 @@
         },
         {
           "name": "Murmuring Mystic",
-          "mainboard": 10.2,
-          "sideboard": 6.5
+          "mainboard": 10.4,
+          "sideboard": 6.4
         },
         {
           "name": "Myr Enforcer",
           "mainboard": 8.4,
           "sideboard": 0
+        },
+        {
+          "name": "Navigator's Compass",
+          "mainboard": 0,
+          "sideboard": 1.2
         },
         {
           "name": "Negate",
@@ -531,12 +535,12 @@
         },
         {
           "name": "Nihil Spellbomb",
-          "mainboard": 17.3,
-          "sideboard": 11.6
+          "mainboard": 16.9,
+          "sideboard": 12.1
         },
         {
           "name": "Ninja of the Deep Hours",
-          "mainboard": 7.4,
+          "mainboard": 7.6,
           "sideboard": 0
         },
         {
@@ -546,7 +550,7 @@
         },
         {
           "name": "Nyxborn Hydra",
-          "mainboard": 13.8,
+          "mainboard": 13.6,
           "sideboard": 1.1
         },
         {
@@ -561,37 +565,37 @@
         },
         {
           "name": "Ponder",
-          "mainboard": 8.4,
+          "mainboard": 8.5,
           "sideboard": 0
         },
         {
           "name": "Preordain",
-          "mainboard": 7.2,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Primordial Pachyderm",
           "mainboard": 0,
-          "sideboard": 1.2
+          "sideboard": 1.1
         },
         {
           "name": "Prismatic Strands",
-          "mainboard": 7.6,
+          "mainboard": 7.4,
           "sideboard": 1.9
         },
         {
           "name": "Pulse of Murasa",
-          "mainboard": 6.7,
+          "mainboard": 6.5,
           "sideboard": 2.4
         },
         {
           "name": "Pyroblast",
           "mainboard": 0,
-          "sideboard": 32.0
+          "sideboard": 31.1
         },
         {
           "name": "Quirion Ranger",
-          "mainboard": 8.5,
+          "mainboard": 8.4,
           "sideboard": 0
         },
         {
@@ -602,7 +606,7 @@
         {
           "name": "Raze",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.5
         },
         {
           "name": "Reckoner's Bargain",
@@ -612,17 +616,17 @@
         {
           "name": "Red Elemental Blast",
           "mainboard": 0,
-          "sideboard": 24.1
+          "sideboard": 24.0
         },
         {
           "name": "Refurbished Familiar",
-          "mainboard": 14.9,
+          "mainboard": 15.0,
           "sideboard": 0
         },
         {
           "name": "Relic of Progenitus",
           "mainboard": 0,
-          "sideboard": 31.6
+          "sideboard": 31.7
         },
         {
           "name": "Revoke Existence",
@@ -636,7 +640,7 @@
         },
         {
           "name": "Sagu Wildling",
-          "mainboard": 11.1,
+          "mainboard": 11.0,
           "sideboard": 0
         },
         {
@@ -657,11 +661,11 @@
         {
           "name": "Searing Blaze",
           "mainboard": 0,
-          "sideboard": 8.9
+          "sideboard": 8.7
         },
         {
           "name": "Seat of the Synod",
-          "mainboard": 9.4,
+          "mainboard": 9.8,
           "sideboard": 0
         },
         {
@@ -676,23 +680,23 @@
         },
         {
           "name": "Silverbluff Bridge",
-          "mainboard": 7.7,
+          "mainboard": 7.5,
           "sideboard": 0
         },
         {
           "name": "Slagwoods Bridge",
-          "mainboard": 5.2,
+          "mainboard": 5.0,
           "sideboard": 0
         },
         {
           "name": "Sleep of the Dead",
-          "mainboard": 7.5,
+          "mainboard": 7.6,
           "sideboard": 0
         },
         {
           "name": "Smash to Smithereens",
           "mainboard": 0,
-          "sideboard": 7.9
+          "sideboard": 8.1
         },
         {
           "name": "Sneaky Snacker",
@@ -701,43 +705,43 @@
         },
         {
           "name": "Snuff Out",
-          "mainboard": 8.6,
-          "sideboard": 1.3
+          "mainboard": 8.7,
+          "sideboard": 1.2
         },
         {
           "name": "Spell Pierce",
-          "mainboard": 6.8,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
           "name": "Spellstutter Sprite",
-          "mainboard": 7.7,
+          "mainboard": 7.9,
           "sideboard": 0
         },
         {
           "name": "Spinewoods Paladin",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 2.3
         },
         {
           "name": "Spirit Link",
           "mainboard": 0,
-          "sideboard": 1.6
+          "sideboard": 1.7
         },
         {
           "name": "Spreading Seas",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 3.1
         },
         {
           "name": "Standard Bearer",
           "mainboard": 0,
-          "sideboard": 5.7
+          "sideboard": 5.8
         },
         {
           "name": "Steel Sabotage",
           "mainboard": 0,
-          "sideboard": 10.5
+          "sideboard": 10.7
         },
         {
           "name": "Stonehorn Dignitary",
@@ -746,18 +750,18 @@
         },
         {
           "name": "Suffocating Fumes",
-          "mainboard": 5.4,
-          "sideboard": 1.6
+          "mainboard": 5.7,
+          "sideboard": 1.7
         },
         {
           "name": "Suplex",
           "mainboard": 0,
-          "sideboard": 4.9
+          "sideboard": 4.7
         },
         {
           "name": "Tamiyo's Safekeeping",
           "mainboard": 0,
-          "sideboard": 3.6
+          "sideboard": 3.3
         },
         {
           "name": "Tectonic Hazard",
@@ -767,16 +771,16 @@
         {
           "name": "Terminate",
           "mainboard": 0,
-          "sideboard": 2.5
+          "sideboard": 2.2
         },
         {
           "name": "Thorn of the Black Rose",
           "mainboard": 0,
-          "sideboard": 1.2
+          "sideboard": 1.3
         },
         {
           "name": "Thought Scour",
-          "mainboard": 8.7,
+          "mainboard": 8.8,
           "sideboard": 0
         },
         {
@@ -786,18 +790,18 @@
         },
         {
           "name": "Thraben Charm",
-          "mainboard": 8.8,
-          "sideboard": 7.6
+          "mainboard": 8.7,
+          "sideboard": 8.0
         },
         {
           "name": "Thraben Inspector",
-          "mainboard": 5.8,
+          "mainboard": 6.1,
           "sideboard": 0
         },
         {
           "name": "Tithing Blade",
-          "mainboard": 0,
-          "sideboard": 1.3
+          "mainboard": 5.0,
+          "sideboard": 1.4
         },
         {
           "name": "Tolarian Terror",
@@ -811,13 +815,13 @@
         },
         {
           "name": "Toxin Analysis",
-          "mainboard": 9.3,
+          "mainboard": 9.0,
           "sideboard": 1.4
         },
         {
           "name": "Tragic Slip",
           "mainboard": 0,
-          "sideboard": 1.3
+          "sideboard": 1.2
         },
         {
           "name": "Troll of Khazad-dûm",
@@ -827,61 +831,56 @@
         {
           "name": "Troublemaker Ouphe",
           "mainboard": 0,
-          "sideboard": 8.0
-        },
-        {
-          "name": "Twisted Landscape",
-          "mainboard": 5.2,
-          "sideboard": 0
+          "sideboard": 7.7
         },
         {
           "name": "Unable to Scream",
           "mainboard": 0,
-          "sideboard": 1.3
+          "sideboard": 1.2
         },
         {
           "name": "Unexpected Fangs",
           "mainboard": 0,
-          "sideboard": 5.4
+          "sideboard": 5.2
         },
         {
           "name": "Unfathomable Truths",
-          "mainboard": 5.6,
+          "mainboard": 5.5,
           "sideboard": 0
         },
         {
           "name": "Urza's Mine",
-          "mainboard": 8.4,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
           "name": "Urza's Power Plant",
-          "mainboard": 8.4,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
           "name": "Urza's Tower",
-          "mainboard": 8.4,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
           "name": "Utopia Sprawl",
-          "mainboard": 6.8,
+          "mainboard": 6.9,
           "sideboard": 0
         },
         {
           "name": "Utrom Monitor",
-          "mainboard": 8.4,
+          "mainboard": 8.3,
           "sideboard": 0
         },
         {
           "name": "Vandalblast",
           "mainboard": 0,
-          "sideboard": 2.6
+          "sideboard": 3.1
         },
         {
           "name": "Vault of Whispers",
-          "mainboard": 15.7,
+          "mainboard": 15.8,
           "sideboard": 0
         },
         {
@@ -891,13 +890,13 @@
         },
         {
           "name": "Voldaren Epicure",
-          "mainboard": 16.5,
+          "mainboard": 16.4,
           "sideboard": 0
         },
         {
           "name": "Weather the Storm",
           "mainboard": 0,
-          "sideboard": 16.3
+          "sideboard": 16.1
         },
         {
           "name": "Whispersilk Cloak",
@@ -906,27 +905,31 @@
         },
         {
           "name": "Wild Growth",
-          "mainboard": 5.0,
+          "mainboard": 5.1,
           "sideboard": 0
         },
         {
           "name": "Winding Way",
-          "mainboard": 10.8,
+          "mainboard": 10.7,
           "sideboard": 0
         },
         {
           "name": "Writhing Chrysalis",
-          "mainboard": 13.5,
-          "sideboard": 2.0
+          "mainboard": 13.2,
+          "sideboard": 2.1
         }
       ]
     },
     "standard": {
       "url": "https://www.mtgtop8.com/topcards?f=ST&meta=52",
+      "sections": [
+        "mainboard",
+        "sideboard"
+      ],
       "cards": [
         {
           "name": "Abandoned Air Temple",
-          "mainboard": 5.8,
+          "mainboard": 5.6,
           "sideboard": 0
         },
         {
@@ -942,12 +945,12 @@
         {
           "name": "Annul",
           "mainboard": 0,
-          "sideboard": 19.7
+          "sideboard": 19.6
         },
         {
           "name": "Authority of the Consuls",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Avatar's Wrath",
@@ -957,87 +960,82 @@
         {
           "name": "Avengers Disassembled",
           "mainboard": 0,
-          "sideboard": 6.8
+          "sideboard": 6.4
         },
         {
           "name": "Ba Sing Se",
-          "mainboard": 20.0,
+          "mainboard": 19.7,
           "sideboard": 0
         },
         {
           "name": "Beza, the Bounding Spring",
           "mainboard": 0,
-          "sideboard": 2.3
+          "sideboard": 2.4
         },
         {
           "name": "Bitter Triumph",
-          "mainboard": 16.8,
+          "mainboard": 16.6,
           "sideboard": 2.4
         },
         {
           "name": "Blazemire Verge",
-          "mainboard": 7.8,
+          "mainboard": 8.2,
           "sideboard": 0
         },
         {
           "name": "Bleachbone Verge",
-          "mainboard": 9.5,
+          "mainboard": 9.7,
           "sideboard": 0
         },
         {
           "name": "Blood Crypt",
-          "mainboard": 11.6,
+          "mainboard": 12.0,
           "sideboard": 0
         },
         {
           "name": "Blooming Marsh",
-          "mainboard": 5.4,
-          "sideboard": 0
-        },
-        {
-          "name": "Breeding Pool",
-          "mainboard": 5.5,
+          "mainboard": 5.6,
           "sideboard": 0
         },
         {
           "name": "Broadside Barrage",
           "mainboard": 0,
-          "sideboard": 8.6
+          "sideboard": 8.4
         },
         {
           "name": "Burst Lightning",
-          "mainboard": 22.1,
+          "mainboard": 22.0,
           "sideboard": 0
         },
         {
           "name": "Cavern of Souls",
-          "mainboard": 14.5,
+          "mainboard": 14.7,
           "sideboard": 0
         },
         {
           "name": "Chainsaw",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 2.1
         },
         {
           "name": "Clarion Conqueror",
           "mainboard": 0,
-          "sideboard": 3.3
+          "sideboard": 3.4
         },
         {
           "name": "Colorstorm Stallion",
           "mainboard": 0,
-          "sideboard": 11.9
+          "sideboard": 11.7
         },
         {
           "name": "Concealed Courtyard",
-          "mainboard": 7.8,
+          "mainboard": 7.9,
           "sideboard": 0
         },
         {
           "name": "Consult the Star Charts",
           "mainboard": 8.6,
-          "sideboard": 1.9
+          "sideboard": 2.0
         },
         {
           "name": "Dawn's Truce",
@@ -1047,7 +1045,7 @@
         {
           "name": "Day of Black Sun",
           "mainboard": 0,
-          "sideboard": 12.3
+          "sideboard": 12.4
         },
         {
           "name": "Day of Judgment",
@@ -1056,33 +1054,33 @@
         },
         {
           "name": "Deadly Cover-Up",
-          "mainboard": 10.4,
-          "sideboard": 4.0
+          "mainboard": 10.1,
+          "sideboard": 3.8
         },
         {
           "name": "Deathmark",
           "mainboard": 0,
-          "sideboard": 2.6
+          "sideboard": 2.4
         },
         {
           "name": "Deceit",
-          "mainboard": 7.4,
+          "mainboard": 7.1,
           "sideboard": 0
         },
         {
           "name": "Decorum Dissertation",
           "mainboard": 0,
-          "sideboard": 3.2
+          "sideboard": 3.3
         },
         {
           "name": "Demolition Field",
-          "mainboard": 12.8,
+          "mainboard": 12.9,
           "sideboard": 0
         },
         {
           "name": "Disdainful Stroke",
           "mainboard": 0,
-          "sideboard": 32.3
+          "sideboard": 32.1
         },
         {
           "name": "Doorkeeper Thrull",
@@ -1091,57 +1089,57 @@
         },
         {
           "name": "Dream Beavers",
-          "mainboard": 7.6,
+          "mainboard": 7.8,
           "sideboard": 0
         },
         {
           "name": "Duress",
-          "mainboard": 9.2,
-          "sideboard": 26.8
+          "mainboard": 8.9,
+          "sideboard": 27.2
         },
         {
           "name": "Earthbender Ascension",
-          "mainboard": 16.5,
+          "mainboard": 16.6,
           "sideboard": 0
         },
         {
           "name": "Eddymurk Crab",
-          "mainboard": 14.9,
+          "mainboard": 14.6,
           "sideboard": 0
         },
         {
           "name": "Elspeth, Storm Slayer",
           "mainboard": 0,
-          "sideboard": 3.5
+          "sideboard": 3.3
         },
         {
           "name": "Emeritus of Ideation",
-          "mainboard": 6.5,
-          "sideboard": 10.4
+          "mainboard": 6.2,
+          "sideboard": 10.1
         },
         {
           "name": "Enduring Curiosity",
-          "mainboard": 9.0,
+          "mainboard": 9.2,
           "sideboard": 0
         },
         {
           "name": "Erode",
-          "mainboard": 16.0,
-          "sideboard": 10.3
+          "mainboard": 16.2,
+          "sideboard": 10.1
         },
         {
           "name": "Escape Tunnel",
-          "mainboard": 16.3,
+          "mainboard": 16.4,
           "sideboard": 0
         },
         {
           "name": "Esper Origins",
-          "mainboard": 14.9,
+          "mainboard": 15.0,
           "sideboard": 0
         },
         {
           "name": "Fabled Passage",
-          "mainboard": 16.7,
+          "mainboard": 16.8,
           "sideboard": 0
         },
         {
@@ -1151,7 +1149,7 @@
         },
         {
           "name": "Firebending Lesson",
-          "mainboard": 9.1,
+          "mainboard": 8.8,
           "sideboard": 0
         },
         {
@@ -1162,37 +1160,37 @@
         {
           "name": "Flashfreeze",
           "mainboard": 0,
-          "sideboard": 38.1
+          "sideboard": 37.7
         },
         {
           "name": "Floodfarm Verge",
-          "mainboard": 8.2,
+          "mainboard": 8.3,
           "sideboard": 0
         },
         {
           "name": "Floodpits Drowner",
-          "mainboard": 9.2,
+          "mainboard": 9.4,
           "sideboard": 0
         },
         {
           "name": "Flow State",
-          "mainboard": 8.3,
+          "mainboard": 7.8,
           "sideboard": 0
         },
         {
           "name": "Get Lost",
           "mainboard": 0,
-          "sideboard": 5.1
+          "sideboard": 5.4
         },
         {
           "name": "Get Out",
-          "mainboard": 12.6,
-          "sideboard": 5.0
+          "mainboard": 12.8,
+          "sideboard": 4.8
         },
         {
           "name": "Ghost Vacuum",
           "mainboard": 0,
-          "sideboard": 23.3
+          "sideboard": 22.7
         },
         {
           "name": "Gigantic Big Bear",
@@ -1201,27 +1199,27 @@
         },
         {
           "name": "Gloomlake Verge",
-          "mainboard": 17.4,
+          "mainboard": 17.2,
           "sideboard": 0
         },
         {
           "name": "Godless Shrine",
-          "mainboard": 11.3,
+          "mainboard": 11.5,
           "sideboard": 0
         },
         {
           "name": "Great Hall of the Biblioplex",
-          "mainboard": 13.7,
+          "mainboard": 13.5,
           "sideboard": 0
         },
         {
           "name": "Hallowed Fountain",
-          "mainboard": 14.8,
+          "mainboard": 14.7,
           "sideboard": 0
         },
         {
           "name": "Hearth Elemental",
-          "mainboard": 11.8,
+          "mainboard": 11.9,
           "sideboard": 0
         },
         {
@@ -1231,88 +1229,88 @@
         },
         {
           "name": "Hidden Lair",
-          "mainboard": 10.9,
+          "mainboard": 10.7,
           "sideboard": 0
         },
         {
           "name": "Hydro-Man, Fluid Felon",
           "mainboard": 0,
-          "sideboard": 7.4
+          "sideboard": 7.5
         },
         {
           "name": "Icetill Explorer",
-          "mainboard": 16.3,
+          "mainboard": 16.4,
           "sideboard": 0
         },
         {
           "name": "Ill-Timed Explosion",
           "mainboard": 0,
-          "sideboard": 4.5
+          "sideboard": 4.3
         },
         {
           "name": "Impractical Joke",
-          "mainboard": 11.0,
-          "sideboard": 2.3
+          "mainboard": 11.1,
+          "sideboard": 2.2
         },
         {
           "name": "Inevitable Defeat",
-          "mainboard": 6.9,
+          "mainboard": 7.0,
           "sideboard": 0
         },
         {
           "name": "Inspiring Vantage",
-          "mainboard": 11.0,
+          "mainboard": 11.5,
           "sideboard": 0
         },
         {
           "name": "Intimidation Tactics",
           "mainboard": 0,
-          "sideboard": 4.1
+          "sideboard": 4.3
         },
         {
           "name": "Into the Flood Maw",
           "mainboard": 0,
-          "sideboard": 3.0
+          "sideboard": 2.7
         },
         {
           "name": "Jeskai Revelation",
-          "mainboard": 10.8,
+          "mainboard": 10.6,
           "sideboard": 0
         },
         {
           "name": "Kaito, Bane of Nightmares",
-          "mainboard": 8.2,
+          "mainboard": 8.3,
           "sideboard": 0
         },
         {
           "name": "Keen-Eyed Curator",
           "mainboard": 10.8,
-          "sideboard": 11.5
+          "sideboard": 11.4
         },
         {
           "name": "Leatherhead, Swamp Stalker",
           "mainboard": 0,
-          "sideboard": 10.8
+          "sideboard": 10.9
         },
         {
           "name": "Leyline of the Void",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.8
         },
         {
           "name": "Llanowar Elves",
-          "mainboard": 21.5,
+          "mainboard": 21.2,
           "sideboard": 0
         },
         {
           "name": "Lumbering Worldwagon",
-          "mainboard": 8.0,
+          "mainboard": 8.1,
           "sideboard": 0
         },
         {
           "name": "M.O.D.O.K.",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.6
         },
         {
           "name": "Magebane Lizard",
@@ -1321,17 +1319,22 @@
         },
         {
           "name": "Meltstrider's Resolve",
-          "mainboard": 13.9,
-          "sideboard": 15.5
+          "mainboard": 13.6,
+          "sideboard": 15.3
+        },
+        {
+          "name": "Meticulous Archive",
+          "mainboard": 5.6,
+          "sideboard": 0
         },
         {
           "name": "Mightform Harmonizer",
-          "mainboard": 16.3,
+          "mainboard": 16.4,
           "sideboard": 0
         },
         {
           "name": "Mistrise Village",
-          "mainboard": 7.8,
+          "mainboard": 7.6,
           "sideboard": 0
         },
         {
@@ -1341,18 +1344,18 @@
         },
         {
           "name": "Mossborn Hydra",
-          "mainboard": 6.2,
-          "sideboard": 12.8
+          "mainboard": 6.3,
+          "sideboard": 12.9
         },
         {
           "name": "Multiversal Passage",
-          "mainboard": 30.0,
+          "mainboard": 29.6,
           "sideboard": 0
         },
         {
           "name": "Negate",
           "mainboard": 0,
-          "sideboard": 14.0
+          "sideboard": 13.9
         },
         {
           "name": "Nowhere to Run",
@@ -1362,11 +1365,11 @@
         {
           "name": "Oildeep Gearhulk",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.0
         },
         {
           "name": "Opt",
-          "mainboard": 16.5,
+          "mainboard": 16.2,
           "sideboard": 0
         },
         {
@@ -1381,7 +1384,7 @@
         },
         {
           "name": "Overgrown Tomb",
-          "mainboard": 9.3,
+          "mainboard": 9.6,
           "sideboard": 0
         },
         {
@@ -1391,8 +1394,8 @@
         },
         {
           "name": "Petrified Hamlet",
-          "mainboard": 5.8,
-          "sideboard": 5.7
+          "mainboard": 5.9,
+          "sideboard": 5.8
         },
         {
           "name": "Pick Your Poison",
@@ -1402,11 +1405,11 @@
         {
           "name": "Pinnacle Starcage",
           "mainboard": 0,
-          "sideboard": 2.5
+          "sideboard": 2.6
         },
         {
           "name": "Practiced Offense",
-          "mainboard": 8.6,
+          "mainboard": 8.3,
           "sideboard": 0
         },
         {
@@ -1417,22 +1420,22 @@
         {
           "name": "Price of Freedom",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 2.9
         },
         {
           "name": "Prismari Charm",
-          "mainboard": 13.3,
+          "mainboard": 13.5,
           "sideboard": 0
         },
         {
           "name": "Professor Dellian Fel",
           "mainboard": 0,
-          "sideboard": 4.5
+          "sideboard": 4.6
         },
         {
           "name": "Pyroclasm",
           "mainboard": 0,
-          "sideboard": 6.3
+          "sideboard": 6.4
         },
         {
           "name": "Pyrrhic Strike",
@@ -1442,17 +1445,17 @@
         {
           "name": "Qarsi Revenant",
           "mainboard": 0,
-          "sideboard": 6.2
+          "sideboard": 5.9
         },
         {
           "name": "Quantum Riddler",
           "mainboard": 0,
-          "sideboard": 4.3
+          "sideboard": 4.1
         },
         {
           "name": "Ral, Crackling Wit",
           "mainboard": 0,
-          "sideboard": 10.1
+          "sideboard": 9.6
         },
         {
           "name": "Raven Eagle",
@@ -1466,17 +1469,17 @@
         },
         {
           "name": "Requiting Hex",
-          "mainboard": 24.1,
-          "sideboard": 9.0
+          "mainboard": 24.2,
+          "sideboard": 9.3
         },
         {
           "name": "Rest in Peace",
           "mainboard": 0,
-          "sideboard": 19.6
+          "sideboard": 19.7
         },
         {
           "name": "Restless Reef",
-          "mainboard": 14.0,
+          "mainboard": 13.8,
           "sideboard": 0
         },
         {
@@ -1487,42 +1490,42 @@
         {
           "name": "Riverchurn Monument",
           "mainboard": 0,
-          "sideboard": 4.2
+          "sideboard": 4.1
         },
         {
           "name": "Riverpyre Verge",
-          "mainboard": 26.5,
+          "mainboard": 26.0,
           "sideboard": 0
         },
         {
           "name": "Roaring Furnace / Steaming Sauna",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 2.1
         },
         {
           "name": "Sacred Foundry",
-          "mainboard": 19.8,
+          "mainboard": 20.3,
           "sideboard": 0
         },
         {
           "name": "Sapling Nursery",
-          "mainboard": 13.3,
-          "sideboard": 9.2
+          "mainboard": 13.4,
+          "sideboard": 9.3
         },
         {
           "name": "Sazh's Chocobo",
-          "mainboard": 16.5,
+          "mainboard": 16.6,
           "sideboard": 0
         },
         {
           "name": "Seam Rip",
-          "mainboard": 6.3,
-          "sideboard": 12.8
+          "mainboard": 6.1,
+          "sideboard": 13.1
         },
         {
           "name": "Sear",
-          "mainboard": 7.8,
-          "sideboard": 7.5
+          "mainboard": 7.9,
+          "sideboard": 7.7
         },
         {
           "name": "Settle the Wreckage",
@@ -1537,41 +1540,41 @@
         {
           "name": "Shattered Acolyte",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Shattered Sanctum",
-          "mainboard": 10.4,
+          "mainboard": 10.5,
           "sideboard": 0
         },
         {
           "name": "Sheltered by Ghosts",
           "mainboard": 0,
-          "sideboard": 6.8
+          "sideboard": 6.7
         },
         {
           "name": "Shoot the Sheriff",
           "mainboard": 15.2,
-          "sideboard": 8.2
+          "sideboard": 8.3
         },
         {
           "name": "Shore Up",
           "mainboard": 0,
-          "sideboard": 1.9
+          "sideboard": 2.0
         },
         {
           "name": "Slagstorm",
           "mainboard": 0,
-          "sideboard": 5.1
+          "sideboard": 5.0
         },
         {
           "name": "Sleight of Hand",
-          "mainboard": 16.1,
+          "mainboard": 15.8,
           "sideboard": 0
         },
         {
           "name": "Slickshot Show-Off",
-          "mainboard": 6.0,
+          "mainboard": 5.5,
           "sideboard": 0
         },
         {
@@ -1582,36 +1585,36 @@
         {
           "name": "Soul-Guide Lantern",
           "mainboard": 0,
-          "sideboard": 24.7
+          "sideboard": 24.5
         },
         {
           "name": "Soulstone Sanctuary",
-          "mainboard": 11.6,
+          "mainboard": 11.7,
           "sideboard": 0
         },
         {
           "name": "Spell Pierce",
-          "mainboard": 22.3,
-          "sideboard": 15.8
+          "mainboard": 22.2,
+          "sideboard": 15.4
         },
         {
           "name": "Spell Snare",
-          "mainboard": 18.0,
-          "sideboard": 14.1
+          "mainboard": 18.2,
+          "sideboard": 14.3
         },
         {
           "name": "Spider-Sense",
           "mainboard": 0,
-          "sideboard": 4.0
+          "sideboard": 3.9
         },
         {
           "name": "Spirebluff Canal",
-          "mainboard": 22.2,
+          "mainboard": 21.7,
           "sideboard": 0
         },
         {
           "name": "Spyglass Siren",
-          "mainboard": 8.1,
+          "mainboard": 8.2,
           "sideboard": 0
         },
         {
@@ -1621,77 +1624,77 @@
         },
         {
           "name": "Starting Town",
-          "mainboard": 26.5,
+          "mainboard": 27.1,
           "sideboard": 0
         },
         {
           "name": "Steam Vents",
-          "mainboard": 30.6,
+          "mainboard": 30.1,
           "sideboard": 0
         },
         {
           "name": "Stock Up",
-          "mainboard": 19.6,
+          "mainboard": 19.1,
           "sideboard": 2.2
         },
         {
           "name": "Stomping Ground",
-          "mainboard": 6.4,
+          "mainboard": 6.7,
           "sideboard": 0
         },
         {
           "name": "Stormcarved Coast",
-          "mainboard": 15.5,
+          "mainboard": 15.7,
           "sideboard": 0
         },
         {
           "name": "Strategic Betrayal",
-          "mainboard": 9.9,
-          "sideboard": 32.7
+          "mainboard": 9.7,
+          "sideboard": 33.0
         },
         {
           "name": "Sunbillow Verge",
-          "mainboard": 10.0,
+          "mainboard": 10.4,
           "sideboard": 0
         },
         {
           "name": "Sunderflock",
-          "mainboard": 11.5,
-          "sideboard": 3.2
+          "mainboard": 11.7,
+          "sideboard": 3.1
         },
         {
           "name": "Sundown Pass",
-          "mainboard": 8.6,
+          "mainboard": 8.4,
           "sideboard": 0
         },
         {
           "name": "Sunspine Lynx",
           "mainboard": 0,
-          "sideboard": 6.3
+          "sideboard": 6.4
         },
         {
           "name": "Superior Spider-Man",
-          "mainboard": 6.7,
+          "mainboard": 6.4,
           "sideboard": 0
         },
         {
           "name": "Surrak, Elusive Hunter",
-          "mainboard": 12.5,
-          "sideboard": 15.5
+          "mainboard": 12.3,
+          "sideboard": 15.7
         },
         {
           "name": "Tablet of Discovery",
-          "mainboard": 11.5,
+          "mainboard": 11.3,
           "sideboard": 0
         },
         {
           "name": "Temple Garden",
-          "mainboard": 6.3,
+          "mainboard": 6.0,
           "sideboard": 0
         },
         {
           "name": "Tersa Lightshatter",
-          "mainboard": 5.4,
+          "mainboard": 5.5,
           "sideboard": 0
         },
         {
@@ -1707,12 +1710,12 @@
         {
           "name": "The Ooze",
           "mainboard": 0,
-          "sideboard": 6.0
+          "sideboard": 6.2
         },
         {
           "name": "The Queen of Dale",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.4
         },
         {
           "name": "The Wondrous Wasp",
@@ -1722,7 +1725,7 @@
         {
           "name": "Thor, God of Thunder",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 2.8
         },
         {
           "name": "Three Steps Ahead",
@@ -1731,92 +1734,96 @@
         },
         {
           "name": "Tishana's Tidebinder",
-          "mainboard": 6.1,
-          "sideboard": 2.9
+          "mainboard": 6.2,
+          "sideboard": 2.8
         },
         {
           "name": "Together as One",
-          "mainboard": 6.0,
+          "mainboard": 6.2,
           "sideboard": 0
         },
         {
           "name": "Torpor Orb",
           "mainboard": 0,
-          "sideboard": 17.4
+          "sideboard": 17.6
         },
         {
           "name": "Traumatic Critique",
-          "mainboard": 11.9,
+          "mainboard": 12.1,
           "sideboard": 0
         },
         {
           "name": "Undercity Sewers",
-          "mainboard": 9.5,
+          "mainboard": 9.2,
           "sideboard": 0
         },
         {
           "name": "Vicious Rivalry",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.8
         },
         {
           "name": "Voice of Victory",
-          "mainboard": 9.2,
-          "sideboard": 6.6
+          "mainboard": 9.5,
+          "sideboard": 6.8
         },
         {
           "name": "Wan Shi Tong, Librarian",
-          "mainboard": 7.8,
-          "sideboard": 11.3
+          "mainboard": 7.9,
+          "sideboard": 11.6
         },
         {
           "name": "Warg Tactics",
           "mainboard": 0,
-          "sideboard": 7.0
+          "sideboard": 7.1
         },
         {
           "name": "Wastewood Verge",
-          "mainboard": 7.0,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Watery Grave",
-          "mainboard": 19.8,
+          "mainboard": 19.7,
           "sideboard": 0
         },
         {
           "name": "We Say Thee Nay!",
-          "mainboard": 8.3,
+          "mainboard": 8.4,
           "sideboard": 0
         },
         {
           "name": "Winternight Stories",
-          "mainboard": 12.9,
+          "mainboard": 12.6,
           "sideboard": 0
         }
       ]
     },
     "modern": {
       "url": "https://www.mtgtop8.com/topcards?f=MO&meta=51",
+      "sections": [
+        "mainboard",
+        "sideboard"
+      ],
       "cards": [
         {
           "name": "Abrupt Decay",
           "mainboard": 0,
-          "sideboard": 3.3
+          "sideboard": 3.4
         },
         {
           "name": "Ancient Stirrings",
-          "mainboard": 11.1,
+          "mainboard": 11.6,
           "sideboard": 0
         },
         {
           "name": "Arena of Glory",
-          "mainboard": 9.0,
+          "mainboard": 8.7,
           "sideboard": 0
         },
         {
           "name": "Arid Mesa",
-          "mainboard": 24.9,
+          "mainboard": 24.5,
           "sideboard": 0
         },
         {
@@ -1826,7 +1833,7 @@
         },
         {
           "name": "Atraxa, Grand Unifier",
-          "mainboard": 9.7,
+          "mainboard": 9.8,
           "sideboard": 0
         },
         {
@@ -1836,18 +1843,18 @@
         },
         {
           "name": "Basking Broodscale",
-          "mainboard": 10.9,
+          "mainboard": 11.4,
           "sideboard": 0
         },
         {
           "name": "Blade of the Bloodchief",
-          "mainboard": 10.9,
+          "mainboard": 11.4,
           "sideboard": 0
         },
         {
           "name": "Blood Moon",
           "mainboard": 0,
-          "sideboard": 7.7
+          "sideboard": 7.2
         },
         {
           "name": "Bloodstained Mire",
@@ -1856,38 +1863,38 @@
         },
         {
           "name": "Boggart Trawler",
-          "mainboard": 8.5,
+          "mainboard": 8.7,
           "sideboard": 0
         },
         {
           "name": "Boseiju, Who Endures",
-          "mainboard": 27.6,
-          "sideboard": 2.7
+          "mainboard": 28.0,
+          "sideboard": 2.6
         },
         {
           "name": "Break the Ice",
           "mainboard": 0,
-          "sideboard": 3.7
+          "sideboard": 3.9
         },
         {
           "name": "Breeding Pool",
-          "mainboard": 13.5,
+          "mainboard": 13.6,
           "sideboard": 0
         },
         {
           "name": "Brotherhood's End",
           "mainboard": 0,
-          "sideboard": 5.5
+          "sideboard": 5.4
         },
         {
           "name": "Cavern of Souls",
-          "mainboard": 14.9,
+          "mainboard": 15.3,
           "sideboard": 2.4
         },
         {
           "name": "Celestial Purge",
           "mainboard": 0,
-          "sideboard": 5.5
+          "sideboard": 5.1
         },
         {
           "name": "Chalice of the Void",
@@ -1902,42 +1909,42 @@
         {
           "name": "Clarion Conqueror",
           "mainboard": 0,
-          "sideboard": 15.8
+          "sideboard": 16.2
         },
         {
           "name": "Collector Ouphe",
           "mainboard": 0,
-          "sideboard": 6.0
+          "sideboard": 5.9
         },
         {
           "name": "Commercial District",
-          "mainboard": 7.9,
+          "mainboard": 7.8,
           "sideboard": 0
         },
         {
           "name": "Consign to Memory",
-          "mainboard": 11.5,
-          "sideboard": 49.4
+          "mainboard": 11.6,
+          "sideboard": 49.1
         },
         {
           "name": "Containment Priest",
           "mainboard": 0,
-          "sideboard": 4.0
+          "sideboard": 4.2
         },
         {
           "name": "Cori-Steel Cutter",
-          "mainboard": 10.1,
+          "mainboard": 10.3,
           "sideboard": 0
         },
         {
           "name": "Counterspell",
-          "mainboard": 9.1,
+          "mainboard": 9.0,
           "sideboard": 0
         },
         {
           "name": "Crystal Barricade",
           "mainboard": 0,
-          "sideboard": 3.8
+          "sideboard": 3.9
         },
         {
           "name": "Culling Ritual",
@@ -1947,17 +1954,12 @@
         {
           "name": "Cursed Totem",
           "mainboard": 0,
-          "sideboard": 3.9
+          "sideboard": 4.1
         },
         {
           "name": "Damping Sphere",
           "mainboard": 0,
-          "sideboard": 17.0
-        },
-        {
-          "name": "Deafening Silence",
-          "mainboard": 0,
-          "sideboard": 1.7
+          "sideboard": 16.4
         },
         {
           "name": "Delighted Halfling",
@@ -1966,22 +1968,22 @@
         },
         {
           "name": "Devourer of Destiny",
-          "mainboard": 11.3,
+          "mainboard": 11.9,
           "sideboard": 0
         },
         {
           "name": "Dismember",
-          "mainboard": 10.8,
-          "sideboard": 15.2
+          "mainboard": 11.5,
+          "sideboard": 15.5
         },
         {
           "name": "Disruptor Flute",
           "mainboard": 0,
-          "sideboard": 10.0
+          "sideboard": 10.2
         },
         {
           "name": "Dragon's Rage Channeler",
-          "mainboard": 9.9,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
@@ -1991,7 +1993,7 @@
         },
         {
           "name": "Dryad Arbor",
-          "mainboard": 11.3,
+          "mainboard": 11.2,
           "sideboard": 0
         },
         {
@@ -2001,27 +2003,27 @@
         },
         {
           "name": "Eldrazi Temple",
-          "mainboard": 19.8,
+          "mainboard": 20.2,
           "sideboard": 0
         },
         {
           "name": "Elegant Parlor",
-          "mainboard": 10.9,
+          "mainboard": 10.5,
           "sideboard": 0
         },
         {
           "name": "Elesh Norn, Grand Cenobite",
           "mainboard": 0,
-          "sideboard": 1.7
+          "sideboard": 1.8
         },
         {
           "name": "Elesh Norn, Mother of Machines",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 3.1
         },
         {
           "name": "Emperor of Bones",
-          "mainboard": 9.8,
+          "mainboard": 9.9,
           "sideboard": 0
         },
         {
@@ -2031,7 +2033,7 @@
         },
         {
           "name": "Emrakul, the Promised End",
-          "mainboard": 17.9,
+          "mainboard": 18.3,
           "sideboard": 0
         },
         {
@@ -2056,7 +2058,7 @@
         },
         {
           "name": "Expressive Iteration",
-          "mainboard": 8.5,
+          "mainboard": 8.6,
           "sideboard": 1.7
         },
         {
@@ -2082,16 +2084,16 @@
         {
           "name": "Fire Magic",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 2.9
         },
         {
           "name": "Flickerwisp",
-          "mainboard": 7.1,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Flooded Strand",
-          "mainboard": 34.9,
+          "mainboard": 34.6,
           "sideboard": 0
         },
         {
@@ -2101,42 +2103,42 @@
         },
         {
           "name": "Force of Negation",
-          "mainboard": 20.2,
-          "sideboard": 5.1
+          "mainboard": 20.1,
+          "sideboard": 5.0
         },
         {
           "name": "Force of Vigor",
           "mainboard": 0,
-          "sideboard": 13.1
+          "sideboard": 12.9
         },
         {
           "name": "Galvanic Blast",
           "mainboard": 0,
-          "sideboard": 4.1
+          "sideboard": 3.9
         },
         {
           "name": "Galvanic Discharge",
-          "mainboard": 10.0,
+          "mainboard": 9.7,
           "sideboard": 0
         },
         {
           "name": "Gemstone Caverns",
-          "mainboard": 13.8,
+          "mainboard": 14.2,
           "sideboard": 5.6
         },
         {
           "name": "Ghost Vacuum",
           "mainboard": 0,
-          "sideboard": 2.1
+          "sideboard": 2.0
         },
         {
           "name": "Glaring Fleshraker",
-          "mainboard": 11.6,
+          "mainboard": 11.8,
           "sideboard": 0
         },
         {
           "name": "Godless Shrine",
-          "mainboard": 18.9,
+          "mainboard": 19.0,
           "sideboard": 0
         },
         {
@@ -2147,7 +2149,7 @@
         {
           "name": "Grafdigger's Cage",
           "mainboard": 0,
-          "sideboard": 20.8
+          "sideboard": 21.5
         },
         {
           "name": "Grapeshot",
@@ -2156,12 +2158,12 @@
         },
         {
           "name": "Green Sun's Zenith",
-          "mainboard": 11.4,
+          "mainboard": 11.3,
           "sideboard": 0
         },
         {
           "name": "Griselbrand",
-          "mainboard": 9.4,
+          "mainboard": 9.5,
           "sideboard": 0
         },
         {
@@ -2172,26 +2174,21 @@
         {
           "name": "Guerrilla Gorilla",
           "mainboard": 0,
-          "sideboard": 3.1
-        },
-        {
-          "name": "Guide of Souls",
-          "mainboard": 6.7,
-          "sideboard": 0
+          "sideboard": 3.2
         },
         {
           "name": "Hallowed Fountain",
-          "mainboard": 23.6,
+          "mainboard": 23.5,
           "sideboard": 0
         },
         {
           "name": "Harbinger of the Seas",
           "mainboard": 0,
-          "sideboard": 5.5
+          "sideboard": 5.6
         },
         {
           "name": "Haywire Mite",
-          "mainboard": 12.8,
+          "mainboard": 13.2,
           "sideboard": 2.3
         },
         {
@@ -2226,22 +2223,22 @@
         },
         {
           "name": "Kozilek's Command",
-          "mainboard": 20.2,
+          "mainboard": 20.7,
           "sideboard": 0
         },
         {
           "name": "Kraul Harpooner",
           "mainboard": 0,
-          "sideboard": 4.3
+          "sideboard": 4.5
         },
         {
           "name": "Lava Dart",
-          "mainboard": 9.7,
+          "mainboard": 9.8,
           "sideboard": 0
         },
         {
           "name": "Lightning Bolt",
-          "mainboard": 16.7,
+          "mainboard": 16.6,
           "sideboard": 0
         },
         {
@@ -2251,32 +2248,32 @@
         },
         {
           "name": "Malevolent Rumble",
-          "mainboard": 19.3,
+          "mainboard": 19.6,
           "sideboard": 0
         },
         {
           "name": "March of Otherworldly Light",
-          "mainboard": 7.4,
+          "mainboard": 7.3,
           "sideboard": 2.9
         },
         {
           "name": "Marsh Flats",
-          "mainboard": 25.6,
+          "mainboard": 25.4,
           "sideboard": 0
         },
         {
           "name": "Meltdown",
           "mainboard": 0,
-          "sideboard": 12.6
+          "sideboard": 12.3
         },
         {
           "name": "Metallic Rebuke",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.1
         },
         {
           "name": "Meticulous Archive",
-          "mainboard": 22.0,
+          "mainboard": 21.8,
           "sideboard": 0
         },
         {
@@ -2291,28 +2288,28 @@
         },
         {
           "name": "Monastery Swiftspear",
-          "mainboard": 9.9,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Mox Opal",
-          "mainboard": 7.1,
+          "mainboard": 6.8,
           "sideboard": 0
         },
         {
           "name": "Mutagenic Growth",
-          "mainboard": 7.9,
+          "mainboard": 8.0,
           "sideboard": 0
         },
         {
           "name": "Mystical Dispute",
           "mainboard": 0,
-          "sideboard": 39.0
+          "sideboard": 38.7
         },
         {
           "name": "Nature's Claim",
           "mainboard": 0,
-          "sideboard": 15.2
+          "sideboard": 15.8
         },
         {
           "name": "Nihil Spellbomb",
@@ -2332,21 +2329,21 @@
         {
           "name": "Orim's Chant",
           "mainboard": 0,
-          "sideboard": 4.7
+          "sideboard": 4.4
         },
         {
           "name": "Otawara, Soaring City",
-          "mainboard": 10.9,
+          "mainboard": 10.4,
           "sideboard": 0
         },
         {
           "name": "Overgrown Tomb",
-          "mainboard": 11.3,
+          "mainboard": 11.4,
           "sideboard": 0
         },
         {
           "name": "Overlord of the Balemurk",
-          "mainboard": 7.9,
+          "mainboard": 8.1,
           "sideboard": 0
         },
         {
@@ -2356,18 +2353,18 @@
         },
         {
           "name": "Phelia, Exuberant Shepherd",
-          "mainboard": 9.8,
+          "mainboard": 9.9,
           "sideboard": 0
         },
         {
           "name": "Pick Your Poison",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.8
         },
         {
           "name": "Pithing Needle",
-          "mainboard": 7.8,
-          "sideboard": 10.5
+          "mainboard": 7.7,
+          "sideboard": 10.6
         },
         {
           "name": "Polluted Delta",
@@ -2376,77 +2373,82 @@
         },
         {
           "name": "Preordain",
-          "mainboard": 15.8,
+          "mainboard": 15.9,
           "sideboard": 0
         },
         {
           "name": "Prismatic Ending",
-          "mainboard": 19.9,
-          "sideboard": 4.9
+          "mainboard": 19.8,
+          "sideboard": 4.8
         },
         {
           "name": "Psychic Frog",
-          "mainboard": 16.5,
+          "mainboard": 16.4,
           "sideboard": 0
         },
         {
           "name": "Pyroclasm",
           "mainboard": 0,
-          "sideboard": 3.7
+          "sideboard": 3.5
         },
         {
           "name": "Quantum Riddler",
-          "mainboard": 24.9,
+          "mainboard": 25.0,
           "sideboard": 2.7
         },
         {
           "name": "Ragavan, Nimble Pilferer",
-          "mainboard": 9.3,
+          "mainboard": 9.2,
           "sideboard": 0
+        },
+        {
+          "name": "Requiting Hex",
+          "mainboard": 0,
+          "sideboard": 1.7
         },
         {
           "name": "Rest in Peace",
           "mainboard": 0,
-          "sideboard": 8.3
+          "sideboard": 8.0
         },
         {
           "name": "Sacred Foundry",
-          "mainboard": 16.8,
+          "mainboard": 16.6,
           "sideboard": 0
         },
         {
           "name": "Scalding Tarn",
-          "mainboard": 24.0,
+          "mainboard": 23.8,
           "sideboard": 0
         },
         {
           "name": "Shadowy Backstreet",
-          "mainboard": 16.4,
+          "mainboard": 16.5,
           "sideboard": 0
         },
         {
           "name": "Shifting Woodland",
-          "mainboard": 10.0,
+          "mainboard": 10.5,
           "sideboard": 0
         },
         {
           "name": "Sink into Stupor",
-          "mainboard": 13.9,
+          "mainboard": 13.7,
           "sideboard": 0
         },
         {
           "name": "Sire of Seven Deaths",
           "mainboard": 0,
-          "sideboard": 7.2
+          "sideboard": 7.7
         },
         {
           "name": "Six",
           "mainboard": 0,
-          "sideboard": 4.9
+          "sideboard": 5.1
         },
         {
           "name": "Slickshot Show-Off",
-          "mainboard": 8.4,
+          "mainboard": 8.5,
           "sideboard": 0
         },
         {
@@ -2456,23 +2458,23 @@
         },
         {
           "name": "Soul-Guide Lantern",
-          "mainboard": 11.2,
-          "sideboard": 3.3
+          "mainboard": 11.7,
+          "sideboard": 3.1
         },
         {
           "name": "Soulless Jailer",
           "mainboard": 0,
-          "sideboard": 6.9
+          "sideboard": 6.7
         },
         {
           "name": "Sowing Mycospawn",
-          "mainboard": 16.1,
+          "mainboard": 16.7,
           "sideboard": 0
         },
         {
           "name": "Spell Pierce",
           "mainboard": 0,
-          "sideboard": 8.8
+          "sideboard": 9.0
         },
         {
           "name": "Spell Snare",
@@ -2481,62 +2483,62 @@
         },
         {
           "name": "Springleaf Drum",
-          "mainboard": 11.3,
+          "mainboard": 11.8,
           "sideboard": 0
         },
         {
           "name": "Steam Vents",
-          "mainboard": 27.2,
+          "mainboard": 26.8,
           "sideboard": 0
         },
         {
           "name": "Stern Scolding",
           "mainboard": 0,
-          "sideboard": 1.9
+          "sideboard": 2.0
         },
         {
           "name": "Stomping Ground",
-          "mainboard": 10.6,
+          "mainboard": 10.5,
           "sideboard": 0
         },
         {
           "name": "Strix Serenade",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 1.9
         },
         {
           "name": "Subtlety",
-          "mainboard": 9.6,
+          "mainboard": 9.5,
           "sideboard": 0
         },
         {
           "name": "Supreme Verdict",
           "mainboard": 0,
-          "sideboard": 2.1
+          "sideboard": 2.0
         },
         {
           "name": "Surgical Extraction",
           "mainboard": 0,
-          "sideboard": 25.2
+          "sideboard": 25.0
         },
         {
           "name": "Swan Song",
           "mainboard": 0,
-          "sideboard": 2.6
+          "sideboard": 2.5
         },
         {
           "name": "Tamiyo, Inquisitive Student",
-          "mainboard": 7.1,
+          "mainboard": 7.0,
           "sideboard": 0
         },
         {
           "name": "Teferi, Time Raveler",
           "mainboard": 15.0,
-          "sideboard": 10.6
+          "sideboard": 10.7
         },
         {
           "name": "Temple Garden",
-          "mainboard": 11.4,
+          "mainboard": 11.8,
           "sideboard": 0
         },
         {
@@ -2557,27 +2559,27 @@
         {
           "name": "Thief of Existence",
           "mainboard": 0,
-          "sideboard": 9.0
+          "sideboard": 9.2
         },
         {
           "name": "Thought-Knot Seer",
           "mainboard": 0,
-          "sideboard": 4.1
+          "sideboard": 4.2
         },
         {
           "name": "Thoughtseize",
-          "mainboard": 25.1,
-          "sideboard": 9.4
+          "mainboard": 25.2,
+          "sideboard": 9.5
         },
         {
           "name": "Thundering Falls",
-          "mainboard": 20.1,
+          "mainboard": 19.9,
           "sideboard": 0
         },
         {
           "name": "Tormod's Crypt",
           "mainboard": 0,
-          "sideboard": 9.4
+          "sideboard": 9.3
         },
         {
           "name": "Torpor Orb",
@@ -2587,16 +2589,16 @@
         {
           "name": "Toxic Deluge",
           "mainboard": 0,
-          "sideboard": 4.5
+          "sideboard": 4.6
         },
         {
           "name": "Trinisphere",
           "mainboard": 0,
-          "sideboard": 15.0
+          "sideboard": 15.5
         },
         {
           "name": "Ugin's Labyrinth",
-          "mainboard": 15.1,
+          "mainboard": 15.7,
           "sideboard": 0
         },
         {
@@ -2611,43 +2613,43 @@
         },
         {
           "name": "Underground Mortuary",
-          "mainboard": 8.6,
+          "mainboard": 8.8,
           "sideboard": 0
         },
         {
           "name": "Unholy Heat",
           "mainboard": 8.0,
-          "sideboard": 12.6
+          "sideboard": 12.7
         },
         {
           "name": "Urza's Saga",
-          "mainboard": 20.8,
+          "mainboard": 20.9,
           "sideboard": 0
         },
         {
           "name": "Veil of Summer",
           "mainboard": 0,
-          "sideboard": 4.3
+          "sideboard": 4.5
         },
         {
           "name": "Verdant Catacombs",
-          "mainboard": 11.7,
+          "mainboard": 11.6,
           "sideboard": 0
         },
         {
           "name": "Vexing Bauble",
-          "mainboard": 13.9,
-          "sideboard": 32.3
+          "mainboard": 14.3,
+          "sideboard": 32.2
         },
         {
           "name": "Walking Ballista",
           "mainboard": 0,
-          "sideboard": 3.3
+          "sideboard": 3.4
         },
         {
           "name": "Warping Wail",
           "mainboard": 0,
-          "sideboard": 8.3
+          "sideboard": 8.7
         },
         {
           "name": "Watery Grave",
@@ -2657,12 +2659,12 @@
         {
           "name": "Wear / Tear",
           "mainboard": 0,
-          "sideboard": 13.2
+          "sideboard": 13.0
         },
         {
           "name": "Whipflare",
           "mainboard": 0,
-          "sideboard": 4.4
+          "sideboard": 4.3
         },
         {
           "name": "White Orchid Phantom",
@@ -2671,33 +2673,42 @@
         },
         {
           "name": "Windswept Heath",
-          "mainboard": 15.5,
+          "mainboard": 15.3,
           "sideboard": 0
         },
         {
           "name": "Witch Enchanter",
-          "mainboard": 8.5,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
           "name": "Wooded Foothills",
-          "mainboard": 25.4,
+          "mainboard": 25.6,
           "sideboard": 0
         },
         {
           "name": "Wrath of God",
           "mainboard": 0,
-          "sideboard": 1.7
+          "sideboard": 1.8
         },
         {
           "name": "Wrath of the Skies",
-          "mainboard": 6.8,
-          "sideboard": 26.5
+          "mainboard": 6.7,
+          "sideboard": 26.4
+        },
+        {
+          "name": "Yavimaya, Cradle of Growth",
+          "mainboard": 6.6,
+          "sideboard": 0
         }
       ]
     },
     "premodern": {
       "url": "https://www.mtgtop8.com/topcards?f=PREM&meta=261",
+      "sections": [
+        "mainboard",
+        "sideboard"
+      ],
       "cards": [
         {
           "name": "Abeyance",
@@ -2706,12 +2717,12 @@
         },
         {
           "name": "Accumulated Knowledge",
-          "mainboard": 6.0,
+          "mainboard": 6.2,
           "sideboard": 0
         },
         {
           "name": "Adarkar Wastes",
-          "mainboard": 13.7,
+          "mainboard": 13.8,
           "sideboard": 0
         },
         {
@@ -2721,13 +2732,13 @@
         },
         {
           "name": "Ancient Tomb",
-          "mainboard": 7.1,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Annul",
           "mainboard": 0,
-          "sideboard": 22.2
+          "sideboard": 22.3
         },
         {
           "name": "Argothian Enchantress",
@@ -2736,37 +2747,37 @@
         },
         {
           "name": "Armageddon",
-          "mainboard": 9.2,
-          "sideboard": 3.1
+          "mainboard": 9.6,
+          "sideboard": 3.2
         },
         {
           "name": "Aura of Silence",
           "mainboard": 0,
-          "sideboard": 19.8
+          "sideboard": 19.9
         },
         {
           "name": "Auramancer",
           "mainboard": 0,
-          "sideboard": 1.8
+          "sideboard": 1.7
         },
         {
           "name": "Back to Basics",
           "mainboard": 0,
-          "sideboard": 5.6
+          "sideboard": 5.7
         },
         {
           "name": "Barbarian Ring",
-          "mainboard": 7.1,
+          "mainboard": 6.9,
           "sideboard": 0
         },
         {
           "name": "Birds of Paradise",
-          "mainboard": 8.8,
+          "mainboard": 8.5,
           "sideboard": 0
         },
         {
           "name": "Bloodstained Mire",
-          "mainboard": 9.9,
+          "mainboard": 9.6,
           "sideboard": 0
         },
         {
@@ -2777,47 +2788,47 @@
         {
           "name": "Brain Freeze",
           "mainboard": 0,
-          "sideboard": 11.4
+          "sideboard": 11.5
         },
         {
           "name": "Brushland",
-          "mainboard": 16.3,
+          "mainboard": 16.4,
           "sideboard": 0
         },
         {
           "name": "Cabal Therapy",
-          "mainboard": 17.0,
+          "mainboard": 16.8,
           "sideboard": 1.9
         },
         {
           "name": "Call of the Herd",
-          "mainboard": 11.9,
+          "mainboard": 12.0,
           "sideboard": 6.8
         },
         {
           "name": "Caller of the Claw",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 3.2
         },
         {
           "name": "Cataclysm",
           "mainboard": 0,
-          "sideboard": 1.3
+          "sideboard": 1.4
         },
         {
           "name": "Chain of Vapor",
-          "mainboard": 13.2,
-          "sideboard": 7.3
+          "mainboard": 13.3,
+          "sideboard": 7.4
         },
         {
           "name": "Chill",
           "mainboard": 0,
-          "sideboard": 5.4
+          "sideboard": 5.3
         },
         {
           "name": "Choke",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 2.5
         },
         {
           "name": "Circle of Protection: Red",
@@ -2826,22 +2837,17 @@
         },
         {
           "name": "City of Brass",
-          "mainboard": 17.6,
+          "mainboard": 17.2,
           "sideboard": 0
-        },
-        {
-          "name": "Cleansing Meditation",
-          "mainboard": 0,
-          "sideboard": 1.3
         },
         {
           "name": "Compost",
           "mainboard": 0,
-          "sideboard": 4.6
+          "sideboard": 4.5
         },
         {
           "name": "Counterspell",
-          "mainboard": 24.8,
+          "mainboard": 25.1,
           "sideboard": 0
         },
         {
@@ -2851,33 +2857,33 @@
         },
         {
           "name": "Cursed Scroll",
-          "mainboard": 15.0,
-          "sideboard": 2.4
+          "mainboard": 14.8,
+          "sideboard": 2.5
         },
         {
           "name": "Cursed Totem",
           "mainboard": 0,
-          "sideboard": 11.2
+          "sideboard": 11.3
         },
         {
           "name": "Dark Ritual",
-          "mainboard": 8.2,
+          "mainboard": 8.0,
           "sideboard": 0
         },
         {
           "name": "Daze",
-          "mainboard": 14.3,
+          "mainboard": 14.5,
           "sideboard": 0
         },
         {
           "name": "Decree of Justice",
-          "mainboard": 9.0,
+          "mainboard": 8.8,
           "sideboard": 0
         },
         {
           "name": "Defense Grid",
           "mainboard": 0,
-          "sideboard": 3.9
+          "sideboard": 4.0
         },
         {
           "name": "Diabolic Edict",
@@ -2886,22 +2892,22 @@
         },
         {
           "name": "Disenchant",
-          "mainboard": 11.1,
+          "mainboard": 11.0,
           "sideboard": 6.6
         },
         {
           "name": "Dominate",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 2.1
         },
         {
           "name": "Drain Life",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 1.9
         },
         {
           "name": "Duress",
-          "mainboard": 18.4,
+          "mainboard": 18.2,
           "sideboard": 7.3
         },
         {
@@ -2916,8 +2922,8 @@
         },
         {
           "name": "Earthquake",
-          "mainboard": 6.1,
-          "sideboard": 5.7
+          "mainboard": 6.2,
+          "sideboard": 5.6
         },
         {
           "name": "Elephant Grass",
@@ -2932,12 +2938,12 @@
         {
           "name": "Engineered Plague",
           "mainboard": 0,
-          "sideboard": 18.4
+          "sideboard": 18.5
         },
         {
           "name": "Enlightened Tutor",
           "mainboard": 0,
-          "sideboard": 7.3
+          "sideboard": 7.2
         },
         {
           "name": "Ensnaring Bridge",
@@ -2947,16 +2953,16 @@
         {
           "name": "Essence Flare",
           "mainboard": 0,
-          "sideboard": 8.8
+          "sideboard": 8.9
         },
         {
           "name": "Exalted Angel",
-          "mainboard": 8.0,
-          "sideboard": 9.6
+          "mainboard": 7.9,
+          "sideboard": 9.7
         },
         {
           "name": "Fact or Fiction",
-          "mainboard": 9.1,
+          "mainboard": 9.0,
           "sideboard": 0
         },
         {
@@ -2966,53 +2972,53 @@
         },
         {
           "name": "Fireblast",
-          "mainboard": 9.0,
+          "mainboard": 8.9,
           "sideboard": 0
         },
         {
           "name": "Flaring Pain",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 2.8
         },
         {
           "name": "Flash of Insight",
-          "mainboard": 12.1,
+          "mainboard": 12.2,
           "sideboard": 0
         },
         {
           "name": "Flooded Strand",
-          "mainboard": 16.4,
+          "mainboard": 16.6,
           "sideboard": 0
         },
         {
           "name": "Foil",
-          "mainboard": 15.6,
+          "mainboard": 15.9,
           "sideboard": 0
         },
         {
           "name": "Frantic Search",
-          "mainboard": 6.6,
+          "mainboard": 6.8,
           "sideboard": 0
         },
         {
           "name": "Gaea's Blessing",
           "mainboard": 0,
-          "sideboard": 11.7
+          "sideboard": 11.8
         },
         {
           "name": "Gempalm Incinerator",
-          "mainboard": 7.2,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Gemstone Mine",
-          "mainboard": 18.4,
+          "mainboard": 18.2,
           "sideboard": 0
         },
         {
           "name": "Ghitu Slinger",
           "mainboard": 0,
-          "sideboard": 3.0
+          "sideboard": 2.8
         },
         {
           "name": "Gilded Drake",
@@ -3022,12 +3028,12 @@
         {
           "name": "Gloom",
           "mainboard": 0,
-          "sideboard": 7.0
+          "sideboard": 6.9
         },
         {
           "name": "Glowrider",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 3.0
         },
         {
           "name": "Goblin Goon",
@@ -3041,27 +3047,27 @@
         },
         {
           "name": "Goblin Lackey",
-          "mainboard": 7.2,
-          "sideboard": 0
-        },
-        {
-          "name": "Goblin Matron",
-          "mainboard": 7.1,
-          "sideboard": 0
-        },
-        {
-          "name": "Goblin Piledriver",
           "mainboard": 7.3,
           "sideboard": 0
         },
         {
-          "name": "Goblin Ringleader",
+          "name": "Goblin Matron",
           "mainboard": 7.2,
           "sideboard": 0
         },
         {
+          "name": "Goblin Piledriver",
+          "mainboard": 7.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Goblin Ringleader",
+          "mainboard": 7.3,
+          "sideboard": 0
+        },
+        {
           "name": "Goblin Sharpshooter",
-          "mainboard": 6.7,
+          "mainboard": 6.8,
           "sideboard": 0
         },
         {
@@ -3071,28 +3077,28 @@
         },
         {
           "name": "Goblin Warchief",
-          "mainboard": 7.2,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Graveborn Muse",
-          "mainboard": 6.1,
+          "mainboard": 6.0,
           "sideboard": 0
         },
         {
           "name": "Grim Lavamancer",
-          "mainboard": 12.0,
+          "mainboard": 11.9,
           "sideboard": 0
         },
         {
           "name": "Gush",
-          "mainboard": 17.6,
+          "mainboard": 17.9,
           "sideboard": 0
         },
         {
           "name": "Haunting Echoes",
           "mainboard": 0,
-          "sideboard": 4.6
+          "sideboard": 4.7
         },
         {
           "name": "Hibernation",
@@ -3102,7 +3108,7 @@
         {
           "name": "Hidden Gibbons",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Hull Breach",
@@ -3112,11 +3118,11 @@
         {
           "name": "Hydroblast",
           "mainboard": 0,
-          "sideboard": 25.4
+          "sideboard": 25.7
         },
         {
           "name": "Hypnotic Specter",
-          "mainboard": 6.4,
+          "mainboard": 6.3,
           "sideboard": 0
         },
         {
@@ -3126,47 +3132,47 @@
         },
         {
           "name": "Incinerate",
-          "mainboard": 11.0,
+          "mainboard": 10.9,
           "sideboard": 0
         },
         {
           "name": "Infest",
           "mainboard": 0,
-          "sideboard": 1.5
+          "sideboard": 1.4
         },
         {
           "name": "Intuition",
-          "mainboard": 7.8,
+          "mainboard": 8.0,
           "sideboard": 0
         },
         {
           "name": "Jackal Pup",
-          "mainboard": 7.0,
+          "mainboard": 6.8,
           "sideboard": 0
         },
         {
           "name": "Karmic Justice",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 3.2
         },
         {
           "name": "Karplusan Forest",
-          "mainboard": 14.3,
+          "mainboard": 14.4,
           "sideboard": 0
         },
         {
           "name": "Krosan Reclamation",
           "mainboard": 0,
-          "sideboard": 2.6
+          "sideboard": 2.5
         },
         {
           "name": "Lightning Bolt",
-          "mainboard": 14.7,
+          "mainboard": 14.5,
           "sideboard": 0
         },
         {
           "name": "Llanowar Wastes",
-          "mainboard": 9.9,
+          "mainboard": 9.8,
           "sideboard": 0
         },
         {
@@ -3187,21 +3193,21 @@
         {
           "name": "Meddling Mage",
           "mainboard": 0,
-          "sideboard": 12.7
+          "sideboard": 12.8
         },
         {
           "name": "Mirri's Guile",
-          "mainboard": 8.3,
+          "mainboard": 8.2,
           "sideboard": 0
         },
         {
           "name": "Misdirection",
-          "mainboard": 6.4,
+          "mainboard": 6.5,
           "sideboard": 0
         },
         {
           "name": "Mishra's Factory",
-          "mainboard": 24.8,
+          "mainboard": 24.9,
           "sideboard": 0
         },
         {
@@ -3212,16 +3218,16 @@
         {
           "name": "Mogg Salvage",
           "mainboard": 0,
-          "sideboard": 6.3
+          "sideboard": 6.4
         },
         {
           "name": "Monk Realist",
           "mainboard": 0,
-          "sideboard": 3.9
+          "sideboard": 3.7
         },
         {
           "name": "Mox Diamond",
-          "mainboard": 12.9,
+          "mainboard": 13.1,
           "sideboard": 0
         },
         {
@@ -3232,7 +3238,7 @@
         {
           "name": "Naturalize",
           "mainboard": 17.9,
-          "sideboard": 27.9
+          "sideboard": 27.7
         },
         {
           "name": "Nevinyrral's Disk",
@@ -3246,12 +3252,12 @@
         },
         {
           "name": "Opalescence",
-          "mainboard": 13.0,
+          "mainboard": 13.2,
           "sideboard": 0
         },
         {
           "name": "Opt",
-          "mainboard": 13.4,
+          "mainboard": 13.7,
           "sideboard": 0
         },
         {
@@ -3262,62 +3268,62 @@
         {
           "name": "Overload",
           "mainboard": 0,
-          "sideboard": 12.5
+          "sideboard": 12.4
         },
         {
           "name": "Parallax Wave",
-          "mainboard": 13.2,
+          "mainboard": 13.5,
           "sideboard": 0
         },
         {
           "name": "Peek",
-          "mainboard": 6.2,
+          "mainboard": 6.3,
           "sideboard": 0
         },
         {
           "name": "Perish",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.5
         },
         {
           "name": "Phyrexian Arena",
           "mainboard": 0,
-          "sideboard": 1.3
+          "sideboard": 1.4
         },
         {
           "name": "Phyrexian Dreadnought",
-          "mainboard": 10.4,
+          "mainboard": 10.5,
           "sideboard": 0
         },
         {
           "name": "Phyrexian Furnace",
-          "mainboard": 10.2,
-          "sideboard": 9.1
+          "mainboard": 10.1,
+          "sideboard": 8.9
         },
         {
           "name": "Plaguebearer",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.1
         },
         {
           "name": "Portent",
-          "mainboard": 17.0,
+          "mainboard": 17.3,
           "sideboard": 0
         },
         {
           "name": "Powder Keg",
-          "mainboard": 15.8,
+          "mainboard": 16.0,
           "sideboard": 8.3
         },
         {
           "name": "Presence of the Master",
           "mainboard": 0,
-          "sideboard": 1.3
+          "sideboard": 1.4
         },
         {
           "name": "Price of Progress",
           "mainboard": 0,
-          "sideboard": 5.1
+          "sideboard": 5.0
         },
         {
           "name": "Psychatog",
@@ -3327,7 +3333,7 @@
         {
           "name": "Pyroblast",
           "mainboard": 0,
-          "sideboard": 22.5
+          "sideboard": 22.4
         },
         {
           "name": "Pyroclasm",
@@ -3337,7 +3343,7 @@
         {
           "name": "Pyrokinesis",
           "mainboard": 0,
-          "sideboard": 8.0
+          "sideboard": 8.1
         },
         {
           "name": "Pyrostatic Pillar",
@@ -3347,7 +3353,7 @@
         {
           "name": "Ravenous Baloth",
           "mainboard": 0,
-          "sideboard": 3.4
+          "sideboard": 3.5
         },
         {
           "name": "Ravenous Rats",
@@ -3362,32 +3368,32 @@
         {
           "name": "Red Elemental Blast",
           "mainboard": 0,
-          "sideboard": 22.2
+          "sideboard": 22.3
         },
         {
           "name": "Replenish",
-          "mainboard": 13.3,
-          "sideboard": 3.5
+          "mainboard": 13.5,
+          "sideboard": 3.4
         },
         {
           "name": "Reprisal",
           "mainboard": 0,
-          "sideboard": 3.0
+          "sideboard": 3.1
         },
         {
           "name": "Rishadan Port",
-          "mainboard": 20.7,
+          "mainboard": 21.0,
           "sideboard": 0
         },
         {
           "name": "Sacred Ground",
           "mainboard": 0,
-          "sideboard": 7.7
+          "sideboard": 7.6
         },
         {
           "name": "Seal of Cleansing",
-          "mainboard": 19.1,
-          "sideboard": 11.5
+          "mainboard": 19.4,
+          "sideboard": 11.8
         },
         {
           "name": "Seal of Fire",
@@ -3396,7 +3402,7 @@
         },
         {
           "name": "Secluded Steppe",
-          "mainboard": 6.5,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
@@ -3406,7 +3412,7 @@
         },
         {
           "name": "Siege-Gang Commander",
-          "mainboard": 7.2,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
@@ -3415,13 +3421,18 @@
           "sideboard": 2.0
         },
         {
+          "name": "Skirk Prospector",
+          "mainboard": 6.0,
+          "sideboard": 0
+        },
+        {
           "name": "Skycloud Expanse",
-          "mainboard": 6.1,
+          "mainboard": 6.3,
           "sideboard": 0
         },
         {
           "name": "Smother",
-          "mainboard": 12.1,
+          "mainboard": 12.2,
           "sideboard": 3.5
         },
         {
@@ -3437,7 +3448,7 @@
         {
           "name": "Sphere of Law",
           "mainboard": 0,
-          "sideboard": 7.1
+          "sideboard": 7.2
         },
         {
           "name": "Spike Feeder",
@@ -3447,11 +3458,11 @@
         {
           "name": "Spinning Darkness",
           "mainboard": 0,
-          "sideboard": 2.8
+          "sideboard": 2.7
         },
         {
           "name": "Squee, Goblin Nabob",
-          "mainboard": 9.6,
+          "mainboard": 9.2,
           "sideboard": 0
         },
         {
@@ -3461,18 +3472,18 @@
         },
         {
           "name": "Stifle",
-          "mainboard": 10.4,
+          "mainboard": 10.5,
           "sideboard": 0
         },
         {
           "name": "Survival of the Fittest",
-          "mainboard": 9.3,
+          "mainboard": 9.0,
           "sideboard": 0
         },
         {
           "name": "Swords to Plowshares",
-          "mainboard": 40.0,
-          "sideboard": 8.5
+          "mainboard": 40.3,
+          "sideboard": 8.2
         },
         {
           "name": "Sylvan Library",
@@ -3482,27 +3493,27 @@
         {
           "name": "Teferi's Response",
           "mainboard": 0,
-          "sideboard": 4.9
+          "sideboard": 4.8
         },
         {
           "name": "Terravore",
-          "mainboard": 12.5,
+          "mainboard": 12.6,
           "sideboard": 0
         },
         {
           "name": "Thwart",
-          "mainboard": 10.8,
+          "mainboard": 10.9,
           "sideboard": 0
         },
         {
           "name": "Tormod's Crypt",
           "mainboard": 0,
-          "sideboard": 47.5
+          "sideboard": 47.8
         },
         {
           "name": "Tranquil Domain",
           "mainboard": 0,
-          "sideboard": 15.6
+          "sideboard": 15.7
         },
         {
           "name": "Treetop Village",
@@ -3512,17 +3523,12 @@
         {
           "name": "Tsabo's Web",
           "mainboard": 0,
-          "sideboard": 19.3
+          "sideboard": 19.7
         },
         {
           "name": "Uktabi Orangutan",
           "mainboard": 0,
-          "sideboard": 5.4
-        },
-        {
-          "name": "Underground River",
-          "mainboard": 6.1,
-          "sideboard": 0
+          "sideboard": 5.0
         },
         {
           "name": "Vendetta",
@@ -3531,27 +3537,27 @@
         },
         {
           "name": "Vision Charm",
-          "mainboard": 10.2,
+          "mainboard": 10.3,
           "sideboard": 0
         },
         {
           "name": "Wall of Roots",
-          "mainboard": 9.3,
+          "mainboard": 9.1,
           "sideboard": 0
         },
         {
           "name": "Warmth",
           "mainboard": 0,
-          "sideboard": 10.6
+          "sideboard": 10.8
         },
         {
           "name": "Wasteland",
-          "mainboard": 32.7,
+          "mainboard": 32.8,
           "sideboard": 0
         },
         {
           "name": "Weathered Wayfarer",
-          "mainboard": 6.6,
+          "mainboard": 6.7,
           "sideboard": 0
         },
         {
@@ -3561,73 +3567,87 @@
         },
         {
           "name": "Windswept Heath",
-          "mainboard": 22.7,
+          "mainboard": 22.9,
           "sideboard": 0
         },
         {
+          "name": "Winter Orb",
+          "mainboard": 0,
+          "sideboard": 1.4
+        },
+        {
           "name": "Withered Wretch",
-          "mainboard": 7.0,
-          "sideboard": 2.8
+          "mainboard": 6.8,
+          "sideboard": 2.7
         },
         {
           "name": "Wooded Foothills",
-          "mainboard": 27.4,
+          "mainboard": 27.1,
           "sideboard": 0
         },
         {
           "name": "Wrath of God",
-          "mainboard": 8.2,
+          "mainboard": 8.1,
           "sideboard": 2.9
         },
         {
           "name": "Xantid Swarm",
           "mainboard": 0,
-          "sideboard": 12.3
+          "sideboard": 12.1
         },
         {
           "name": "Yavimaya Coast",
-          "mainboard": 7.5,
+          "mainboard": 7.1,
           "sideboard": 0
         },
         {
           "name": "Zuran Orb",
           "mainboard": 0,
-          "sideboard": 8.6
+          "sideboard": 8.7
         }
       ]
     },
     "pioneer": {
       "url": "https://www.mtgtop8.com/topcards?f=PI&meta=193",
+      "sections": [
+        "mainboard",
+        "sideboard"
+      ],
       "cards": [
         {
           "name": "Abandon Attachments",
-          "mainboard": 6.2,
+          "mainboard": 6.4,
           "sideboard": 3.9
         },
         {
           "name": "Abrade",
           "mainboard": 0,
-          "sideboard": 12.0
+          "sideboard": 12.2
         },
         {
           "name": "Abrupt Decay",
-          "mainboard": 14.4,
-          "sideboard": 12.0
+          "mainboard": 14.6,
+          "sideboard": 11.7
         },
         {
           "name": "Academic Dispute",
-          "mainboard": 16.1,
+          "mainboard": 16.3,
           "sideboard": 0
         },
         {
           "name": "Accumulate Wisdom",
-          "mainboard": 6.2,
-          "sideboard": 14.7
+          "mainboard": 6.4,
+          "sideboard": 14.9
+        },
+        {
+          "name": "Airbender's Reversal",
+          "mainboard": 0,
+          "sideboard": 1.9
         },
         {
           "name": "Anger of the Gods",
           "mainboard": 0,
-          "sideboard": 3.2
+          "sideboard": 3.4
         },
         {
           "name": "Annul",
@@ -3637,27 +3657,27 @@
         {
           "name": "Ashiok, Dream Render",
           "mainboard": 0,
-          "sideboard": 12.1
+          "sideboard": 12.2
         },
         {
           "name": "Avengers Disassembled",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 2.5
         },
         {
           "name": "Badgermole Cub",
-          "mainboard": 23.0,
+          "mainboard": 23.3,
           "sideboard": 0
         },
         {
           "name": "Beza, the Bounding Spring",
           "mainboard": 0,
-          "sideboard": 12.9
+          "sideboard": 13.0
         },
         {
           "name": "Bitter Triumph",
           "mainboard": 19.3,
-          "sideboard": 3.1
+          "sideboard": 2.9
         },
         {
           "name": "Blooming Marsh",
@@ -3666,18 +3686,18 @@
         },
         {
           "name": "Boomerang Basics",
-          "mainboard": 21.5,
-          "sideboard": 19.3
+          "mainboard": 21.4,
+          "sideboard": 19.5
         },
         {
           "name": "Boseiju, Who Endures",
-          "mainboard": 34.1,
+          "mainboard": 33.9,
           "sideboard": 0
         },
         {
           "name": "Brazen Borrower",
           "mainboard": 0,
-          "sideboard": 6.0
+          "sideboard": 6.3
         },
         {
           "name": "Broadside Barrage",
@@ -3686,23 +3706,33 @@
         },
         {
           "name": "Brushland",
-          "mainboard": 6.6,
+          "mainboard": 6.4,
           "sideboard": 0
         },
         {
           "name": "Burst Lightning",
-          "mainboard": 21.0,
+          "mainboard": 21.1,
           "sideboard": 0
         },
         {
           "name": "Cache Grab",
-          "mainboard": 9.4,
+          "mainboard": 9.0,
           "sideboard": 0
+        },
+        {
+          "name": "Castle Locthwain",
+          "mainboard": 5.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Chandra, Awakened Inferno",
+          "mainboard": 0,
+          "sideboard": 2.0
         },
         {
           "name": "Change the Equation",
           "mainboard": 0,
-          "sideboard": 11.4
+          "sideboard": 11.7
         },
         {
           "name": "Clarion Conqueror",
@@ -3711,77 +3741,82 @@
         },
         {
           "name": "Collective Brutality",
-          "mainboard": 5.9,
-          "sideboard": 3.0
+          "mainboard": 5.8,
+          "sideboard": 2.9
         },
         {
           "name": "Combustion Technique",
-          "mainboard": 6.2,
-          "sideboard": 4.7
+          "mainboard": 6.4,
+          "sideboard": 4.8
         },
         {
           "name": "Concealed Courtyard",
-          "mainboard": 11.7,
+          "mainboard": 11.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Consider",
+          "mainboard": 5.7,
           "sideboard": 0
         },
         {
           "name": "Consult the Star Charts",
-          "mainboard": 5.7,
+          "mainboard": 5.8,
           "sideboard": 0
         },
         {
           "name": "Cruelclaw's Heist",
           "mainboard": 0,
-          "sideboard": 8.1
+          "sideboard": 8.4
         },
         {
           "name": "Culling Ritual",
           "mainboard": 10.2,
-          "sideboard": 16.2
+          "sideboard": 16.4
         },
         {
           "name": "Damping Sphere",
           "mainboard": 0,
-          "sideboard": 2.8
+          "sideboard": 2.7
         },
         {
           "name": "Darkbore Pathway",
-          "mainboard": 8.3,
+          "mainboard": 8.2,
           "sideboard": 0
         },
         {
           "name": "Darkslick Shores",
-          "mainboard": 7.4,
+          "mainboard": 7.2,
           "sideboard": 0
         },
         {
           "name": "Decorum Dissertation",
           "mainboard": 0,
-          "sideboard": 4.4
+          "sideboard": 4.2
         },
         {
           "name": "Deep-Cavern Bat",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Den of the Bugbear",
-          "mainboard": 11.8,
+          "mainboard": 11.6,
           "sideboard": 0
         },
         {
           "name": "Deserted Beach",
-          "mainboard": 6.6,
+          "mainboard": 6.7,
           "sideboard": 0
         },
         {
           "name": "Disdainful Stroke",
           "mainboard": 0,
-          "sideboard": 12.4
+          "sideboard": 12.3
         },
         {
           "name": "Divide by Zero",
-          "mainboard": 6.1,
+          "mainboard": 6.3,
           "sideboard": 0
         },
         {
@@ -3791,107 +3826,102 @@
         },
         {
           "name": "Dovin's Veto",
-          "mainboard": 5.8,
+          "mainboard": 5.9,
           "sideboard": 3.0
         },
         {
           "name": "Drana and Linvala",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 2.5
         },
         {
           "name": "Duress",
-          "mainboard": 11.8,
-          "sideboard": 25.8
+          "mainboard": 12.0,
+          "sideboard": 25.1
         },
         {
           "name": "Eiganjo, Seat of the Empire",
-          "mainboard": 11.4,
+          "mainboard": 11.2,
           "sideboard": 0
         },
         {
           "name": "Elder Gargaroth",
           "mainboard": 0,
-          "sideboard": 2.3
+          "sideboard": 2.4
         },
         {
           "name": "Elspeth, Storm Slayer",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.8
         },
         {
           "name": "Elvish Mystic",
-          "mainboard": 8.3,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
           "name": "Emberheart Challenger",
-          "mainboard": 20.3,
+          "mainboard": 20.4,
           "sideboard": 0
         },
         {
           "name": "Emeritus of Ideation",
           "mainboard": 0,
-          "sideboard": 4.5
+          "sideboard": 4.7
         },
         {
           "name": "Emptiness",
-          "mainboard": 8.9,
+          "mainboard": 8.4,
           "sideboard": 0
         },
         {
           "name": "Enter the Avatar State",
           "mainboard": 0,
-          "sideboard": 9.2
+          "sideboard": 8.9
         },
         {
           "name": "Erode",
           "mainboard": 0,
-          "sideboard": 2.1
+          "sideboard": 1.9
         },
         {
           "name": "Esika's Chariot",
-          "mainboard": 8.7,
+          "mainboard": 8.3,
           "sideboard": 0
-        },
-        {
-          "name": "Extinction Event",
-          "mainboard": 0,
-          "sideboard": 2.1
         },
         {
           "name": "Farewell",
           "mainboard": 0,
-          "sideboard": 2.1
+          "sideboard": 2.2
         },
         {
           "name": "Fatal Push",
-          "mainboard": 28.9,
-          "sideboard": 7.6
+          "mainboard": 28.3,
+          "sideboard": 7.3
         },
         {
           "name": "Fiery Impulse",
-          "mainboard": 5.7,
+          "mainboard": 5.9,
           "sideboard": 0
         },
         {
           "name": "Firebending Lesson",
-          "mainboard": 6.4,
-          "sideboard": 18.0
+          "mainboard": 6.5,
+          "sideboard": 18.1
         },
         {
           "name": "Flow State",
-          "mainboard": 14.7,
+          "mainboard": 14.8,
           "sideboard": 0
         },
         {
           "name": "Flowstone Infusion",
           "mainboard": 0,
-          "sideboard": 5.4
+          "sideboard": 5.3
         },
         {
           "name": "Formidable Speaker",
-          "mainboard": 16.2,
+          "mainboard": 16.0,
           "sideboard": 0
         },
         {
@@ -3901,17 +3931,17 @@
         },
         {
           "name": "Get Lost",
-          "mainboard": 9.2,
-          "sideboard": 2.5
+          "mainboard": 9.5,
+          "sideboard": 2.7
         },
         {
           "name": "Ghost Vacuum",
           "mainboard": 0,
-          "sideboard": 15.0
+          "sideboard": 15.2
         },
         {
           "name": "Gloomlake Verge",
-          "mainboard": 6.8,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
@@ -3921,27 +3951,27 @@
         },
         {
           "name": "Go for the Throat",
-          "mainboard": 7.5,
+          "mainboard": 7.2,
           "sideboard": 0
         },
         {
           "name": "Godless Shrine",
-          "mainboard": 8.1,
+          "mainboard": 8.0,
           "sideboard": 0
         },
         {
           "name": "Gran-Gran",
-          "mainboard": 7.5,
+          "mainboard": 7.7,
           "sideboard": 0
         },
         {
           "name": "Graveyard Trespasser",
-          "mainboard": 14.2,
+          "mainboard": 14.3,
           "sideboard": 0
         },
         {
           "name": "Greasefang, Okiba Boss",
-          "mainboard": 11.0,
+          "mainboard": 10.6,
           "sideboard": 0
         },
         {
@@ -3951,48 +3981,48 @@
         },
         {
           "name": "Hall of Storm Giants",
-          "mainboard": 6.1,
+          "mainboard": 6.3,
           "sideboard": 0
         },
         {
           "name": "Hallowed Fountain",
-          "mainboard": 11.5,
+          "mainboard": 11.8,
           "sideboard": 0
         },
         {
           "name": "Haywire Mite",
           "mainboard": 0,
-          "sideboard": 3.9
+          "sideboard": 4.1
         },
         {
           "name": "High Noon",
           "mainboard": 0,
-          "sideboard": 5.1
+          "sideboard": 5.3
         },
         {
           "name": "Improvisation Capstone",
           "mainboard": 0,
-          "sideboard": 6.8
+          "sideboard": 7.0
         },
         {
           "name": "Invoke Despair",
           "mainboard": 0,
-          "sideboard": 17.0
+          "sideboard": 17.1
         },
         {
           "name": "Iroh's Demonstration",
           "mainboard": 0,
-          "sideboard": 21.5
+          "sideboard": 21.8
         },
         {
           "name": "It'll Quench Ya!",
-          "mainboard": 6.2,
-          "sideboard": 15.5
+          "mainboard": 6.4,
+          "sideboard": 15.7
         },
         {
           "name": "Keen-Eyed Curator",
           "mainboard": 0,
-          "sideboard": 5.9
+          "sideboard": 6.1
         },
         {
           "name": "Knockout Blow",
@@ -4002,61 +4032,61 @@
         {
           "name": "Kraul Harpooner",
           "mainboard": 0,
-          "sideboard": 4.7
+          "sideboard": 4.9
         },
         {
           "name": "Kumano Faces Kakkazan",
-          "mainboard": 6.5,
+          "mainboard": 6.4,
           "sideboard": 0
         },
         {
           "name": "Kutzil's Flanker",
           "mainboard": 0,
-          "sideboard": 5.7
+          "sideboard": 5.8
         },
         {
           "name": "Languish",
           "mainboard": 0,
-          "sideboard": 8.7
+          "sideboard": 8.9
         },
         {
           "name": "Leyline of the Void",
           "mainboard": 0,
-          "sideboard": 5.7
+          "sideboard": 5.4
         },
         {
           "name": "Llanowar Elves",
-          "mainboard": 8.8,
+          "mainboard": 9.0,
           "sideboard": 0
         },
         {
           "name": "Llanowar Wastes",
-          "mainboard": 14.5,
+          "mainboard": 14.7,
           "sideboard": 0
         },
         {
           "name": "Loran of the Third Path",
           "mainboard": 0,
-          "sideboard": 5.9
+          "sideboard": 5.3
         },
         {
           "name": "Maelstrom Pulse",
-          "mainboard": 7.5,
-          "sideboard": 4.0
+          "mainboard": 7.8,
+          "sideboard": 4.2
         },
         {
           "name": "Magebane Lizard",
           "mainboard": 0,
-          "sideboard": 6.1
+          "sideboard": 6.0
         },
         {
           "name": "March of Otherworldly Light",
-          "mainboard": 6.5,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
           "name": "Monastery Swiftspear",
-          "mainboard": 21.1,
+          "mainboard": 21.2,
           "sideboard": 0
         },
         {
@@ -4066,38 +4096,38 @@
         },
         {
           "name": "Multiversal Passage",
-          "mainboard": 9.0,
+          "mainboard": 8.8,
           "sideboard": 0
         },
         {
           "name": "Mutavault",
-          "mainboard": 28.2,
+          "mainboard": 28.0,
           "sideboard": 0
         },
         {
           "name": "Mystical Dispute",
           "mainboard": 0,
-          "sideboard": 11.4
+          "sideboard": 11.8
         },
         {
           "name": "Narset's Reversal",
           "mainboard": 0,
-          "sideboard": 2.5
+          "sideboard": 2.7
         },
         {
           "name": "Narset, Parter of Veils",
-          "mainboard": 5.7,
-          "sideboard": 2.5
+          "mainboard": 0,
+          "sideboard": 2.7
         },
         {
           "name": "Nature's Rhythm",
-          "mainboard": 6.0,
+          "mainboard": 6.3,
           "sideboard": 0
         },
         {
           "name": "Necromentia",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 2.7
         },
         {
           "name": "Negate",
@@ -4106,47 +4136,47 @@
         },
         {
           "name": "No More Lies",
-          "mainboard": 6.5,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
           "name": "Nowhere to Run",
           "mainboard": 0,
-          "sideboard": 8.8
+          "sideboard": 9.2
         },
         {
           "name": "Nykthos, Shrine to Nyx",
-          "mainboard": 5.8,
+          "mainboard": 6.0,
           "sideboard": 0
         },
         {
           "name": "Octopus Form",
           "mainboard": 0,
-          "sideboard": 15.9
+          "sideboard": 16.1
         },
         {
           "name": "Origin of Metalbending",
           "mainboard": 0,
-          "sideboard": 11.7
+          "sideboard": 11.2
         },
         {
           "name": "Otawara, Soaring City",
-          "mainboard": 24.8,
+          "mainboard": 24.7,
           "sideboard": 0
         },
         {
           "name": "Overgrown Tomb",
-          "mainboard": 20.2,
+          "mainboard": 20.1,
           "sideboard": 0
         },
         {
           "name": "Overlord of the Balemurk",
-          "mainboard": 7.7,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Parhelion II",
-          "mainboard": 11.0,
+          "mainboard": 10.6,
           "sideboard": 0
         },
         {
@@ -4157,62 +4187,62 @@
         {
           "name": "Pest Control",
           "mainboard": 0,
-          "sideboard": 7.0
+          "sideboard": 6.6
         },
         {
           "name": "Petrified Hamlet",
-          "mainboard": 8.9,
+          "mainboard": 9.0,
           "sideboard": 0
         },
         {
           "name": "Price of Freedom",
           "mainboard": 0,
-          "sideboard": 6.5
+          "sideboard": 6.7
         },
         {
           "name": "Professor Dellian Fel",
-          "mainboard": 13.5,
-          "sideboard": 7.6
+          "mainboard": 13.7,
+          "sideboard": 7.3
         },
         {
           "name": "Professor of Symbology",
-          "mainboard": 9.4,
+          "mainboard": 9.0,
           "sideboard": 0
         },
         {
           "name": "Proft's Eidetic Memory",
-          "mainboard": 6.7,
+          "mainboard": 6.9,
           "sideboard": 0
         },
         {
           "name": "Pyroclasm",
           "mainboard": 0,
-          "sideboard": 10.4
+          "sideboard": 10.1
         },
         {
           "name": "Quantum Riddler",
-          "mainboard": 9.9,
-          "sideboard": 9.0
+          "mainboard": 10.2,
+          "sideboard": 9.2
         },
         {
           "name": "Ral Zarek, Guest Lecturer",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.3
         },
         {
           "name": "Ral, Crackling Wit",
           "mainboard": 0,
-          "sideboard": 10.5
+          "sideboard": 10.6
         },
         {
           "name": "Ramunap Ruins",
-          "mainboard": 6.6,
+          "mainboard": 6.5,
           "sideboard": 0
         },
         {
           "name": "Ray of Enfeeblement",
           "mainboard": 0,
-          "sideboard": 6.2
+          "sideboard": 6.0
         },
         {
           "name": "Reckless Rage",
@@ -4222,17 +4252,17 @@
         {
           "name": "Redcap Melee",
           "mainboard": 0,
-          "sideboard": 22.4
+          "sideboard": 22.5
         },
         {
           "name": "Remorseful Cleric",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.5
         },
         {
           "name": "Rending Volley",
           "mainboard": 0,
-          "sideboard": 3.6
+          "sideboard": 3.7
         },
         {
           "name": "Rest in Peace",
@@ -4241,42 +4271,42 @@
         },
         {
           "name": "Restless Anchorage",
-          "mainboard": 6.0,
+          "mainboard": 6.1,
           "sideboard": 0
         },
         {
           "name": "Restless Cottage",
-          "mainboard": 13.3,
+          "mainboard": 13.4,
           "sideboard": 0
         },
         {
           "name": "Riverglide Pathway",
-          "mainboard": 25.2,
+          "mainboard": 25.7,
           "sideboard": 0
         },
         {
           "name": "Riverpyre Verge",
-          "mainboard": 27.5,
+          "mainboard": 28.0,
           "sideboard": 0
         },
         {
           "name": "Ruinous Waterbending",
           "mainboard": 0,
-          "sideboard": 5.9
+          "sideboard": 5.8
         },
         {
           "name": "Sacred Foundry",
-          "mainboard": 7.0,
+          "mainboard": 7.2,
           "sideboard": 0
         },
         {
           "name": "Scorching Shot",
           "mainboard": 0,
-          "sideboard": 17.4
+          "sideboard": 17.5
         },
         {
           "name": "Screaming Nemesis",
-          "mainboard": 14.3,
+          "mainboard": 14.2,
           "sideboard": 0
         },
         {
@@ -4287,66 +4317,66 @@
         {
           "name": "Setessan Petitioner",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.8
         },
         {
           "name": "Sheoldred, the Apocalypse",
-          "mainboard": 16.7,
+          "mainboard": 16.9,
           "sideboard": 0
         },
         {
           "name": "Shivan Reef",
-          "mainboard": 18.2,
+          "mainboard": 18.4,
           "sideboard": 0
         },
         {
           "name": "Sleight of Hand",
-          "mainboard": 18.5,
+          "mainboard": 18.8,
           "sideboard": 0
         },
         {
           "name": "Sokenzan, Crucible of Defiance",
-          "mainboard": 11.3,
+          "mainboard": 11.2,
           "sideboard": 0
         },
         {
           "name": "Sokka's Haiku",
           "mainboard": 0,
-          "sideboard": 4.0
+          "sideboard": 4.2
         },
         {
           "name": "Soul-Guide Lantern",
           "mainboard": 0,
-          "sideboard": 16.5
+          "sideboard": 16.6
         },
         {
           "name": "Soul-Scar Mage",
-          "mainboard": 20.9,
+          "mainboard": 21.0,
           "sideboard": 0
         },
         {
           "name": "Spell Pierce",
           "mainboard": 0,
-          "sideboard": 21.8
+          "sideboard": 22.0
         },
         {
           "name": "Spell Snare",
           "mainboard": 0,
-          "sideboard": 2.3
+          "sideboard": 2.4
         },
         {
           "name": "Spirebluff Canal",
-          "mainboard": 29.8,
+          "mainboard": 30.4,
           "sideboard": 0
         },
         {
           "name": "Starting Town",
-          "mainboard": 9.0,
+          "mainboard": 8.4,
           "sideboard": 0
         },
         {
           "name": "Steam Vents",
-          "mainboard": 30.1,
+          "mainboard": 30.7,
           "sideboard": 0
         },
         {
@@ -4356,27 +4386,32 @@
         },
         {
           "name": "Stormchaser's Talent",
-          "mainboard": 21.5,
+          "mainboard": 21.4,
           "sideboard": 0
         },
         {
           "name": "Sunspine Lynx",
-          "mainboard": 6.0,
+          "mainboard": 5.9,
           "sideboard": 2.9
         },
         {
           "name": "Supreme Verdict",
-          "mainboard": 5.8,
+          "mainboard": 5.9,
           "sideboard": 0
         },
         {
           "name": "Surrak, Elusive Hunter",
           "mainboard": 0,
-          "sideboard": 4.3
+          "sideboard": 4.5
+        },
+        {
+          "name": "Tablet of Discovery",
+          "mainboard": 5.8,
+          "sideboard": 0
         },
         {
           "name": "Takenuma, Abandoned Mire",
-          "mainboard": 31.4,
+          "mainboard": 30.8,
           "sideboard": 0
         },
         {
@@ -4386,42 +4421,42 @@
         },
         {
           "name": "Teferi, Hero of Dominaria",
-          "mainboard": 6.4,
+          "mainboard": 6.5,
           "sideboard": 0
         },
         {
           "name": "Temple Garden",
-          "mainboard": 12.1,
+          "mainboard": 11.6,
           "sideboard": 0
         },
         {
           "name": "Temporary Lockdown",
-          "mainboard": 6.1,
+          "mainboard": 6.4,
           "sideboard": 0
         },
         {
           "name": "The Legend of Roku",
           "mainboard": 0,
-          "sideboard": 3.5
+          "sideboard": 3.3
         },
         {
           "name": "Thoughtseize",
-          "mainboard": 33.0,
-          "sideboard": 4.8
+          "mainboard": 32.7,
+          "sideboard": 4.6
         },
         {
           "name": "Three Steps Ahead",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Thrun, Breaker of Silence",
           "mainboard": 0,
-          "sideboard": 2.1
+          "sideboard": 2.0
         },
         {
           "name": "Thundering Broodwagon",
-          "mainboard": 8.7,
+          "mainboard": 8.3,
           "sideboard": 0
         },
         {
@@ -4432,7 +4467,7 @@
         {
           "name": "True Ancestry",
           "mainboard": 0,
-          "sideboard": 5.7
+          "sideboard": 5.4
         },
         {
           "name": "Unable to Scream",
@@ -4441,68 +4476,57 @@
         },
         {
           "name": "Unholy Annex / Ritual Chamber",
-          "mainboard": 16.7,
+          "mainboard": 16.9,
           "sideboard": 0
         },
         {
           "name": "Unlicensed Hearse",
           "mainboard": 0,
-          "sideboard": 26.6
+          "sideboard": 26.4
         },
         {
           "name": "Urborg, Tomb of Yawgmoth",
-          "mainboard": 21.2,
+          "mainboard": 21.4,
           "sideboard": 0
         },
         {
           "name": "Vanishing Verse",
           "mainboard": 0,
-          "sideboard": 7.5
-        },
-        {
-          "name": "Wastewood Verge",
-          "mainboard": 5.7,
-          "sideboard": 0
+          "sideboard": 7.3
         },
         {
           "name": "Watery Grave",
-          "mainboard": 9.0,
+          "mainboard": 8.7,
           "sideboard": 0
         },
         {
           "name": "Weathered Runestone",
           "mainboard": 0,
-          "sideboard": 5.8
+          "sideboard": 5.7
         },
         {
           "name": "Winternight Stories",
-          "mainboard": 5.7,
+          "mainboard": 5.8,
           "sideboard": 0
         },
         {
           "name": "Witherbloom Command",
           "mainboard": 0,
-          "sideboard": 3.0
-        },
-        {
-          "name": "Withering Curse",
-          "mainboard": 0,
-          "sideboard": 2.1
-        },
-        {
-          "name": "Yathan Roadwatcher",
-          "mainboard": 5.9,
-          "sideboard": 0
+          "sideboard": 2.9
         },
         {
           "name": "Yorion, Sky Nomad",
           "mainboard": 0,
-          "sideboard": 7.9
+          "sideboard": 7.8
         }
       ]
     },
     "legacy": {
       "url": "https://www.mtgtop8.com/topcards?f=LE&meta=39",
+      "sections": [
+        "mainboard",
+        "sideboard"
+      ],
       "cards": [
         {
           "name": "Abrade",
@@ -4516,27 +4540,27 @@
         },
         {
           "name": "Ajani, Nacatl Pariah",
-          "mainboard": 6.8,
+          "mainboard": 7.0,
           "sideboard": 0
         },
         {
           "name": "Amped Raptor",
-          "mainboard": 6.7,
+          "mainboard": 6.9,
           "sideboard": 0
         },
         {
           "name": "Ancient Tomb",
-          "mainboard": 30.3,
+          "mainboard": 30.1,
           "sideboard": 0
         },
         {
           "name": "Arid Mesa",
-          "mainboard": 12.6,
+          "mainboard": 12.8,
           "sideboard": 0
         },
         {
           "name": "Atraxa, Grand Unifier",
-          "mainboard": 14.1,
+          "mainboard": 13.8,
           "sideboard": 0
         },
         {
@@ -4546,27 +4570,27 @@
         },
         {
           "name": "Barrowgoyf",
-          "mainboard": 5.8,
+          "mainboard": 5.6,
           "sideboard": 18.0
         },
         {
           "name": "Bayou",
-          "mainboard": 7.2,
+          "mainboard": 7.3,
           "sideboard": 0
         },
         {
           "name": "Beseech the Mirror",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 3.0
         },
         {
           "name": "Bilbo, Thief in the Night",
-          "mainboard": 9.1,
+          "mainboard": 9.4,
           "sideboard": 0
         },
         {
           "name": "Bloodstained Mire",
-          "mainboard": 17.4,
+          "mainboard": 17.0,
           "sideboard": 0
         },
         {
@@ -4582,7 +4606,7 @@
         {
           "name": "Boomerang Basics",
           "mainboard": 0,
-          "sideboard": 2.5
+          "sideboard": 2.6
         },
         {
           "name": "Boseiju, Who Endures",
@@ -4591,42 +4615,42 @@
         },
         {
           "name": "Brainstorm",
-          "mainboard": 46.9,
+          "mainboard": 46.5,
           "sideboard": 0
         },
         {
           "name": "Brazen Borrower",
-          "mainboard": 8.7,
-          "sideboard": 6.4
+          "mainboard": 8.5,
+          "sideboard": 6.3
         },
         {
           "name": "Brotherhood's End",
           "mainboard": 0,
-          "sideboard": 3.0
+          "sideboard": 2.8
         },
         {
           "name": "Cabal Therapy",
-          "mainboard": 6.7,
+          "mainboard": 6.8,
           "sideboard": 0
         },
         {
           "name": "Carpet of Flowers",
           "mainboard": 0,
-          "sideboard": 10.3
+          "sideboard": 10.4
         },
         {
           "name": "Cavern of Souls",
-          "mainboard": 11.8,
+          "mainboard": 11.7,
           "sideboard": 0
         },
         {
           "name": "Celestial Purge",
           "mainboard": 0,
-          "sideboard": 3.2
+          "sideboard": 3.3
         },
         {
           "name": "Chalice of the Void",
-          "mainboard": 8.4,
+          "mainboard": 8.5,
           "sideboard": 0
         },
         {
@@ -4636,12 +4660,12 @@
         },
         {
           "name": "Chrome Mox",
-          "mainboard": 7.9,
+          "mainboard": 7.8,
           "sideboard": 0
         },
         {
           "name": "City of Traitors",
-          "mainboard": 14.2,
+          "mainboard": 13.9,
           "sideboard": 0
         },
         {
@@ -4662,47 +4686,47 @@
         {
           "name": "Consign to Memory",
           "mainboard": 0,
-          "sideboard": 46.5
+          "sideboard": 46.2
         },
         {
           "name": "Containment Priest",
           "mainboard": 0,
-          "sideboard": 23.3
+          "sideboard": 23.6
         },
         {
           "name": "Damping Sphere",
           "mainboard": 0,
-          "sideboard": 10.5
+          "sideboard": 10.4
         },
         {
           "name": "Dark Ritual",
-          "mainboard": 14.3,
+          "mainboard": 14.2,
           "sideboard": 0
         },
         {
           "name": "Dauthi Voidwalker",
           "mainboard": 0,
-          "sideboard": 7.2
+          "sideboard": 7.0
         },
         {
           "name": "Daze",
-          "mainboard": 27.6,
+          "mainboard": 27.4,
           "sideboard": 0
         },
         {
           "name": "Deafening Silence",
           "mainboard": 0,
-          "sideboard": 13.5
+          "sideboard": 13.8
         },
         {
           "name": "Defense Grid",
           "mainboard": 0,
-          "sideboard": 4.2
+          "sideboard": 4.1
         },
         {
           "name": "Dismember",
           "mainboard": 0,
-          "sideboard": 16.3
+          "sideboard": 16.4
         },
         {
           "name": "Disruptor Flute",
@@ -4717,21 +4741,21 @@
         {
           "name": "Duress",
           "mainboard": 0,
-          "sideboard": 4.5
+          "sideboard": 4.6
         },
         {
           "name": "Echo of Eons",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 2.5
         },
         {
           "name": "Eldrazi Confluence",
-          "mainboard": 6.3,
+          "mainboard": 6.4,
           "sideboard": 4.2
         },
         {
           "name": "Elegant Parlor",
-          "mainboard": 6.6,
+          "mainboard": 6.8,
           "sideboard": 0
         },
         {
@@ -4741,13 +4765,13 @@
         },
         {
           "name": "Emrakul, the Aeons Torn",
-          "mainboard": 6.1,
+          "mainboard": 5.9,
           "sideboard": 0
         },
         {
           "name": "Endurance",
           "mainboard": 0,
-          "sideboard": 7.8
+          "sideboard": 7.7
         },
         {
           "name": "Engineered Explosives",
@@ -4757,52 +4781,52 @@
         {
           "name": "Ensnaring Bridge",
           "mainboard": 0,
-          "sideboard": 9.2
+          "sideboard": 9.4
         },
         {
           "name": "Erode",
           "mainboard": 0,
-          "sideboard": 7.8
+          "sideboard": 7.9
         },
         {
           "name": "Expedition Map",
-          "mainboard": 8.1,
+          "mainboard": 8.2,
           "sideboard": 0
         },
         {
           "name": "Extinguisher Battleship",
           "mainboard": 0,
-          "sideboard": 3.5
+          "sideboard": 3.6
         },
         {
           "name": "Faerie Macabre",
           "mainboard": 0,
-          "sideboard": 15.7
+          "sideboard": 15.9
         },
         {
           "name": "Fatal Push",
           "mainboard": 14.7,
-          "sideboard": 10.5
+          "sideboard": 10.3
         },
         {
           "name": "Flooded Strand",
-          "mainboard": 43.0,
+          "mainboard": 43.1,
           "sideboard": 0
         },
         {
           "name": "Flow State",
-          "mainboard": 26.1,
+          "mainboard": 25.8,
           "sideboard": 0
         },
         {
           "name": "Flusterstorm",
           "mainboard": 0,
-          "sideboard": 5.6
+          "sideboard": 5.5
         },
         {
           "name": "Force of Negation",
-          "mainboard": 18.7,
-          "sideboard": 39.7
+          "mainboard": 18.6,
+          "sideboard": 39.3
         },
         {
           "name": "Force of Vigor",
@@ -4811,7 +4835,7 @@
         },
         {
           "name": "Force of Will",
-          "mainboard": 54.8,
+          "mainboard": 54.5,
           "sideboard": 0
         },
         {
@@ -4822,7 +4846,7 @@
         {
           "name": "Gaddock Teeg",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Ghost Quarter",
@@ -4831,23 +4855,23 @@
         },
         {
           "name": "Giant's Boulder",
-          "mainboard": 5.6,
+          "mainboard": 5.8,
           "sideboard": 0
         },
         {
           "name": "Glaring Fleshraker",
-          "mainboard": 5.6,
+          "mainboard": 5.7,
           "sideboard": 0
         },
         {
           "name": "Goblin Bombardment",
-          "mainboard": 6.7,
+          "mainboard": 6.9,
           "sideboard": 0
         },
         {
           "name": "Grafdigger's Cage",
           "mainboard": 0,
-          "sideboard": 11.9
+          "sideboard": 11.5
         },
         {
           "name": "Grim Monolith",
@@ -4856,13 +4880,13 @@
         },
         {
           "name": "Guide of Souls",
-          "mainboard": 7.0,
+          "mainboard": 7.1,
           "sideboard": 0
         },
         {
           "name": "Harbinger of the Seas",
           "mainboard": 0,
-          "sideboard": 3.9
+          "sideboard": 3.8
         },
         {
           "name": "Haywire Mite",
@@ -4871,23 +4895,23 @@
         },
         {
           "name": "Hexing Squelcher",
-          "mainboard": 6.7,
-          "sideboard": 4.0
+          "mainboard": 6.8,
+          "sideboard": 3.9
         },
         {
           "name": "Hullbreacher",
           "mainboard": 0,
-          "sideboard": 2.1
+          "sideboard": 2.2
         },
         {
           "name": "Hydroblast",
           "mainboard": 0,
-          "sideboard": 26.0
+          "sideboard": 25.7
         },
         {
           "name": "Icetill Explorer",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 2.1
         },
         {
           "name": "Into the Flood Maw",
@@ -4897,7 +4921,7 @@
         {
           "name": "Invasion Submersible",
           "mainboard": 0,
-          "sideboard": 3.6
+          "sideboard": 3.8
         },
         {
           "name": "Jace, Wielder of Mysteries",
@@ -4907,66 +4931,66 @@
         {
           "name": "Jegantha, the Wellspring",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 2.1
         },
         {
           "name": "Kaito, Bane of Nightmares",
-          "mainboard": 8.9,
+          "mainboard": 8.7,
           "sideboard": 2.3
         },
         {
           "name": "Karakas",
-          "mainboard": 28.6,
+          "mainboard": 28.8,
           "sideboard": 3.0
         },
         {
           "name": "Karn, the Great Creator",
-          "mainboard": 9.2,
+          "mainboard": 9.4,
           "sideboard": 0
         },
         {
           "name": "Kozilek's Command",
-          "mainboard": 12.6,
+          "mainboard": 12.8,
           "sideboard": 0
         },
         {
           "name": "Lavinia, Azorius Renegade",
           "mainboard": 0,
-          "sideboard": 6.8
+          "sideboard": 6.9
         },
         {
           "name": "Leyline of the Void",
           "mainboard": 0,
-          "sideboard": 11.4
+          "sideboard": 11.5
         },
         {
           "name": "Lightning Bolt",
-          "mainboard": 6.5,
+          "mainboard": 6.4,
           "sideboard": 0
         },
         {
           "name": "Lion's Eye Diamond",
-          "mainboard": 9.7,
+          "mainboard": 9.8,
           "sideboard": 0
         },
         {
           "name": "Liquimetal Coating",
           "mainboard": 0,
-          "sideboard": 4.3
+          "sideboard": 4.4
         },
         {
           "name": "Long Goodbye",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 3.0
         },
         {
           "name": "Lotus Petal",
-          "mainboard": 34.3,
+          "mainboard": 34.0,
           "sideboard": 0
         },
         {
           "name": "Lórien Revealed",
-          "mainboard": 8.3,
+          "mainboard": 8.2,
           "sideboard": 0
         },
         {
@@ -4976,7 +5000,7 @@
         },
         {
           "name": "Marsh Flats",
-          "mainboard": 20.9,
+          "mainboard": 21.1,
           "sideboard": 0
         },
         {
@@ -5001,42 +5025,42 @@
         },
         {
           "name": "Mishra's Bauble",
-          "mainboard": 17.9,
+          "mainboard": 17.6,
           "sideboard": 0
         },
         {
           "name": "Misty Rainforest",
-          "mainboard": 34.8,
+          "mainboard": 34.3,
           "sideboard": 0
         },
         {
           "name": "Moonshadow",
-          "mainboard": 6.5,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
           "name": "Mox Opal",
-          "mainboard": 10.7,
+          "mainboard": 10.6,
           "sideboard": 0
         },
         {
           "name": "Murktide Regent",
-          "mainboard": 17.6,
-          "sideboard": 2.6
+          "mainboard": 17.3,
+          "sideboard": 2.5
         },
         {
           "name": "Mycosynth Lattice",
           "mainboard": 0,
-          "sideboard": 8.8
+          "sideboard": 9.0
         },
         {
           "name": "Mystic Sanctuary",
-          "mainboard": 6.1,
+          "mainboard": 5.9,
           "sideboard": 0
         },
         {
           "name": "Nethergoyf",
-          "mainboard": 8.8,
+          "mainboard": 8.7,
           "sideboard": 0
         },
         {
@@ -5047,21 +5071,21 @@
         {
           "name": "Null Rod",
           "mainboard": 0,
-          "sideboard": 11.4
+          "sideboard": 11.3
         },
         {
           "name": "Ocelot Pride",
-          "mainboard": 6.9,
+          "mainboard": 7.1,
           "sideboard": 0
         },
         {
           "name": "Omniscience",
-          "mainboard": 7.4,
+          "mainboard": 7.2,
           "sideboard": 0
         },
         {
           "name": "Once Upon a Time",
-          "mainboard": 6.5,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
@@ -5072,7 +5096,7 @@
         {
           "name": "Peer into the Abyss",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 3.0
         },
         {
           "name": "Perilous Snare",
@@ -5081,22 +5105,22 @@
         },
         {
           "name": "Petrified Hamlet",
-          "mainboard": 9.2,
+          "mainboard": 9.5,
           "sideboard": 0
         },
         {
           "name": "Phelia, Exuberant Shepherd",
-          "mainboard": 12.8,
+          "mainboard": 12.9,
           "sideboard": 0
         },
         {
           "name": "Pithing Needle",
-          "mainboard": 9.0,
+          "mainboard": 8.9,
           "sideboard": 6.8
         },
         {
           "name": "Planar Nexus",
-          "mainboard": 8.4,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
@@ -5106,23 +5130,23 @@
         },
         {
           "name": "Polluted Delta",
-          "mainboard": 44.6,
+          "mainboard": 44.1,
           "sideboard": 0
         },
         {
           "name": "Ponder",
-          "mainboard": 44.3,
+          "mainboard": 43.9,
           "sideboard": 0
         },
         {
           "name": "Portable Hole",
           "mainboard": 0,
-          "sideboard": 2.9
+          "sideboard": 2.8
         },
         {
           "name": "Price of Progress",
           "mainboard": 0,
-          "sideboard": 7.2
+          "sideboard": 7.4
         },
         {
           "name": "Prismatic Ending",
@@ -5131,17 +5155,17 @@
         },
         {
           "name": "Prismatic Vista",
-          "mainboard": 8.3,
+          "mainboard": 8.4,
           "sideboard": 0
         },
         {
           "name": "Pyroblast",
           "mainboard": 0,
-          "sideboard": 20.4
+          "sideboard": 20.3
         },
         {
           "name": "Quantum Riddler",
-          "mainboard": 10.6,
+          "mainboard": 10.7,
           "sideboard": 0
         },
         {
@@ -5155,38 +5179,43 @@
           "sideboard": 4.2
         },
         {
+          "name": "Savannah",
+          "mainboard": 5.8,
+          "sideboard": 0
+        },
+        {
           "name": "Scalding Tarn",
-          "mainboard": 33.1,
+          "mainboard": 32.4,
           "sideboard": 0
         },
         {
           "name": "Scrubland",
-          "mainboard": 7.2,
+          "mainboard": 7.4,
           "sideboard": 0
         },
         {
           "name": "Sheoldred's Edict",
           "mainboard": 0,
-          "sideboard": 7.0
+          "sideboard": 6.8
         },
         {
           "name": "Show and Tell",
-          "mainboard": 8.1,
+          "mainboard": 7.9,
           "sideboard": 3.6
         },
         {
           "name": "Sink into Stupor",
-          "mainboard": 9.8,
+          "mainboard": 9.9,
           "sideboard": 0
         },
         {
           "name": "Skateboard",
-          "mainboard": 11.2,
+          "mainboard": 11.1,
           "sideboard": 0
         },
         {
           "name": "Snuff Out",
-          "mainboard": 10.4,
+          "mainboard": 10.3,
           "sideboard": 5.8
         },
         {
@@ -5197,7 +5226,7 @@
         {
           "name": "Spell Pierce",
           "mainboard": 0,
-          "sideboard": 2.7
+          "sideboard": 2.5
         },
         {
           "name": "Stifle",
@@ -5222,31 +5251,31 @@
         {
           "name": "Summon: Bahamut",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 3.3
         },
         {
           "name": "Surgical Extraction",
           "mainboard": 0,
-          "sideboard": 30.6
+          "sideboard": 30.7
         },
         {
           "name": "Swords to Plowshares",
-          "mainboard": 26.7,
+          "mainboard": 27.1,
           "sideboard": 2.6
         },
         {
           "name": "Tamiyo, Inquisitive Student",
-          "mainboard": 26.0,
+          "mainboard": 25.7,
           "sideboard": 0
         },
         {
           "name": "Tendrils of Agony",
           "mainboard": 0,
-          "sideboard": 3.1
+          "sideboard": 3.2
         },
         {
           "name": "Thalia, Guardian of Thraben",
-          "mainboard": 7.1,
+          "mainboard": 7.2,
           "sideboard": 0
         },
         {
@@ -5256,17 +5285,17 @@
         },
         {
           "name": "The One Ring",
-          "mainboard": 10.9,
+          "mainboard": 11.1,
           "sideboard": 3.3
         },
         {
           "name": "Thoughtseize",
-          "mainboard": 32.3,
+          "mainboard": 32.1,
           "sideboard": 7.1
         },
         {
           "name": "Thundering Falls",
-          "mainboard": 8.0,
+          "mainboard": 7.8,
           "sideboard": 0
         },
         {
@@ -5287,7 +5316,7 @@
         {
           "name": "Trinisphere",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.3
         },
         {
           "name": "Triumph of Saint Katherine",
@@ -5296,7 +5325,7 @@
         },
         {
           "name": "Tropical Island",
-          "mainboard": 9.6,
+          "mainboard": 9.7,
           "sideboard": 0
         },
         {
@@ -5307,21 +5336,21 @@
         {
           "name": "Twinshot Sniper",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 1.9
         },
         {
           "name": "Ugin, Eye of the Storms",
-          "mainboard": 7.7,
+          "mainboard": 7.9,
           "sideboard": 0
         },
         {
           "name": "Undercity Sewers",
-          "mainboard": 24.4,
+          "mainboard": 24.1,
           "sideboard": 0
         },
         {
           "name": "Underground Sea",
-          "mainboard": 29.0,
+          "mainboard": 28.8,
           "sideboard": 0
         },
         {
@@ -5335,28 +5364,23 @@
           "sideboard": 3.8
         },
         {
-          "name": "Urza's Bauble",
-          "mainboard": 5.6,
-          "sideboard": 0
-        },
-        {
           "name": "Urza's Mine",
-          "mainboard": 6.4,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
           "name": "Urza's Power Plant",
-          "mainboard": 6.4,
+          "mainboard": 6.6,
           "sideboard": 0
         },
         {
           "name": "Urza's Saga",
-          "mainboard": 17.5,
+          "mainboard": 17.3,
           "sideboard": 0
         },
         {
           "name": "Urza's Tower",
-          "mainboard": 8.4,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
@@ -5371,48 +5395,52 @@
         },
         {
           "name": "Voice of Victory",
-          "mainboard": 7.0,
+          "mainboard": 7.2,
           "sideboard": 0
         },
         {
           "name": "Volcanic Island",
-          "mainboard": 18.3,
+          "mainboard": 18.2,
           "sideboard": 0
         },
         {
           "name": "Warping Wail",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 2.5
         },
         {
           "name": "Wasteland",
-          "mainboard": 51.7,
+          "mainboard": 51.8,
           "sideboard": 0
         },
         {
           "name": "Windswept Heath",
-          "mainboard": 9.9,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Witch Enchanter",
-          "mainboard": 5.9,
+          "mainboard": 6.0,
           "sideboard": 0
         },
         {
           "name": "Wrath of the Skies",
           "mainboard": 0,
-          "sideboard": 16.3
+          "sideboard": 16.5
         },
         {
           "name": "Yorion, Sky Nomad",
           "mainboard": 0,
-          "sideboard": 4.7
+          "sideboard": 4.8
         }
       ]
     },
     "vintage": {
       "url": "https://www.mtgtop8.com/topcards?f=VI&meta=82",
+      "sections": [
+        "mainboard",
+        "sideboard"
+      ],
       "cards": [
         {
           "name": "Abrade",
@@ -5422,21 +5450,21 @@
         {
           "name": "Abrupt Decay",
           "mainboard": 0,
-          "sideboard": 4.2
+          "sideboard": 4.1
         },
         {
           "name": "Ancestral Recall",
-          "mainboard": 62.4,
+          "mainboard": 63.2,
           "sideboard": 0
         },
         {
           "name": "Ancient Grudge",
           "mainboard": 0,
-          "sideboard": 1.5
+          "sideboard": 1.4
         },
         {
           "name": "Ancient Tomb",
-          "mainboard": 42.2,
+          "mainboard": 41.9,
           "sideboard": 0
         },
         {
@@ -5446,132 +5474,137 @@
         },
         {
           "name": "Anointed Peacekeeper",
-          "mainboard": 10.3,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Archon of Absolution",
           "mainboard": 0,
-          "sideboard": 10.1
+          "sideboard": 9.9
         },
         {
           "name": "Archon of Emeria",
-          "mainboard": 10.5,
+          "mainboard": 10.3,
           "sideboard": 0
         },
         {
           "name": "Argentum Masticore",
           "mainboard": 0,
-          "sideboard": 23.3
+          "sideboard": 23.4
         },
         {
           "name": "Atraxa, Grand Unifier",
+          "mainboard": 8.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Azure Beastbinder",
+          "mainboard": 0,
+          "sideboard": 1.0
+        },
+        {
+          "name": "Bazaar of Baghdad",
           "mainboard": 8.4,
           "sideboard": 0
         },
         {
-          "name": "Bazaar of Baghdad",
-          "mainboard": 8.6,
-          "sideboard": 0
-        },
-        {
           "name": "Bilbo, Thief in the Night",
-          "mainboard": 20.4,
+          "mainboard": 21.6,
           "sideboard": 0
         },
         {
           "name": "Black Lotus",
-          "mainboard": 91.0,
+          "mainboard": 91.2,
           "sideboard": 0
         },
         {
           "name": "Blightsteel Colossus",
           "mainboard": 0,
-          "sideboard": 1.5
+          "sideboard": 1.6
         },
         {
           "name": "Bojuka Bog",
           "mainboard": 0,
-          "sideboard": 1.1
+          "sideboard": 1.0
         },
         {
           "name": "Boseiju, Who Endures",
-          "mainboard": 10.5,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Brainstorm",
-          "mainboard": 33.2,
+          "mainboard": 32.6,
           "sideboard": 0
         },
         {
           "name": "Cavern of Souls",
-          "mainboard": 11.2,
+          "mainboard": 10.9,
           "sideboard": 0
         },
         {
           "name": "Chain of Vapor",
-          "mainboard": 11.6,
-          "sideboard": 0
+          "mainboard": 12.5,
+          "sideboard": 1.2
         },
         {
           "name": "Chalice of the Void",
-          "mainboard": 26.2,
-          "sideboard": 0
+          "mainboard": 25.7,
+          "sideboard": 1.0
         },
         {
           "name": "Chancellor of the Annex",
-          "mainboard": 10.5,
+          "mainboard": 10.3,
           "sideboard": 0
         },
         {
           "name": "Chrome Mox",
-          "mainboard": 10.5,
+          "mainboard": 10.3,
           "sideboard": 0
         },
         {
           "name": "City of Traitors",
-          "mainboard": 15.2,
+          "mainboard": 14.8,
           "sideboard": 0
         },
         {
           "name": "Clarion Conqueror",
-          "mainboard": 10.3,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Commandeer",
           "mainboard": 0,
-          "sideboard": 5.5
+          "sideboard": 5.3
         },
         {
           "name": "Consign to Memory",
           "mainboard": 0,
-          "sideboard": 42.4
+          "sideboard": 42.5
         },
         {
           "name": "Containment Priest",
           "mainboard": 0,
-          "sideboard": 22.9
+          "sideboard": 23.0
         },
         {
           "name": "Coveted Jewel",
-          "mainboard": 7.5,
+          "mainboard": 8.0,
           "sideboard": 0
         },
         {
           "name": "Defense Grid",
           "mainboard": 0,
-          "sideboard": 17.6
+          "sideboard": 17.9
         },
         {
           "name": "Demonic Tutor",
-          "mainboard": 42.9,
+          "mainboard": 43.5,
           "sideboard": 0
         },
         {
           "name": "Dig Through Time",
-          "mainboard": 13.2,
+          "mainboard": 12.7,
           "sideboard": 0
         },
         {
@@ -5582,22 +5615,22 @@
         {
           "name": "Disruptor Flute",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.1
         },
         {
           "name": "Dress Down",
           "mainboard": 0,
-          "sideboard": 2.0
+          "sideboard": 2.3
         },
         {
           "name": "Erode",
           "mainboard": 0,
-          "sideboard": 1.8
+          "sideboard": 1.6
         },
         {
           "name": "Fatal Push",
-          "mainboard": 18.5,
-          "sideboard": 14.7
+          "mainboard": 18.7,
+          "sideboard": 15.0
         },
         {
           "name": "Feed the Swarm",
@@ -5606,333 +5639,338 @@
         },
         {
           "name": "Flooded Strand",
-          "mainboard": 37.6,
+          "mainboard": 38.0,
           "sideboard": 0
         },
         {
           "name": "Flow State",
-          "mainboard": 28.8,
+          "mainboard": 30.0,
           "sideboard": 0
         },
         {
           "name": "Flusterstorm",
-          "mainboard": 29.5,
-          "sideboard": 14.7
+          "mainboard": 29.8,
+          "sideboard": 14.6
         },
         {
           "name": "Forbidden Orchard",
-          "mainboard": 7.7,
+          "mainboard": 7.4,
           "sideboard": 0
         },
         {
           "name": "Force of Negation",
-          "mainboard": 59.8,
-          "sideboard": 16.0
+          "mainboard": 60.0,
+          "sideboard": 16.2
         },
         {
           "name": "Force of Vigor",
           "mainboard": 0,
-          "sideboard": 11.2
+          "sideboard": 10.9
         },
         {
           "name": "Force of Will",
-          "mainboard": 69.5,
-          "sideboard": 1.1
+          "mainboard": 70.2,
+          "sideboard": 1.0
         },
         {
           "name": "Fury",
           "mainboard": 0,
-          "sideboard": 3.3
+          "sideboard": 3.1
         },
         {
           "name": "Ghost Quarter",
           "mainboard": 0,
-          "sideboard": 1.5
+          "sideboard": 1.4
         },
         {
           "name": "Gifts Ungiven",
-          "mainboard": 9.5,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Gitaxian Probe",
-          "mainboard": 61.1,
+          "mainboard": 60.8,
           "sideboard": 0
         },
         {
           "name": "Glaring Fleshraker",
-          "mainboard": 15.4,
+          "mainboard": 15.2,
           "sideboard": 0
         },
         {
           "name": "Grafdigger's Cage",
           "mainboard": 0,
-          "sideboard": 41.8
+          "sideboard": 42.3
         },
         {
           "name": "Grim Monolith",
-          "mainboard": 24.0,
+          "mainboard": 24.2,
           "sideboard": 0
         },
         {
           "name": "Hedge Maze",
-          "mainboard": 7.9,
+          "mainboard": 7.6,
           "sideboard": 0
         },
         {
           "name": "Hexing Squelcher",
           "mainboard": 0,
-          "sideboard": 4.4
+          "sideboard": 4.3
         },
         {
           "name": "Hollow One",
-          "mainboard": 8.1,
+          "mainboard": 8.0,
           "sideboard": 0
         },
         {
           "name": "Hullbreacher",
           "mainboard": 0,
-          "sideboard": 2.4
+          "sideboard": 3.1
         },
         {
           "name": "Hurkyl's Recall",
           "mainboard": 0,
-          "sideboard": 14.7
+          "sideboard": 15.4
         },
         {
           "name": "Into the Flood Maw",
           "mainboard": 0,
-          "sideboard": 1.1
+          "sideboard": 1.0
         },
         {
           "name": "Inventors' Fair",
-          "mainboard": 8.6,
+          "mainboard": 8.4,
           "sideboard": 0
         },
         {
           "name": "Kappa Cannoneer",
           "mainboard": 0,
-          "sideboard": 1.5
+          "sideboard": 1.8
         },
         {
           "name": "Karakas",
-          "mainboard": 16.5,
-          "sideboard": 2.4
+          "mainboard": 16.6,
+          "sideboard": 2.5
         },
         {
           "name": "Karn, the Great Creator",
-          "mainboard": 30.8,
+          "mainboard": 31.0,
           "sideboard": 0
         },
         {
           "name": "Leyline of the Void",
           "mainboard": 0,
-          "sideboard": 26.4
+          "sideboard": 25.3
         },
         {
           "name": "Light of Day",
           "mainboard": 0,
-          "sideboard": 1.8
+          "sideboard": 1.6
+        },
+        {
+          "name": "Liquimetal Coating",
+          "mainboard": 0,
+          "sideboard": 1.0
         },
         {
           "name": "Lodestone Golem",
-          "mainboard": 10.5,
-          "sideboard": 1.5
+          "mainboard": 10.7,
+          "sideboard": 1.6
         },
         {
           "name": "Long Goodbye",
           "mainboard": 0,
-          "sideboard": 16.7
+          "sideboard": 17.0
         },
         {
           "name": "Lotus Petal",
-          "mainboard": 24.6,
+          "mainboard": 23.4,
           "sideboard": 0
         },
         {
           "name": "Lurrus of the Dream-Den",
           "mainboard": 0,
-          "sideboard": 37.6
+          "sideboard": 37.8
         },
         {
           "name": "Lórien Revealed",
-          "mainboard": 38.9,
+          "mainboard": 39.6,
           "sideboard": 0
         },
         {
           "name": "Mana Crypt",
-          "mainboard": 62.9,
+          "mainboard": 63.4,
           "sideboard": 0
         },
         {
           "name": "Mana Vault",
-          "mainboard": 31.6,
+          "mainboard": 31.8,
           "sideboard": 0
         },
         {
           "name": "Manifold Key",
-          "mainboard": 28.6,
+          "mainboard": 29.4,
           "sideboard": 0
         },
         {
           "name": "Mental Misstep",
-          "mainboard": 62.6,
-          "sideboard": 2.0
+          "mainboard": 62.8,
+          "sideboard": 1.8
         },
         {
           "name": "Merchant Scroll",
-          "mainboard": 14.9,
+          "mainboard": 15.6,
           "sideboard": 0
         },
         {
           "name": "Meticulous Archive",
-          "mainboard": 9.2,
+          "mainboard": 9.7,
           "sideboard": 0
         },
         {
           "name": "Mindbreak Trap",
-          "mainboard": 15.6,
-          "sideboard": 32.3
+          "mainboard": 15.4,
+          "sideboard": 32.0
         },
         {
           "name": "Mishra's Workshop",
-          "mainboard": 26.4,
+          "mainboard": 26.5,
           "sideboard": 0
         },
         {
           "name": "Misty Rainforest",
-          "mainboard": 38.0,
+          "mainboard": 37.6,
           "sideboard": 0
         },
         {
           "name": "Momentum Breaker",
           "mainboard": 0,
-          "sideboard": 4.8
+          "sideboard": 4.7
         },
         {
           "name": "Mox Emerald",
-          "mainboard": 70.3,
+          "mainboard": 70.4,
           "sideboard": 0
         },
         {
           "name": "Mox Jet",
-          "mainboard": 89.0,
+          "mainboard": 89.3,
           "sideboard": 0
         },
         {
           "name": "Mox Opal",
-          "mainboard": 11.2,
+          "mainboard": 11.3,
           "sideboard": 0
         },
         {
           "name": "Mox Pearl",
-          "mainboard": 80.2,
+          "mainboard": 81.1,
           "sideboard": 0
         },
         {
           "name": "Mox Ruby",
-          "mainboard": 67.9,
+          "mainboard": 68.4,
           "sideboard": 0
         },
         {
           "name": "Mox Sapphire",
-          "mainboard": 90.8,
+          "mainboard": 91.0,
           "sideboard": 0
         },
         {
           "name": "Mycosynth Lattice",
           "mainboard": 0,
-          "sideboard": 11.2
+          "sideboard": 11.3
         },
         {
           "name": "Mystic Forge",
-          "mainboard": 18.0,
+          "mainboard": 17.7,
           "sideboard": 0
         },
         {
           "name": "Mystical Dispute",
           "mainboard": 0,
-          "sideboard": 8.4
+          "sideboard": 9.2
         },
         {
           "name": "Nature's Claim",
           "mainboard": 0,
-          "sideboard": 1.3
+          "sideboard": 1.2
         },
         {
           "name": "Nihil Spellbomb",
-          "mainboard": 11.4,
-          "sideboard": 10.5
+          "mainboard": 12.1,
+          "sideboard": 11.1
         },
         {
           "name": "Null Rod",
-          "mainboard": 15.8,
-          "sideboard": 40.0
+          "mainboard": 15.2,
+          "sideboard": 39.8
         },
         {
           "name": "Oath of Druids",
-          "mainboard": 7.7,
+          "mainboard": 7.4,
           "sideboard": 0
         },
         {
           "name": "Orcish Bowmasters",
-          "mainboard": 13.8,
-          "sideboard": 1.1
+          "mainboard": 13.6,
+          "sideboard": 1.0
         },
         {
           "name": "Paradoxical Outcome",
-          "mainboard": 13.2,
+          "mainboard": 13.8,
           "sideboard": 0
         },
         {
           "name": "Path to Exile",
           "mainboard": 0,
-          "sideboard": 1.8
+          "sideboard": 1.6
         },
         {
           "name": "Petrified Hamlet",
           "mainboard": 0,
-          "sideboard": 5.1
+          "sideboard": 5.3
         },
         {
           "name": "Pithing Needle",
-          "mainboard": 16.5,
-          "sideboard": 38.5
+          "mainboard": 16.4,
+          "sideboard": 39.0
         },
         {
           "name": "Polluted Delta",
-          "mainboard": 46.8,
+          "mainboard": 47.0,
           "sideboard": 0
         },
         {
           "name": "Ponder",
-          "mainboard": 9.5,
+          "mainboard": 9.7,
           "sideboard": 0
         },
         {
           "name": "Portable Hole",
           "mainboard": 0,
-          "sideboard": 11.2
+          "sideboard": 11.1
         },
         {
           "name": "Portal to Phyrexia",
           "mainboard": 0,
-          "sideboard": 2.6
+          "sideboard": 2.7
         },
         {
           "name": "Prismatic Ending",
           "mainboard": 0,
-          "sideboard": 5.5
+          "sideboard": 5.7
         },
         {
           "name": "Psychic Frog",
-          "mainboard": 21.5,
+          "mainboard": 21.6,
           "sideboard": 0
         },
         {
           "name": "Pyroblast",
           "mainboard": 0,
-          "sideboard": 11.9
+          "sideboard": 12.1
         },
         {
           "name": "Pyrokinesis",
@@ -5942,7 +5980,7 @@
         {
           "name": "Ravenous Trap",
           "mainboard": 0,
-          "sideboard": 4.6
+          "sideboard": 4.7
         },
         {
           "name": "Red Elemental Blast",
@@ -5951,22 +5989,22 @@
         },
         {
           "name": "Scalding Tarn",
-          "mainboard": 34.3,
+          "mainboard": 34.1,
           "sideboard": 0
         },
         {
           "name": "Seal of Cleansing",
           "mainboard": 0,
-          "sideboard": 4.4
+          "sideboard": 4.3
         },
         {
           "name": "Seasoned Dungeoneer",
-          "mainboard": 10.3,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Sensei's Divining Top",
-          "mainboard": 18.7,
+          "mainboard": 19.1,
           "sideboard": 0
         },
         {
@@ -5976,13 +6014,13 @@
         },
         {
           "name": "Serum Powder",
-          "mainboard": 8.4,
+          "mainboard": 8.2,
           "sideboard": 0
         },
         {
           "name": "Shattering Spree",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.1
         },
         {
           "name": "Sheoldred's Edict",
@@ -5992,42 +6030,42 @@
         {
           "name": "Sickening Shoal",
           "mainboard": 0,
-          "sideboard": 5.3
+          "sideboard": 5.1
         },
         {
           "name": "Sink into Stupor",
-          "mainboard": 16.3,
+          "mainboard": 17.0,
           "sideboard": 0
         },
         {
           "name": "Snapback",
           "mainboard": 0,
-          "sideboard": 2.2
+          "sideboard": 2.1
         },
         {
           "name": "Snapcaster Mage",
-          "mainboard": 8.8,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
           "name": "Snuff Out",
           "mainboard": 0,
-          "sideboard": 11.0
+          "sideboard": 10.7
         },
         {
           "name": "Sol Ring",
-          "mainboard": 53.6,
+          "mainboard": 54.2,
           "sideboard": 0
         },
         {
           "name": "Soul Rend",
           "mainboard": 0,
-          "sideboard": 1.3
+          "sideboard": 1.2
         },
         {
           "name": "Soul-Guide Lantern",
-          "mainboard": 18.5,
-          "sideboard": 31.9
+          "mainboard": 18.7,
+          "sideboard": 32.0
         },
         {
           "name": "Spell Pierce",
@@ -6037,142 +6075,147 @@
         {
           "name": "Sphinx of the Steel Wind",
           "mainboard": 0,
-          "sideboard": 2.6
+          "sideboard": 2.7
         },
         {
           "name": "Steel Sabotage",
           "mainboard": 0,
-          "sideboard": 9.2
+          "sideboard": 9.9
         },
         {
           "name": "Stock Up",
-          "mainboard": 36.3,
+          "mainboard": 36.8,
           "sideboard": 0
         },
         {
           "name": "Stonecoil Serpent",
           "mainboard": 0,
-          "sideboard": 7.5
+          "sideboard": 7.6
         },
         {
           "name": "Stony Silence",
           "mainboard": 0,
-          "sideboard": 1.8
+          "sideboard": 1.6
         },
         {
           "name": "Strip Mine",
-          "mainboard": 47.0,
-          "sideboard": 4.6
+          "mainboard": 46.4,
+          "sideboard": 4.5
         },
         {
           "name": "Suplex",
           "mainboard": 0,
-          "sideboard": 1.1
+          "sideboard": 1.0
         },
         {
           "name": "Swords to Plowshares",
-          "mainboard": 13.2,
+          "mainboard": 13.1,
           "sideboard": 24.6
         },
         {
           "name": "Talon Gates of Madara",
-          "mainboard": 23.1,
-          "sideboard": 11.4
+          "mainboard": 23.4,
+          "sideboard": 11.5
         },
         {
           "name": "Tezzeret, Cruel Captain",
-          "mainboard": 21.5,
+          "mainboard": 21.8,
           "sideboard": 0
         },
         {
           "name": "The Fantasticar",
-          "mainboard": 17.8,
+          "mainboard": 18.3,
           "sideboard": 0
         },
         {
           "name": "The One Ring",
-          "mainboard": 23.7,
+          "mainboard": 24.0,
           "sideboard": 0
         },
         {
           "name": "The Tabernacle at Pendrell Vale",
           "mainboard": 0,
-          "sideboard": 35.2
+          "sideboard": 34.7
         },
         {
           "name": "Thoughtseize",
-          "mainboard": 10.8,
+          "mainboard": 11.5,
           "sideboard": 0
         },
         {
           "name": "Time Vault",
-          "mainboard": 27.5,
-          "sideboard": 1.3
+          "mainboard": 28.5,
+          "sideboard": 1.2
         },
         {
           "name": "Time Walk",
-          "mainboard": 62.4,
+          "mainboard": 63.2,
           "sideboard": 0
         },
         {
           "name": "Tinker",
-          "mainboard": 15.4,
+          "mainboard": 16.2,
           "sideboard": 0
         },
         {
           "name": "Tolarian Academy",
-          "mainboard": 46.2,
+          "mainboard": 47.2,
           "sideboard": 0
         },
         {
           "name": "Tormod's Crypt",
           "mainboard": 0,
-          "sideboard": 15.6
+          "sideboard": 15.4
         },
         {
           "name": "Treasure Cruise",
-          "mainboard": 15.8,
+          "mainboard": 15.2,
           "sideboard": 0
         },
         {
           "name": "Trinisphere",
-          "mainboard": 14.9,
-          "sideboard": 5.3
+          "mainboard": 15.6,
+          "sideboard": 4.9
         },
         {
           "name": "Tropical Island",
-          "mainboard": 10.8,
+          "mainboard": 10.3,
           "sideboard": 0
         },
         {
           "name": "Tundra",
-          "mainboard": 16.0,
+          "mainboard": 16.2,
           "sideboard": 0
         },
         {
           "name": "Unable to Scream",
           "mainboard": 0,
-          "sideboard": 7.5
+          "sideboard": 7.8
         },
         {
           "name": "Undercity Sewers",
-          "mainboard": 24.6,
+          "mainboard": 24.4,
           "sideboard": 0
         },
         {
           "name": "Underground Sea",
-          "mainboard": 43.1,
+          "mainboard": 43.7,
           "sideboard": 0
         },
         {
           "name": "Urza's Saga",
-          "mainboard": 65.7,
-          "sideboard": 1.3
+          "mainboard": 66.7,
+          "sideboard": 1.2
+        },
+        {
+          "name": "Urza, Lord High Artificer",
+          "mainboard": 0,
+          "sideboard": 1.0
         },
         {
           "name": "Vampiric Tutor",
-          "mainboard": 9.7,
-          "sideboard": 2.2
+          "mainboard": 9.9,
+          "sideboard": 2.3
         },
         {
           "name": "Veil of Summer",
@@ -6181,8 +6224,8 @@
         },
         {
           "name": "Vexing Bauble",
-          "mainboard": 62.0,
-          "sideboard": 3.5
+          "mainboard": 61.8,
+          "sideboard": 3.3
         },
         {
           "name": "Virtue's Ruin",
@@ -6191,43 +6234,551 @@
         },
         {
           "name": "Void Mirror",
-          "mainboard": 12.1,
-          "sideboard": 4.6
+          "mainboard": 11.7,
+          "sideboard": 4.9
         },
         {
           "name": "Volcanic Island",
-          "mainboard": 14.5,
+          "mainboard": 14.8,
           "sideboard": 0
         },
         {
           "name": "Wasteland",
-          "mainboard": 42.0,
-          "sideboard": 4.2
+          "mainboard": 41.7,
+          "sideboard": 4.1
         },
         {
           "name": "White Plume Adventurer",
-          "mainboard": 10.3,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Witch Enchanter",
-          "mainboard": 10.3,
+          "mainboard": 10.1,
           "sideboard": 0
         },
         {
           "name": "Wurmcoil Engine",
           "mainboard": 0,
-          "sideboard": 15.8
+          "sideboard": 16.2
         },
         {
           "name": "Yawgmoth's Will",
-          "mainboard": 7.9,
+          "mainboard": 8.6,
           "sideboard": 0
         },
         {
           "name": "Yixlid Jailer",
           "mainboard": 0,
-          "sideboard": 8.6
+          "sideboard": 8.4
+        }
+      ]
+    },
+    "duel": {
+      "url": "https://www.mtgtop8.com/topcards?f=EDH&meta=121",
+      "sections": [
+        "mainboard"
+      ],
+      "cards": [
+        {
+          "name": "Abrupt Decay",
+          "mainboard": 18.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Animate Dead",
+          "mainboard": 16.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Barrowgoyf",
+          "mainboard": 16.8,
+          "sideboard": 0
+        },
+        {
+          "name": "Benevolent Bodyguard",
+          "mainboard": 20.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Birds of Paradise",
+          "mainboard": 19.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Brainstorm",
+          "mainboard": 29.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Brainsurge",
+          "mainboard": 16.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Broadside Bombardiers",
+          "mainboard": 24.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Cathar Commando",
+          "mainboard": 24.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Chain Lightning",
+          "mainboard": 21.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Cling to Dust",
+          "mainboard": 19.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Cloud, Midgar Mercenary",
+          "mainboard": 18.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Consult the Star Charts",
+          "mainboard": 22.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Counterspell",
+          "mainboard": 28.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Cryptic Command",
+          "mainboard": 16.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Daze",
+          "mainboard": 26.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Delighted Halfling",
+          "mainboard": 21.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Demonic Tutor",
+          "mainboard": 39.8,
+          "sideboard": 0
+        },
+        {
+          "name": "Detective's Phoenix",
+          "mainboard": 29.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Dismember",
+          "mainboard": 26.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Disruptor Flute",
+          "mainboard": 20.1,
+          "sideboard": 0
+        },
+        {
+          "name": "Drannith Magistrate",
+          "mainboard": 30.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Elvish Mystic",
+          "mainboard": 17.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Emperor of Bones",
+          "mainboard": 20.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Enlightened Tutor",
+          "mainboard": 37.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Erode",
+          "mainboard": 15.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Esper Sentinel",
+          "mainboard": 18.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Fatal Push",
+          "mainboard": 35.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Force Spike",
+          "mainboard": 32.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Force of Negation",
+          "mainboard": 27.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Forth Eorlingas!",
+          "mainboard": 15.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Fury",
+          "mainboard": 38.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Fyndhorn Elves",
+          "mainboard": 17.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Galvanic Discharge",
+          "mainboard": 27.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Ghost Vacuum",
+          "mainboard": 16.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Ghostfire Slice",
+          "mainboard": 25.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Gitaxian Probe",
+          "mainboard": 21.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Giver of Runes",
+          "mainboard": 24.1,
+          "sideboard": 0
+        },
+        {
+          "name": "Green Sun's Zenith",
+          "mainboard": 16.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Grief",
+          "mainboard": 20.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Guide of Souls",
+          "mainboard": 24.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Hexing Squelcher",
+          "mainboard": 26.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Inquisition of Kozilek",
+          "mainboard": 20.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Lightning Bolt",
+          "mainboard": 41.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Llanowar Elves",
+          "mainboard": 18.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Lose Focus",
+          "mainboard": 26.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Lórien Revealed",
+          "mainboard": 24.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Mana Leak",
+          "mainboard": 30.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Mana Tithe",
+          "mainboard": 35.0,
+          "sideboard": 0
+        },
+        {
+          "name": "March of Otherworldly Light",
+          "mainboard": 18.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Memory Lapse",
+          "mainboard": 28.1,
+          "sideboard": 0
+        },
+        {
+          "name": "Mental Misstep",
+          "mainboard": 37.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Mother of Runes",
+          "mainboard": 30.1,
+          "sideboard": 0
+        },
+        {
+          "name": "No More Lies",
+          "mainboard": 16.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Ocelot Pride",
+          "mainboard": 29.0,
+          "sideboard": 0
+        },
+        {
+          "name": "On Thin Ice",
+          "mainboard": 23.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Orcish Bowmasters",
+          "mainboard": 28.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Oust",
+          "mainboard": 16.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Parallax Wave",
+          "mainboard": 40.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Phelia, Exuberant Shepherd",
+          "mainboard": 24.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Phlage, Titan of Fire's Fury",
+          "mainboard": 17.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Ponder",
+          "mainboard": 22.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Portable Hole",
+          "mainboard": 15.8,
+          "sideboard": 0
+        },
+        {
+          "name": "Pre-War Formalwear",
+          "mainboard": 24.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Preordain",
+          "mainboard": 22.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Pyrogoyf",
+          "mainboard": 24.8,
+          "sideboard": 0
+        },
+        {
+          "name": "Pyrokinesis",
+          "mainboard": 25.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Ranger-Captain of Eos",
+          "mainboard": 18.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Razorgrass Ambush",
+          "mainboard": 20.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Recruiter of the Guard",
+          "mainboard": 17.8,
+          "sideboard": 0
+        },
+        {
+          "name": "Remand",
+          "mainboard": 27.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Reprieve",
+          "mainboard": 28.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Reverent Mantra",
+          "mainboard": 18.9,
+          "sideboard": 0
+        },
+        {
+          "name": "Shadowspear",
+          "mainboard": 17.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Sink into Stupor",
+          "mainboard": 25.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Skrelv, Defector Mite",
+          "mainboard": 15.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Skullclamp",
+          "mainboard": 40.8,
+          "sideboard": 0
+        },
+        {
+          "name": "Skyclave Apparition",
+          "mainboard": 33.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Snapcaster Mage",
+          "mainboard": 21.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Solitude",
+          "mainboard": 48.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Spectacular Spider-Man",
+          "mainboard": 25.4,
+          "sideboard": 0
+        },
+        {
+          "name": "Spell Snare",
+          "mainboard": 31.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Static Prison",
+          "mainboard": 23.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Stern Scolding",
+          "mainboard": 29.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Stoneforge Mystic",
+          "mainboard": 18.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Subtlety",
+          "mainboard": 30.1,
+          "sideboard": 0
+        },
+        {
+          "name": "Sundering Eruption",
+          "mainboard": 18.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Swift Reconfiguration",
+          "mainboard": 28.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Swords to Plowshares",
+          "mainboard": 53.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Tainted Pact",
+          "mainboard": 29.0,
+          "sideboard": 0
+        },
+        {
+          "name": "Tale's End",
+          "mainboard": 27.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Teferi, Time Raveler",
+          "mainboard": 19.6,
+          "sideboard": 0
+        },
+        {
+          "name": "Thoughtseize",
+          "mainboard": 28.5,
+          "sideboard": 0
+        },
+        {
+          "name": "Toxic Deluge",
+          "mainboard": 15.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Utopia Sprawl",
+          "mainboard": 21.3,
+          "sideboard": 0
+        },
+        {
+          "name": "Voice of Victory",
+          "mainboard": 38.2,
+          "sideboard": 0
+        },
+        {
+          "name": "Wash Away",
+          "mainboard": 33.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Wild Growth",
+          "mainboard": 23.7,
+          "sideboard": 0
+        },
+        {
+          "name": "Witch Enchanter",
+          "mainboard": 36.1,
+          "sideboard": 0
+        },
+        {
+          "name": "Worldly Tutor",
+          "mainboard": 18.7,
+          "sideboard": 0
         }
       ]
     }

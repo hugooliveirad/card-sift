@@ -20,6 +20,15 @@ import {
   csvText,
 } from "./import.js";
 import { read, write, enrich } from "./data.js";
+import {
+  CARD_TYPES,
+  compileQuery,
+  matchesQuery,
+  setMatches,
+  typeMatches,
+  advancedQuery,
+  searchRemote,
+} from "./search.js";
 const $ = (selector) => document.querySelector(selector);
 const e = (value) =>
   String(value ?? "").replace(
@@ -88,6 +97,7 @@ const money = (value) =>
       }).format(value);
 let state = { rows: [], rules: structuredClone(DEFAULT_RULES) },
   snapshot = null,
+  j25 = null,
   example = null,
   results = [],
   previousState = null;
@@ -107,6 +117,21 @@ let filter = "all",
 let persistentError = "",
   loadFailed = false,
   ready = false;
+let setQuery = "",
+  typeInclude = [],
+  typeExclude = [],
+  compiled = compileQuery(""),
+  searchError = "",
+  searchController = null,
+  searchTimer = null,
+  remoteHits = null,
+  searchLoading = false;
+let detailNavigation = null,
+  dialogMode = null,
+  modalOpener = null,
+  modalOriginId = null,
+  pageScroll = null,
+  detailScroll = 0;
 function toast(message) {
   $("#toast").textContent = message;
   $("#toast").hidden = false;
@@ -154,7 +179,7 @@ function changeRules() {
   if (!form.reportValidity()) return;
   const input = new FormData(form);
   const next = { ...state.rules, formats: input.getAll("formats") };
-  for (const key of ["copies", "basics", "minShare", "threshold"])
+  for (const key of ["copies", "landCopies", "basics", "minShare", "threshold"])
     next[key] = Number(input.get(key));
   for (const key of [
     "formatMode",
@@ -164,7 +189,7 @@ function changeRules() {
     "preference",
   ])
     next[key] = input.get(key);
-  for (const key of ["priceEnabled", "trustReference"])
+  for (const key of ["priceEnabled", "trustReference", "keepJ25"])
     next[key] = input.has(key);
   try {
     state.rules = validateRules(next);
@@ -196,14 +221,16 @@ function printing(row) {
   return `${row.set ? row.set.toUpperCase() : "Unspecified set"}${row.number ? " #" + row.number : ""} · ${row.finish === "nonfoil" ? "Nonfoil" : row.finish === "etched" ? "Etched" : "Foil"}`;
 }
 function filteredRows() {
+  if (searchError || searchLoading || !compiled) return [];
   return results
     .filter(
       (row) =>
         (filter === "all" || row[filter] > 0) &&
-        (!query ||
-          norm(
-            `${row.name} ${row.card?.type_line || ""} ${row.card?.oracle_text || ""}`,
-          ).includes(norm(query))) &&
+        (compiled.requiresRemote
+          ? remoteHits?.has(row.card?.id)
+          : matchesQuery(row, compiled)) &&
+        setMatches(row, setQuery) &&
+        typeMatches(row, typeInclude, typeExclude) &&
         (!rarity || row.card?.rarity === rarity) &&
         (!color ||
           (row.card &&
@@ -215,15 +242,17 @@ function filteredRows() {
     )
     .sort((a, b) => {
       const diff =
-        sort === "price"
-          ? (b.price ?? -1) - (a.price ?? -1)
-          : sort === "quantity"
-            ? b.quantity - a.quantity
-            : sort === "bulk"
-              ? b.bulk - a.bulk
-              : sort === "review"
-                ? b.review - a.review
-                : 0;
+        sort === "played"
+          ? (b.tournamentShare ?? -1) - (a.tournamentShare ?? -1)
+          : sort === "price"
+            ? (b.price ?? -1) - (a.price ?? -1)
+            : sort === "quantity"
+              ? b.quantity - a.quantity
+              : sort === "bulk"
+                ? b.bulk - a.bulk
+                : sort === "review"
+                  ? b.review - a.review
+                  : 0;
       return (
         diff ||
         a.name.localeCompare(b.name) ||
@@ -231,8 +260,184 @@ function filteredRows() {
       );
     });
 }
+function updateSearch() {
+  clearTimeout(searchTimer);
+  searchController?.abort();
+  searchController = null;
+  searchError = "";
+  remoteHits = null;
+  searchLoading = false;
+  page = 1;
+  try {
+    compiled = compileQuery(query);
+    if (compiled.requiresRemote) {
+      if (compiled.hasCollectionTerms)
+        throw new Error(
+          "Use the Keep/Bulk/Review tabs with online-only syntax; collection-specific is: terms work with local searches.",
+        );
+      searchLoading = true;
+      const controller = new AbortController();
+      searchController = controller;
+      searchTimer = setTimeout(async () => {
+        try {
+          const hits = await searchRemote(query, { signal: controller.signal });
+          if (controller.signal.aborted) return;
+          remoteHits = hits;
+        } catch (error) {
+          if (controller.signal.aborted) return;
+          searchError =
+            error.message + " Edit the query or use locally supported fields.";
+        }
+        searchLoading = false;
+        renderResults();
+      }, 400);
+    }
+  } catch (error) {
+    compiled = null;
+    searchError = error.message;
+  }
+  renderResults();
+}
+function setupFilters() {
+  $("#type-options").innerHTML = CARD_TYPES.map(
+    (type) =>
+      `<label class="field">${type}<select data-type="${type}" aria-label="${type} filter"><option value="">Any</option><option value="include">Include</option><option value="exclude">Exclude</option></select></label>`,
+  ).join("");
+  const input = (name, label, placeholder = "", type = "text") =>
+    `<label class="field">${label}<input name="${name}" type="${type}" placeholder="${e(placeholder)}" ${type === "number" ? 'step="any"' : ""}></label>`;
+  const select = (name, label, options) =>
+    `<label class="field">${label}<select name="${name}">${options.map(([value, text]) => `<option value="${e(value)}">${e(text)}</option>`).join("")}</select></label>`;
+  const checks = (name, label, options) =>
+    `<fieldset class="search-checks"><legend>${label}</legend>${options.map(([value, text]) => `<label class="check"><input type="checkbox" name="${name}" value="${value}">${text}</label>`).join("")}</fieldset>`;
+  const colors = [
+    ["W", "White"],
+    ["U", "Blue"],
+    ["B", "Black"],
+    ["R", "Red"],
+    ["G", "Green"],
+    ["C", "Colorless"],
+  ];
+  const operators = [
+    ["=", "Equal to"],
+    ["<", "Less than"],
+    [">", "Greater than"],
+    ["<=", "At most"],
+    [">=", "At least"],
+    ["!=", "Not equal"],
+  ];
+  $("#advanced-fields").innerHTML = [
+    input("name", "Card name", "Lightning"),
+    input("oracle", "Rules text", "draw a card · ~ means this card"),
+    input("type", "Type line", "creature elf -artifact"),
+    input("set", "Set code", "j25"),
+    input("mana", "Mana cost (online)", "{G}{U} or 2WW"),
+    input("artist", "Artist", "Rebecca Guay"),
+    input("flavor", "Flavor text"),
+    input("lore", "Lore (online)"),
+    input("criteria", "Criteria", "foil reprint -basic"),
+    checks("colors", "Card colors", colors),
+    select("colorOp", "Color comparison", [
+      [":", "Including"],
+      ["=", "Exactly"],
+      ["<=", "At most"],
+    ]),
+    checks("identity", "Commander color identity (at most)", colors),
+    select("stat", "Statistic", [
+      ["mv", "Mana value"],
+      ["pow", "Power"],
+      ["tou", "Toughness"],
+      ["loy", "Loyalty"],
+    ]),
+    select("statOp", "Stat requirement", operators),
+    input("statValue", "Stat value", "3", "number"),
+    select("formatStatus", "Format status", [
+      ["legal", "Legal or restricted"],
+      ["restricted", "Restricted"],
+      ["banned", "Banned"],
+    ]),
+    select("format", "Format", [
+      ["", "Any format"],
+      ...Object.entries(FORMATS),
+    ]),
+    select("price", "Price currency", [
+      ["usd", "USD"],
+      ["eur", "EUR"],
+    ]),
+    select("priceOp", "Price requirement", operators),
+    input("priceValue", "Unit price", "2", "number"),
+    checks(
+      "rarities",
+      "Rarity (any selected)",
+      RARITIES.map((r) => [r, r[0].toUpperCase() + r.slice(1)]),
+    ),
+    checks("games", "Game (any selected)", [
+      ["paper", "Paper"],
+      ["arena", "Arena"],
+      ["mtgo", "Magic Online"],
+    ]),
+  ].join("");
+}
+function applyAdvanced() {
+  const form = $("#advanced-form");
+  if (!form.reportValidity()) return;
+  const data = new FormData(form),
+    fields = Object.fromEntries(data);
+  for (const key of ["colors", "identity", "rarities", "games"])
+    fields[key] = data.getAll(key);
+  query = advancedQuery(fields);
+  $("#search").value = query;
+  updateSearch();
+}
+function showSearchHelp() {
+  modal(
+    "Search your collection",
+    "Atlas-style search, with your sorting plan built in.",
+    `<div class="info-copy"><p>Combine terms with spaces (AND), OR, and parentheses. Prefix a term or group with a minus sign to exclude it. The table and grid always show only your imported copies.</p></div><div class="search-examples">${[
+      [
+        "t:creature -t:artifact c:g mv<=3",
+        "Small green creatures, excluding artifacts",
+      ],
+      ['(t:instant OR t:sorcery) o:"draw a card"', "Card-draw spells"],
+      [
+        "set:j25",
+        "Copies from J25; use is:j25 for deck membership across sets",
+      ],
+      ["id<=wu f:duel", "Duel Commander cards within white/blue identity"],
+      ["r>=rare usd>=2", "Rares and mythics priced at least USD 2"],
+      ["is:bulk -t:land", "Bulk copies excluding lands"],
+      ["pow>=4", "Power four or greater"],
+    ]
+      .map(
+        ([q, description]) =>
+          `<button class="query-example" data-query="${e(q)}"><code>${e(q)}</code><span>${e(description)}</span></button>`,
+      )
+      .join(
+        "",
+      )}</div><div class="info-copy"><p>Common type, rules text, mana value, color, identity, stats, rarity, format, set, artist, flavor, price, and sorting terms run locally. Refresh card data if your saved cards lack a field. Unknown metadata does not satisfy a negative filter.</p><p>Other Scryfall syntax (such as lore: or mana-cost comparisons) searches online and intersects returned printing IDs with your collection. Name-only rows use their reference printing. Online errors and overly broad searches are shown explicitly; incomplete results are never presented as complete.</p><p>Set search uses your imported set or a verified printing; it never assumes the reference set is the set you own. <a href="https://scryfall.com/docs/syntax" target="_blank" rel="noopener noreferrer">Full Scryfall syntax</a></p></div>`,
+  );
+}
+function tournamentLabel(row) {
+  if (row.tournamentShare === null) return '<span class="muted">—</span>';
+  const hit = row.played.find(
+    (h) => Math.max(h.mainboard, h.sideboard) === row.tournamentShare,
+  );
+  return `<span class="number">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[hit.format])}</span>`;
+}
+
 function render() {
-  results = analyze(state.rows, state.rules, snapshot);
+  results = analyze(state.rows, state.rules, snapshot, Date.now(), j25);
+  const sets = new Map();
+  for (const row of state.rows) {
+    const code = row.set || (isExact(row) ? row.card?.set : "");
+    if (code) sets.set(code, row.card?.set === code ? row.card.set_name : code);
+  }
+  $("#owned-sets").innerHTML = [...sets]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(
+      ([code, name]) =>
+        `<option value="${e(code.toUpperCase())}">${e(name)}</option>`,
+    )
+    .join("");
   const totals = results.reduce(
     (s, r) => {
       for (const k of ["quantity", "keep", "bulk", "review"]) s[k] += r[k];
@@ -276,6 +481,23 @@ function render() {
   renderResults();
 }
 function renderResults() {
+  const message =
+    searchError ||
+    (searchLoading
+      ? "Searching Scryfall… results will appear when the complete search finishes."
+      : compiled?.requiresRemote
+        ? "Scryfall results matched to collection printing IDs."
+        : query
+          ? "Local advanced search · refresh card data if fields are missing."
+          : "");
+  $("#search-status").textContent = message;
+  $("#search-status").hidden = !message;
+  $("#search-status").classList.toggle("error-copy", Boolean(searchError));
+  $("#type-filter-count").textContent =
+    typeInclude.length + typeExclude.length
+      ? `(${typeInclude.length + typeExclude.length} active)`
+      : "";
+
   const rows = filteredRows();
   const pages = Math.max(1, Math.ceil(rows.length / 48));
   page = Math.min(page, pages);
@@ -285,29 +507,86 @@ function renderResults() {
       `<div class="empty"><div class="empty-icon">${icon("layers")}</div><h3>Good cards deserve to be found.</h3><p>Import your collection to see what to keep, what to box up, and what needs a closer look.</p><div class="row wrap"><button class="button primary small" data-action="import">${icon("upload")} Import cards</button><button class="text-button" data-action="demo">Try an example ${icon("arrow")}</button></div></div>`;
   } else if (!rows.length) {
     $("#results").innerHTML =
-      `<div class="empty"><div class="empty-icon">${icon("search")}</div><h3>No cards match this view.</h3><p>Try another search or clear the filters to see your collection.</p><button class="button quiet small" data-action="clear-filters">Clear filters</button></div>`;
+      `<div class="empty"><div class="empty-icon">${icon("search")}</div><h3>${searchLoading ? "Searching your collection…" : searchError ? "Check your search" : "No cards match this view."}</h3><p>${e(searchError || (searchLoading ? "Waiting for the full Scryfall result." : "Try another search or clear the filters to see your collection."))}</p><button class="button quiet small" data-action="clear-filters">Clear filters</button></div>`;
   } else if (view === "table") {
     $("#results").innerHTML =
-      `<div class="table-wrap" tabindex="0" role="region" aria-label="Collection table, scroll horizontally for all columns"><table><thead><tr><th scope="col">Card / printing</th><th scope="col">Rarity</th><th scope="col">Owned</th><th scope="col">Unit price</th><th scope="col">Sorting plan</th><th scope="col">Why</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody>${visible.map((row) => `<tr><td><button class="card-cell" data-detail="${e(row.id)}"><span class="thumb">${safeURL(row.card?.art, "image") ? `<img src="${e(safeURL(row.card.art, "image"))}" alt="" loading="lazy">` : icon("layers")}</span><span><strong>${e(row.name)}</strong><small>${e(printing(row))}</small></span></button></td><td><span class="rarity ${e(row.card?.rarity || "")}">${e(row.card?.rarity || "Unknown")}</span></td><td class="number">${count(row.quantity)}</td><td class="number">${money(row.price)}<span class="price-note">${row.price === null ? "Unavailable" : row.exact ? "Printing price" : "Reference price"}</span></td><td>${pills(row)}</td><td class="reason-cell">${e(reason(row))}</td><td><button class="more-button" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${icon("chevron")}</button></td></tr>`).join("")}</tbody></table></div>`;
+      `<div class="table-wrap" tabindex="0" role="region" aria-label="Collection table, scroll horizontally for all columns"><table><thead><tr><th scope="col">Card / printing</th><th scope="col">Rarity</th><th scope="col">Owned</th><th scope="col">Unit price</th><th scope="col" title="Highest mainboard or sideboard share in selected formats">Tournament play</th><th scope="col">Sorting plan</th><th scope="col">Why</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody>${visible.map((row) => `<tr><td><button class="card-cell" data-detail="${e(row.id)}"><span class="thumb">${safeURL(row.card?.art, "image") ? `<img src="${e(safeURL(row.card.art, "image"))}" alt="" loading="lazy">` : icon("layers")}</span><span><strong>${e(row.name)}</strong><small>${e(printing(row))}</small></span></button></td><td><span class="rarity ${e(row.card?.rarity || "")}">${e(row.card?.rarity || "Unknown")}</span></td><td class="number">${count(row.quantity)}</td><td class="number">${money(row.price)}<span class="price-note">${row.price === null ? "Unavailable" : row.exact ? "Printing price" : "Reference price"}</span></td><td>${tournamentLabel(row)}</td><td>${pills(row)}</td><td class="reason-cell">${e(reason(row))}</td><td><button class="more-button" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${icon("chevron")}</button></td></tr>`).join("")}</tbody></table></div>`;
   } else {
     $("#results").innerHTML =
-      `<div class="card-grid">${visible.map((row) => `<article class="grid-card"><button class="grid-image" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${safeURL(row.card?.image, "image") ? `<img src="${e(safeURL(row.card.image, "image"))}" alt="${e(row.name)}" loading="lazy" width="488" height="680">` : '<span class="image-placeholder">◈</span>'}<span class="grid-qty">${count(row.quantity)} owned</span></button><div class="grid-body"><button class="grid-name" data-detail="${e(row.id)}">${e(row.name)}</button><div class="grid-meta"><span>${e(printing(row))}</span><span class="number">${money(row.price)}${row.price !== null && !row.exact ? " ref." : ""}</span></div>${pills(row)}<p class="grid-reason">${e(reason(row))}</p></div></article>`).join("")}</div>`;
+      `<div class="card-grid">${visible.map((row) => `<article class="grid-card"><button class="grid-image" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${safeURL(row.card?.image, "image") ? `<img src="${e(safeURL(row.card.image, "image"))}" alt="${e(row.name)}" loading="lazy" width="488" height="680">` : '<span class="image-placeholder">◈</span>'}<span class="grid-qty">${count(row.quantity)} owned</span></button><div class="grid-body"><button class="grid-name" data-detail="${e(row.id)}">${e(row.name)}</button><div class="grid-meta"><span>${e(printing(row))}</span><span class="number">${money(row.price)}${row.price !== null && !row.exact ? " ref." : ""}</span></div>${pills(row)}${sort === "played" ? `<div class="grid-played">${tournamentLabel(row)}</div>` : ""}<p class="grid-reason">${e(reason(row))}</p></div></article>`).join("")}</div>`;
   }
   $("#pagination").innerHTML = rows.length
     ? `<span>${count((page - 1) * 48 + 1)}–${count(Math.min(page * 48, rows.length))} of ${count(rows.length)} printings</span><div class="row"><button class="button quiet small" data-page="${page - 1}" ${page === 1 ? "disabled" : ""}>Previous</button><span>${page} / ${pages}</span><button class="button quiet small" data-page="${page + 1}" ${page === pages ? "disabled" : ""}>Next</button></div>`
     : "";
 }
-function modal(title, subtitle, body, footer = "") {
+function modal(title, subtitle, body, footer = "", options = {}) {
+  const dialog = $("#dialog"),
+    wasOpen = dialog.open,
+    active = document.activeElement;
+  const focusId = dialog.contains(active) ? active?.id : null;
+  const focusAction = dialog.contains(active) ? active?.dataset.action : null;
+  const scroll = options.preserve ? dialog.scrollTop : options.scrollTop || 0;
+  if (!wasOpen) {
+    modalOpener = active;
+    modalOriginId = active?.dataset.detail;
+    pageScroll = { x: window.scrollX, y: window.scrollY };
+  }
+  dialogMode = options.kind || "other";
   $("#dialog-content").innerHTML =
     `<div class="dialog-header"><div><h2 id="dialog-title">${e(title)}</h2>${subtitle ? `<p>${e(subtitle)}</p>` : ""}</div><button class="close-button" data-action="close" aria-label="Close dialog">${icon("close")}</button></div><div class="dialog-body">${body}</div>${footer ? `<div class="dialog-footer">${footer}</div>` : ""}`;
-  const dialog = $("#dialog");
   dialog.setAttribute("aria-labelledby", "dialog-title");
-  if (!dialog.open) dialog.showModal();
+  if (!wasOpen) dialog.showModal();
+  else {
+    const focus = focusId
+      ? dialog.querySelector("#" + CSS.escape(focusId))
+      : focusAction
+        ? dialog.querySelector(
+            `[data-action="${CSS.escape(focusAction)}"]:not(:disabled)`,
+          )
+        : null;
+    (focus || dialog.querySelector(".close-button")).focus({
+      preventScroll: true,
+    });
+  }
+  dialog.scrollTop = scroll;
 }
 function closeModal() {
   $("#dialog").close();
-  detailId = null;
 }
+function restoreModalOrigin() {
+  const target = modalOpener?.isConnected
+    ? modalOpener
+    : modalOriginId
+      ? document.querySelector(`[data-detail="${CSS.escape(modalOriginId)}"]`)
+      : null;
+  (target || $("#collection")).focus({ preventScroll: true });
+  if (pageScroll)
+    window.scrollTo({
+      left: pageScroll.x,
+      top: pageScroll.y,
+      behavior: "instant",
+    });
+  detailId = null;
+  detailNavigation = null;
+  dialogMode = null;
+  modalOpener = null;
+  modalOriginId = null;
+  pageScroll = null;
+}
+function detailNavHTML() {
+  const index = detailNavigation?.indexOf(detailId) ?? -1,
+    total = detailNavigation?.length || 0;
+  return `<nav class="dialog-nav" aria-label="Navigate filtered collection"><button class="button quiet small" data-action="previous-card" ${index <= 0 ? "disabled" : ""}>Previous</button><span class="dialog-position" role="status" aria-live="polite">${index + 1} / ${total}<small>Filtered collection · ← / →</small></span><button class="button quiet small" data-action="next-card" ${index >= total - 1 ? "disabled" : ""}>Next</button></nav>`;
+}
+function stepCard(direction) {
+  const index = detailNavigation?.indexOf(detailId) ?? -1;
+  const next = detailNavigation?.[index + direction];
+  if (next) showDetail(next);
+}
+function backToCard() {
+  showDetail(detailId, { scrollTop: detailScroll });
+}
+
 function download(name, text, type = "text/plain") {
   const url = URL.createObjectURL(new Blob([text], { type }));
   const a = document.createElement("a");
@@ -544,7 +823,10 @@ function exitDemo() {
   syncRules();
   render();
 }
-function showDetail(id) {
+function showDetail(id, options = {}) {
+  if (!$("#dialog").open || !detailNavigation?.includes(id))
+    detailNavigation = filteredRows().map((row) => row.id);
+  if (!detailNavigation.includes(id)) detailNavigation.push(id);
   detailId = id;
   const row = results.find((r) => r.id === id);
   if (!row) return;
@@ -555,7 +837,7 @@ function showDetail(id) {
     row.name,
     printing(row),
     `<div class="detail-layout"><div>${img ? `<img class="detail-image" src="${e(img)}" alt="${e(row.name)}">` : '<div class="no-image">Card image unavailable</div>'}<div class="detail-price">${money(row.price)}</div><p class="hint">${row.exact ? "Exact printing" : "Reference printing"} · ${e(row.finish)}<br>${c ? `Scryfall price · ${date(row.fetchedAt)}` : "Refresh card data to look up this card."}</p>${link ? `<a class="text-button" href="${e(link)}" target="_blank" rel="noopener noreferrer">Open in Scryfall ${icon("external")}</a>` : ""}</div><div><div class="detail-meta">${e(c?.type_line || "Card details unavailable")}<br>${e(c?.mana_cost || "")} ${c ? " · " + e(c.rarity) : ""} · ${count(row.quantity)} owned</div>${pills(row)}<h3>Why these copies go here</h3><ul class="detail-reasons">${[...new Set(row.reasons)].map((reason) => `<li>${e(reason)}</li>`).join("")}${row.review ? row.uncertainties.map((reason) => `<li>${e(reason)}</li>`).join("") : ""}</ul>
-    ${row.played.length ? `<h3>Play evidence</h3>${row.played.map((hit) => `<div class="source-row"><div>${e(FORMATS[hit.format])}<small>Mainboard ${hit.mainboard}% · Sideboard ${hit.sideboard}%</small></div><a href="${e(safeURL(hit.url))}" target="_blank" rel="noopener noreferrer">Source</a></div>`).join("")}<p class="hint">MTGTop8 · ${e(snapshot.window)} · fetched ${date(snapshot.fetchedAt)}. Mainboard and sideboard percentages are not added together.</p>` : ""}
+    ${row.played.length ? `<h3>Play evidence</h3>${row.played.map((hit) => `<div class="source-row"><div>${e(FORMATS[hit.format])}<small>Mainboard ${hit.mainboard}%${snapshot.formats[hit.format].sections?.includes("sideboard") === false ? "" : ` · Sideboard ${hit.sideboard}%`}</small></div><a href="${e(safeURL(hit.url))}" target="_blank" rel="noopener noreferrer">Source</a></div>`).join("")}<p class="hint">MTGTop8 · ${e(snapshot.window)} · fetched ${date(snapshot.fetchedAt)}. Mainboard and sideboard percentages are not added together.</p>` : ""}
     <h3>Your decision</h3><label class="field">Override for this printing<select id="row-override"><option value="" ${!row.override ? "selected" : ""}>Follow my keep rules</option><option value="keep" ${row.override === "keep" ? "selected" : ""}>Keep every copy</option><option value="bulk" ${row.override === "bulk" ? "selected" : ""}>Put every copy in bulk</option></select></label><div class="detail-actions"><button class="button quiet small" data-action="edit-card">Edit card / quantity</button><button class="button quiet small" data-action="copy-card">Copy decklist line</button></div></div></div>
     ${
       c
@@ -569,16 +851,20 @@ function showDetail(id) {
             .join("")}</div></details>`
         : ""
     }`,
+    detailNavHTML(),
+    { kind: "card", ...options },
   );
 }
 function editCard() {
+  detailScroll = $("#dialog").scrollTop;
   const row = state.rows.find((r) => r.id === detailId);
   if (!row) return;
   modal(
     "Edit card",
     "Correct an identifier or update how many copies you own.",
     `<form id="edit-form"><div class="edit-fields"><label class="field wide">English card name<input name="name" required maxlength="300" value="${e(row.name)}"></label><label class="field">Quantity<input name="quantity" type="number" min="1" max="100000" step="1" required value="${row.quantity}"></label><label class="field">Finish<select name="finish">${["nonfoil", "foil", "etched"].map((f) => `<option ${f === row.finish ? "selected" : ""}>${f}</option>`).join("")}</select></label><label class="field">Set code<input name="set" value="${e(row.set)}"></label><label class="field">Collector number<input name="number" value="${e(row.number)}"></label><label class="field wide">Scryfall ID (optional, overrides name and set)<input name="scryfallId" value="${e(row.scryfallId)}" pattern="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"></label></div><p class="hint">To switch cards or printings, clear the old Scryfall ID first. Card details will be fetched again after saving.</p></form>`,
-    `<button class="button quiet" data-detail="${e(row.id)}">Cancel</button><button class="button primary" data-action="save-card">Save changes</button>`,
+    `<button class="button quiet" data-action="back-card">Back to card</button><button class="button primary" data-action="save-card">Save changes</button>`,
+    { kind: "edit" },
   );
 }
 async function saveCard() {
@@ -599,10 +885,13 @@ async function saveCard() {
   delete old.card;
   delete old.fetchedAt;
   delete old.lookupError;
-  closeModal();
+  const id = detailId;
   render();
+  showDetail(id, { scrollTop: detailScroll });
   await persist();
-  if (!previousState) sync();
+  if (!previousState) await sync();
+  if ($("#dialog").open && dialogMode === "card" && detailId === id)
+    showDetail(id, { preserve: true });
 }
 function showSources() {
   const old =
@@ -610,14 +899,14 @@ function showSources() {
   modal(
     "Where the recommendations come from",
     "Facts, dates, and the limits of each source.",
-    `<div class="info-copy"><h3>Tournament play · MTGTop8</h3><p>A dated snapshot of the ${snapshot?.window?.toLowerCase() || "last two months"} of tournament deck statistics. We include up to 100 mainboard and 100 sideboard cards per format, each appearing in at least 1% of decks in that section. Basic lands are excluded from this sample and use your separate reserve.</p><p><strong>Absence from this sample does not mean a card never sees play.</strong> Your selected minimum share is checked against either section. A card must also be currently legal or restricted according to Scryfall to qualify.</p><p>Snapshot fetched: <strong>${date(snapshot?.fetchedAt)}</strong>. The hosted site refreshes weekly. ${old ? "Missing or old evidence sends uncertain copies to Needs review." : "The snapshot is current."}</p></div>
+    `<div class="info-copy"><h3>Tournament play · MTGTop8</h3><p>A dated snapshot of the ${snapshot?.window?.toLowerCase() || "last two months"} of tournament deck statistics. We include up to 100 mainboard and 100 sideboard cards per format, each appearing in at least 1% of decks in that section. Basic lands are excluded from this sample and use your separate reserve. Duel Commander uses mainboard evidence only.</p><p><strong>Absence from this sample does not mean a card never sees play.</strong> Your selected minimum share is checked against either section. A card must also be currently legal or restricted according to Scryfall to qualify.</p><p>Snapshot fetched: <strong>${date(snapshot?.fetchedAt)}</strong>. The hosted site refreshes weekly. ${old ? "Missing or old evidence sends uncertain copies to Needs review." : "The snapshot is current. Tournament sorting uses the highest section percentage among your selected formats; percentages are never added across formats."}</p></div>
     ${Object.entries(FORMATS)
       .map(
         ([format, label]) =>
           `<div class="source-row"><div>${label}<small>${snapshot?.formats?.[format] ? count(snapshot.formats[format].cards.length) + " sampled card names" : "No tournament source bundled · legality mode available"}</small></div>${snapshot?.formats?.[format] ? `<a href="${e(safeURL(snapshot.formats[format].url))}" target="_blank" rel="noopener noreferrer">View MTGTop8 ${icon("external")}</a>` : ""}</div>`,
       )
       .join("")}
-    <div class="info-copy" style="margin-top:24px"><h3>Card details · Scryfall</h3><p>Names, images, rarity, legality, and USD / EUR prices come from <a href="https://scryfall.com/docs/api" target="_blank" rel="noopener noreferrer">Scryfall</a>. Refresh card data to update prices and legality. Data is cached for 24 hours; data older than 7 days requires review before bulk recommendations.</p><p>Prices describe the selected printing and finish. They are market references, not a quote for the condition or language of your copy. Missing prices are never treated as zero. Set + collector number or Scryfall ID identifies a printing; a name alone gives a reference printing.</p><p>Collection files, quantities, and preferences stay in this browser. Scryfall receives card identifiers during lookup, and its image host receives image requests. Export a backup before clearing browser storage. Other tabs and devices do not automatically sync.</p><p>Magic: The Gathering and card imagery belong to Wizards of the Coast. Card Sift is an independent fan project, inspired by <a href="https://hugobessa.com.br/jumpstart-atlas/">Jumpstart Atlas</a>.</p></div>`,
+    <div class="info-copy" style="margin-top:24px"><h3>J25 deck membership · Jumpstart Atlas</h3><p>${j25 ? `${j25.names.length} unique English card names from ${j25.decks} Foundations Jumpstart decks. Updated ${date(j25.fetchedAt)}.` : "Membership data unavailable; reload to retry."} Membership matches names across all printings, including cards you own from other sets. It qualifies a card for the playset reserve, rather than protecting unlimited duplicates. The catalog is derived automatically from <a href="https://github.com/hugooliveirad/jumpstart-atlas" target="_blank" rel="noopener noreferrer">Jumpstart Atlas</a>.</p></div><div class="info-copy" style="margin-top:24px"><h3>Card details · Scryfall</h3><p>Names, images, rarity, legality, and USD / EUR prices come from <a href="https://scryfall.com/docs/api" target="_blank" rel="noopener noreferrer">Scryfall</a>. Refresh card data to update prices and legality. Data is cached for 24 hours; data older than 7 days requires review before bulk recommendations.</p><p>Prices describe the selected printing and finish. They are market references, not a quote for the condition or language of your copy. Missing prices are never treated as zero. Set + collector number or Scryfall ID identifies a printing; a name alone gives a reference printing.</p><p>Collection files, quantities, and preferences stay in this browser. Scryfall receives card identifiers during lookup and any online search query, and its image host receives image requests. Export a backup before clearing browser storage. Other tabs and devices do not automatically sync.</p><p>Magic: The Gathering and card imagery belong to Wizards of the Coast. Card Sift is an independent fan project, inspired by <a href="https://hugobessa.com.br/jumpstart-atlas/">Jumpstart Atlas</a>.</p></div>`,
   );
 }
 function showGuide() {
@@ -630,8 +919,8 @@ function showGuide() {
         "Select your formats. Tournament mode requires actual mainboard or sideboard evidence. Legality mode also keeps cards with no recorded tournament use. Commander has legality support; no Commander play statistics are bundled.",
       ],
       [
-        "Reserve a playset, across printings",
-        "Keep four, one, or another number per card name. Copies already protected by rarity, value, or a manual keep count toward that reserve. You can also reserve a playset of every card, or turn playset reserves off. Basic lands use their own number.",
+        "Reserve copies by card or land printing",
+        "Nonlands share one reserve per card name across sets. Lands reserve only copies of the same printing (Scryfall ID or set + collector number), including its finishes. Set separate limits for nonbasic lands and basics in the sidebar. Copies protected by rarity, value, or a manual keep already count toward their reserve. Enable J25 to qualify card names appearing in any Atlas Foundations Jumpstart deck, even when your copies come from other sets.",
       ],
       [
         "Protect the cards you care about",
@@ -643,7 +932,7 @@ function showGuide() {
       ],
       [
         "Export your sorting plan",
-        "Table and grid show the same recommendations. Search, filter, and sort to work through your collection; export the full plan or the current view as CSV. Backups preserve your inventory, rules, and overrides.",
+        "Table and grid share type inclusion/exclusion, set search, and advanced queries. Most tournament play sorts by the highest deck share in your selected formats. Card dialogs follow the entire filtered, sorted list with Previous/Next and arrow keys. Back and Escape return from editing to the same card and scroll position. Export the full plan or current view as CSV; backups preserve rules and decisions.",
       ],
     ]
       .map(
@@ -682,6 +971,8 @@ function exportPlan(scope) {
     "Card data date",
     "Evidence date",
     "Override",
+    "Tournament share (%)",
+    "J25 deck member",
     "Reasons",
     "Review notes",
   ];
@@ -704,6 +995,8 @@ function exportPlan(scope) {
         r.fetchedAt ? new Date(r.fetchedAt).toISOString() : "",
         snapshot?.fetchedAt || "",
         r.override || "",
+        r.tournamentShare,
+        r.j25 === null ? "unknown" : r.j25 ? "yes" : "no",
         r.reasons.join("; "),
         r.uncertainties.join("; "),
       ]),
@@ -713,6 +1006,12 @@ function exportPlan(scope) {
   closeModal();
 }
 function resetFilters() {
+  setQuery = "";
+  typeInclude = [];
+  typeExclude = [];
+  $("#set-search").value = "";
+  document.querySelectorAll("[data-type]").forEach((el) => (el.value = ""));
+  $("#advanced-form").reset();
   query = "";
   color = "";
   rarity = "";
@@ -721,6 +1020,7 @@ function resetFilters() {
   $("#search").value = "";
   $("#color-filter").value = "";
   $("#rarity-filter").value = "";
+  updateSearch();
   render();
 }
 async function action(name) {
@@ -729,6 +1029,15 @@ async function action(name) {
     return;
   }
   switch (name) {
+    case "previous-card":
+      stepCard(-1);
+      break;
+    case "next-card":
+      stepCard(1);
+      break;
+    case "back-card":
+      backToCard();
+      break;
     case "close":
       closeModal();
       break;
@@ -749,6 +1058,9 @@ async function action(name) {
       break;
     case "backup":
       backup();
+      break;
+    case "search-help":
+      showSearchHelp();
       break;
     case "sources":
       showSources();
@@ -844,7 +1156,13 @@ document.addEventListener("click", async (event) => {
   try {
     if (target.dataset.action) await action(target.dataset.action);
     else if (target.dataset.detail) showDetail(target.dataset.detail);
-    else if (target.dataset.filter) {
+    else if (target.dataset.query) {
+      query = target.dataset.query;
+      $("#search").value = query;
+      closeModal();
+      updateSearch();
+      $("#search").focus();
+    } else if (target.dataset.filter) {
       filter = target.dataset.filter;
       page = 1;
       render();
@@ -880,7 +1198,16 @@ document.addEventListener("change", async (event) => {
     else delete row.override;
     render();
     persist();
-    showDetail(detailId);
+    showDetail(detailId, { preserve: true });
+  } else if (target.dataset.type) {
+    typeInclude = [...document.querySelectorAll("[data-type]")]
+      .filter((el) => el.value === "include")
+      .map((el) => el.dataset.type);
+    typeExclude = [...document.querySelectorAll("[data-type]")]
+      .filter((el) => el.value === "exclude")
+      .map((el) => el.dataset.type);
+    page = 1;
+    renderResults();
   } else if (target.id === "color-filter") {
     color = target.value;
     page = 1;
@@ -897,8 +1224,16 @@ document.addEventListener("change", async (event) => {
 });
 $("#search").addEventListener("input", (event) => {
   query = event.target.value;
+  updateSearch();
+});
+$("#set-search").addEventListener("input", (event) => {
+  setQuery = event.target.value;
   page = 1;
   renderResults();
+});
+$("#advanced-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  applyAdvanced();
 });
 $("#rules").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -910,7 +1245,27 @@ document.addEventListener("submit", (event) => {
     saveCard();
   }
 });
+$("#dialog").addEventListener("close", restoreModalOrigin);
+$("#dialog").addEventListener("cancel", (event) => {
+  if (dialogMode === "edit") {
+    event.preventDefault();
+    backToCard();
+  }
+});
 document.addEventListener("keydown", (event) => {
+  const editing =
+    ["INPUT", "TEXTAREA", "SELECT"].includes(event.target.tagName) ||
+    event.target.isContentEditable;
+  if (
+    $("#dialog").open &&
+    dialogMode === "card" &&
+    !editing &&
+    ["ArrowLeft", "ArrowRight"].includes(event.key)
+  ) {
+    event.preventDefault();
+    stepCard(event.key === "ArrowLeft" ? -1 : 1);
+    return;
+  }
   if (
     event.key === "/" &&
     !["INPUT", "TEXTAREA", "SELECT"].includes(event.target.tagName) &&
@@ -950,11 +1305,16 @@ async function init() {
         `<label class="format-chip"><input type="checkbox" name="formats" value="${key}"><span>${label}</span></label>`,
     )
     .join("");
+  setupFilters();
   syncRules();
   render();
   const loaded = await Promise.allSettled([
     read("state", "collection"),
     fetch("./data/metagame.json").then((r) => {
+      if (!r.ok) throw new Error();
+      return r.json();
+    }),
+    fetch("./data/j25.json").then((r) => {
       if (!r.ok) throw new Error();
       return r.json();
     }),
@@ -990,8 +1350,9 @@ async function init() {
   } else if (loaded[0].status === "rejected")
     storageWarning(loaded[0].reason.message);
   if (loaded[1].status === "fulfilled") snapshot = loaded[1].value;
-  if (loaded[2].status === "fulfilled") {
-    example = loaded[2].value;
+  if (loaded[2].status === "fulfilled") j25 = loaded[2].value;
+  if (loaded[3].status === "fulfilled") {
+    example = loaded[3].value;
     const arts = example.rows.filter((r) => r.card?.image);
     if (arts[0]) $("#hero-one").src = safeURL(arts[0].card.image, "image");
     if (arts[4]) $("#hero-two").src = safeURL(arts[4].card.image, "image");

@@ -1,6 +1,6 @@
 {
   "example": true,
-  "fetchedAt": "2026-09-23T21:01:06.988Z",
+  "fetchedAt": "2026-09-24T18:26:19.165Z",
   "rows": [
     {
       "id": "example-0",
@@ -11,9 +11,13 @@
       "scryfallId": "7673784e-db4b-43a1-8d55-1bb9fc1e284f",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "7673784e-db4b-43a1-8d55-1bb9fc1e284f",
         "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
         "name": "Lightning Bolt",
+        "names": [
+          "Lightning Bolt"
+        ],
         "set": "msc",
         "set_name": "Marvel Super Heroes Commander",
         "collector_number": "806",
@@ -47,8 +51,8 @@
           "usd": "0.75",
           "usd_foil": "3.73",
           "usd_etched": null,
-          "eur": "1.94",
-          "eur_foil": "2.22",
+          "eur": "1.89",
+          "eur_foil": "2.21",
           "tix": "0.02"
         },
         "type_line": "Instant",
@@ -56,6 +60,19 @@
         "colors": [
           "R"
         ],
+        "color_identity": [
+          "R"
+        ],
+        "cmc": 1,
+        "artist": "Milivoj Ćeran",
+        "flavor_text": "\"I am the god of thunder, the lord of the savage lightning, and the very skies must tremble when speaks The Mighty Thor!\"",
+        "games": [
+          "paper",
+          "mtgo",
+          "arena"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Lightning Bolt deals 3 damage to any target.",
         "image": "https://cards.scryfall.io/normal/front/7/6/7673784e-db4b-43a1-8d55-1bb9fc1e284f.jpg?1783903008",
         "art": "https://cards.scryfall.io/art_crop/front/7/6/7673784e-db4b-43a1-8d55-1bb9fc1e284f.jpg?1783903008",
@@ -65,7 +82,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-1",
@@ -76,9 +93,13 @@
       "scryfallId": "4f616706-ec97-4923-bb1e-11a69fbaa1f8",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "4f616706-ec97-4923-bb1e-11a69fbaa1f8",
         "oracle_id": "cc187110-1148-4090-bbb8-e205694a39f5",
         "name": "Counterspell",
+        "names": [
+          "Counterspell"
+        ],
         "set": "dsc",
         "set_name": "Duskmourn: House of Horror Commander",
         "collector_number": "114",
@@ -109,10 +130,10 @@
           "tlr": "legal"
         },
         "prices": {
-          "usd": "3.40",
+          "usd": "3.36",
           "usd_foil": null,
           "usd_etched": null,
-          "eur": "4.04",
+          "eur": "3.89",
           "eur_foil": null,
           "tix": "1.39"
         },
@@ -121,6 +142,18 @@
         "colors": [
           "U"
         ],
+        "color_identity": [
+          "U"
+        ],
+        "cmc": 2,
+        "artist": "Zack Stella",
+        "flavor_text": "",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Counter target spell.",
         "image": "https://cards.scryfall.io/normal/front/4/f/4f616706-ec97-4923-bb1e-11a69fbaa1f8.jpg?1783909630",
         "art": "https://cards.scryfall.io/art_crop/front/4/f/4f616706-ec97-4923-bb1e-11a69fbaa1f8.jpg?1783909630",
@@ -129,7 +162,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-2",
@@ -140,9 +173,13 @@
       "scryfallId": "6a0b230b-d391-4998-a3f7-7b158a0ec2cd",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "6a0b230b-d391-4998-a3f7-7b158a0ec2cd",
         "oracle_id": "68954295-54e3-4303-a6bc-fc4547a4e3a3",
         "name": "Llanowar Elves",
+        "names": [
+          "Llanowar Elves"
+        ],
         "set": "fdn",
         "set_name": "Foundations",
         "collector_number": "227",
@@ -174,9 +211,9 @@
         },
         "prices": {
           "usd": "0.33",
-          "usd_foil": "1.75",
+          "usd_foil": "1.83",
           "usd_etched": null,
-          "eur": "0.23",
+          "eur": "0.24",
           "eur_foil": "0.36",
           "tix": "0.03"
         },
@@ -185,6 +222,21 @@
         "colors": [
           "G"
         ],
+        "color_identity": [
+          "G"
+        ],
+        "cmc": 1,
+        "power": "1",
+        "toughness": "1",
+        "artist": "Kev Walker",
+        "flavor_text": "The elves of the Llanowar forest have defended it for generations. It is their sacred duty to keep outside influences from corrupting their ancestral home.",
+        "games": [
+          "paper",
+          "arena",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "{T}: Add {G}.",
         "image": "https://cards.scryfall.io/normal/front/6/a/6a0b230b-d391-4998-a3f7-7b158a0ec2cd.jpg?1783909057",
         "art": "https://cards.scryfall.io/art_crop/front/6/a/6a0b230b-d391-4998-a3f7-7b158a0ec2cd.jpg?1783909057",
@@ -194,7 +246,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-3",
@@ -205,9 +257,13 @@
       "scryfallId": "34c3a894-ee75-4db9-a69f-711bb3cc150a",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "34c3a894-ee75-4db9-a69f-711bb3cc150a",
         "oracle_id": "33d405ea-7a9a-4970-b70f-9c05d90dd6f0",
         "name": "Duress",
+        "names": [
+          "Duress"
+        ],
         "set": "fdn",
         "set_name": "Foundations",
         "collector_number": "606",
@@ -241,7 +297,7 @@
           "usd": "0.09",
           "usd_foil": null,
           "usd_etched": null,
-          "eur": "0.23",
+          "eur": "0.22",
           "eur_foil": null,
           "tix": "0.03"
         },
@@ -250,6 +306,19 @@
         "colors": [
           "B"
         ],
+        "color_identity": [
+          "B"
+        ],
+        "cmc": 1,
+        "artist": "PINDURSKI",
+        "flavor_text": "\"Give of yourself, for *compleation* awaits the cleansed.\"\n—Nokar, priest of Sheoldred",
+        "games": [
+          "paper",
+          "arena",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card.",
         "image": "https://cards.scryfall.io/normal/front/3/4/34c3a894-ee75-4db9-a69f-711bb3cc150a.jpg?1783908930",
         "art": "https://cards.scryfall.io/art_crop/front/3/4/34c3a894-ee75-4db9-a69f-711bb3cc150a.jpg?1783908930",
@@ -258,7 +327,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-4",
@@ -269,9 +338,13 @@
       "scryfallId": "8ee443cc-e17a-493b-9c93-1f9e141a30e4",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "8ee443cc-e17a-493b-9c93-1f9e141a30e4",
         "oracle_id": "6ad8011d-3471-4369-9d68-b264cc027487",
         "name": "Sol Ring",
+        "names": [
+          "Sol Ring"
+        ],
         "set": "frc",
         "set_name": "Reality Fracture Commander",
         "collector_number": "21",
@@ -305,13 +378,23 @@
           "usd": null,
           "usd_foil": null,
           "usd_etched": null,
-          "eur": "1.75",
+          "eur": "1.70",
           "eur_foil": null,
           "tix": null
         },
         "type_line": "Artifact",
         "mana_cost": "{1}",
         "colors": [],
+        "color_identity": [],
+        "cmc": 1,
+        "artist": "Titus Lunter",
+        "flavor_text": "Jace could see the sunlight in his Multiverse, but somewhere along the way, he lost the feel of its warmth.",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "{T}: Add {C}{C}.",
         "image": "https://cards.scryfall.io/normal/front/8/e/8ee443cc-e17a-493b-9c93-1f9e141a30e4.jpg?1789644446",
         "art": "https://cards.scryfall.io/art_crop/front/8/e/8ee443cc-e17a-493b-9c93-1f9e141a30e4.jpg?1789644446",
@@ -320,7 +403,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-5",
@@ -331,9 +414,13 @@
       "scryfallId": "11e12a84-e7be-4afc-a230-c2e644743fa8",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "11e12a84-e7be-4afc-a230-c2e644743fa8",
         "oracle_id": "53f7c868-b03e-4fc2-8dcf-a75bbfa3272b",
         "name": "Dark Ritual",
+        "names": [
+          "Dark Ritual"
+        ],
         "set": "msc",
         "set_name": "Marvel Super Heroes Commander",
         "collector_number": "793",
@@ -364,11 +451,11 @@
           "tlr": "legal"
         },
         "prices": {
-          "usd": "6.87",
-          "usd_foil": "14.10",
+          "usd": "6.98",
+          "usd_foil": "13.89",
           "usd_etched": null,
-          "eur": "9.03",
-          "eur_foil": "10.00",
+          "eur": "9.02",
+          "eur_foil": "9.75",
           "tix": "0.02"
         },
         "type_line": "Instant",
@@ -376,6 +463,19 @@
         "colors": [
           "B"
         ],
+        "color_identity": [
+          "B"
+        ],
+        "cmc": 1,
+        "artist": "Nino Is",
+        "flavor_text": "\"Behold! The most arcane powers of the multiverse are mere tools in service of Doom's ambition.\"",
+        "games": [
+          "paper",
+          "mtgo",
+          "arena"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Add {B}{B}{B}.",
         "image": "https://cards.scryfall.io/normal/front/1/1/11e12a84-e7be-4afc-a230-c2e644743fa8.jpg?1783903013",
         "art": "https://cards.scryfall.io/art_crop/front/1/1/11e12a84-e7be-4afc-a230-c2e644743fa8.jpg?1783903013",
@@ -385,7 +485,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-6",
@@ -396,9 +496,13 @@
       "scryfallId": "f7e12477-d59f-442b-a678-1be746d0b7be",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "f7e12477-d59f-442b-a678-1be746d0b7be",
         "oracle_id": "b1544f21-7e98-461b-aed5-e748b0168c52",
         "name": "Swords to Plowshares",
+        "names": [
+          "Swords to Plowshares"
+        ],
         "set": "frc",
         "set_name": "Reality Fracture Commander",
         "collector_number": "37",
@@ -432,7 +536,7 @@
           "usd": null,
           "usd_foil": null,
           "usd_etched": null,
-          "eur": "1.95",
+          "eur": "2.08",
           "eur_foil": null,
           "tix": null
         },
@@ -441,6 +545,18 @@
         "colors": [
           "W"
         ],
+        "color_identity": [
+          "W"
+        ],
+        "cmc": 1,
+        "artist": "Jesper Ejsing",
+        "flavor_text": "\"The arc of my blade has carved a path of light for the peace that will follow.\"",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Exile target creature. Its controller gains life equal to its power.",
         "image": "https://cards.scryfall.io/normal/front/f/7/f7e12477-d59f-442b-a678-1be746d0b7be.jpg?1789599810",
         "art": "https://cards.scryfall.io/art_crop/front/f/7/f7e12477-d59f-442b-a678-1be746d0b7be.jpg?1789599810",
@@ -450,7 +566,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-7",
@@ -461,9 +577,13 @@
       "scryfallId": "702c4781-670b-49ae-b511-90ed119841b0",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "702c4781-670b-49ae-b511-90ed119841b0",
         "oracle_id": "711eea87-0fa3-46e0-a42b-fa5a86455f04",
         "name": "Shivan Dragon",
+        "names": [
+          "Shivan Dragon"
+        ],
         "set": "fdn",
         "set_name": "Foundations",
         "collector_number": "763",
@@ -506,6 +626,23 @@
         "colors": [
           "R"
         ],
+        "color_identity": [
+          "R"
+        ],
+        "cmc": 6,
+        "power": "5",
+        "toughness": "5",
+        "artist": "Donato Giancola",
+        "flavor_text": "The undisputed master of the mountains of Shiv.",
+        "games": [
+          "paper",
+          "arena",
+          "mtgo"
+        ],
+        "keywords": [
+          "Flying"
+        ],
+        "reprint": true,
         "oracle_text": "Flying\n{R}: This creature gets +1/+0 until end of turn.",
         "image": "https://cards.scryfall.io/normal/front/7/0/702c4781-670b-49ae-b511-90ed119841b0.jpg?1787562519",
         "art": "https://cards.scryfall.io/art_crop/front/7/0/702c4781-670b-49ae-b511-90ed119841b0.jpg?1787562519",
@@ -514,7 +651,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-8",
@@ -525,9 +662,13 @@
       "scryfallId": "bbc99a51-1501-4525-a3cc-f48249b64bed",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "bbc99a51-1501-4525-a3cc-f48249b64bed",
         "oracle_id": "713332c1-5bd8-400f-bfff-c1ca0697a043",
         "name": "Opt",
+        "names": [
+          "Opt"
+        ],
         "set": "tdc",
         "set_name": "Tarkir: Dragonstorm Commander",
         "collector_number": "158",
@@ -558,7 +699,7 @@
           "tlr": "legal"
         },
         "prices": {
-          "usd": "0.28",
+          "usd": "0.30",
           "usd_foil": null,
           "usd_etched": null,
           "eur": "0.18",
@@ -570,6 +711,20 @@
         "colors": [
           "U"
         ],
+        "color_identity": [
+          "U"
+        ],
+        "cmc": 1,
+        "artist": "Craig J Spearing",
+        "flavor_text": "\"It's easy to anticipate Captain Storm's orders: take the more dangerous route.\"",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [
+          "Scry"
+        ],
+        "reprint": true,
         "oracle_text": "Scry 1. (Look at the top card of your library. You may put that card on the bottom.)\nDraw a card.",
         "image": "https://cards.scryfall.io/normal/front/b/b/bbc99a51-1501-4525-a3cc-f48249b64bed.jpg?1783907102",
         "art": "https://cards.scryfall.io/art_crop/front/b/b/bbc99a51-1501-4525-a3cc-f48249b64bed.jpg?1783907102",
@@ -578,7 +733,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790197266987
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-9",
@@ -589,9 +744,13 @@
       "scryfallId": "409f9b88-f03e-40b6-9883-68c14c37c0de",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "409f9b88-f03e-40b6-9883-68c14c37c0de",
         "oracle_id": "14c8f55d-d177-4c25-a931-ebeb9e6062a0",
         "name": "Grizzly Bears",
+        "names": [
+          "Grizzly Bears"
+        ],
         "set": "10e",
         "set_name": "Tenth Edition",
         "collector_number": "268",
@@ -634,6 +793,20 @@
         "colors": [
           "G"
         ],
+        "color_identity": [
+          "G"
+        ],
+        "cmc": 2,
+        "power": "2",
+        "toughness": "2",
+        "artist": "D. J. Cleland-Hura",
+        "flavor_text": "\"We cannot forget that among all of Dominaria's wonders, a system of life exists, with prey and predators that will never fight wars nor vie for ancient power.\"\n—Jolrael, empress of beasts",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "",
         "image": "https://cards.scryfall.io/normal/front/4/0/409f9b88-f03e-40b6-9883-68c14c37c0de.jpg?1783943001",
         "art": "https://cards.scryfall.io/art_crop/front/4/0/409f9b88-f03e-40b6-9883-68c14c37c0de.jpg?1783943001",
@@ -643,7 +816,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-10",
@@ -654,9 +827,13 @@
       "scryfallId": "cb3b35b8-f321-46d8-a441-6b9a6efa9021",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "cb3b35b8-f321-46d8-a441-6b9a6efa9021",
         "oracle_id": "273b339c-964b-4a18-8eb5-ceb8abcdfd9e",
         "name": "Divination",
+        "names": [
+          "Divination"
+        ],
         "set": "m19",
         "set_name": "Core Set 2019",
         "collector_number": "51",
@@ -688,7 +865,7 @@
         },
         "prices": {
           "usd": "0.21",
-          "usd_foil": "0.26",
+          "usd_foil": "0.18",
           "usd_etched": null,
           "eur": "0.09",
           "eur_foil": "0.23",
@@ -699,6 +876,19 @@
         "colors": [
           "U"
         ],
+        "color_identity": [
+          "U"
+        ],
+        "cmc": 3,
+        "artist": "Willian Murai",
+        "flavor_text": "\"The stars mark your destiny. May you accept the fate thus divulged.\"",
+        "games": [
+          "arena",
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Draw two cards.",
         "image": "https://cards.scryfall.io/normal/front/c/b/cb3b35b8-f321-46d8-a441-6b9a6efa9021.jpg?1783934590",
         "art": "https://cards.scryfall.io/art_crop/front/c/b/cb3b35b8-f321-46d8-a441-6b9a6efa9021.jpg?1783934590",
@@ -708,7 +898,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-11",
@@ -719,9 +909,13 @@
       "scryfallId": "dce15387-4114-4b3e-91aa-5b42b45c44ac",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "dce15387-4114-4b3e-91aa-5b42b45c44ac",
         "oracle_id": "b34bb2dc-c1af-4d77-b0b3-a0fb342a5fc6",
         "name": "Forest",
+        "names": [
+          "Forest"
+        ],
         "set": "trk",
         "set_name": "Star Trek",
         "collector_number": "325",
@@ -762,6 +956,19 @@
         "type_line": "Basic Land — Forest",
         "mana_cost": "",
         "colors": [],
+        "color_identity": [
+          "G"
+        ],
+        "cmc": 0,
+        "artist": "Bastien Grivet",
+        "flavor_text": "",
+        "games": [
+          "paper",
+          "mtgo",
+          "arena"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "({T}: Add {G}.)",
         "image": "https://cards.scryfall.io/normal/front/d/c/dce15387-4114-4b3e-91aa-5b42b45c44ac.jpg?1785981675",
         "art": "https://cards.scryfall.io/art_crop/front/d/c/dce15387-4114-4b3e-91aa-5b42b45c44ac.jpg?1785981675",
@@ -771,7 +978,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-12",
@@ -782,9 +989,13 @@
       "scryfallId": "537d2b05-3f52-45d6-8fe3-26282085d0c6",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "537d2b05-3f52-45d6-8fe3-26282085d0c6",
         "oracle_id": "34515b16-c9a4-4f98-8c77-416a7a523407",
         "name": "Wrath of God",
+        "names": [
+          "Wrath of God"
+        ],
         "set": "cmm",
         "set_name": "Commander Masters",
         "collector_number": "70",
@@ -818,8 +1029,8 @@
           "usd": "4.15",
           "usd_foil": "3.88",
           "usd_etched": null,
-          "eur": "2.73",
-          "eur_foil": "3.40",
+          "eur": "2.76",
+          "eur_foil": "3.47",
           "tix": "0.72"
         },
         "type_line": "Sorcery",
@@ -827,6 +1038,18 @@
         "colors": [
           "W"
         ],
+        "color_identity": [
+          "W"
+        ],
+        "cmc": 4,
+        "artist": "Willian Murai",
+        "flavor_text": "Legend speaks of the lost coastal polis of Olantin, whose inhabitants' hubris enraged the sun god Heliod.",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Destroy all creatures. They can't be regenerated.",
         "image": "https://cards.scryfall.io/normal/front/5/3/537d2b05-3f52-45d6-8fe3-26282085d0c6.jpg?1783915706",
         "art": "https://cards.scryfall.io/art_crop/front/5/3/537d2b05-3f52-45d6-8fe3-26282085d0c6.jpg?1783915706",
@@ -836,7 +1059,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-13",
@@ -847,9 +1070,13 @@
       "scryfallId": "ec7d6864-7b6b-4f74-8474-9b9ec96b1d33",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "ec7d6864-7b6b-4f74-8474-9b9ec96b1d33",
         "oracle_id": "36cd2364-d113-47d1-b2c4-b088d9eb88dd",
         "name": "Brainstorm",
+        "names": [
+          "Brainstorm"
+        ],
         "set": "frc",
         "set_name": "Reality Fracture Commander",
         "collector_number": "39",
@@ -883,7 +1110,7 @@
           "usd": null,
           "usd_foil": null,
           "usd_etched": null,
-          "eur": "2.93",
+          "eur": "2.97",
           "eur_foil": null,
           "tix": null
         },
@@ -892,6 +1119,18 @@
         "colors": [
           "U"
         ],
+        "color_identity": [
+          "U"
+        ],
+        "cmc": 1,
+        "artist": "Daarken",
+        "flavor_text": "\"I have a plan. Actually, I have three.\"",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Draw three cards, then put two cards from your hand on top of your library in any order.",
         "image": "https://cards.scryfall.io/normal/front/e/c/ec7d6864-7b6b-4f74-8474-9b9ec96b1d33.jpg?1789599806",
         "art": "https://cards.scryfall.io/art_crop/front/e/c/ec7d6864-7b6b-4f74-8474-9b9ec96b1d33.jpg?1789599806",
@@ -901,7 +1140,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-14",
@@ -912,9 +1151,13 @@
       "scryfallId": "390c40ba-2464-44ae-8d67-93c72ab3c425",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "390c40ba-2464-44ae-8d67-93c72ab3c425",
         "oracle_id": "bdb3ca68-ec1f-4e16-81cc-d23f8f52c728",
         "name": "Naturalize",
+        "names": [
+          "Naturalize"
+        ],
         "set": "m19",
         "set_name": "Core Set 2019",
         "collector_number": "190",
@@ -948,7 +1191,7 @@
           "usd": "0.25",
           "usd_foil": "0.40",
           "usd_etched": null,
-          "eur": "0.09",
+          "eur": "0.08",
           "eur_foil": "0.67",
           "tix": "0.03"
         },
@@ -957,6 +1200,19 @@
         "colors": [
           "G"
         ],
+        "color_identity": [
+          "G"
+        ],
+        "cmc": 2,
+        "artist": "Daniel Ljunggren",
+        "flavor_text": "\"And if you threaten me again, your shiny steel trousers will be sprouting daggerthorn vines.\"\n—Iveta, rooftop runner",
+        "games": [
+          "arena",
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Destroy target artifact or enchantment.",
         "image": "https://cards.scryfall.io/normal/front/3/9/390c40ba-2464-44ae-8d67-93c72ab3c425.jpg?1783934532",
         "art": "https://cards.scryfall.io/art_crop/front/3/9/390c40ba-2464-44ae-8d67-93c72ab3c425.jpg?1783934532",
@@ -966,7 +1222,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-15",
@@ -977,9 +1233,13 @@
       "scryfallId": "5dcd0c4e-4047-47a2-8969-c62616d457c2",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "5dcd0c4e-4047-47a2-8969-c62616d457c2",
         "oracle_id": "59e7f2ae-4535-4191-98be-3e65b6b2befa",
         "name": "Doom Blade",
+        "names": [
+          "Doom Blade"
+        ],
         "set": "msc",
         "set_name": "Marvel Super Heroes Commander",
         "collector_number": "576",
@@ -1013,7 +1273,7 @@
           "usd": "0.28",
           "usd_foil": null,
           "usd_etched": null,
-          "eur": "0.25",
+          "eur": "0.24",
           "eur_foil": null,
           "tix": "0.02"
         },
@@ -1022,6 +1282,19 @@
         "colors": [
           "B"
         ],
+        "color_identity": [
+          "B"
+        ],
+        "cmc": 2,
+        "artist": "Bachzim",
+        "flavor_text": "\"Doom has found diversion in the thrust and parry of our storied struggle. But you have fallen behind, Richards. Now you shall fall asunder!\"",
+        "games": [
+          "paper",
+          "mtgo",
+          "arena"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "Destroy target nonblack creature.",
         "image": "https://cards.scryfall.io/normal/front/5/d/5dcd0c4e-4047-47a2-8969-c62616d457c2.jpg?1783903090",
         "art": "https://cards.scryfall.io/art_crop/front/5/d/5dcd0c4e-4047-47a2-8969-c62616d457c2.jpg?1783903090",
@@ -1030,7 +1303,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-16",
@@ -1041,9 +1314,13 @@
       "scryfallId": "305078a5-ac18-4721-bba2-3434eba5b1cf",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "305078a5-ac18-4721-bba2-3434eba5b1cf",
         "oracle_id": "a3a98bc9-caa0-49b7-951c-fe4e4f54e4ba",
         "name": "Ornithopter",
+        "names": [
+          "Ornithopter"
+        ],
         "set": "dmr",
         "set_name": "Dominaria Remastered",
         "collector_number": "233",
@@ -1077,13 +1354,27 @@
           "usd": "0.36",
           "usd_foil": "0.38",
           "usd_etched": null,
-          "eur": "0.20",
+          "eur": "0.18",
           "eur_foil": "0.31",
           "tix": "0.04"
         },
         "type_line": "Artifact Creature — Thopter",
         "mana_cost": "{0}",
         "colors": [],
+        "color_identity": [],
+        "cmc": 0,
+        "power": "0",
+        "toughness": "2",
+        "artist": "Franz Vohwinkel",
+        "flavor_text": "\"It has been my honor to improve on Thran's original design. Perhaps history will remember me in some small part for my work.\"\n—Urza, in his apprenticeship",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [
+          "Flying"
+        ],
+        "reprint": true,
         "oracle_text": "Flying",
         "image": "https://cards.scryfall.io/normal/front/3/0/305078a5-ac18-4721-bba2-3434eba5b1cf.jpg?1783918410",
         "art": "https://cards.scryfall.io/art_crop/front/3/0/305078a5-ac18-4721-bba2-3434eba5b1cf.jpg?1783918410",
@@ -1093,7 +1384,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     },
     {
       "id": "example-17",
@@ -1104,9 +1395,13 @@
       "scryfallId": "c0318a48-30e4-4ef7-be3d-5e561c5ce428",
       "finish": "nonfoil",
       "card": {
+        "dataVersion": 2,
         "id": "c0318a48-30e4-4ef7-be3d-5e561c5ce428",
         "oracle_id": "a75445d3-1303-4bb5-89ad-26ea93fecd48",
         "name": "Evolving Wilds",
+        "names": [
+          "Evolving Wilds"
+        ],
         "set": "msc",
         "set_name": "Marvel Super Heroes Commander",
         "collector_number": "240",
@@ -1137,16 +1432,26 @@
           "tlr": "legal"
         },
         "prices": {
-          "usd": "0.24",
+          "usd": "0.25",
           "usd_foil": null,
           "usd_etched": null,
-          "eur": "0.09",
+          "eur": "0.10",
           "eur_foil": null,
           "tix": "0.04"
         },
         "type_line": "Land",
         "mana_cost": "",
         "colors": [],
+        "color_identity": [],
+        "cmc": 0,
+        "artist": "Rytis Sabaliauskas",
+        "flavor_text": "\"The mechanisms of evolution do their work upon the Savage Land, as they do everywhere. I only hasten the process.\"\n—High Evolutionary, Herbert Wyndham",
+        "games": [
+          "paper",
+          "mtgo"
+        ],
+        "keywords": [],
+        "reprint": true,
         "oracle_text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
         "image": "https://cards.scryfall.io/normal/front/c/0/c0318a48-30e4-4ef7-be3d-5e561c5ce428.jpg?1783903203",
         "art": "https://cards.scryfall.io/art_crop/front/c/0/c0318a48-30e4-4ef7-be3d-5e561c5ce428.jpg?1783903203",
@@ -1156,7 +1461,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790197266988
+      "fetchedAt": 1790274379165
     }
   ]
 }

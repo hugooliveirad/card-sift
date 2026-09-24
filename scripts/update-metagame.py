@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 
 FORMATS = {'pauper': 'PAU', 'standard': 'ST', 'modern': 'MO', 'premodern': 'PREM',
-           'pioneer': 'PI', 'legacy': 'LE', 'vintage': 'VI'}
+           'pioneer': 'PI', 'legacy': 'LE', 'vintage': 'VI', 'duel': 'EDH'}
 BASE = 'https://www.mtgtop8.com/topcards'
 
 
@@ -62,7 +62,8 @@ def main():
         if not meta:
             raise ValueError('Missing two-month window: ' + name)
         cards = {}
-        for section in ('MD', 'SB'):
+        sections = ('MD',) if name == 'duel' else ('MD', 'SB')
+        for section in sections:
             previous = None
             for page in range(1, 6):
                 params = {'f': code, 'meta': meta[1], 'current_page': page, 'maindeck': section, 'lands': 1}
@@ -81,6 +82,7 @@ def main():
                 if rows[-1]['percent'] < 1 or page >= max(pages, default=1):
                     break
         snapshot['formats'][name] = {'url': BASE + '?' + urllib.parse.urlencode({'f': code, 'meta': meta[1]}),
+                                     'sections': ['mainboard' if section == 'MD' else 'sideboard' for section in sections],
                                      'cards': sorted(cards.values(), key=lambda r: r['name'])}
         print(f'{name}: {len(cards)} cards with evidence', flush=True)
     output = Path(args.output)

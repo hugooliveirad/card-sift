@@ -73,6 +73,7 @@ export function compactCard(card) {
   const faces = card.card_faces || [];
   const images = card.image_uris || faces[0]?.image_uris || {};
   return {
+    dataVersion: 2,
     id: card.id,
     oracle_id: card.oracle_id,
     name: card.name,
@@ -89,7 +90,27 @@ export function compactCard(card) {
     prices: card.prices,
     type_line: card.type_line,
     mana_cost: card.mana_cost || faces[0]?.mana_cost || "",
-    colors: card.colors || faces[0]?.colors || [],
+    colors: card.colors || [...new Set(faces.flatMap((f) => f.colors || []))],
+    color_identity: card.color_identity,
+    cmc: card.cmc,
+    power: card.power,
+    toughness: card.toughness,
+    loyalty: card.loyalty,
+    artist:
+      card.artist ||
+      faces
+        .map((f) => f.artist)
+        .filter(Boolean)
+        .join(" / "),
+    flavor_text:
+      card.flavor_text ||
+      faces
+        .map((f) => f.flavor_text)
+        .filter(Boolean)
+        .join("\n"),
+    games: card.games,
+    keywords: card.keywords,
+    reprint: card.reprint,
     oracle_text:
       card.oracle_text ||
       faces.map((f) => f.name + "\n" + f.oracle_text).join("\n\n"),
@@ -162,7 +183,11 @@ export async function enrich(
   for (const row of rows) {
     const id = identifier(row),
       key = JSON.stringify(id);
-    if (!force && row.card && Date.now() - row.fetchedAt < 86400000) {
+    if (
+      !force &&
+      row.card?.dataVersion === 2 &&
+      Date.now() - row.fetchedAt < 86400000
+    ) {
       completed++;
       continue;
     }
@@ -173,7 +198,10 @@ export async function enrich(
   for (const [key, entry] of pending) {
     signal?.throwIfAborted();
     const cached = force ? null : await read("cards", key).catch(() => null);
-    if (cached && Date.now() - cached.fetchedAt < 86400000) {
+    if (
+      cached?.card?.dataVersion === 2 &&
+      Date.now() - cached.fetchedAt < 86400000
+    ) {
       for (const row of entry.rows) if (!applyCard(row, cached)) unmatched++;
       completed += entry.rows.length;
     } else todo.push({ ...entry, key });

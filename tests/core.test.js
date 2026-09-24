@@ -347,3 +347,181 @@ test("identifier-only rows and split-card face names resolve correctly", async (
   );
   assert.equal(split.name, "Fire // Ice");
 });
+
+function land(id, quantity, options = {}) {
+  const {
+    set = "tst",
+    number = id,
+    basic = false,
+    finish = "nonfoil",
+    ...extra
+  } = options;
+  return row({
+    id,
+    quantity,
+    set,
+    number,
+    finish,
+    name: "Test Land",
+    card: {
+      ...row().card,
+      id: `land-${set}-${number}`,
+      name: "Test Land",
+      oracle_id: "same-land",
+      set,
+      collector_number: number,
+      type_line: basic ? "Basic Land — Forest" : "Land",
+      prices: { usd: "0.1", usd_foil: "0.2" },
+    },
+    ...extra,
+  });
+}
+test("land playsets are independent per exact printing, across finishes and identifier styles", () => {
+  const a = land("a", 3, { set: "one", number: "1" }),
+    b = land("b", 9, { set: "two", number: "2" }),
+    foil = land("foil", 4, { set: "one", number: "1", finish: "foil" });
+  foil.scryfallId = foil.card.id;
+  foil.set = "";
+  foil.number = "";
+  const result = plan([a, b, foil], {
+    playsets: "all",
+    copies: 1,
+    landCopies: 5,
+    priceEnabled: false,
+  });
+  assert.deepEqual(
+    result.map((r) => [r.keep, r.bulk]),
+    [
+      [3, 0],
+      [5, 4],
+      [2, 2],
+    ],
+  );
+  conserved(result);
+});
+test("basic land reserves also use exact printings, and unknown land printings need review", () => {
+  const result = plan(
+    [land("a", 30, { basic: true }), land("b", 30, { basic: true })],
+    { basics: 12 },
+  );
+  assert.deepEqual(
+    result.map((r) => r.keep),
+    [12, 12],
+  );
+  conserved(result);
+  const unknown = land("unknown", 30, { basic: true });
+  unknown.set = "";
+  unknown.number = "";
+  const r = plan([unknown], { priceEnabled: false })[0];
+  assert.equal(r.keep, 0);
+  assert.equal(r.review, 30);
+});
+test("protected land copies count only toward that printing reserve", () => {
+  const result = plan([land("a", 8, { override: "keep" }), land("b", 8)], {
+    playsets: "all",
+    landCopies: 3,
+  });
+  assert.deepEqual(
+    result.map((r) => [r.keep, r.bulk]),
+    [
+      [8, 0],
+      [3, 5],
+    ],
+  );
+});
+test("old rules and backups gain additive land and J25 defaults", () => {
+  const { landCopies, keepJ25, ...oldRules } = rules();
+  const restored = validateRules(oldRules);
+  assert.equal(restored.landCopies, 4);
+  assert.equal(restored.keepJ25, false);
+  assert.throws(
+    () => validateRules({ ...restored, landCopies: 2.5 }),
+    /landCopies/,
+  );
+});
+test("Duel Commander evidence has its own legality and ranks independently of keep decisions", () => {
+  const data = {
+    ...snapshot,
+    formats: {
+      duel: {
+        url: "https://www.mtgtop8.com/",
+        cards: [{ name: "Lightning Bolt", mainboard: 42, sideboard: 0 }],
+      },
+    },
+  };
+  const card = row({
+    override: "bulk",
+    card: { ...row().card, legalities: { duel: "legal", commander: "banned" } },
+  });
+  const r = plan(
+    [card],
+    { formats: ["duel"], minShare: 50, formatMode: "legal" },
+    data,
+  )[0];
+  assert.equal(r.tournamentShare, 42);
+  assert.equal(r.played[0].format, "duel");
+  assert.equal(r.bulk, 8);
+  const automatic = plan(
+    [{ ...card, override: undefined }],
+    { formats: ["duel"] },
+    data,
+  )[0];
+  assert.equal(automatic.keep, 4);
+});
+test("J25 membership qualifies other-set copies and obeys playset limits", () => {
+  const data = { names: ["Lightning Bolt"] };
+  const result = analyze(
+    [
+      row({ id: "one", quantity: 3 }),
+      row({
+        id: "two",
+        quantity: 7,
+        set: "other",
+        card: { ...row().card, set: "other" },
+      }),
+    ],
+    rules({ formats: [], keepJ25: true }),
+    snapshot,
+    now,
+    data,
+  );
+  assert.equal(
+    result.reduce((s, r) => s + r.keep, 0),
+    4,
+  );
+  assert.ok(result.every((r) => r.j25));
+  assert.ok(result[0].reasons.some((r) => r.includes("J25")));
+  conserved(result);
+  const off = analyze(
+    [row()],
+    rules({ formats: [], keepJ25: false }),
+    snapshot,
+    now,
+    data,
+  );
+  assert.equal(off[0].keep, 0);
+});
+test("missing J25 membership does not silently bulk cards with that keep rule enabled", () => {
+  const result = analyze(
+    [row()],
+    rules({ formats: [], keepJ25: true }),
+    snapshot,
+    now,
+    null,
+  );
+  assert.equal(result[0].review, 8);
+});
+test("J25 land matches still use separate land printing reserves", () => {
+  const result = analyze(
+    [land("a", 8), land("b", 8)],
+    rules({ formats: [], keepJ25: true, landCopies: 2 }),
+    snapshot,
+    now,
+    { names: ["Test Land"] },
+  );
+  assert.deepEqual(
+    result.map((r) => r.keep),
+    [2, 2],
+  );
+  conserved(result);
+});

@@ -7,6 +7,7 @@ export const FORMATS = {
   legacy: "Legacy",
   vintage: "Vintage",
   commander: "Commander",
+  duel: "Duel Commander",
 };
 export const RARITIES = ["common", "uncommon", "rare", "mythic"];
 export const DEFAULT_RULES = {
@@ -15,6 +16,8 @@ export const DEFAULT_RULES = {
   minShare: 1,
   playsets: "matched",
   copies: 4,
+  landCopies: 4,
+  keepJ25: false,
   rarity: "rare",
   priceEnabled: true,
   threshold: 2,
@@ -40,6 +43,27 @@ export const rowKey = (row) =>
   ]);
 export const groupKey = (row) =>
   row.card?.oracle_id || norm(row.card?.name || row.name);
+export const isLand = (row) => /\bLand\b/.test(row.card?.type_line || "");
+export function reserveKey(row) {
+  if (!isLand(row)) return groupKey(row);
+  return isExact(row)
+    ? `land:${row.card.id || row.card.set + ":" + row.card.collector_number}`
+    : `unknown-land:${row.id}`;
+}
+export function tournamentHits(
+  row,
+  formats,
+  snapshot,
+  evidence = buildEvidence(snapshot),
+) {
+  return formats.flatMap((format) => {
+    const hit = evidenceFor(row, format, evidence);
+    return hit &&
+      ["legal", "restricted"].includes(row.card?.legalities?.[format])
+      ? [{ ...hit, format, url: snapshot.formats[format].url }]
+      : [];
+  });
+}
 export function validQuantity(value) {
   const n = Number(value);
   return Number.isSafeInteger(n) && n > 0 && n <= 100000;
@@ -86,7 +110,8 @@ export function evidenceFor(row, format, evidence) {
     evidence[format]?.get(norm(name.split(" // ")[0]))
   );
 }
-export function analyze(rows, rules, snapshot, now = Date.now()) {
+export function analyze(rows, rules, snapshot, now = Date.now(), j25 = null) {
+  const j25Names = new Set((j25?.names || []).map(norm));
   const evidence = buildEvidence(snapshot);
   const evidenceFresh =
     snapshot &&
@@ -101,11 +126,29 @@ export function analyze(rows, rules, snapshot, now = Date.now()) {
       review: 0,
       reasons: [],
       uncertainties: [],
-      played: [],
+      played: tournamentHits(row, rules.formats, snapshot, evidence),
       eligible: false,
       price: priceOf(row, rules.currency),
       exact: isExact(row),
     };
+    item.j25 = j25 ? j25Names.has(norm(row.card?.name || row.name)) : null;
+    if (rules.keepJ25 && !row.override) {
+      if (!j25)
+        item.uncertainties.push(
+          "J25 deck membership unavailable; reload to retry",
+        );
+      else if (item.j25) {
+        item.eligible = Boolean(row.card);
+        item.reasons.push(
+          "Included in a Foundations Jumpstart (J25) deck, across printings",
+        );
+      }
+    }
+    item.tournamentShare = item.played.length
+      ? Math.max(
+          ...item.played.map((hit) => Math.max(hit.mainboard, hit.sideboard)),
+        )
+      : null;
     if (row.override === "keep") {
       item.keep = row.quantity;
       item.reasons.push("You chose to keep every copy");
@@ -164,11 +207,6 @@ export function analyze(rows, rules, snapshot, now = Date.now()) {
               Math.max(hit.mainboard, hit.sideboard) >= rules.minShare
             ) {
               item.eligible = true;
-              item.played.push({
-                ...hit,
-                format,
-                url: snapshot.formats[format].url,
-              });
               item.reasons.push(
                 `${FORMATS[format]}: ${Math.max(hit.mainboard, hit.sideboard)}% of ${hit.mainboard >= hit.sideboard ? "mainboards" : "sideboards"}${evidenceFresh ? "" : " (older evidence)"}`,
               );
@@ -180,7 +218,7 @@ export function analyze(rows, rules, snapshot, now = Date.now()) {
         }
       }
     }
-    const key = groupKey(row);
+    const key = reserveKey(row);
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(item);
     return item;
@@ -188,11 +226,20 @@ export function analyze(rows, rules, snapshot, now = Date.now()) {
   for (const group of groups.values()) {
     const basic = group.some((r) => /\bBasic\b/.test(r.card?.type_line || ""));
     const eligible = group.some((r) => r.eligible);
+    const land = group.some(isLand);
+    const copies = land ? rules.landCopies : rules.copies;
     let target = basic
       ? rules.basics
       : rules.playsets === "all" || (rules.playsets === "matched" && eligible)
-        ? rules.copies
+        ? copies
         : 0;
+    if (land && target > 0 && !group.every(isExact)) {
+      for (const item of group)
+        item.uncertainties.push(
+          "Exact land printing needed for its reserve; add a set and collector number or Scryfall ID",
+        );
+      target = 0;
+    }
     // Copies protected by value, rarity, or a manual keep already satisfy the shared playset.
     target = Math.max(0, target - group.reduce((sum, r) => sum + r.keep, 0));
     const candidates = group
@@ -215,8 +262,10 @@ export function analyze(rows, rules, snapshot, now = Date.now()) {
       if (chosen)
         item.reasons.push(
           basic
-            ? `Basic land reserve (${rules.basics} per name)`
-            : `Playset reserve (${rules.copies} across printings)`,
+            ? `Basic land reserve (${rules.basics} per printing)`
+            : land
+              ? `Land playset (${copies} per printing)`
+              : `Playset reserve (${copies} across printings)`,
         );
       const remaining = item.quantity - item.keep;
       if (remaining) {
@@ -279,6 +328,7 @@ export function validateRules(input) {
   }
   for (const [key, max] of Object.entries({
     copies: 100,
+    landCopies: 10000,
     basics: 10000,
     minShare: 100,
     threshold: 1000000,
@@ -287,12 +337,13 @@ export function validateRules(input) {
       !Number.isFinite(r[key]) ||
       r[key] < 0 ||
       r[key] > max ||
-      (["copies", "basics"].includes(key) && !Number.isInteger(r[key]))
+      (["copies", "landCopies", "basics"].includes(key) &&
+        !Number.isInteger(r[key]))
     )
       throw new Error(`Invalid ${key} rule.`);
   }
   if (r.minShare < 1) throw new Error("Minimum deck share is 1%.");
-  for (const key of ["priceEnabled", "trustReference"])
+  for (const key of ["priceEnabled", "trustReference", "keepJ25"])
     if (typeof r[key] !== "boolean") throw new Error(`Invalid ${key} rule.`);
   return r;
 }

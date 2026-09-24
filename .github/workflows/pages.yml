@@ -34,6 +34,8 @@ jobs:
           node --check src/data.js
       - name: Refresh tournament evidence
         run: python3 scripts/update-metagame.py
+      - name: Refresh J25 deck membership
+        run: python3 scripts/update-j25.py
       - name: Refresh example prices and card details
         run: node scripts/update-example.mjs
       - uses: actions/configure-pages@v5
