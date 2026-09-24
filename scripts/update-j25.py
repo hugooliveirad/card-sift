@@ -25,6 +25,11 @@ if len(names) < 300:
     raise ValueError('Incomplete J25 catalog; refusing to replace membership data')
 data = {'schema': 1, 'source': 'https://github.com/hugooliveirad/jumpstart-atlas',
         'catalogSource': catalog.get('source'), 'fetchedAt': dt.datetime.now(dt.timezone.utc).isoformat(),
-        'decks': len(catalog['decks']), 'names': names}
+        'decks': len(catalog['decks']), 'names': names,
+        'deckInfo': {deck['id']: {key: deck[key] for key in ('name', 'variant', 'color')}
+                     for deck in catalog['decks']},
+        'membership': {name: [{'deck': deck['id'], 'quantity': card['quantity']}
+                             for deck in catalog['decks'] for card in deck['cards']
+                             if card['name'] == name] for name in names}}
 Path('data/j25.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
 print(f"Derived {len(names)} card names from {data['decks']} Atlas J25 decks.")

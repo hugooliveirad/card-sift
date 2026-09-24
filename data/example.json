@@ -1,11 +1,11 @@
 {
   "example": true,
-  "fetchedAt": "2026-09-24T18:26:19.165Z",
+  "fetchedAt": "2026-09-24T19:21:40.815Z",
   "rows": [
     {
       "id": "example-0",
       "name": "Lightning Bolt",
-      "quantity": 12,
+      "quantity": 10,
       "set": "msc",
       "number": "806",
       "scryfallId": "7673784e-db4b-43a1-8d55-1bb9fc1e284f",
@@ -82,7 +82,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-1",
@@ -162,7 +162,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-2",
@@ -246,7 +246,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-3",
@@ -327,7 +327,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-4",
@@ -403,7 +403,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-5",
@@ -485,7 +485,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-6",
@@ -566,7 +566,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-7",
@@ -651,7 +651,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-8",
@@ -733,7 +733,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-9",
@@ -816,7 +816,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-10",
@@ -898,7 +898,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-11",
@@ -978,7 +978,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-12",
@@ -1059,7 +1059,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-13",
@@ -1140,7 +1140,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-14",
@@ -1222,7 +1222,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-15",
@@ -1303,7 +1303,7 @@
           "nonfoil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-16",
@@ -1384,7 +1384,7 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
     },
     {
       "id": "example-17",
@@ -1461,7 +1461,89 @@
           "foil"
         ]
       },
-      "fetchedAt": 1790274379165
+      "fetchedAt": 1790277700815
+    },
+    {
+      "id": "example-0-foil",
+      "name": "Lightning Bolt",
+      "quantity": 2,
+      "set": "msc",
+      "number": "806",
+      "scryfallId": "7673784e-db4b-43a1-8d55-1bb9fc1e284f",
+      "finish": "foil",
+      "card": {
+        "dataVersion": 2,
+        "id": "7673784e-db4b-43a1-8d55-1bb9fc1e284f",
+        "oracle_id": "4457ed35-7c10-48c8-9776-456485fdf070",
+        "name": "Lightning Bolt",
+        "names": [
+          "Lightning Bolt"
+        ],
+        "set": "msc",
+        "set_name": "Marvel Super Heroes Commander",
+        "collector_number": "806",
+        "rarity": "uncommon",
+        "legalities": {
+          "standard": "not_legal",
+          "future": "not_legal",
+          "historic": "banned",
+          "timeless": "legal",
+          "gladiator": "legal",
+          "pioneer": "not_legal",
+          "modern": "legal",
+          "legacy": "legal",
+          "pauper": "legal",
+          "vintage": "legal",
+          "penny": "not_legal",
+          "commander": "legal",
+          "oathbreaker": "legal",
+          "standardbrawl": "not_legal",
+          "brawl": "legal",
+          "competitivebrawl": "legal",
+          "alchemy": "not_legal",
+          "paupercommander": "legal",
+          "duel": "legal",
+          "oldschool": "not_legal",
+          "premodern": "legal",
+          "predh": "legal",
+          "tlr": "legal"
+        },
+        "prices": {
+          "usd": "0.75",
+          "usd_foil": "3.73",
+          "usd_etched": null,
+          "eur": "1.89",
+          "eur_foil": "2.21",
+          "tix": "0.02"
+        },
+        "type_line": "Instant",
+        "mana_cost": "{R}",
+        "colors": [
+          "R"
+        ],
+        "color_identity": [
+          "R"
+        ],
+        "cmc": 1,
+        "artist": "Milivoj Ćeran",
+        "flavor_text": "\"I am the god of thunder, the lord of the savage lightning, and the very skies must tremble when speaks The Mighty Thor!\"",
+        "games": [
+          "paper",
+          "mtgo",
+          "arena"
+        ],
+        "keywords": [],
+        "reprint": true,
+        "oracle_text": "Lightning Bolt deals 3 damage to any target.",
+        "image": "https://cards.scryfall.io/normal/front/7/6/7673784e-db4b-43a1-8d55-1bb9fc1e284f.jpg?1783903008",
+        "art": "https://cards.scryfall.io/art_crop/front/7/6/7673784e-db4b-43a1-8d55-1bb9fc1e284f.jpg?1783903008",
+        "scryfall_uri": "https://scryfall.com/card/msc/806/lightning-bolt?utm_source=api",
+        "finishes": [
+          "nonfoil",
+          "foil"
+        ]
+      },
+      "fetchedAt": 1790277700815
     }
   ]
 }

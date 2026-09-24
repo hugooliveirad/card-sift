@@ -9,7 +9,18 @@ import {
   validQuantity,
   groupKey,
   isExact,
+  buildEvidence,
+  evidenceFor,
 } from "./core.js";
+import {
+  groupPrintings,
+  printingKey,
+  ownedVersions,
+  finishName,
+  isFoil,
+  tournamentURL,
+  ligaURL,
+} from "./display.js";
 import {
   COLUMNS,
   parseCSV,
@@ -112,6 +123,7 @@ let filter = "all",
   busy = false,
   importState = null,
   detailId = null,
+  detailPositionId = null,
   toastTimer,
   saveChain = Promise.resolve();
 let persistentError = "",
@@ -218,7 +230,9 @@ function reason(row) {
         "No keep rule matched";
 }
 function printing(row) {
-  return `${row.set ? row.set.toUpperCase() : "Unspecified set"}${row.number ? " #" + row.number : ""} · ${row.finish === "nonfoil" ? "Nonfoil" : row.finish === "etched" ? "Etched" : "Foil"}`;
+  const set = isExact(row) ? row.card.set : row.set;
+  const number = isExact(row) ? row.card.collector_number : row.number;
+  return `${set ? set.toUpperCase() : "Unspecified set"}${number ? " #" + number : ""} · ${finishName(row.finish)}`;
 }
 function filteredRows() {
   if (searchError || searchLoading || !compiled) return [];
@@ -240,26 +254,28 @@ function filteredRows() {
                 ? row.card.colors?.length > 1
                 : row.card.colors?.includes(color)))),
     )
-    .sort((a, b) => {
-      const diff =
-        sort === "played"
-          ? (b.tournamentShare ?? -1) - (a.tournamentShare ?? -1)
-          : sort === "price"
-            ? (b.price ?? -1) - (a.price ?? -1)
-            : sort === "quantity"
-              ? b.quantity - a.quantity
-              : sort === "bulk"
-                ? b.bulk - a.bulk
-                : sort === "review"
-                  ? b.review - a.review
-                  : 0;
-      return (
-        diff ||
-        a.name.localeCompare(b.name) ||
-        printing(a).localeCompare(printing(b))
-      );
-    });
+    .sort(compareRows);
 }
+function compareRows(a, b) {
+  const diff =
+    sort === "played"
+      ? (b.tournamentShare ?? -1) - (a.tournamentShare ?? -1)
+      : sort === "price"
+        ? (b.price ?? -1) - (a.price ?? -1)
+        : sort === "quantity"
+          ? b.quantity - a.quantity
+          : sort === "bulk"
+            ? b.bulk - a.bulk
+            : sort === "review"
+              ? b.review - a.review
+              : 0;
+  return (
+    diff ||
+    a.name.localeCompare(b.name) ||
+    printing(a).localeCompare(printing(b))
+  );
+}
+
 function updateSearch() {
   clearTimeout(searchTimer);
   searchController?.abort();
@@ -424,6 +440,125 @@ function tournamentLabel(row) {
   return `<span class="number">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[hit.format])}</span>`;
 }
 
+function displayedRows() {
+  const rows = filteredRows();
+  return view === "table" ? groupPrintings(rows).sort(compareRows) : rows;
+}
+function finishSummary(row) {
+  return row.versions
+    .map((v) => `${count(v.quantity)} ${finishName(v.finish)}`)
+    .join(" · ");
+}
+function finishPrices(row) {
+  return row.versions
+    .map(
+      (v) =>
+        `<span class="finish-price">${money(v.price)} <small>${e(finishName(v.finish))}${v.price !== null && !v.exact ? " · ref." : ""}</small></span>`,
+    )
+    .join("");
+}
+function formatMatrix(row) {
+  const evidence = buildEvidence(snapshot);
+  return `<div class="format-matrix">${Object.entries(FORMATS)
+    .map(([format, label]) => {
+      const status = row.card?.legalities?.[format] || "unknown";
+      const playable = ["legal", "restricted"].includes(status);
+      const hit = evidenceFor(row, format, evidence);
+      const statusLabel = status.replaceAll("_", " ");
+      const usage = hit
+        ? `Mainboard ${hit.mainboard}%${snapshot.formats[format].sections?.includes("sideboard") === false ? "" : ` · Sideboard ${hit.sideboard}%`}`
+        : "";
+      return `<div class="format-tag ${playable ? "is-legal" : ""}"><span class="format-name"><i class="legality-dot" aria-hidden="true"></i>${e(label)}</span><span class="format-status">${e(statusLabel)}</span>${hit ? `<a class="format-share" href="${e(safeURL(snapshot.formats[format].url))}" target="_blank" rel="noopener noreferrer" title="${e(usage)}"><strong>${Math.max(hit.mainboard, hit.sideboard)}%</strong> of decks<span class="sr-only"> · ${e(usage)} · ${e(label)} source</span></a>` : `<span class="format-share muted">${snapshot?.formats?.[format] ? "No sampled play" : "No usage data"}</span>`}</div>`;
+    })
+    .join("")}</div>`;
+}
+
+function cardLinks(row, menu = false) {
+  const name = row.card?.name || row.name;
+  const set = isExact(row) ? row.card.set : row.set;
+  const number = isExact(row) ? row.card.collector_number : row.number;
+  const exactLink = isExact(row) ? safeURL(row.card?.scryfall_uri) : "";
+  const printingLink =
+    exactLink ||
+    (set && number
+      ? `https://scryfall.com/card/${encodeURIComponent(set)}/${encodeURIComponent(number)}`
+      : "");
+  const links = [
+    ...(printingLink
+      ? [
+          [
+            exactLink
+              ? "Scryfall · this printing"
+              : "Scryfall · look up printing",
+            printingLink,
+          ],
+        ]
+      : [
+          [
+            "Scryfall · card search",
+            "https://scryfall.com/search?" +
+              new URLSearchParams({ q: `!"${name.replaceAll('"', "")}"` }),
+          ],
+        ]),
+    ...(set
+      ? [
+          [
+            `Scryfall · ${set.toUpperCase()} set`,
+            `https://scryfall.com/sets/${encodeURIComponent(set)}`,
+          ],
+        ]
+      : []),
+    ["LigaMagic · card prices", ligaURL(name)],
+    ["MTGTop8 · tournament decks", tournamentURL(name)],
+  ];
+  const body = links
+    .map(
+      ([label, url]) =>
+        `<a href="${e(url)}" target="_blank" rel="noopener noreferrer">${e(label)} ${icon("external")}</a>`,
+    )
+    .join("");
+  return menu
+    ? `<details class="links-menu" name="version-links"><summary aria-label="Links for ${e(printing(row))}">Links</summary><div>${body}</div></details>`
+    : `<div class="card-links">${body}</div>`;
+}
+
+function deckMembership(row) {
+  const name = row.card?.name || row.name;
+  const key = Object.keys(j25?.membership || {}).find(
+    (key) => norm(key) === norm(name),
+  );
+  const memberships = j25?.membership?.[key] || [];
+  return `<section class="detail-section"><h3>Decks using this card</h3><h4>Foundations Jumpstart · J25</h4>${
+    memberships.length
+      ? `<p class="hint">${memberships.length} deck variants · matches every printing of this card.</p><div class="deck-memberships">${memberships
+          .map(({ deck, quantity }) => {
+            const info = j25.deckInfo[deck];
+            return `<a href="https://hugobessa.com.br/jumpstart-atlas/#explore?pack=${encodeURIComponent(deck)}" target="_blank" rel="noopener noreferrer"><span>${e(info.name)} <small>v${info.variant}</small></span><span>${quantity}× ${icon("external")}</span></a>`;
+          })
+          .join("")}</div>`
+      : `<p class="hint">${j25?.membership ? "Not in the J25 deck catalog." : "Deck membership data is unavailable. Reload to retry."}</p>`
+  }<h4>Tournament decklists</h4><p class="hint">Browse matching decklists on MTGTop8. The percentages above are aggregate card usage, not archetype shares.</p><div class="tournament-decks">${Object.entries(
+    FORMATS,
+  )
+    .filter(
+      ([format]) =>
+        snapshot?.formats?.[format] &&
+        ["legal", "restricted"].includes(row.card?.legalities?.[format]),
+    )
+    .map(
+      ([format, label]) =>
+        `<a href="${e(tournamentURL(name, format))}" target="_blank" rel="noopener noreferrer">${e(label)} ${icon("external")}</a>`,
+    )
+    .join(
+      "",
+    )}<a href="${e(tournamentURL(name))}" target="_blank" rel="noopener noreferrer">All tournament decks ${icon("external")}</a></div></section>`;
+}
+
+function versionsHTML(row) {
+  const versions = ownedVersions(row, results);
+  return `<section class="detail-section"><h3>Versions you own <span class="muted">· ${count(versions.reduce((sum, v) => sum + v.quantity, 0))} copies</span></h3><p class="hint">All owned sets and finishes, including those outside the current filters. Select a version to inspect or edit its copies.</p><div class="owned-versions">${versions.map((v) => `<div class="owned-version ${v.id === row.id ? "selected" : ""}"><button class="version-select" id="version-${e(v.id)}" data-version="${e(v.id)}" aria-pressed="${v.id === row.id}"><span class="thumb ${isFoil(v) ? "foil-image" : ""}">${safeURL(v.card?.art, "image") ? `<img src="${e(safeURL(v.card.art, "image"))}" loading="lazy" alt="">` : icon("layers")}</span><span><strong>${e(printing(v))}</strong><small>${e(v.set && v.set === v.card?.set ? v.card.set_name : v.exact ? v.card?.set_name : "Printing not verified")}</small><small>${count(v.quantity)} owned · ${money(v.price)} each${!v.exact ? " · reference" : ""}</small></span></button><div class="version-plan">${pills(v)}</div>${cardLinks(v, true)}</div>`).join("")}</div></section>`;
+}
+
 function render() {
   results = analyze(state.rows, state.rules, snapshot, Date.now(), j25);
   const sets = new Map();
@@ -452,9 +587,10 @@ function render() {
     $("#tab-" + key).textContent = count(totals[key]);
   }
   $("#stat-distinct").textContent = state.rows.length
-    ? `${count(new Set(state.rows.map(groupKey)).size)} card names · ${count(state.rows.length)} printings`
+    ? `${count(new Set(state.rows.map(groupKey)).size)} card names · ${count(new Set(state.rows.map(printingKey)).size)} printings`
     : "Your cards, all in one place";
-  $("#row-count").textContent = count(state.rows.length) + " printings";
+  $("#row-count").textContent =
+    count(new Set(state.rows.map(printingKey)).size) + " printings";
   $("#welcome").hidden = state.rows.length > 0;
   $("#demo-notice").hidden = !previousState;
   $("#collection-status").textContent = previousState
@@ -498,7 +634,7 @@ function renderResults() {
       ? `(${typeInclude.length + typeExclude.length} active)`
       : "";
 
-  const rows = filteredRows();
+  const rows = displayedRows();
   const pages = Math.max(1, Math.ceil(rows.length / 48));
   page = Math.min(page, pages);
   const visible = rows.slice((page - 1) * 48, page * 48);
@@ -510,13 +646,13 @@ function renderResults() {
       `<div class="empty"><div class="empty-icon">${icon("search")}</div><h3>${searchLoading ? "Searching your collection…" : searchError ? "Check your search" : "No cards match this view."}</h3><p>${e(searchError || (searchLoading ? "Waiting for the full Scryfall result." : "Try another search or clear the filters to see your collection."))}</p><button class="button quiet small" data-action="clear-filters">Clear filters</button></div>`;
   } else if (view === "table") {
     $("#results").innerHTML =
-      `<div class="table-wrap" tabindex="0" role="region" aria-label="Collection table, scroll horizontally for all columns"><table><thead><tr><th scope="col">Card / printing</th><th scope="col">Rarity</th><th scope="col">Owned</th><th scope="col">Unit price</th><th scope="col" title="Highest mainboard or sideboard share in selected formats">Tournament play</th><th scope="col">Sorting plan</th><th scope="col">Why</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody>${visible.map((row) => `<tr><td><button class="card-cell" data-detail="${e(row.id)}"><span class="thumb">${safeURL(row.card?.art, "image") ? `<img src="${e(safeURL(row.card.art, "image"))}" alt="" loading="lazy">` : icon("layers")}</span><span><strong>${e(row.name)}</strong><small>${e(printing(row))}</small></span></button></td><td><span class="rarity ${e(row.card?.rarity || "")}">${e(row.card?.rarity || "Unknown")}</span></td><td class="number">${count(row.quantity)}</td><td class="number">${money(row.price)}<span class="price-note">${row.price === null ? "Unavailable" : row.exact ? "Printing price" : "Reference price"}</span></td><td>${tournamentLabel(row)}</td><td>${pills(row)}</td><td class="reason-cell">${e(reason(row))}</td><td><button class="more-button" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${icon("chevron")}</button></td></tr>`).join("")}</tbody></table></div>`;
+      `<div class="table-wrap" tabindex="0" role="region" aria-label="Collection table, scroll horizontally for all columns"><table><thead><tr><th scope="col">Card / printing</th><th scope="col">Rarity</th><th scope="col">Owned</th><th scope="col">Unit price</th><th scope="col" title="Highest mainboard or sideboard share in selected formats">Tournament play</th><th scope="col">Sorting plan</th><th scope="col">Why</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody>${visible.map((row) => `<tr><td><button class="card-cell" data-detail="${e(row.id)}"><span class="thumb ${row.versions.some(isFoil) ? "foil-image" : ""}">${safeURL(row.card?.art, "image") ? `<img src="${e(safeURL(row.card.art, "image"))}" alt="" loading="lazy">` : icon("layers")}</span><span><strong>${e(row.name)}</strong><small>${e(printing(row).replace(/ · (Nonfoil|Foil|Etched foil)$/, ""))}</small><small>${e(finishSummary(row))}</small></span></button></td><td><span class="rarity ${e(row.card?.rarity || "")}">${e(row.card?.rarity || "Unknown")}</span></td><td class="number">${count(row.quantity)}</td><td class="number">${finishPrices(row)}</td><td>${tournamentLabel(row)}</td><td>${pills(row)}</td><td class="reason-cell">${row.versions.length > 1 ? "Decisions by finish · open details" : e(reason(row))}</td><td><button class="more-button" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${icon("chevron")}</button></td></tr>`).join("")}</tbody></table></div>`;
   } else {
     $("#results").innerHTML =
-      `<div class="card-grid">${visible.map((row) => `<article class="grid-card"><button class="grid-image" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${safeURL(row.card?.image, "image") ? `<img src="${e(safeURL(row.card.image, "image"))}" alt="${e(row.name)}" loading="lazy" width="488" height="680">` : '<span class="image-placeholder">◈</span>'}<span class="grid-qty">${count(row.quantity)} owned</span></button><div class="grid-body"><button class="grid-name" data-detail="${e(row.id)}">${e(row.name)}</button><div class="grid-meta"><span>${e(printing(row))}</span><span class="number">${money(row.price)}${row.price !== null && !row.exact ? " ref." : ""}</span></div>${pills(row)}${sort === "played" ? `<div class="grid-played">${tournamentLabel(row)}</div>` : ""}<p class="grid-reason">${e(reason(row))}</p></div></article>`).join("")}</div>`;
+      `<div class="card-grid">${visible.map((row) => `<article class="grid-card"><button class="grid-image ${isFoil(row) ? "foil-image" : ""}" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${safeURL(row.card?.image, "image") ? `<img src="${e(safeURL(row.card.image, "image"))}" alt="${e(row.name)}" loading="lazy" width="488" height="680">` : '<span class="image-placeholder">◈</span>'}<span class="grid-qty">${count(row.quantity)} owned</span>${isFoil(row) ? `<span class="foil-label">✦ ${e(finishName(row.finish))}</span>` : ""}</button><div class="grid-body"><button class="grid-name" data-detail="${e(row.id)}">${e(row.name)}</button><div class="grid-meta"><span>${e(printing(row))}</span><span class="number">${money(row.price)}${row.price !== null && !row.exact ? " ref." : ""}</span></div>${pills(row)}<div class="grid-played">${tournamentLabel(row)}</div><details class="grid-formats"><summary>Formats &amp; tournament use</summary>${formatMatrix(row)}</details><p class="grid-reason">${e(reason(row))}</p></div></article>`).join("")}</div>`;
   }
   $("#pagination").innerHTML = rows.length
-    ? `<span>${count((page - 1) * 48 + 1)}–${count(Math.min(page * 48, rows.length))} of ${count(rows.length)} printings</span><div class="row"><button class="button quiet small" data-page="${page - 1}" ${page === 1 ? "disabled" : ""}>Previous</button><span>${page} / ${pages}</span><button class="button quiet small" data-page="${page + 1}" ${page === pages ? "disabled" : ""}>Next</button></div>`
+    ? `<span>${count((page - 1) * 48 + 1)}–${count(Math.min(page * 48, rows.length))} of ${count(rows.length)} ${view === "table" ? "printings" : "printing / finish entries"}</span><div class="row"><button class="button quiet small" data-page="${page - 1}" ${page === 1 ? "disabled" : ""}>Previous</button><span>${page} / ${pages}</span><button class="button quiet small" data-page="${page + 1}" ${page === pages ? "disabled" : ""}>Next</button></div>`
     : "";
 }
 function modal(title, subtitle, body, footer = "", options = {}) {
@@ -567,6 +703,7 @@ function restoreModalOrigin() {
       behavior: "instant",
     });
   detailId = null;
+  detailPositionId = null;
   detailNavigation = null;
   dialogMode = null;
   modalOpener = null;
@@ -574,14 +711,14 @@ function restoreModalOrigin() {
   pageScroll = null;
 }
 function detailNavHTML() {
-  const index = detailNavigation?.indexOf(detailId) ?? -1,
+  const index = detailNavigation?.indexOf(detailPositionId) ?? -1,
     total = detailNavigation?.length || 0;
   return `<nav class="dialog-nav" aria-label="Navigate filtered collection"><button class="button quiet small" data-action="previous-card" ${index <= 0 ? "disabled" : ""}>Previous</button><span class="dialog-position" role="status" aria-live="polite">${index + 1} / ${total}<small>Filtered collection · ← / →</small></span><button class="button quiet small" data-action="next-card" ${index >= total - 1 ? "disabled" : ""}>Next</button></nav>`;
 }
 function stepCard(direction) {
-  const index = detailNavigation?.indexOf(detailId) ?? -1;
+  const index = detailNavigation?.indexOf(detailPositionId) ?? -1;
   const next = detailNavigation?.[index + direction];
-  if (next) showDetail(next);
+  if (next) showDetail(next, { navigation: true });
 }
 function backToCard() {
   showDetail(detailId, { scrollTop: detailScroll });
@@ -824,37 +961,31 @@ function exitDemo() {
   render();
 }
 function showDetail(id, options = {}) {
-  if (!$("#dialog").open || !detailNavigation?.includes(id))
-    detailNavigation = filteredRows().map((row) => row.id);
-  if (!detailNavigation.includes(id)) detailNavigation.push(id);
+  if (!$("#dialog").open || !detailNavigation) {
+    detailNavigation = displayedRows().map((row) => row.id);
+    if (!detailNavigation.includes(id)) detailNavigation.push(id);
+    detailPositionId = id;
+  } else if (options.navigation && detailNavigation.includes(id)) {
+    detailPositionId = id;
+  }
   detailId = id;
   const row = results.find((r) => r.id === id);
   if (!row) return;
   const c = row.card,
-    link = safeURL(c?.scryfall_uri),
     img = safeURL(c?.image, "image");
   modal(
     row.name,
     printing(row),
-    `<div class="detail-layout"><div>${img ? `<img class="detail-image" src="${e(img)}" alt="${e(row.name)}">` : '<div class="no-image">Card image unavailable</div>'}<div class="detail-price">${money(row.price)}</div><p class="hint">${row.exact ? "Exact printing" : "Reference printing"} · ${e(row.finish)}<br>${c ? `Scryfall price · ${date(row.fetchedAt)}` : "Refresh card data to look up this card."}</p>${link ? `<a class="text-button" href="${e(link)}" target="_blank" rel="noopener noreferrer">Open in Scryfall ${icon("external")}</a>` : ""}</div><div><div class="detail-meta">${e(c?.type_line || "Card details unavailable")}<br>${e(c?.mana_cost || "")} ${c ? " · " + e(c.rarity) : ""} · ${count(row.quantity)} owned</div>${pills(row)}<h3>Why these copies go here</h3><ul class="detail-reasons">${[...new Set(row.reasons)].map((reason) => `<li>${e(reason)}</li>`).join("")}${row.review ? row.uncertainties.map((reason) => `<li>${e(reason)}</li>`).join("") : ""}</ul>
-    ${row.played.length ? `<h3>Play evidence</h3>${row.played.map((hit) => `<div class="source-row"><div>${e(FORMATS[hit.format])}<small>Mainboard ${hit.mainboard}%${snapshot.formats[hit.format].sections?.includes("sideboard") === false ? "" : ` · Sideboard ${hit.sideboard}%`}</small></div><a href="${e(safeURL(hit.url))}" target="_blank" rel="noopener noreferrer">Source</a></div>`).join("")}<p class="hint">MTGTop8 · ${e(snapshot.window)} · fetched ${date(snapshot.fetchedAt)}. Mainboard and sideboard percentages are not added together.</p>` : ""}
-    <h3>Your decision</h3><label class="field">Override for this printing<select id="row-override"><option value="" ${!row.override ? "selected" : ""}>Follow my keep rules</option><option value="keep" ${row.override === "keep" ? "selected" : ""}>Keep every copy</option><option value="bulk" ${row.override === "bulk" ? "selected" : ""}>Put every copy in bulk</option></select></label><div class="detail-actions"><button class="button quiet small" data-action="edit-card">Edit card / quantity</button><button class="button quiet small" data-action="copy-card">Copy decklist line</button></div></div></div>
-    ${
-      c
-        ? `<details class="native-details"><summary>Card text and format legalities</summary><p class="oracle-text" style="margin:15px 0">${e(c.oracle_text)}</p><div class="legalities">${Object.entries(
-            FORMATS,
-          )
-            .map(
-              ([key, label]) =>
-                `<span class="${["legal", "restricted"].includes(c.legalities?.[key]) ? "" : "illegal"}">${label}: ${e(c.legalities?.[key] || "unknown")}</span>`,
-            )
-            .join("")}</div></details>`
-        : ""
-    }`,
+    `<div class="detail-layout"><div><div class="detail-art ${isFoil(row) ? "foil-image" : ""}">${img ? `<img class="detail-image" src="${e(img)}" alt="${e(row.name)}">` : '<div class="no-image">Card image unavailable</div>'}${isFoil(row) ? `<span class="foil-label">✦ ${e(finishName(row.finish))}</span>` : ""}</div><div class="detail-price">${money(row.price)}</div><p class="hint">${row.exact ? "Exact printing" : "Reference printing"} · ${e(finishName(row.finish))}<br>${c ? `Scryfall price · ${date(row.fetchedAt)}` : "Refresh card data to look up this card."}</p>${cardLinks(row)}</div><div><div class="detail-meta">${e(c?.type_line || "Card details unavailable")}<br>${e(c?.mana_cost || "")} ${c ? " · " + e(c.rarity) : ""} · ${count(row.quantity)} owned in this finish</div>${pills(row)}<h3>Why these copies go here</h3><ul class="detail-reasons">${[...new Set(row.reasons)].map((reason) => `<li>${e(reason)}</li>`).join("")}${row.review ? row.uncertainties.map((reason) => `<li>${e(reason)}</li>`).join("") : ""}</ul>
+    <h3>Formats &amp; tournament use</h3>${formatMatrix(row)}<p class="hint">Green: legal or restricted · gray: not legal or unknown. Status is also written on each tag.</p><p class="hint">Usage is the higher of mainboard / sideboard deck share; sections are never added. ${snapshot ? `MTGTop8 · ${e(snapshot.window)} · fetched ${date(snapshot.fetchedAt)}.` : "Tournament data unavailable."} No sampled play does not mean 0%. All formats are shown, independently of your keep rules.</p>
+    <h3>Your decision</h3><label class="field">Override for this printing and finish<select id="row-override"><option value="" ${!row.override ? "selected" : ""}>Follow my keep rules</option><option value="keep" ${row.override === "keep" ? "selected" : ""}>Keep every copy</option><option value="bulk" ${row.override === "bulk" ? "selected" : ""}>Put every copy in bulk</option></select></label><div class="detail-actions"><button class="button quiet small" data-action="edit-card">Edit card / quantity</button><button class="button quiet small" data-action="copy-card">Copy decklist line</button></div></div></div>
+    ${versionsHTML(row)}${deckMembership(row)}
+    ${c ? `<details class="native-details"><summary>Card text</summary><p class="oracle-text" style="margin:15px 0">${e(c.oracle_text)}</p></details>` : ""}`,
     detailNavHTML(),
     { kind: "card", ...options },
   );
 }
+
 function editCard() {
   detailScroll = $("#dialog").scrollTop;
   const row = state.rows.find((r) => r.id === detailId);
@@ -1156,6 +1287,8 @@ document.addEventListener("click", async (event) => {
   try {
     if (target.dataset.action) await action(target.dataset.action);
     else if (target.dataset.detail) showDetail(target.dataset.detail);
+    else if (target.dataset.version)
+      showDetail(target.dataset.version, { preserve: true });
     else if (target.dataset.query) {
       query = target.dataset.query;
       $("#search").value = query;
@@ -1247,7 +1380,12 @@ document.addEventListener("submit", (event) => {
 });
 $("#dialog").addEventListener("close", restoreModalOrigin);
 $("#dialog").addEventListener("cancel", (event) => {
-  if (dialogMode === "edit") {
+  const openLinks = $("#dialog .links-menu[open]");
+  if (openLinks) {
+    event.preventDefault();
+    openLinks.open = false;
+    openLinks.querySelector("summary").focus({ preventScroll: true });
+  } else if (dialogMode === "edit") {
     event.preventDefault();
     backToCard();
   }

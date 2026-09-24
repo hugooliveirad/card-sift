@@ -932,6 +932,261 @@ tbody tr:hover {
   outline: 1px solid #ffffff1a;
   outline-offset: -1px;
 }
+.foil-image {
+  position: relative;
+  isolation: isolate;
+}
+.foil-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    125deg,
+    #70e4eb08 8%,
+    #68cbe760 24%,
+    #bd80ed40 37%,
+    #ffeaa76b 49%,
+    #83e7c53d 60%,
+    transparent 78%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.grid-image.foil-image::after {
+  inset: 13px 13px 0;
+  border-radius: 8px;
+}
+.foil-label {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  z-index: 1;
+  padding: 4px 8px;
+  border: 1px solid #bcacd7;
+  border-radius: 5px;
+  color: #f2e7ff;
+  background: #30223de8;
+  font-size: 11px;
+}
+.finish-price {
+  display: block;
+  white-space: nowrap;
+  line-height: 1.7;
+}
+.finish-price small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.detail-art {
+  position: relative;
+  border-radius: 11px;
+  overflow: hidden;
+}
+.detail-art img {
+  display: block;
+  aspect-ratio: 488 / 680;
+  height: auto;
+  background: #293225;
+}
+.detail-art .foil-label {
+  left: 10px;
+}
+.grid-qty {
+  z-index: 1;
+}
+.card-links {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 11px;
+}
+.card-links a,
+.links-menu a,
+.tournament-decks a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-links svg,
+.links-menu svg,
+.tournament-decks svg,
+.deck-memberships svg {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+}
+.format-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 6px;
+}
+.format-tag {
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #ffffff03;
+  min-width: 0;
+  font-size: 10px;
+}
+.format-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+.legality-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #929b8c;
+}
+.is-legal .legality-dot {
+  background: #90d69a;
+}
+.format-status {
+  display: block;
+  margin: 3px 0 6px 13px;
+  color: var(--muted);
+  text-transform: capitalize;
+}
+.format-share {
+  display: block;
+  font-size: 10px;
+}
+.format-share strong {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.grid-formats {
+  margin-top: 10px;
+}
+.grid-formats summary {
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--muted);
+}
+.grid-formats .format-matrix {
+  margin-top: 8px;
+}
+.detail-section {
+  border-top: 1px solid var(--line);
+  margin-top: 25px;
+  padding-top: 20px;
+}
+.detail-section h3 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+.detail-section h4 {
+  font-size: 12px;
+  margin: 18px 0 8px;
+}
+.owned-versions {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+.owned-version {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.owned-version.selected {
+  border-color: #90b477;
+  background: #9abe7210;
+}
+.version-select {
+  display: flex;
+  flex: 1 1 200px;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  text-align: left;
+  min-width: 0;
+}
+.version-select strong {
+  display: block;
+  font-size: 12px;
+}
+.version-select small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.version-plan {
+  flex: 0 1 auto;
+}
+.links-menu {
+  position: relative;
+  font-size: 11px;
+}
+.links-menu summary {
+  cursor: pointer;
+  padding: 8px;
+}
+.links-menu > div {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: min(230px, calc(100vw - 80px));
+  padding: 7px;
+  border: 1px solid #697b5b;
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 10px 30px #0008;
+  z-index: 3;
+}
+.links-menu a {
+  padding: 9px;
+  font-size: 11px;
+}
+.deck-memberships {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.deck-memberships a {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+.deck-memberships small {
+  color: var(--muted);
+}
+.tournament-decks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tournament-decks a {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 11px;
+}
+@media (max-width: 600px) {
+  .links-menu {
+    flex-basis: 100%;
+  }
+  .links-menu > div {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+}
 .rarity {
   font-size: 10px;
   text-transform: capitalize;
@@ -1471,22 +1726,6 @@ dialog::backdrop {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-.legalities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.legalities span {
-  font-size: 9px;
-  padding: 4px 6px;
-  border-radius: 4px;
-  border: 1px solid #44543b;
-  color: #c4d8b4;
-}
-.legalities .illegal {
-  color: #a8afa3;
-  border-color: #3c4439;
 }
 .edit-fields {
   display: grid;

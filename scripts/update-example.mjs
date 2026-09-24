@@ -49,6 +49,18 @@ const rows = cards.map(([name, quantity], i) => {
     fetchedAt: Date.now(),
   };
 });
+const foilExample = rows.find(
+  (row) => row.card.finishes.includes("foil") && row.quantity >= 6,
+);
+if (foilExample) {
+  foilExample.quantity -= 2;
+  rows.push({
+    ...foilExample,
+    id: foilExample.id + "-foil",
+    quantity: 2,
+    finish: "foil",
+  });
+}
 await writeFile(
   "data/example.json",
   JSON.stringify(

@@ -2,7 +2,7 @@
   "schema": 1,
   "source": "https://github.com/hugooliveirad/jumpstart-atlas",
   "catalogSource": "https://magic.wizards.com/en/news/announcements/foundations-jumpstart-booster-themes",
-  "fetchedAt": "2026-09-24T18:33:06.935430+00:00",
+  "fetchedAt": "2026-09-24T19:19:03.313074+00:00",
   "decks": 121,
   "names": [
     "Abandon Reason",
@@ -773,5 +773,9014 @@
     "Zada, Hedron Grinder",
     "Zealot of the God-Pharaoh",
     "Zealous Conscripts"
-  ]
+  ],
+  "deckInfo": {
+    "angels-1": {
+      "name": "Angels",
+      "variant": 1,
+      "color": "W"
+    },
+    "angels-2": {
+      "name": "Angels",
+      "variant": 2,
+      "color": "W"
+    },
+    "armed-1": {
+      "name": "Armed",
+      "variant": 1,
+      "color": "W"
+    },
+    "armed-2": {
+      "name": "Armed",
+      "variant": 2,
+      "color": "W"
+    },
+    "armed-3": {
+      "name": "Armed",
+      "variant": 3,
+      "color": "W"
+    },
+    "armed-4": {
+      "name": "Armed",
+      "variant": 4,
+      "color": "W"
+    },
+    "enchanted-1": {
+      "name": "Enchanted",
+      "variant": 1,
+      "color": "W"
+    },
+    "enchanted-2": {
+      "name": "Enchanted",
+      "variant": 2,
+      "color": "W"
+    },
+    "enchanted-3": {
+      "name": "Enchanted",
+      "variant": 3,
+      "color": "W"
+    },
+    "enchanted-4": {
+      "name": "Enchanted",
+      "variant": 4,
+      "color": "W"
+    },
+    "giddyap-1": {
+      "name": "Giddyap",
+      "variant": 1,
+      "color": "W"
+    },
+    "healers-1": {
+      "name": "Healers",
+      "variant": 1,
+      "color": "W"
+    },
+    "healers-2": {
+      "name": "Healers",
+      "variant": 2,
+      "color": "W"
+    },
+    "healers-3": {
+      "name": "Healers",
+      "variant": 3,
+      "color": "W"
+    },
+    "healers-4": {
+      "name": "Healers",
+      "variant": 4,
+      "color": "W"
+    },
+    "heroes-1": {
+      "name": "Heroes",
+      "variant": 1,
+      "color": "W"
+    },
+    "heroes-2": {
+      "name": "Heroes",
+      "variant": 2,
+      "color": "W"
+    },
+    "legion-1": {
+      "name": "Legion",
+      "variant": 1,
+      "color": "W"
+    },
+    "legion-2": {
+      "name": "Legion",
+      "variant": 2,
+      "color": "W"
+    },
+    "prideful-1": {
+      "name": "Prideful",
+      "variant": 1,
+      "color": "W"
+    },
+    "stalwart-1": {
+      "name": "Stalwart",
+      "variant": 1,
+      "color": "W"
+    },
+    "stalwart-2": {
+      "name": "Stalwart",
+      "variant": 2,
+      "color": "W"
+    },
+    "stalwart-3": {
+      "name": "Stalwart",
+      "variant": 3,
+      "color": "W"
+    },
+    "stalwart-4": {
+      "name": "Stalwart",
+      "variant": 4,
+      "color": "W"
+    },
+    "bookworms-1": {
+      "name": "Bookworms",
+      "variant": 1,
+      "color": "U"
+    },
+    "bookworms-2": {
+      "name": "Bookworms",
+      "variant": 2,
+      "color": "U"
+    },
+    "bookworms-3": {
+      "name": "Bookworms",
+      "variant": 3,
+      "color": "U"
+    },
+    "bookworms-4": {
+      "name": "Bookworms",
+      "variant": 4,
+      "color": "U"
+    },
+    "drowned-1": {
+      "name": "Drowned",
+      "variant": 1,
+      "color": "U"
+    },
+    "drowned-2": {
+      "name": "Drowned",
+      "variant": 2,
+      "color": "U"
+    },
+    "illusions-1": {
+      "name": "Illusions",
+      "variant": 1,
+      "color": "U"
+    },
+    "inventive-1": {
+      "name": "Inventive",
+      "variant": 1,
+      "color": "U"
+    },
+    "inventive-2": {
+      "name": "Inventive",
+      "variant": 2,
+      "color": "U"
+    },
+    "inventive-3": {
+      "name": "Inventive",
+      "variant": 3,
+      "color": "U"
+    },
+    "inventive-4": {
+      "name": "Inventive",
+      "variant": 4,
+      "color": "U"
+    },
+    "ninjas-1": {
+      "name": "Ninjas",
+      "variant": 1,
+      "color": "U"
+    },
+    "of-the-coast-1": {
+      "name": "Of the Coast",
+      "variant": 1,
+      "color": "U"
+    },
+    "of-the-coast-2": {
+      "name": "Of the Coast",
+      "variant": 2,
+      "color": "U"
+    },
+    "soaring-1": {
+      "name": "Soaring",
+      "variant": 1,
+      "color": "U"
+    },
+    "soaring-2": {
+      "name": "Soaring",
+      "variant": 2,
+      "color": "U"
+    },
+    "soaring-3": {
+      "name": "Soaring",
+      "variant": 3,
+      "color": "U"
+    },
+    "soaring-4": {
+      "name": "Soaring",
+      "variant": 4,
+      "color": "U"
+    },
+    "surprise-1": {
+      "name": "Surprise!",
+      "variant": 1,
+      "color": "U"
+    },
+    "surprise-2": {
+      "name": "Surprise!",
+      "variant": 2,
+      "color": "U"
+    },
+    "surprise-3": {
+      "name": "Surprise!",
+      "variant": 3,
+      "color": "U"
+    },
+    "surprise-4": {
+      "name": "Surprise!",
+      "variant": 4,
+      "color": "U"
+    },
+    "wizards-1": {
+      "name": "Wizards",
+      "variant": 1,
+      "color": "U"
+    },
+    "wizards-2": {
+      "name": "Wizards",
+      "variant": 2,
+      "color": "U"
+    },
+    "clerics-1": {
+      "name": "Clerics",
+      "variant": 1,
+      "color": "B"
+    },
+    "clerics-2": {
+      "name": "Clerics",
+      "variant": 2,
+      "color": "B"
+    },
+    "clerics-3": {
+      "name": "Clerics",
+      "variant": 3,
+      "color": "B"
+    },
+    "clerics-4": {
+      "name": "Clerics",
+      "variant": 4,
+      "color": "B"
+    },
+    "ghastly-1": {
+      "name": "Ghastly",
+      "variant": 1,
+      "color": "B"
+    },
+    "ghastly-2": {
+      "name": "Ghastly",
+      "variant": 2,
+      "color": "B"
+    },
+    "ghastly-3": {
+      "name": "Ghastly",
+      "variant": 3,
+      "color": "B"
+    },
+    "ghastly-4": {
+      "name": "Ghastly",
+      "variant": 4,
+      "color": "B"
+    },
+    "grave-robbers-1": {
+      "name": "Grave Robbers",
+      "variant": 1,
+      "color": "B"
+    },
+    "grave-robbers-2": {
+      "name": "Grave Robbers",
+      "variant": 2,
+      "color": "B"
+    },
+    "grave-robbers-3": {
+      "name": "Grave Robbers",
+      "variant": 3,
+      "color": "B"
+    },
+    "grave-robbers-4": {
+      "name": "Grave Robbers",
+      "variant": 4,
+      "color": "B"
+    },
+    "icky-1": {
+      "name": "Icky",
+      "variant": 1,
+      "color": "B"
+    },
+    "icky-2": {
+      "name": "Icky",
+      "variant": 2,
+      "color": "B"
+    },
+    "ne-er-do-wells-1": {
+      "name": "Ne'er-do-wells",
+      "variant": 1,
+      "color": "B"
+    },
+    "ne-er-do-wells-2": {
+      "name": "Ne'er-do-wells",
+      "variant": 2,
+      "color": "B"
+    },
+    "nefarious-1": {
+      "name": "Nefarious",
+      "variant": 1,
+      "color": "B"
+    },
+    "snakes-1": {
+      "name": "Snakes",
+      "variant": 1,
+      "color": "B"
+    },
+    "treasures-1": {
+      "name": "Treasures",
+      "variant": 1,
+      "color": "B"
+    },
+    "treasures-2": {
+      "name": "Treasures",
+      "variant": 2,
+      "color": "B"
+    },
+    "vampires-1": {
+      "name": "Vampires",
+      "variant": 1,
+      "color": "B"
+    },
+    "vampires-2": {
+      "name": "Vampires",
+      "variant": 2,
+      "color": "B"
+    },
+    "vampires-3": {
+      "name": "Vampires",
+      "variant": 3,
+      "color": "B"
+    },
+    "vampires-4": {
+      "name": "Vampires",
+      "variant": 4,
+      "color": "B"
+    },
+    "bloody-1": {
+      "name": "Bloody",
+      "variant": 1,
+      "color": "R"
+    },
+    "bloody-2": {
+      "name": "Bloody",
+      "variant": 2,
+      "color": "R"
+    },
+    "bloody-3": {
+      "name": "Bloody",
+      "variant": 3,
+      "color": "R"
+    },
+    "bloody-4": {
+      "name": "Bloody",
+      "variant": 4,
+      "color": "R"
+    },
+    "burning-1": {
+      "name": "Burning",
+      "variant": 1,
+      "color": "R"
+    },
+    "copied-1": {
+      "name": "Copied",
+      "variant": 1,
+      "color": "R"
+    },
+    "copied-2": {
+      "name": "Copied",
+      "variant": 2,
+      "color": "R"
+    },
+    "dragons-1": {
+      "name": "Dragons",
+      "variant": 1,
+      "color": "R"
+    },
+    "dragons-2": {
+      "name": "Dragons",
+      "variant": 2,
+      "color": "R"
+    },
+    "goblins-1": {
+      "name": "Goblins",
+      "variant": 1,
+      "color": "R"
+    },
+    "goblins-2": {
+      "name": "Goblins",
+      "variant": 2,
+      "color": "R"
+    },
+    "goblins-3": {
+      "name": "Goblins",
+      "variant": 3,
+      "color": "R"
+    },
+    "goblins-4": {
+      "name": "Goblins",
+      "variant": 4,
+      "color": "R"
+    },
+    "stoked-1": {
+      "name": "Stoked",
+      "variant": 1,
+      "color": "R"
+    },
+    "stoked-2": {
+      "name": "Stoked",
+      "variant": 2,
+      "color": "R"
+    },
+    "stoked-3": {
+      "name": "Stoked",
+      "variant": 3,
+      "color": "R"
+    },
+    "stoked-4": {
+      "name": "Stoked",
+      "variant": 4,
+      "color": "R"
+    },
+    "too-many-1": {
+      "name": "Too Many",
+      "variant": 1,
+      "color": "R"
+    },
+    "warriors-1": {
+      "name": "Warriors",
+      "variant": 1,
+      "color": "R"
+    },
+    "warriors-2": {
+      "name": "Warriors",
+      "variant": 2,
+      "color": "R"
+    },
+    "zealots-1": {
+      "name": "Zealots",
+      "variant": 1,
+      "color": "R"
+    },
+    "zealots-2": {
+      "name": "Zealots",
+      "variant": 2,
+      "color": "R"
+    },
+    "zealots-3": {
+      "name": "Zealots",
+      "variant": 3,
+      "color": "R"
+    },
+    "zealots-4": {
+      "name": "Zealots",
+      "variant": 4,
+      "color": "R"
+    },
+    "beasts-1": {
+      "name": "Beasts",
+      "variant": 1,
+      "color": "G"
+    },
+    "beasts-2": {
+      "name": "Beasts",
+      "variant": 2,
+      "color": "G"
+    },
+    "dinner-1": {
+      "name": "Dinner",
+      "variant": 1,
+      "color": "G"
+    },
+    "dinosaurs-1": {
+      "name": "Dinosaurs",
+      "variant": 1,
+      "color": "G"
+    },
+    "dinosaurs-2": {
+      "name": "Dinosaurs",
+      "variant": 2,
+      "color": "G"
+    },
+    "elves-1": {
+      "name": "Elves",
+      "variant": 1,
+      "color": "G"
+    },
+    "elves-2": {
+      "name": "Elves",
+      "variant": 2,
+      "color": "G"
+    },
+    "elves-3": {
+      "name": "Elves",
+      "variant": 3,
+      "color": "G"
+    },
+    "elves-4": {
+      "name": "Elves",
+      "variant": 4,
+      "color": "G"
+    },
+    "encounter-1": {
+      "name": "Encounter",
+      "variant": 1,
+      "color": "G"
+    },
+    "encounter-2": {
+      "name": "Encounter",
+      "variant": 2,
+      "color": "G"
+    },
+    "encounter-3": {
+      "name": "Encounter",
+      "variant": 3,
+      "color": "G"
+    },
+    "encounter-4": {
+      "name": "Encounter",
+      "variant": 4,
+      "color": "G"
+    },
+    "explorers-1": {
+      "name": "Explorers",
+      "variant": 1,
+      "color": "G"
+    },
+    "explorers-2": {
+      "name": "Explorers",
+      "variant": 2,
+      "color": "G"
+    },
+    "explorers-3": {
+      "name": "Explorers",
+      "variant": 3,
+      "color": "G"
+    },
+    "explorers-4": {
+      "name": "Explorers",
+      "variant": 4,
+      "color": "G"
+    },
+    "fun-guys-1": {
+      "name": "Fun Guys",
+      "variant": 1,
+      "color": "G"
+    },
+    "fun-guys-2": {
+      "name": "Fun Guys",
+      "variant": 2,
+      "color": "G"
+    },
+    "landfall-1": {
+      "name": "Landfall",
+      "variant": 1,
+      "color": "G"
+    },
+    "landfall-2": {
+      "name": "Landfall",
+      "variant": 2,
+      "color": "G"
+    },
+    "landfall-3": {
+      "name": "Landfall",
+      "variant": 3,
+      "color": "G"
+    },
+    "landfall-4": {
+      "name": "Landfall",
+      "variant": 4,
+      "color": "G"
+    },
+    "modified-1": {
+      "name": "Modified",
+      "variant": 1,
+      "color": "G"
+    },
+    "chaos-1": {
+      "name": "Chaos",
+      "variant": 1,
+      "color": "M"
+    }
+  },
+  "membership": {
+    "Abandon Reason": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      }
+    ],
+    "Academy Journeymage": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Adeline, Resplendent Cathar": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Adventure Awaits": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      }
+    ],
+    "Adventurous Impulse": [
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Advocate of the Beast": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Aerial Guide": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Aether Channeler": [
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Aggressive Instinct": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Agonizing Syphon": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      }
+    ],
+    "Ahn-Crop Crasher": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      }
+    ],
+    "Ainok Artillerist": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      }
+    ],
+    "Ainok Guide": [
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      }
+    ],
+    "Air Elemental": [
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Ajani's Pridemate": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Ajani, Adversary of Tyrants": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      }
+    ],
+    "Akroan Crusader": [
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Akroan Skyguard": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      }
+    ],
+    "Alchemist's Gift": [
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      },
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      }
+    ],
+    "Ambassador Oak": [
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      }
+    ],
+    "Ancestral Anger": [
+      {
+        "deck": "copied-2",
+        "quantity": 2
+      }
+    ],
+    "Ancestral Blade": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Ancient Greenwarden": [
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      }
+    ],
+    "Anep, Vizier of Hazoret": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Angel of Mercy": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      }
+    ],
+    "Angel of Vitality": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Angelic Cub": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      }
+    ],
+    "Angelic Edict": [
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Angelic Gift": [
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Anje's Ravager": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      }
+    ],
+    "Aphelia, Viper Whisperer": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Arbor Armament": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Archaeomancer": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      }
+    ],
+    "Archfiend's Vessel": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Archon of Falling Stars": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Archon of Sun's Grace": [
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Arena Athlete": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Argivian Phalanx": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      }
+    ],
+    "Armorcraft Judge": [
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Armored Kincaller": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      }
+    ],
+    "Army of the Damned": [
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Arrogant Outlaw": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Ash Barrens": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Audacious Thief": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      },
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Audacity": [
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Augur of Bolas": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Aven Reedstalker": [
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Averna, the Chaos Bloom": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Azure Drake": [
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Baloth Gorger": [
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Baloth Woodcrasher": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Balustrade Spy": [
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Band Together": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Banisher Priest": [
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      }
+    ],
+    "Banishing Light": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      },
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Basri's Acolyte": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      }
+    ],
+    "Basri's Lieutenant": [
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      }
+    ],
+    "Basri's Solidarity": [
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      }
+    ],
+    "Bastion of Remembrance": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      }
+    ],
+    "Bathe in Dragonfire": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      }
+    ],
+    "Battle Cry Goblin": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Battle-Rattle Shaman": [
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Battlefield Promotion": [
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Battlefield Scavenger": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Beetleback Chief": [
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      }
+    ],
+    "Belligerent Guest": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Big Play": [
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Biogenic Upgrade": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      }
+    ],
+    "Bishop's Soldier": [
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      }
+    ],
+    "Bite Down": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Bituminous Blast": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Bleed Dry": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Blink of an Eye": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Blood Beckoning": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      }
+    ],
+    "Blood Burglar": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Blood Feud": [
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Blood Fountain": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Blood Hypnotist": [
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      }
+    ],
+    "Blood Petal Celebrant": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Bloodbraid Elf": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Bloodfire Expert": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Bloodgift Demon": [
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      }
+    ],
+    "Bloodlust Inciter": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Bloodthirsty Aerialist": [
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      }
+    ],
+    "Bloodtithe Collector": [
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      }
+    ],
+    "Boggart Brute": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      }
+    ],
+    "Boldwyr Intimidator": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Bond of Flourishing": [
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      }
+    ],
+    "Bonecaller Cleric": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Boneclad Necromancer": [
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      }
+    ],
+    "Bounty of Skemfar": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      }
+    ],
+    "Braulios of Pheres Band": [
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Breaching Hippocamp": [
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      }
+    ],
+    "Briarbridge Tracker": [
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      }
+    ],
+    "Brightmare": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Brigone, Soldier of Meletis": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Brimaz, King of Oreskos": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Brineborn Cutthroat": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Brothers Yamazaki": [
+      {
+        "deck": "too-many-1",
+        "quantity": 2
+      }
+    ],
+    "Brushstrider": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Brute Strength": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      }
+    ],
+    "Bury in Books": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Bushwhack": [
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Byway Courier": [
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      }
+    ],
+    "Cackling Counterpart": [
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Cage of Hands": [
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      }
+    ],
+    "Canopy Baloth": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Captivating Unicorn": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      }
+    ],
+    "Capture Sphere": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      }
+    ],
+    "Carnelian Orb of Dragonkind": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      }
+    ],
+    "Cartouche of Knowledge": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      }
+    ],
+    "Cartouche of Solidarity": [
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      }
+    ],
+    "Cartouche of Zeal": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Cavalier of Gales": [
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      }
+    ],
+    "Cave of Temptation": [
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Celestial Enforcer": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      }
+    ],
+    "Celestial Unicorn": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Chains of Custody": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Chandra's Spitfire": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Charmbreaker Devils": [
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      }
+    ],
+    "Cherished Hatchling": [
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Chief of the Foundry": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Chilling Trap": [
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Choking Tethers": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      }
+    ],
+    "Chosen by Heliod": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      }
+    ],
+    "Chromatic Lantern": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Chrome Prowler": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      }
+    ],
+    "Clear Shot": [
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Cleon, Merry Champion": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Cliffhaven Kitesail": [
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      }
+    ],
+    "Cloudkin Seer": [
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      }
+    ],
+    "Coat with Venom": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Colossal Dreadmaw": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Combat Celebrant": [
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      }
+    ],
+    "Commune with Dinosaurs": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Concentrate": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      }
+    ],
+    "Conclave Tribunal": [
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Contract Killing": [
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Coordinated Assault": [
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      }
+    ],
+    "Crawl from the Cellar": [
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Creeping Bloodsucker": [
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      }
+    ],
+    "Crimson Wisps": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Crooked Custodian": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      }
+    ],
+    "Crossway Troublemakers": [
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      }
+    ],
+    "Cruel Witness": [
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Crystacean": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      }
+    ],
+    "Cyclops Electromancer": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      }
+    ],
+    "Cynette, Jelly Drover": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Danitha Capashen, Paragon": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      }
+    ],
+    "Dark Bargain": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Dark Confidant": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Dark Supplicant": [
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      }
+    ],
+    "Dauntless Onslaught": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      }
+    ],
+    "Dauntless Unity": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Dawnwing Marshal": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      },
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Daybreak Chaplain": [
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      }
+    ],
+    "Daybreak Combatants": [
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Deadly Dispute": [
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Deadly Riposte": [
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      }
+    ],
+    "Deal Gone Bad": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Deep Analysis": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Deepwood Denizen": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Defend the Campus": [
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Defend the Celestus": [
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Defenestrate": [
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Defiant Strike": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Delightful Discovery": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      }
+    ],
+    "Desert of the Fervent": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      }
+    ],
+    "Desperate Lunge": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      }
+    ],
+    "Destroy Evil": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      }
+    ],
+    "Destructive Digger": [
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Devouring Swarm": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Dionus, Elvish Archdruid": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Dire Fleet Hoarder": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Diregraf Scavenger": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      }
+    ],
+    "Disfigure": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      }
+    ],
+    "Divine Arrow": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Divine Favor": [
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      }
+    ],
+    "Doomed Dissenter": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Doomed Necromancer": [
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      }
+    ],
+    "Drag Under": [
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Dragon Hatchling": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Dragon Whelp": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Dragon's Fire": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Dragonlord's Servant": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Draugr Thought-Thief": [
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Dreadful Apathy": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Dreadhorde Arcanist": [
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      }
+    ],
+    "Dreadhound": [
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      }
+    ],
+    "Dropkick Bomber": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      }
+    ],
+    "Dross Hopper": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      }
+    ],
+    "Drover of the Mighty": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      }
+    ],
+    "Drowsing Tyrannodon": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Druid of the Anima": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Durable Coilbug": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      }
+    ],
+    "Dusk Mangler": [
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Duskshell Crawler": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      }
+    ],
+    "Dwynen's Elite": [
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      }
+    ],
+    "Eager Construct": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Eaten Alive": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Eerie Soultender": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      }
+    ],
+    "Eidolon of Astral Winds": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      }
+    ],
+    "Elderfang Disciple": [
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      }
+    ],
+    "Elite Skirmisher": [
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Elvish Archdruid": [
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      }
+    ],
+    "Elvish Visionary": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      }
+    ],
+    "Emberhorn Minotaur": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      }
+    ],
+    "Endless Cockroaches": [
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Enlisted Wurm": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Entomber Exarch": [
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      }
+    ],
+    "Epicure of Blood": [
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Eternal Taskmaster": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Evereth, Viceroy of Plunder": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Evolving Wilds": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Exclusion Mage": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      }
+    ],
+    "Expedition Champion": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      }
+    ],
+    "Expedition Diviner": [
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Expedition Raptor": [
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Expedition Skulker": [
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Expendable Lackey": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Experimental Aviator": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Explore": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Exsanguinate": [
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Extinguish the Light": [
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Eye Collector": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      }
+    ],
+    "Fading Hope": [
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Faerie Seer": [
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Faerie Vandal": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Faith's Fetters": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Faithful Pikemaster": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Fake Your Own Death": [
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Falkenrath Celebrants": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Falkenrath Marauders": [
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Falkenrath Noble": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Fanatical Firebrand": [
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Fathom Fleet Firebrand": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Favored Hoplite": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Favored of Iroas": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Felidar Sovereign": [
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Fencing Ace": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Fiendish Duo": [
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Fierce Witchstalker": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Fiery Fall": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Filigree Attendant": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      }
+    ],
+    "Fire Prophecy": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Firebrand Archer": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Fireshrieker": [
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      }
+    ],
+    "Firespitter Whelp": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Fissure Wizard": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Fists of Flame": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      }
+    ],
+    "Flame-Blessed Bolt": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      }
+    ],
+    "Flames of the Firebrand": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Fling": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Flutterfox": [
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "For the Family": [
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Forest": [
+      {
+        "deck": "beasts-1",
+        "quantity": 7
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 7
+      },
+      {
+        "deck": "dinner-1",
+        "quantity": 7
+      },
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 7
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 7
+      },
+      {
+        "deck": "elves-1",
+        "quantity": 7
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 7
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 7
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 7
+      },
+      {
+        "deck": "encounter-1",
+        "quantity": 7
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 7
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 7
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 7
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 7
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 7
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 7
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 7
+      },
+      {
+        "deck": "fun-guys-1",
+        "quantity": 7
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 7
+      },
+      {
+        "deck": "landfall-1",
+        "quantity": 7
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 7
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 7
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 7
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 6
+      },
+      {
+        "deck": "chaos-1",
+        "quantity": 2
+      }
+    ],
+    "Forgotten Ancient": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      }
+    ],
+    "Forgotten Cave": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Foul Play": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Fretwork Colony": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      }
+    ],
+    "Frontline Heroism": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      }
+    ],
+    "Frost Trickster": [
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Fumulus, the Infestation": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Fungal Plots": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Furious Reprisal": [
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Fusion Elemental": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Garruk's Packleader": [
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Garruk, Caller of Beasts": [
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Gavony Silversmith": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Gearseeker Serpent": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      }
+    ],
+    "General Kreat, the Boltbringer": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Generous Pup": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Ghalta, Primal Hunger": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Ghirapur Guide": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      }
+    ],
+    "Ghitu Encampment": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Giada, Font of Hope": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Giant Growth": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      }
+    ],
+    "Giant Opportunity": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Gift of Fangs": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      }
+    ],
+    "Gift of the Gargantuan": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      }
+    ],
+    "Gilded Scuttler": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Gingerbrute": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Gird for Battle": [
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Glimmerbell": [
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Glory Bearers": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      }
+    ],
+    "Gluttonous Guest": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Gnarlid Colony": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Gnawing Zombie": [
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      }
+    ],
+    "Go Forth": [
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Go for the Throat": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      }
+    ],
+    "Goblin Arsonist": [
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      }
+    ],
+    "Goblin Dark-Dwellers": [
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Goblin Fireslinger": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Goblin Goliath": [
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      }
+    ],
+    "Goblin Rabblemaster": [
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Goblin Researcher": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      }
+    ],
+    "Goblin Smuggler": [
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      }
+    ],
+    "Goblin Surprise": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      },
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Goblin Trailblazer": [
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      }
+    ],
+    "Godsend": [
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      }
+    ],
+    "Golden-Tail Disciple": [
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Goma Fada Vanguard": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Goremand": [
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Gorex, the Tombshell": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      }
+    ],
+    "Gorging Vulture": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Gorgon Flail": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Gornog, the Red Reaper": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Grave Strength": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      }
+    ],
+    "Graveblade Marauder": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      }
+    ],
+    "Gravedigger": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Grazing Gladehart": [
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Greenwood Sentinel": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      }
+    ],
+    "Grim Bounty": [
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      }
+    ],
+    "Groundswell": [
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Guardian Idol": [
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Gust of Wind": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      }
+    ],
+    "Guttersnipe": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      }
+    ],
+    "Harrow": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Harvester of Souls": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      }
+    ],
+    "Haunting Figment": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Hearts on Fire": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      }
+    ],
+    "Heartstabber Mosquito": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Heir of the Ancient Fang": [
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Hellkite Whelp": [
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Herald of War": [
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Herald of the Sun": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Hero of the Games": [
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Hexgold Hoverwings": [
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      }
+    ],
+    "High-Rise Sawjack": [
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Hinterland Sanctifier": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Hooded Blightfang": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Howling Banshee": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Hungry Megasloth": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Hunter's Edge": [
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Hurska Sweet-Tooth": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Impeccable Timing": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Incorrigible Youths": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      }
+    ],
+    "Indomitable Will": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Infernal Grasp": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Infuriate": [
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Ingenious Leonin": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Insatiable Appetite": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Insolent Neonate": [
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      }
+    ],
+    "Inspiring Overseer": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Invigorated Rampage": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      }
+    ],
+    "Invigorating Surge": [
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      }
+    ],
+    "Ipnu Rivulet": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      }
+    ],
+    "Isareth the Awakener": [
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Island": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 7
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 6
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 7
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 6
+      },
+      {
+        "deck": "drowned-1",
+        "quantity": 6
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 7
+      },
+      {
+        "deck": "illusions-1",
+        "quantity": 7
+      },
+      {
+        "deck": "inventive-1",
+        "quantity": 6
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 6
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 6
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 6
+      },
+      {
+        "deck": "ninjas-1",
+        "quantity": 7
+      },
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 6
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 6
+      },
+      {
+        "deck": "soaring-1",
+        "quantity": 7
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 7
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 7
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 7
+      },
+      {
+        "deck": "surprise-1",
+        "quantity": 7
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 7
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 7
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 7
+      },
+      {
+        "deck": "wizards-1",
+        "quantity": 7
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 7
+      },
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Ivora, Insatiable Heir": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Ivy Lane Denizen": [
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Ixalli's Diviner": [
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Jadelight Ranger": [
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Jaya's Firenado": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Jiang Yanggu, Wildcrafter": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Jubilant Mascot": [
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Jungle Delver": [
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      }
+    ],
+    "Kabira Crossroads": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      }
+    ],
+    "Kapsho Kitefins": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      }
+    ],
+    "Kargan Intimidator": [
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Kazandu Nectarpot": [
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      }
+    ],
+    "Kazandu Stomper": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      }
+    ],
+    "Keldon Raider": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Killing Glare": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Kiln Fiend": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      }
+    ],
+    "Kindled Fury": [
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "King of the Pride": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Kodama of the West Tree": [
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Koma's Faithful": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      }
+    ],
+    "Krenko's Command": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      },
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Krenko, Tin Street Kingpin": [
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      }
+    ],
+    "Krosan Tusker": [
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      }
+    ],
+    "Krovikan Mist": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Kruin Striker": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      }
+    ],
+    "Kujar Seedsculptor": [
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      }
+    ],
+    "Lat-Nam Adept": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Lathliss, Dragon Queen": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Leaf-Crowned Visionary": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      }
+    ],
+    "Leonin Scimitar": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Leonin Vanguard": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Leonin of the Lost Pride": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Light of Hope": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      }
+    ],
+    "Light of the Legion": [
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Light the Way": [
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      }
+    ],
+    "Lightwalker": [
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      }
+    ],
+    "Liliana, Death's Majesty": [
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Llanowar Elves": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Llanowar Visionary": [
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      }
+    ],
+    "Locked in the Cemetery": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Lonely Sandbar": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Lord of the Unreal": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Lotus Cobra": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      }
+    ],
+    "Mace of the Valiant": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      }
+    ],
+    "Maelstrom Colossus": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Majestic Metamorphosis": [
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Make a Stand": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      }
+    ],
+    "Malcator's Watcher": [
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      }
+    ],
+    "Malfunction": [
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      }
+    ],
+    "Maraleaf Rider": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Markov Blademaster": [
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      }
+    ],
+    "Markov Enforcer": [
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      }
+    ],
+    "Markov Retribution": [
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      }
+    ],
+    "Markov Warlord": [
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      }
+    ],
+    "Marwyn, the Nurturer": [
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      }
+    ],
+    "Masked Blackguard": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Maul of the Skyclaves": [
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      }
+    ],
+    "Memorial to Folly": [
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      }
+    ],
+    "Memorial to Genius": [
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Memorial to Glory": [
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Mentor of the Meek": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Merfolk Branchwalker": [
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Merfolk Pupil": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      }
+    ],
+    "Mesa Unicorn": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Metalspinner's Puzzleknot": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Midnight Assassin": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      }
+    ],
+    "Might of the Masses": [
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      }
+    ],
+    "Mikaeus, the Lunarch": [
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Militant Inquisitor": [
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      }
+    ],
+    "Minotaur Sureshot": [
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Mirran Bardiche": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      }
+    ],
+    "Mirrorwing Dragon": [
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      }
+    ],
+    "Moan of the Unhallowed": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Mogg Flunkies": [
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Moldgraf Millipede": [
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Moment of Craving": [
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Moment of Heroism": [
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      }
+    ],
+    "Moment of Triumph": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Moodmark Painter": [
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      }
+    ],
+    "Moon-Circuit Hacker": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Moonsnare Specialist": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Morbid Opportunist": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Morkrut Behemoth": [
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      }
+    ],
+    "Morkrut Necropod": [
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Mountain": [
+      {
+        "deck": "bloody-1",
+        "quantity": 7
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 7
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 7
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 7
+      },
+      {
+        "deck": "burning-1",
+        "quantity": 7
+      },
+      {
+        "deck": "copied-1",
+        "quantity": 7
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 7
+      },
+      {
+        "deck": "dragons-1",
+        "quantity": 7
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 7
+      },
+      {
+        "deck": "goblins-1",
+        "quantity": 7
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 7
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 7
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 7
+      },
+      {
+        "deck": "stoked-1",
+        "quantity": 7
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 7
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 7
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 7
+      },
+      {
+        "deck": "too-many-1",
+        "quantity": 7
+      },
+      {
+        "deck": "warriors-1",
+        "quantity": 6
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 6
+      },
+      {
+        "deck": "zealots-1",
+        "quantity": 6
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 7
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 6
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 7
+      },
+      {
+        "deck": "chaos-1",
+        "quantity": 2
+      }
+    ],
+    "Mowu, Loyal Companion": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Mu Yanling, Sky Dancer": [
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      }
+    ],
+    "Murasa Ranger": [
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      }
+    ],
+    "Murder": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      }
+    ],
+    "Murmuring Mystic": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Muse Drake": [
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      }
+    ],
+    "Myr Enforcer": [
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      }
+    ],
+    "Mystic Skyfish": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      }
+    ],
+    "Naban, Dean of Iteration": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Nadir Kraken": [
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Naiad of Hidden Coves": [
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      }
+    ],
+    "Nantuko Husk": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Nazar, the Velvet Fang": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Necropolis Regent": [
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      }
+    ],
+    "Necrotic Wound": [
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      }
+    ],
+    "Neerdiv, Devious Diver": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Nef-Crop Entangler": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Neonate's Rush": [
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Network Disruptor": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Night's Whisper": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Nightveil Sprite": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Ninja of the Deep Hours": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Nullpriest of Oblivion": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      }
+    ],
+    "Nykthos Paragon": [
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      }
+    ],
+    "Nyx-Fleece Ram": [
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      }
+    ],
+    "Obstinate Baloth": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      }
+    ],
+    "Ojutai Exemplars": [
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Omen of the Sea": [
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      }
+    ],
+    "Oneirophage": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Open Fire": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      }
+    ],
+    "Opportunity": [
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Opt": [
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      },
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      }
+    ],
+    "Oran-Rief Ooze": [
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      }
+    ],
+    "Orchard Strider": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Organ Hoarder": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      }
+    ],
+    "Ornithopter of Paradise": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Orochi Merge-Keeper": [
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Outflank": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Overcome": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Overflowing Insight": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      }
+    ],
+    "Overwhelm": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      }
+    ],
+    "Owl Familiar": [
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      }
+    ],
+    "Ozox, the Clattering King": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Pacifism": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Padeem, Consul of Innovation": [
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Paladin of the Bloodstained": [
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Paradise Druid": [
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Parhelion Patrol": [
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Patchwork Automaton": [
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      }
+    ],
+    "Pathmaker Initiate": [
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      }
+    ],
+    "Patron of the Valiant": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      }
+    ],
+    "Persistent Specimen": [
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Pestermite": [
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      }
+    ],
+    "Phantasmal Form": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Phantasmal Shieldback": [
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      },
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Phantom Ninja": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Pharika's Chosen": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Pigment Storm": [
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Pilfering Imp": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      }
+    ],
+    "Pitiless Plunderer": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Plagon, Lord of the Beach": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Plains": [
+      {
+        "deck": "angels-1",
+        "quantity": 7
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 7
+      },
+      {
+        "deck": "armed-1",
+        "quantity": 7
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 7
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 7
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 7
+      },
+      {
+        "deck": "enchanted-1",
+        "quantity": 7
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 7
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 7
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 7
+      },
+      {
+        "deck": "giddyap-1",
+        "quantity": 7
+      },
+      {
+        "deck": "healers-1",
+        "quantity": 6
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 7
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 6
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 7
+      },
+      {
+        "deck": "heroes-1",
+        "quantity": 7
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 7
+      },
+      {
+        "deck": "legion-1",
+        "quantity": 7
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 6
+      },
+      {
+        "deck": "prideful-1",
+        "quantity": 7
+      },
+      {
+        "deck": "stalwart-1",
+        "quantity": 7
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 6
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 7
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 7
+      },
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Plate Armor": [
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      }
+    ],
+    "Play with Fire": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Pol Jamaar, Illusionist": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      }
+    ],
+    "Powerstone Fracture": [
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Predator's Strike": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Pridemalkin": [
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Priest of Forgotten Gods": [
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Priest of Gix": [
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Primeval Bounty": [
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Primeval Herald": [
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Prophetic Prism": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Prosperous Thief": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Psemilla, Meletian Poet": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Purple-Crystal Crab": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      }
+    ],
+    "Pyrophobia": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Qala, Ajani's Pridemate": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Quirion Beastcaller": [
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      }
+    ],
+    "Raise the Alarm": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Rally of Wings": [
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Rampant Growth": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Rapacious Dragon": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      }
+    ],
+    "Razorgrass Invoker": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      }
+    ],
+    "Read the Bones": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Realm Seekers": [
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      }
+    ],
+    "Reaper from the Abyss": [
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      }
+    ],
+    "Reassembling Skeleton": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Reckless Amplimancer": [
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Reckless Impulse": [
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Reckless Scholar": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Recruitment Officer": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Recumbent Bliss": [
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      }
+    ],
+    "Relic Axe": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Relief Captain": [
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Remand": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Renegade Tactics": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      }
+    ],
+    "Repel the Darkness": [
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Resistance Reunited": [
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      }
+    ],
+    "Resistance Skywarden": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      }
+    ],
+    "Retreat to Kazandu": [
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      }
+    ],
+    "Rev, Tithe Extractor": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Revitalize": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Revoke Demise": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Rhox Faithmender": [
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      }
+    ],
+    "Righteous Valkyrie": [
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      }
+    ],
+    "Rionya, Fire Dancer": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Rishkar, Peema Renegade": [
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      }
+    ],
+    "Rodolf Duskbringer": [
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Roil Eruption": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Ronom Unicorn": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Run Ashore": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Ruthless Knave": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Ruthless Technomancer": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      }
+    ],
+    "Sai, Master Thopterist": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      }
+    ],
+    "Sanctum Seeker": [
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      }
+    ],
+    "Sandsteppe Outcast": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Sandstorm Crasher": [
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Sangromancer": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      }
+    ],
+    "Saproling Migration": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Sarkhan's Rage": [
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Sarkhan, Fireblood": [
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Satyr Hoplite": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      }
+    ],
+    "Saurian Symbiote": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Savage Stomp": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      }
+    ],
+    "Savannah Lions": [
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      }
+    ],
+    "Scavenged Blade": [
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      }
+    ],
+    "Scholar of Combustion": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      }
+    ],
+    "Scion of Darkness": [
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      }
+    ],
+    "Scion of Opulence": [
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      }
+    ],
+    "Scion of the Swarm": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Scourge of the Undercity": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      },
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Screaming Swarm": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Scythecat Cub": [
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Search Party Captain": [
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      }
+    ],
+    "Seat of the Synod": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Secluded Steppe": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Seize the Spoils": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Serpent Assassin": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Serpentine Ambush": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      }
+    ],
+    "Serra Angel": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      }
+    ],
+    "Serra's Embrace": [
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      }
+    ],
+    "Servant of the Scale": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      }
+    ],
+    "Severed Strands": [
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      }
+    ],
+    "Shambling Ghast": [
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Shardless Outlander": [
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      },
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Shield Mare": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Shimmer Dragon": [
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      }
+    ],
+    "Shipwreck Dowser": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Shock": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      }
+    ],
+    "Shore Keeper": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      }
+    ],
+    "Shorecomber Crab": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      }
+    ],
+    "Shoulder to Shoulder": [
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Shroofus Sproutsire": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Sigiled Starfish": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Silent Departure": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      }
+    ],
+    "Skemfar Shadowsage": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Sky-Eel School": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Skyclave Pick-Axe": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Skymarch Bloodletter": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      }
+    ],
+    "Slimebind": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      }
+    ],
+    "Slimy Piper": [
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Slinza, the Spiked Stampede": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Smoke Shroud": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Snakeskin Veil": [
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Snapping Gnarlid": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Somberwald Beastmaster": [
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      }
+    ],
+    "Soul Read": [
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Soul Sear": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Sparktongue Dragon": [
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      }
+    ],
+    "Speakeasy Server": [
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      }
+    ],
+    "Speaker of the Heavens": [
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      }
+    ],
+    "Spectral Sailor": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Spellgorger Weird": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      }
+    ],
+    "Sphinx of Enlightenment": [
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      }
+    ],
+    "Spined Tyrranax": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      }
+    ],
+    "Spirited Companion": [
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Spore Crawler": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      }
+    ],
+    "Spore Swarm": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Sporecrown Thallid": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Sporemound": [
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Sprite Noble": [
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Squad Captain": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      }
+    ],
+    "Stalwart Valkyrie": [
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Star Pupil": [
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      }
+    ],
+    "Starfield Mystic": [
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      }
+    ],
+    "Starlight Snare": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      },
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Starlit Mantle": [
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      }
+    ],
+    "Starnheim Courser": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      }
+    ],
+    "Starnheim Memento": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      }
+    ],
+    "Steadfast Sentry": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Steadfast Unicorn": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Stinging Lionfish": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Stitched Drake": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      }
+    ],
+    "Stolen Vitality": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Stolen by the Fae": [
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Stone Haven Outfitter": [
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      }
+    ],
+    "Stony Strength": [
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      }
+    ],
+    "Stronghold Confessor": [
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Subtle Strike": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Sudden Insight": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Sunblade Samurai": [
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      }
+    ],
+    "Sungrace Pegasus": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Sunhome Stalwart": [
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Sunmane Pegasus": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Sunspear Shikari": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      }
+    ],
+    "Supreme Will": [
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      }
+    ],
+    "Sutina, Speaker of the Tajuru": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      }
+    ],
+    "Swamp": [
+      {
+        "deck": "clerics-1",
+        "quantity": 7
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 7
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 7
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 7
+      },
+      {
+        "deck": "ghastly-1",
+        "quantity": 7
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 7
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 7
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 7
+      },
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 7
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 7
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 6
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 7
+      },
+      {
+        "deck": "icky-1",
+        "quantity": 7
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 7
+      },
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 7
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 7
+      },
+      {
+        "deck": "nefarious-1",
+        "quantity": 7
+      },
+      {
+        "deck": "snakes-1",
+        "quantity": 7
+      },
+      {
+        "deck": "treasures-1",
+        "quantity": 7
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 6
+      },
+      {
+        "deck": "vampires-1",
+        "quantity": 7
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 7
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 7
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 7
+      },
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Swarm of Bloodflies": [
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      }
+    ],
+    "Swift Response": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Syr Elenora, the Discerning": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Taborax, Hope's Demise": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      }
+    ],
+    "Taeko, the Patient Avalanche": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Tail Swipe": [
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Tajuru Pathwarden": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      }
+    ],
+    "Take Up the Shield": [
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      }
+    ],
+    "Teferi's Ageless Insight": [
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      }
+    ],
+    "Tenacity": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Terramorphic Expanse": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Territorial Scythecat": [
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      }
+    ],
+    "Tethmos High Priest": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      }
+    ],
+    "Thieves' Guild Enforcer": [
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Thieves' Tools": [
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      }
+    ],
+    "Thirsting Bloodlord": [
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      }
+    ],
+    "Thopter Architect": [
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      }
+    ],
+    "Thopter Mechanic": [
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      }
+    ],
+    "Thornweald Archer": [
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      }
+    ],
+    "Thought Monitor": [
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      }
+    ],
+    "Thoughtcast": [
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      }
+    ],
+    "Thrashing Brontodon": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Thriving Bluff": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      },
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dragons-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      },
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Thriving Grove": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      },
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-1",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-2",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-3",
+        "quantity": 1
+      },
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-1",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-2",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-3",
+        "quantity": 1
+      },
+      {
+        "deck": "encounter-4",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      },
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-2",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-3",
+        "quantity": 1
+      },
+      {
+        "deck": "landfall-4",
+        "quantity": 1
+      },
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Thriving Heath": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-2",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-4",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-1",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-2",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-3",
+        "quantity": 1
+      },
+      {
+        "deck": "enchanted-4",
+        "quantity": 1
+      },
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "healers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-1",
+        "quantity": 1
+      },
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      },
+      {
+        "deck": "prideful-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Thriving Isle": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      },
+      {
+        "deck": "illusions-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-3",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      },
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      },
+      {
+        "deck": "wizards-2",
+        "quantity": 1
+      }
+    ],
+    "Thriving Moor": [
+      {
+        "deck": "clerics-1",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-2",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ne-er-do-wells-2",
+        "quantity": 1
+      },
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      },
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Thryx, the Sudden Storm": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      }
+    ],
+    "Thundering Spineback": [
+      {
+        "deck": "dinosaurs-1",
+        "quantity": 1
+      },
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Thurid, Mare of Destiny": [
+      {
+        "deck": "giddyap-1",
+        "quantity": 1
+      }
+    ],
+    "Tide Skimmer": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Tidepool Turtle": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      },
+      {
+        "deck": "of-the-coast-2",
+        "quantity": 1
+      }
+    ],
+    "Time to Feed": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Tireless Provisioner": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-1",
+        "quantity": 1
+      }
+    ],
+    "Tireless Tracker": [
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      }
+    ],
+    "Titan's Strength": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      }
+    ],
+    "Tolarian Kraken": [
+      {
+        "deck": "bookworms-4",
+        "quantity": 1
+      }
+    ],
+    "Topiary Stomper": [
+      {
+        "deck": "dinosaurs-2",
+        "quantity": 1
+      }
+    ],
+    "Torment of Scarabs": [
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Tough Cookie": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Towering-Wave Mystic": [
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Tragic Slip": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Trail of Crumbs": [
+      {
+        "deck": "dinner-1",
+        "quantity": 1
+      }
+    ],
+    "Treasure Keeper": [
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      },
+      {
+        "deck": "inventive-4",
+        "quantity": 1
+      }
+    ],
+    "Trial of Knowledge": [
+      {
+        "deck": "bookworms-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bookworms-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      }
+    ],
+    "Trial of Zeal": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Triplicate Spirits": [
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Trueheart Twins": [
+      {
+        "deck": "zealots-3",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ],
+    "Trusty Retriever": [
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      }
+    ],
+    "Tukatongue Thallid": [
+      {
+        "deck": "fun-guys-1",
+        "quantity": 1
+      }
+    ],
+    "Twinferno": [
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Typhoid Rats": [
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      }
+    ],
+    "Tyvar Kell": [
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Ukud Cobra": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Ulcerate": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Ulvenwald Mysteries": [
+      {
+        "deck": "explorers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      }
+    ],
+    "Uncaged Fury": [
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Uncomfortable Chill": [
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Undead Butler": [
+      {
+        "deck": "grave-robbers-2",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-4",
+        "quantity": 1
+      }
+    ],
+    "Undercellar Myconid": [
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Undercity Scrounger": [
+      {
+        "deck": "treasures-1",
+        "quantity": 1
+      },
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Undergrowth Champion": [
+      {
+        "deck": "landfall-1",
+        "quantity": 1
+      }
+    ],
+    "Undersea Invader": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      }
+    ],
+    "Universal Solvent": [
+      {
+        "deck": "inventive-2",
+        "quantity": 1
+      }
+    ],
+    "Unleash Fury": [
+      {
+        "deck": "stoked-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      }
+    ],
+    "Unstoppable Ogre": [
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Urdnan, Dromoka Warrior": [
+      {
+        "deck": "stalwart-1",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stalwart-4",
+        "quantity": 1
+      }
+    ],
+    "Urge to Feed": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      }
+    ],
+    "Valkyrie Harbinger": [
+      {
+        "deck": "healers-2",
+        "quantity": 1
+      }
+    ],
+    "Valkyrie's Sword": [
+      {
+        "deck": "armed-1",
+        "quantity": 1
+      },
+      {
+        "deck": "armed-3",
+        "quantity": 1
+      }
+    ],
+    "Valorous Stance": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Vampire Nighthawk": [
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Vampire Scrivener": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Vampire of the Dire Moon": [
+      {
+        "deck": "vampires-1",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-2",
+        "quantity": 1
+      },
+      {
+        "deck": "vampires-4",
+        "quantity": 1
+      }
+    ],
+    "Vampiric Fury": [
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      }
+    ],
+    "Vault of Whispers": [
+      {
+        "deck": "treasures-2",
+        "quantity": 1
+      }
+    ],
+    "Venerated Loxodon": [
+      {
+        "deck": "legion-2",
+        "quantity": 1
+      }
+    ],
+    "Venomous Hierophant": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Venser, Shaper Savant": [
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Verdeloth the Ancient": [
+      {
+        "deck": "fun-guys-2",
+        "quantity": 1
+      }
+    ],
+    "Vexing Gull": [
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Vicious Conquistador": [
+      {
+        "deck": "vampires-3",
+        "quantity": 1
+      }
+    ],
+    "Vilis, Broker of Blood": [
+      {
+        "deck": "nefarious-1",
+        "quantity": 1
+      }
+    ],
+    "Village Rites": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-2",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      }
+    ],
+    "Violent Outburst": [
+      {
+        "deck": "chaos-1",
+        "quantity": 1
+      }
+    ],
+    "Virus Beetle": [
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Vito, Thorn of the Dusk Rose": [
+      {
+        "deck": "clerics-3",
+        "quantity": 1
+      },
+      {
+        "deck": "clerics-4",
+        "quantity": 1
+      }
+    ],
+    "Voice of the Woods": [
+      {
+        "deck": "elves-4",
+        "quantity": 1
+      }
+    ],
+    "Voldaren Ambusher": [
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Voldaren Duelist": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-2",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-3",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Voldaren Epicure": [
+      {
+        "deck": "bloody-1",
+        "quantity": 1
+      },
+      {
+        "deck": "bloody-4",
+        "quantity": 1
+      }
+    ],
+    "Volley Veteran": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-2",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-4",
+        "quantity": 1
+      }
+    ],
+    "Voracious Greatshark": [
+      {
+        "deck": "surprise-2",
+        "quantity": 1
+      }
+    ],
+    "Vraska's Finisher": [
+      {
+        "deck": "snakes-1",
+        "quantity": 1
+      }
+    ],
+    "Wailing Ghoul": [
+      {
+        "deck": "grave-robbers-1",
+        "quantity": 1
+      },
+      {
+        "deck": "grave-robbers-3",
+        "quantity": 1
+      }
+    ],
+    "Wakedancer": [
+      {
+        "deck": "ghastly-1",
+        "quantity": 1
+      },
+      {
+        "deck": "ghastly-4",
+        "quantity": 1
+      }
+    ],
+    "Waker of Waves": [
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Wall of Lost Thoughts": [
+      {
+        "deck": "drowned-1",
+        "quantity": 1
+      },
+      {
+        "deck": "drowned-2",
+        "quantity": 1
+      }
+    ],
+    "Warbriar Blessing": [
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Warden of Evos Isle": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-2",
+        "quantity": 1
+      }
+    ],
+    "Waterkin Shaman": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      }
+    ],
+    "Wavebreak Hippocamp": [
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Weaselback Redcap": [
+      {
+        "deck": "goblins-1",
+        "quantity": 1
+      },
+      {
+        "deck": "goblins-3",
+        "quantity": 1
+      },
+      {
+        "deck": "too-many-1",
+        "quantity": 1
+      }
+    ],
+    "Weaver of Lightning": [
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Whirlermaker": [
+      {
+        "deck": "inventive-1",
+        "quantity": 1
+      }
+    ],
+    "Whirlwind Denial": [
+      {
+        "deck": "ninjas-1",
+        "quantity": 1
+      }
+    ],
+    "Wildfire Elemental": [
+      {
+        "deck": "burning-1",
+        "quantity": 1
+      }
+    ],
+    "Wind Strider": [
+      {
+        "deck": "surprise-1",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-3",
+        "quantity": 1
+      },
+      {
+        "deck": "surprise-4",
+        "quantity": 1
+      }
+    ],
+    "Windcaller Aven": [
+      {
+        "deck": "wizards-1",
+        "quantity": 1
+      }
+    ],
+    "Windreader Sphinx": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      }
+    ],
+    "Windstorm Drake": [
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      }
+    ],
+    "Winged Words": [
+      {
+        "deck": "soaring-1",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-3",
+        "quantity": 1
+      },
+      {
+        "deck": "soaring-4",
+        "quantity": 1
+      }
+    ],
+    "Wingsteed Rider": [
+      {
+        "deck": "heroes-1",
+        "quantity": 1
+      },
+      {
+        "deck": "heroes-2",
+        "quantity": 1
+      }
+    ],
+    "Witching Well": [
+      {
+        "deck": "bookworms-2",
+        "quantity": 1
+      }
+    ],
+    "Wolfrider's Saddle": [
+      {
+        "deck": "modified-1",
+        "quantity": 1
+      }
+    ],
+    "Woodland Champion": [
+      {
+        "deck": "explorers-3",
+        "quantity": 1
+      }
+    ],
+    "Woodland Liege": [
+      {
+        "deck": "beasts-1",
+        "quantity": 1
+      },
+      {
+        "deck": "beasts-2",
+        "quantity": 1
+      }
+    ],
+    "Wrecking Crew": [
+      {
+        "deck": "warriors-1",
+        "quantity": 1
+      },
+      {
+        "deck": "warriors-2",
+        "quantity": 1
+      }
+    ],
+    "Wriggling Grub": [
+      {
+        "deck": "ghastly-3",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-1",
+        "quantity": 1
+      },
+      {
+        "deck": "icky-2",
+        "quantity": 1
+      }
+    ],
+    "Yarok's Wavecrasher": [
+      {
+        "deck": "of-the-coast-1",
+        "quantity": 1
+      }
+    ],
+    "Young Pyromancer": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-3",
+        "quantity": 1
+      },
+      {
+        "deck": "stoked-4",
+        "quantity": 1
+      }
+    ],
+    "Youthful Valkyrie": [
+      {
+        "deck": "angels-1",
+        "quantity": 1
+      },
+      {
+        "deck": "angels-2",
+        "quantity": 1
+      }
+    ],
+    "Zada, Hedron Grinder": [
+      {
+        "deck": "copied-1",
+        "quantity": 1
+      },
+      {
+        "deck": "copied-2",
+        "quantity": 1
+      }
+    ],
+    "Zealot of the God-Pharaoh": [
+      {
+        "deck": "zealots-2",
+        "quantity": 1
+      }
+    ],
+    "Zealous Conscripts": [
+      {
+        "deck": "zealots-1",
+        "quantity": 1
+      },
+      {
+        "deck": "zealots-4",
+        "quantity": 1
+      }
+    ]
+  }
 }

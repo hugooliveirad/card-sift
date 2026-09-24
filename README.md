@@ -11,10 +11,12 @@ Inspired by [Jumpstart Atlas](https://hugobessa.com.br/jumpstart-atlas/). A sepa
 1. Import a CSV, TSV, text decklist, Card Sift backup, or Jumpstart Atlas JSON backup. Review column mappings and excluded rows before applying it. Replace a full collection or add new copies. The previous inventory can be restored with Undo last import until you leave the page.
 2. Choose formats and whether you want tournament evidence (default) or any legal card. Set a minimum deck share, a playset target, separate reserves per land printing, J25 deck membership, protected rarities, and a USD/EUR price floor.
 3. Review the table or image grid. Search names or use advanced query syntax; include/exclude card types, search owned sets, and filter by recommendation, color, or rarity. Sort by tournament play, name, price, quantity, bulk, or review.
-4. Open a card for all reasons, current legalities, source links, and a manual keep/bulk override. Previous/Next and arrow keys follow the filtered, sorted collection across pages; Back or Escape from editing restores the card and scroll position. Correct a card identifier or quantity if needed.
+4. Open a card for all owned versions, a format matrix with legality and tournament usage, named J25 decks, and links to matching tournament decklists. Each owned version has a link menu for Scryfall printing/set pages, LigaMagic prices, and MTGTop8. Select a version to edit its quantity or override that printing and finish. Previous/Next and arrow keys follow the filtered, sorted collection across pages; switching owned versions preserves your position. Back or Escape from editing restores the card and scroll position.
 5. Export a CSV sorting plan for your current view or the entire collection. Export a JSON backup to preserve your inventory, rules, and decisions.
 
 Try the example collection without replacing your own inventory. The example uses real Scryfall printings and is clearly labeled.
+
+The table joins finishes of the same known printing, showing separate finish quantities and unit prices with a combined sorting plan. Filters apply before joining: a foil-only search shows only matching copies. Exports and backups retain individual finish rows. The grid keeps finishes separate and marks foil/etched cards with a subtle rainbow overlay and a text label. Name-only rows remain separate because their printing is unverified.
 
 ## How decisions work
 
@@ -35,9 +37,11 @@ Try the example collection without replacing your own inventory. The example use
 
 Commander supports legality mode. There is no bundled Commander tournament source. Tournament mode treats legal Commander cards without evidence as uncertain.
 
+Card details show every supported format, independently of the keep-rule selections. Green circles indicate legal/restricted status; gray circles indicate nonlegal/unknown status, with text labels distinguishing each. Usage is the higher section share, with mainboard/sideboard breakdown on hover and links to the source. Missing sampled evidence is never displayed as 0%. Tournament deck links open MTGTop8 searches by card and format; the app does not infer archetype shares from aggregate card statistics.
+
 ### J25 membership and search
 
-`data/j25.json` is derived by `scripts/update-j25.py` from Jumpstart Atlas's `CATALOG`, currently 768 names across 121 decks. The deployment refreshes this derived list from the Atlas repository. It is not a separately maintained deck catalog. Missing membership data sends otherwise unprotected copies to review when the J25 rule is enabled.
+`data/j25.json` is derived by `scripts/update-j25.py` from Jumpstart Atlas's `CATALOG`, currently 768 names across 121 decks. It includes deck names, variants, and per-card membership quantities for links back to the Atlas decklists. The deployment refreshes this derived index from the Atlas repository. It is not a separately maintained deck catalog. Missing membership data sends otherwise unprotected copies to review when the J25 rule is enabled.
 
 Advanced fields mirror Atlas: card name, rules text, type line with exclusions, set, mana cost, artist, flavor, lore, criteria, colors and identity, mana value/power/toughness/loyalty, format status, price, rarity, and game. Applying fields writes a visible query. Local searches support AND, OR, parentheses, negation, and sorting predicates such as `is:keep`, `is:bulk`, `is:review`, and `is:j25`.
 
