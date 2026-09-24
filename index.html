@@ -379,15 +379,17 @@
                 <option value="review">Needs review first</option>
               </select>
             </div>
+            <label class="set-search-label" for="set-search">Set search</label>
             <div class="collection-filter-row">
-              <label class="field set-search"
-                >Set search<input
+              <div class="field set-search">
+                <input
                   id="set-search"
                   type="search"
                   list="owned-sets"
                   placeholder="Set code or name, e.g. J25"
-                  autocomplete="off" /></label
-              ><datalist id="owned-sets"></datalist>
+                  autocomplete="off" />
+              </div>
+              <datalist id="owned-sets"></datalist>
               <details class="type-filter-panel" id="type-filters">
                 <summary>
                   Card types <span id="type-filter-count"></span>

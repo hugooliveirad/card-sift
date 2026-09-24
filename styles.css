@@ -2305,6 +2305,12 @@ dialog::backdrop {
   }
 }
 
+.set-search-label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  color: var(--muted);
+}
 .collection-filter-row {
   display: flex;
   align-items: flex-start;
@@ -2315,6 +2321,9 @@ dialog::backdrop {
 .collection-filter-row .field {
   margin: 0;
 }
+.collection-filter-row > .text-button {
+  min-height: 37px;
+}
 .set-search {
   flex: 1;
   min-width: 180px;
@@ -2324,7 +2333,7 @@ dialog::backdrop {
   flex: 1;
   min-width: 200px;
   border: 1px solid var(--line);
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-radius: 7px;
   background: var(--panel);
 }
