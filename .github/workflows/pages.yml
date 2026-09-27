@@ -33,7 +33,7 @@ jobs:
           node --check src/app.js
           node --check src/data.js
       - name: Refresh requested set cache
-        run: node scripts/update-set-cache.mjs
+        run: node scripts/update-set-cache.mjs --max-age-hours 24
       - name: Refresh tournament evidence
         run: python3 scripts/update-metagame.py
       - uses: actions/cache@v4

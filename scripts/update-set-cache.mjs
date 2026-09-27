@@ -1,26 +1,59 @@
-import { writeFile, rename, mkdir } from "node:fs/promises";
+import { readFile, writeFile, rename, mkdir } from "node:fs/promises";
 import { compactCard } from "../src/data.js";
 
 const roots = ["fdn", "j25", "hob", "sos"];
+const ageOption = process.argv.indexOf("--max-age-hours");
+const maxAgeHours = ageOption < 0 ? 0 : Number(process.argv[ageOption + 1]);
+if (!Number.isFinite(maxAgeHours) || maxAgeHours < 0)
+  throw new Error("--max-age-hours must be a nonnegative number");
+if (maxAgeHours > 0) {
+  const old = await readFile("data/set-cache.json", "utf8")
+    .then(JSON.parse)
+    .catch((error) => {
+      if (error.code !== "ENOENT") throw error;
+      return null;
+    });
+  const age = Date.now() - Date.parse(old?.fetchedAt);
+  if (
+    old?.schema === 1 &&
+    old.cards?.length &&
+    roots.every((code) => old.roots?.includes(code)) &&
+    age >= 0 &&
+    age < maxAgeHours * 3600000
+  ) {
+    console.log(`Using complete set snapshot from ${old.fetchedAt}`);
+    process.exit(0);
+  }
+}
 const excludedTypes = new Set(["alchemy"]);
 const headers = {
   Accept: "application/json",
   "User-Agent": "CardSift/1.0 (github.com/hugooliveirad/card-sift)",
 };
 async function get(url) {
+  let retryDelay = 500;
+  let lastStatus = "unknown";
   for (let attempt = 0; attempt < 5; attempt++) {
-    await new Promise((resolve) =>
-      setTimeout(resolve, 500 + 1000 * (2 ** attempt - 1)),
-    );
+    await new Promise((resolve) => setTimeout(resolve, retryDelay));
     const response = await fetch(url, {
       headers,
       signal: AbortSignal.timeout(30000),
     });
-    if (response.status === 429 || response.status >= 500) continue;
+    if (response.status === 429 || response.status >= 500) {
+      lastStatus = response.status;
+      const retryAfter = response.headers.get("Retry-After");
+      const advisedDelay = retryAfter
+        ? Number.isFinite(Number(retryAfter))
+          ? Number(retryAfter) * 1000
+          : Date.parse(retryAfter) - Date.now()
+        : 0;
+      retryDelay = Math.max(5000 * 2 ** attempt, advisedDelay || 0);
+      continue;
+    }
     if (!response.ok) throw new Error(`Scryfall ${response.status}: ${url}`);
     return response.json();
   }
-  throw new Error(`Scryfall unavailable: ${url}`);
+  throw new Error(`Scryfall unavailable (${lastStatus}): ${url}`);
 }
 const allSets = (await get("https://api.scryfall.com/sets")).data;
 const included = new Set(roots);
