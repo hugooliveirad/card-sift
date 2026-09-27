@@ -2510,3 +2510,7 @@ dialog::backdrop {
   border-top: 1px solid var(--line);
   font-size: 12px;
 }
+
+.deck-count-number:first-child {
+  margin-top: 0;
+}

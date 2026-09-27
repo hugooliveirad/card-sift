@@ -71,6 +71,10 @@ export function parseCSV(text) {
       ),
     ]),
   );
+  const englishName = headers.findIndex(
+    (header) => header.toLowerCase().replace(/[^a-z]/g, "") === "englishname",
+  );
+  if (englishName >= 0) mapping.name = englishName;
   return { headers, rows, mapping, delimiter };
 }
 export function rowsFromCSV(parsed, mapping = parsed.mapping) {

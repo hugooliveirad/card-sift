@@ -43,13 +43,13 @@ Card details show every supported format, independently of the keep-rule selecti
 
 `data/deck-counts.json` adds exact MTGTop8 search totals for a rolling **365 inclusive calendar days**, ending at the snapshot date. Each search selects one card, one format, and both mainboard and sideboard. Its result count counts matching decklists once, even when a card is in both sections. Counts are not extrapolated from rounded percentages or the small archetype example sample. MTGDecks was considered, but its pages rejected automated access.
 
-The index covers the card names already collected in the annual mainboard/sideboard statistics snapshot for each of the eight formats. **It is not a complete catalog of every played card.** Unindexed cards have an unknown count, not zero; basic lands use the separate reserve and Commander has no count source. Card details link to the exact dated search and show each format's count, independently of format selection. Count windows and percentage windows are labeled separately.
+**Pauper and Duel Commander cover every legal/restricted card name in the preloaded release families**, even when it is absent from the annual top-card sample. Each name gets an actual dated lookup, including confirmed zero-result searches. Other formats retain the annual statistics index. **It is not a complete catalog of every played card.** Unindexed cards have an unknown count, not zero; basic lands use the separate reserve and Commander has no count source. Card details link to the exact dated search and show each format's count, independently of format selection. Count windows and percentage windows are labeled separately.
 
 Choose **Appear in at least X decks** in Keep rules to reserve a playset when the card meets that count in at least one selected, currently legal/restricted format. This is an alternative to the percentage criterion; rarity, price, J25, land reserves, and overrides retain their existing behavior. Missing counts or old negative evidence require review; known positive counts can still protect copies and are marked when old. Existing saved rules and backups default the new `minDecks` field to 10 and retain their previous mode.
 
 The collection's **Minimum decks · last 365 days** filters the table/grid independently of Keep rules. Unindexed cards are excluded while a minimum is active. **Most decks** sorts by the highest indexed count in a selected legal format, with unknown counts last. Counts are never summed across formats. CSV exports include counts by selected format and their window and fetch date.
 
-Run `python3 scripts/update-deck-counts.py` to refresh. It validates echoed source filters, checkpoints progress locally, starts card lookups at least one second apart with at most three in flight, and publishes atomically only after all counts finish. Complete snapshots are reused for up to seven days; Actions caches them to avoid a full crawl on every UI deploy. A refresh failure prevents publication. The rolling window always refers to the displayed snapshot dates, not live browser time.
+Run `python3 scripts/update-deck-counts.py` to refresh. It validates echoed source filters, checkpoints progress locally, starts card lookups at least one second apart with at most three in flight, and publishes atomically only after all counts finish. Counts are reused for up to seven days, but newly added set/card coverage is filled immediately using the same date window. Adventure/transform/modal cards search their front face, while split/Room cards use MTGTop8’s combined name; all results are stored under the canonical English name. Actions caches complete snapshots to avoid a full crawl on every UI deploy. A refresh failure prevents publication. The rolling window always refers to the displayed snapshot dates, not live browser time.
 
 **Named tournament archetypes** come from `data/archetypes.json`, refreshed by `scripts/update-archetypes.py`. For each of the eight supported tournament formats it reads the first 25 results of MTGTop8's recent deck search, restricted to the preceding 60 days, then reads those actual decklists and their source-assigned archetypes. It publishes only after every requested page succeeds and passes identity, format, date, and decklist checks. Commander entries in Duel Commander are distinguished from mainboard and sideboard cards using the source's section headings.
 
@@ -65,6 +65,14 @@ Types include any selected type and exclude every selected type. Set search matc
 
 Online-only Scryfall syntax (including mana-cost comparisons, regex, and lore) searches all matching printings and intersects printing IDs with the collection. Name-only rows use their reference printing for online queries. Remote results are applied only after every page succeeds; cancellation prevents old queries from replacing new results. Searches over 10,000 printings require a narrower query. Collection-specific `is:` terms cannot combine with online-only syntax; use the recommendation tabs for Keep/Bulk/Review instead.
 
+### Preloaded release families
+
+`data/set-cache.json` contains Scryfall metadata for **FDN, J25, HOB, SOS and their related paper sets**, discovered through Scryfall's parent-set links. This includes Foundations Commander, The Hobbit Eternal, Secrets of Strixhaven Commander, Mystical Archive, promos, tokens, front cards, and art cards. Special Guests printings are included only when their release dates match those root releases. Alchemy is excluded. Tokens and front/art cards are metadata entries; they do not create invented tournament evidence.
+
+The cache is generated by `node scripts/update-set-cache.mjs` before the tournament counts refresh. It contains public card metadata only, never your collection quantities, purchase prices, or containers. Exact printing IDs and set/collector numbers remain distinct. Imports and saved collections use matching bundled metadata immediately; normal import lookup can reuse it for up to seven days. **Refresh card data** still forces live Scryfall lookup, and older bundled data retains its original timestamp and remains subject to review.
+
+For Mythic Tools CSV files, the importer now prefers **English Name** over the localized Card Name field. Non-English printing IDs that are not in the English bundle still resolve through Scryfall. The **Use Pauper + Duel · at least 1 deck** button applies those two formats and a minimum of one recorded deck, without changing copy targets, rarity/price protection, or J25 preferences. Existing saved rules remain intact until you apply the preset or change them yourself.
+
 ### Scryfall and prices
 
 [Scryfall collection API](https://scryfall.com/docs/api/cards/collection) lookups batch up to 75 distinct identifiers, with at least 600 ms between requests, bounded retries, cancellation, and timeouts. This respects the documented collection endpoint limit of two requests per second. Metadata and prices are cached for 24 hours in IndexedDB; Refresh card data bypasses the cache. Data older than seven days requires review before bulk recommendations.
@@ -79,6 +87,7 @@ Files and quantities stay local. Scryfall receives identifiers to resolve cards 
 python3 -m http.server 8001
 # Open http://localhost:8001
 npm test
+node scripts/update-set-cache.mjs
 python3 scripts/update-metagame.py
 python3 scripts/update-archetypes.py
 python3 scripts/update-deck-counts.py
@@ -92,6 +101,7 @@ No package install or bundler needed. Native ES modules require HTTP rather than
 - `src/core.js`: pure allocation rules, price lookup, and grouping.
 - `src/import.js`: CSV/decklist parsing, import validation, backup validation, and CSV output.
 - `src/data.js`: IndexedDB and Scryfall lookup/cache.
+- `src/set-cache.js`: bundled printing indexes and import hydration.
 - `src/search.js`: query parsing, local matching, advanced-field composition, and online search.
 - `src/archetypes.js`: card-to-deck evidence indexing and grouping by tournament archetype.
 - `src/app.js`: interaction and rendering.
@@ -100,7 +110,7 @@ No package install or bundler needed. Native ES modules require HTTP rather than
 
 ## Deployment
 
-GitHub Pages uses [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Pushes to `main`, manual dispatches, and a weekly Monday schedule run tests, refresh tournament statistics, annual deck counts, archetype decklists, J25 membership, and example prices, and deploy a static artifact. The source repo does not accumulate automated data commits. A failed source refresh fails the deployment and leaves the previous site available. GitHub may suspend scheduled workflows after 60 days without repository activity; re-enable a suspended workflow in Actions or with `gh workflow enable pages.yml`. Old evidence is labeled and handled conservatively in the app.
+GitHub Pages uses [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Pushes to `main`, manual dispatches, and a weekly Monday schedule run tests, refresh release-family card metadata, tournament statistics, annual deck counts, archetype decklists, J25 membership, and example prices, and deploy a static artifact. The source repo does not accumulate automated data commits. A failed source refresh fails the deployment and leaves the previous site available. GitHub may suspend scheduled workflows after 60 days without repository activity; re-enable a suspended workflow in Actions or with `gh workflow enable pages.yml`. Old evidence is labeled and handled conservatively in the app.
 
 The committed snapshots support immediate local use. The deployed snapshots are generated afresh by the workflow, so their timestamps may differ from the files in git.
 

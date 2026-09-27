@@ -44,6 +44,13 @@
           <fieldset>
             <legend>01 <span>Your formats</span></legend>
             <div id="format-options" class="format-options"></div>
+            <button
+              type="button"
+              class="button quiet small"
+              data-action="priority-formats"
+            >
+              Use Pauper + Duel · at least 1 deck
+            </button>
             <label class="field"
               >Keep cards that<select name="formatMode">
                 <option value="played">See tournament play</option>
@@ -78,6 +85,16 @@
             <p class="hint" id="format-hint">
               Mainboard or sideboard usage qualifies for your playset reserve.
             </p>
+            <details class="native-details">
+              <summary>Preloaded sets</summary>
+              <p class="hint" id="set-cache-status">
+                Loading the card and tournament cache…
+              </p>
+              <a href="./data/set-cache.json" download>Download card cache</a
+              ><br /><a href="./data/deck-counts.json" download
+                >Download tournament counts</a
+              >
+            </details>
           </fieldset>
           <fieldset>
             <legend>02 <span>Copies to keep</span></legend>

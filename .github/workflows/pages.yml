@@ -15,7 +15,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -32,13 +32,15 @@ jobs:
           npm test
           node --check src/app.js
           node --check src/data.js
+      - name: Refresh requested set cache
+        run: node scripts/update-set-cache.mjs
       - name: Refresh tournament evidence
         run: python3 scripts/update-metagame.py
       - uses: actions/cache@v4
         with:
           path: data/deck-counts.json
-          key: deck-counts-v1-${{ github.run_id }}
-          restore-keys: deck-counts-v1-
+          key: deck-counts-v2-${{ github.run_id }}
+          restore-keys: deck-counts-v2-
       - name: Refresh annual deck counts
         run: python3 scripts/update-deck-counts.py
       - name: Refresh archetype decklist evidence

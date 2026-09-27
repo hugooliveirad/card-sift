@@ -62,26 +62,38 @@ def main():
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     now = dt.datetime.now(dt.timezone.utc)
-    if output.exists():
-        old = json.loads(output.read_text())
-        age = now - dt.datetime.fromisoformat(old['fetchedAt'])
-        if dt.timedelta(0) <= age < dt.timedelta(days=args.max_age_days):
-            print('Using current deck-count snapshot from ' + old['fetchedAt'], flush=True)
-            return
-    end = now.date()
-    start = end - dt.timedelta(days=364)  # Inclusive dates: exactly 365 days.
+    old = json.loads(output.read_text()) if output.exists() else None
+    age = now - dt.datetime.fromisoformat(old['fetchedAt']) if old else None
+    reuse = old is not None and dt.timedelta(0) <= age < dt.timedelta(days=args.max_age_days)
+    end = dt.date.fromisoformat(old['through']) if reuse else now.date()
+    start = end - dt.timedelta(days=364)
     candidates = json.loads(Path('data/metagame.json').read_text())
+    set_cache = json.loads(Path('data/set-cache.json').read_text())
+    wanted = {f: {c['name']: c['name'] for c in candidates['formats'][f]['cards']} for f in FORMATS}
+    for card in set_cache['cards']:
+        name = card['name']
+        source_name = name.replace(' // ', ' / ') if card.get('layout') in ('split', 'room') else name.split(' // ')[0]
+        for f in set_cache['priorityFormats']:
+            if card.get('legalities', {}).get(f) in ('legal', 'restricted'):
+                wanted[f][name] = source_name
     progress = output.with_suffix('.progress.json')
     checkpoint = json.loads(progress.read_text()) if progress.exists() else {}
-    if checkpoint.get('through') != end.isoformat():
-        checkpoint = {'through': end.isoformat(), 'formats': {}}
-    snapshot = {'schema': 1, 'source': 'MTGTop8', 'fetchedAt': now.isoformat(),
+    if checkpoint.get('through') != end.isoformat() or checkpoint.get('schema') != 2:
+        checkpoint = {'schema': 2, 'through': end.isoformat(), 'formats': {}}
+    if reuse:
+        for f, data in old['formats'].items():
+            saved = checkpoint['formats'].setdefault(f, {})
+            for card in data['cards']:
+                query_name = urllib.parse.parse_qs(urllib.parse.urlsplit(card['url']).query, encoding='windows-1252')['cards'][0]
+                saved.setdefault(query_name, card['decks'])
+    snapshot = {'schema': 1, 'source': 'MTGTop8', 'fetchedAt': old['fetchedAt'] if reuse else now.isoformat(),
                 'window': 'Last 365 days', 'from': start.isoformat(), 'through': end.isoformat(),
-                'selection': 'Cards in the annual mainboard and sideboard statistics index',
+                'selection': 'Annual statistics plus every legal card in the cached set families for Pauper and Duel Commander',
+                'setCoverage': {'sets': [s['code'] for s in set_cache['sets']], 'formats': set_cache['priorityFormats']},
                 'sections': ['mainboard', 'sideboard'], 'formats': {}}
     for format_name, code in FORMATS.items():
         saved = checkpoint['formats'].setdefault(format_name, {})
-        names = sorted({c['name'] for c in candidates['formats'][format_name]['cards']})
+        names = sorted(set(wanted[format_name].values()))
         missing = [name for name in names if name not in saved]
         failures = []
         with ThreadPoolExecutor(max_workers=3) as pool:
@@ -100,7 +112,7 @@ def main():
                     print(f'{format_name}: {i}/{len(names)} cards', flush=True)
         if failures:
             raise ValueError('Incomplete counts; previous snapshot retained. ' + '; '.join(failures))
-        cards = [{'name': name, 'decks': saved[name], 'url': search_url(code, start, end, name)} for name in names]
+        cards = [{'name': name, 'decks': saved[source_name], 'url': search_url(code, start, end, source_name)} for name, source_name in sorted(wanted[format_name].items())]
         snapshot['formats'][format_name] = {'code': code, 'url': search_url(code, start, end), 'cards': cards}
         print(f'{format_name}: completed {len(cards)} exact card counts', flush=True)
     temporary = output.with_suffix('.tmp')

@@ -74,6 +74,7 @@ export function compactCard(card) {
   const images = card.image_uris || faces[0]?.image_uris || {};
   return {
     dataVersion: 2,
+    layout: card.layout,
     id: card.id,
     oracle_id: card.oracle_id,
     name: card.name,
@@ -175,7 +176,7 @@ async function requestCards(identifiers, signal) {
 }
 export async function enrich(
   rows,
-  { force = false, signal, onProgress = () => {} } = {},
+  { force = false, signal, onProgress = () => {}, preloadedAt = null } = {},
 ) {
   const pending = new Map();
   let completed = 0,
@@ -186,7 +187,9 @@ export async function enrich(
     if (
       !force &&
       row.card?.dataVersion === 2 &&
-      Date.now() - row.fetchedAt < 86400000
+      (Date.now() - row.fetchedAt < 86400000 ||
+        (row.fetchedAt === preloadedAt &&
+          Date.now() - preloadedAt < 7 * 86400000))
     ) {
       completed++;
       continue;

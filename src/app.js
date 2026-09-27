@@ -31,6 +31,7 @@ import {
   csvText,
 } from "./import.js";
 import { read, write, enrich } from "./data.js";
+import { indexSetCache, hydrateSetCache } from "./set-cache.js";
 import { buildArchetypeIndex, archetypesFor } from "./archetypes.js";
 import {
   CARD_TYPES,
@@ -111,6 +112,8 @@ let state = { rows: [], rules: structuredClone(DEFAULT_RULES) },
   snapshot = null,
   deckCounts = null,
   countEvidence = {},
+  setCache = null,
+  setIndex = null,
   j25 = null,
   archetypes = null,
   archetypeIndex = new Map(),
@@ -474,7 +477,19 @@ function tournamentLabel(row) {
     (h) => Math.max(h.mainboard, h.sideboard) === row.tournamentShare,
   );
   const decks = row.deckHits.find((h) => h.decks === row.tournamentDecks);
-  return `${share ? `<span class="number" title="${e(snapshot?.window || "Percentage snapshot")}">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[share.format])} · ${share.sideboard > share.mainboard ? "sideboard" : "mainboard"}</span>` : '<span class="muted">No share indexed</span>'}${decks ? `<span class="deck-count-number">${count(decks.decks)} decks</span><span class="price-note">${e(FORMATS[decks.format])} · last 365 days</span>` : '<span class="price-note">Deck count not indexed</span>'}`;
+  const shareLabel = share
+    ? `<span class="number" title="${e(snapshot?.window || "Percentage snapshot")}">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[share.format])} · ${share.sideboard > share.mainboard ? "sideboard" : "mainboard"}</span>`
+    : "";
+  const countLabel = decks
+    ? `<span class="number deck-count-number">${count(decks.decks)} ${decks.decks === 1 ? "deck" : "decks"}</span><span class="price-note">${e(FORMATS[decks.format])} · last 365 days</span>`
+    : '<span class="price-note">Deck count not indexed</span>';
+  return state.rules.formatMode === "decks" ||
+    sort === "decks" ||
+    minDecksFilter > 0
+    ? countLabel +
+        (shareLabel ? `<div class="price-note">${shareLabel}</div>` : "")
+    : (shareLabel || '<span class="muted">Not in percentage sample</span>') +
+        countLabel;
 }
 
 function displayedRows() {
@@ -503,7 +518,7 @@ function formatMatrix(row) {
       const hit = evidenceFor(row, format, evidence);
       const deckHit = evidenceFor(row, format, countEvidence);
       const countTag = deckHit
-        ? `<a class="format-decks" href="${e(deckCountLink(row, format))}" target="_blank" rel="noopener noreferrer"><strong>${count(deckHit.decks)} decks</strong><span class="format-breakdown">Last 365 days · mainboard or sideboard</span></a>`
+        ? `<a class="format-decks" href="${e(deckCountLink(row, format))}" target="_blank" rel="noopener noreferrer"><strong>${count(deckHit.decks)} ${deckHit.decks === 1 ? "deck" : "decks"}</strong><span class="format-breakdown">Last 365 days · mainboard or sideboard</span></a>`
         : `<span class="format-breakdown">${deckCounts?.formats?.[format] ? "Deck count not indexed" : "Deck counts unavailable"}</span>`;
       const statusLabel = status.replaceAll("_", " ");
       const source = safeURL(snapshot?.formats?.[format]?.url);
@@ -740,7 +755,7 @@ function renderResults() {
       `<div class="empty"><div class="empty-icon">${icon("search")}</div><h3>${searchLoading ? "Searching your collection…" : searchError ? "Check your search" : "No cards match this view."}</h3><p>${e(searchError || (searchLoading ? "Waiting for the full Scryfall result." : "Try another search or clear the filters to see your collection."))}</p><button class="button quiet small" data-action="clear-filters">Clear filters</button></div>`;
   } else if (view === "table") {
     $("#results").innerHTML =
-      `<div class="table-wrap" tabindex="0" role="region" aria-label="Collection table, scroll horizontally for all columns"><table><thead><tr><th scope="col">Card / printing</th><th scope="col">Rarity</th><th scope="col">Owned</th><th scope="col">Unit price</th><th scope="col" title="Highest mainboard or sideboard share in selected formats">Tournament play</th><th scope="col">Sorting plan</th><th scope="col">Why</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody>${visible.map((row) => `<tr><td><button class="card-cell" data-detail="${e(row.id)}"><span class="thumb ${row.versions.some(isFoil) ? "foil-image" : ""}">${safeURL(row.card?.art, "image") ? `<img src="${e(safeURL(row.card.art, "image"))}" alt="" loading="lazy">` : icon("layers")}</span><span><strong>${e(row.name)}</strong><small>${e(printing(row).replace(/ · (Nonfoil|Foil|Etched foil)$/, ""))}</small><small>${e(finishSummary(row))}</small></span></button></td><td><span class="rarity ${e(row.card?.rarity || "")}">${e(row.card?.rarity || "Unknown")}</span></td><td class="number">${count(row.quantity)}</td><td class="number">${finishPrices(row)}</td><td>${tournamentLabel(row)}</td><td>${pills(row)}</td><td class="reason-cell">${row.versions.length > 1 ? "Decisions by finish · open details" : e(reason(row))}</td><td><button class="more-button" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${icon("chevron")}</button></td></tr>`).join("")}</tbody></table></div>`;
+      `<div class="table-wrap" tabindex="0" role="region" aria-label="Collection table, scroll horizontally for all columns"><table><thead><tr><th scope="col">Card / printing</th><th scope="col">Rarity</th><th scope="col">Owned</th><th scope="col">Unit price</th><th scope="col" title="Highest deck count and section share in selected legal formats">Tournament play</th><th scope="col">Sorting plan</th><th scope="col">Why</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody>${visible.map((row) => `<tr><td><button class="card-cell" data-detail="${e(row.id)}"><span class="thumb ${row.versions.some(isFoil) ? "foil-image" : ""}">${safeURL(row.card?.art, "image") ? `<img src="${e(safeURL(row.card.art, "image"))}" alt="" loading="lazy">` : icon("layers")}</span><span><strong>${e(row.name)}</strong><small>${e(printing(row).replace(/ · (Nonfoil|Foil|Etched foil)$/, ""))}</small><small>${e(finishSummary(row))}</small></span></button></td><td><span class="rarity ${e(row.card?.rarity || "")}">${e(row.card?.rarity || "Unknown")}</span></td><td class="number">${count(row.quantity)}</td><td class="number">${finishPrices(row)}</td><td>${tournamentLabel(row)}</td><td>${pills(row)}</td><td class="reason-cell">${row.versions.length > 1 ? "Decisions by finish · open details" : e(reason(row))}</td><td><button class="more-button" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${icon("chevron")}</button></td></tr>`).join("")}</tbody></table></div>`;
   } else {
     $("#results").innerHTML =
       `<div class="card-grid">${visible.map((row) => `<article class="grid-card"><button class="grid-image ${isFoil(row) ? "foil-image" : ""}" data-detail="${e(row.id)}" aria-label="Details for ${e(row.name)}">${safeURL(row.card?.image, "image") ? `<img src="${e(safeURL(row.card.image, "image"))}" alt="${e(row.name)}" loading="lazy" width="488" height="680">` : '<span class="image-placeholder">◈</span>'}<span class="grid-qty">${count(row.quantity)} owned</span>${isFoil(row) ? `<span class="foil-label">✦ ${e(finishName(row.finish))}</span>` : ""}</button><div class="grid-body"><button class="grid-name" data-detail="${e(row.id)}">${e(row.name)}</button><div class="grid-meta"><span>${e(printing(row))}</span><span class="number">${money(row.price)}${row.price !== null && !row.exact ? " ref." : ""}</span></div>${pills(row)}<div class="grid-played">${tournamentLabel(row)}</div><details class="grid-formats"><summary>Formats &amp; tournament use</summary>${formatMatrix(row)}</details><p class="grid-reason">${e(reason(row))}</p></div></article>`).join("")}</div>`;
@@ -846,6 +861,7 @@ function backup() {
 }
 async function sync(force = false) {
   if (busy || !state.rows.length || previousState || !ready) return;
+  if (!force) hydrateSetCache(state.rows, setIndex);
   busy = true;
   syncController = new AbortController();
   render();
@@ -853,6 +869,7 @@ async function sync(force = false) {
   try {
     const done = await enrich(state.rows, {
       force,
+      preloadedAt: setIndex?.fetchedAt,
       signal: syncController.signal,
       onProgress: ({ completed, total, unmatched }) => {
         $("#sync-status").innerHTML =
@@ -1132,9 +1149,9 @@ function showSources() {
           `<div class="source-row"><div>${label}<small>${snapshot?.formats?.[format] ? count(snapshot.formats[format].cards.length) + " sampled card names" : "No tournament source bundled · legality mode available"}</small></div>${snapshot?.formats?.[format] ? `<a href="${e(safeURL(snapshot.formats[format].url))}" target="_blank" rel="noopener noreferrer">View MTGTop8 ${icon("external")}</a>` : ""}</div>`,
       )
       .join("")}
-    <div class="info-copy" style="margin-top:24px"><h3>Deck counts · MTGTop8</h3><p>${e(deckCountPeriod())} Exact totals from dated card searches, with mainboard and sideboard enabled together. A matching deck is counted once. This index covers the card names in our annual statistics snapshot, not all Magic cards. Unindexed counts stay unknown and can require review. The minimum applies within any one selected, currently legal format; counts are never added across formats. The collection minimum filters the view independently of Keep rules.</p></div>
+    <div class="info-copy" style="margin-top:24px"><h3>Deck counts · MTGTop8</h3><p>${e(deckCountPeriod())} Exact totals from dated card searches, with mainboard and sideboard enabled together. A matching deck is counted once. For Pauper and Duel Commander, this index includes every currently legal card name in the preloaded release families, including cards absent from the top-card statistics. Other formats retain the annual top-card index. Cards outside the covered sets may still be unindexed. Unindexed counts stay unknown and can require review. The minimum applies within any one selected, currently legal format; counts are never added across formats. The collection minimum filters the view independently of Keep rules.</p></div>
     <div class="info-copy" style="margin-top:24px"><h3>Tournament archetypes · MTGTop8</h3><p>Up to 25 recent decklists per format from the preceding 60 days, labeled with MTGTop8’s archetype names. Card details show matching lists, section-specific copy counts, dates, and event links. This sample provides examples of use; it does not measure archetype popularity or change your keep rules. ${archetypes ? `Snapshot fetched: ${date(archetypes.fetchedAt)}.` : "Archetype data unavailable; reload to retry."}</p></div>
-    <div class="info-copy" style="margin-top:24px"><h3>J25 deck membership · Jumpstart Atlas</h3><p>${j25 ? `${j25.names.length} unique English card names from ${j25.decks} Foundations Jumpstart decks. Updated ${date(j25.fetchedAt)}.` : "Membership data unavailable; reload to retry."} Membership matches names across all printings, including cards you own from other sets. It qualifies a card for the playset reserve, rather than protecting unlimited duplicates. The catalog is derived automatically from <a href="https://github.com/hugooliveirad/jumpstart-atlas" target="_blank" rel="noopener noreferrer">Jumpstart Atlas</a>.</p></div><div class="info-copy" style="margin-top:24px"><h3>Card details · Scryfall</h3><p>Names, images, rarity, legality, and USD / EUR prices come from <a href="https://scryfall.com/docs/api" target="_blank" rel="noopener noreferrer">Scryfall</a>. Refresh card data to update prices and legality. Data is cached for 24 hours; data older than 7 days requires review before bulk recommendations.</p><p>Prices describe the selected printing and finish. They are market references, not a quote for the condition or language of your copy. Missing prices are never treated as zero. Set + collector number or Scryfall ID identifies a printing; a name alone gives a reference printing.</p><p>Collection files, quantities, and preferences stay in this browser. Scryfall receives card identifiers during lookup and any online search query, and its image host receives image requests. Export a backup before clearing browser storage. Other tabs and devices do not automatically sync.</p><p>Magic: The Gathering and card imagery belong to Wizards of the Coast. Card Sift is an independent fan project, inspired by <a href="https://hugobessa.com.br/jumpstart-atlas/">Jumpstart Atlas</a>.</p></div>`,
+    <div class="info-copy" style="margin-top:24px"><h3>J25 deck membership · Jumpstart Atlas</h3><p>${j25 ? `${j25.names.length} unique English card names from ${j25.decks} Foundations Jumpstart decks. Updated ${date(j25.fetchedAt)}.` : "Membership data unavailable; reload to retry."} Membership matches names across all printings, including cards you own from other sets. It qualifies a card for the playset reserve, rather than protecting unlimited duplicates. The catalog is derived automatically from <a href="https://github.com/hugooliveirad/jumpstart-atlas" target="_blank" rel="noopener noreferrer">Jumpstart Atlas</a>.</p></div><div class="info-copy" style="margin-top:24px"><h3>Card details · Scryfall</h3><p>Names, images, rarity, legality, and USD / EUR prices come from <a href="https://scryfall.com/docs/api" target="_blank" rel="noopener noreferrer">Scryfall</a>. Refresh card data to update prices and legality. Live lookups are cached for 24 hours; the preloaded set cache can be reused for up to 7 days. Data older than 7 days requires review before bulk recommendations.</p><p>Prices describe the selected printing and finish. They are market references, not a quote for the condition or language of your copy. Missing prices are never treated as zero. Set + collector number or Scryfall ID identifies a printing; a name alone gives a reference printing.</p><p>Collection files, quantities, and preferences stay in this browser. Scryfall receives card identifiers during lookup and any online search query, and its image host receives image requests. Export a backup before clearing browser storage. Other tabs and devices do not automatically sync.</p><p>Magic: The Gathering and card imagery belong to Wizards of the Coast. Card Sift is an independent fan project, inspired by <a href="https://hugobessa.com.br/jumpstart-atlas/">Jumpstart Atlas</a>.</p></div>`,
   );
 }
 function showGuide() {
@@ -1269,6 +1286,21 @@ async function action(name) {
     return;
   }
   switch (name) {
+    case "priority-formats":
+      state.rules = validateRules({
+        ...state.rules,
+        formats: ["pauper", "duel"],
+        formatMode: "decks",
+        minDecks: 1,
+      });
+      page = 1;
+      syncRules();
+      render();
+      await persist();
+      toast(
+        "Keep now uses at least 1 deck in Pauper or Duel Commander, including sideboards.",
+      );
+      break;
     case "previous-card":
       stepCard(-1);
       break;
@@ -1591,7 +1623,7 @@ async function init() {
   render();
   const loaded = await Promise.allSettled([
     read("state", "collection"),
-    fetch("./data/metagame.json").then((r) => {
+    fetch("./data/metagame.json", { cache: "no-cache" }).then((r) => {
       if (!r.ok) throw new Error();
       return r.json();
     }),
@@ -1607,7 +1639,11 @@ async function init() {
       if (!r.ok) throw new Error();
       return r.json();
     }),
-    fetch("./data/deck-counts.json").then((r) => {
+    fetch("./data/deck-counts.json", { cache: "no-cache" }).then((r) => {
+      if (!r.ok) throw new Error();
+      return r.json();
+    }),
+    fetch("./data/set-cache.json", { cache: "no-cache" }).then((r) => {
       if (!r.ok) throw new Error();
       return r.json();
     }),
@@ -1642,6 +1678,12 @@ async function init() {
     deckCounts = loaded[5].value;
     countEvidence = buildEvidence(deckCounts);
   }
+  if (loaded[6].status === "fulfilled") {
+    setCache = loaded[6].value;
+    setIndex = indexSetCache(setCache);
+    const applied = hydrateSetCache(state.rows, setIndex);
+    if (applied && !loadFailed) await persist();
+  }
   if (loaded[1].status === "fulfilled") snapshot = loaded[1].value;
   if (loaded[2].status === "fulfilled") j25 = loaded[2].value;
   if (loaded[4].status === "fulfilled") {
@@ -1659,6 +1701,9 @@ async function init() {
     if (arts[4]) $("#hero-two").src = safeURL(arts[4].card.image, "image");
   }
   ready = true;
+  $("#set-cache-status").textContent = setCache
+    ? `Preloaded: ${setCache.cards.length.toLocaleString()} printings · ${setCache.sets.map((set) => set.code.toUpperCase()).join(", ")}. Card data updated ${date(setCache.fetchedAt)}. ${deckCounts?.setCoverage ? "Pauper and Duel counts cover legal cards across these releases." : "Expanded tournament counts are unavailable; reload to retry."}`
+    : "Set cache unavailable. Card lookup will use Scryfall; reload to retry the cache.";
   syncRules();
   render();
   if (!snapshot) {

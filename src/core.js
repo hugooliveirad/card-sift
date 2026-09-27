@@ -227,7 +227,7 @@ export function analyze(
             item.eligible = true;
             item.reasons.push(`Legal in ${FORMATS[format]}`);
           } else if (rules.formatMode === "decks") {
-            // Basics have their own unconditional reserve and are not indexed.
+            // Basics have their own unconditional reserve, independent of tournament counts.
             if (/\bBasic\b/.test(row.card.type_line || "") && isLand(row))
               continue;
             const hit = item.deckHits.find((entry) => entry.format === format);
@@ -237,7 +237,7 @@ export function analyze(
             ) {
               item.eligible = true;
               item.reasons.push(
-                `${FORMATS[format]}: ${hit.decks} decks · ${deckCounts.window} · mainboard or sideboard${countsFresh ? "" : " (older evidence)"}`,
+                `${FORMATS[format]}: ${hit.decks} ${hit.decks === 1 ? "deck" : "decks"} · ${deckCounts.window} · mainboard or sideboard${countsFresh ? "" : " (older evidence)"}`,
               );
             } else if (!hit || !countsFresh) {
               item.uncertainties.push(
