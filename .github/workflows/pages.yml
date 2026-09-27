@@ -15,7 +15,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 90
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -34,6 +34,13 @@ jobs:
           node --check src/data.js
       - name: Refresh tournament evidence
         run: python3 scripts/update-metagame.py
+      - uses: actions/cache@v4
+        with:
+          path: data/deck-counts.json
+          key: deck-counts-v1-${{ github.run_id }}
+          restore-keys: deck-counts-v1-
+      - name: Refresh annual deck counts
+        run: python3 scripts/update-deck-counts.py
       - name: Refresh archetype decklist evidence
         run: python3 scripts/update-archetypes.py
       - name: Refresh J25 deck membership

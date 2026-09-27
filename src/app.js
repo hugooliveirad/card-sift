@@ -109,6 +109,8 @@ const money = (value) =>
       }).format(value);
 let state = { rows: [], rules: structuredClone(DEFAULT_RULES) },
   snapshot = null,
+  deckCounts = null,
+  countEvidence = {},
   j25 = null,
   archetypes = null,
   archetypeIndex = new Map(),
@@ -122,6 +124,7 @@ let filter = "all",
   color = "",
   rarity = "",
   sort = "name",
+  minDecksFilter = 0,
   syncController = null,
   busy = false,
   importState = null,
@@ -184,17 +187,29 @@ function syncRules() {
     .querySelectorAll("[name=formats]")
     .forEach((el) => (el.checked = state.rules.formats.includes(el.value)));
   $("#share-field").hidden = state.rules.formatMode !== "played";
+  $("#deck-count-field").hidden = state.rules.formatMode !== "decks";
+  $("#deck-count-hint").textContent =
+    `In any one selected format: ${state.rules.formats.map((format) => FORMATS[format]).join(", ") || "none selected"}. Mainboard or sideboard. Unindexed cards are excluded while a minimum is set. This filters the view; Keep rules are separate. ${deckCountPeriod()}`;
   $("#format-hint").textContent =
-    state.rules.formatMode === "played"
-      ? `Mainboard or sideboard usage qualifies for your playset reserve. MTGTop8 · ${snapshot?.window || "Loading date range…"}.`
-      : "Any legal or restricted card qualifies, even with no tournament evidence.";
+    state.rules.formatMode === "decks"
+      ? `At least this many decks in any one selected format. Mainboard and sideboard count together, once per deck. ${deckCountPeriod()}`
+      : state.rules.formatMode === "played"
+        ? `Mainboard or sideboard usage qualifies for your playset reserve. MTGTop8 · ${snapshot?.window || "Loading date range…"}.`
+        : "Any legal or restricted card qualifies, even with no tournament evidence.";
 }
 function changeRules() {
   const form = $("#rules");
   if (!form.reportValidity()) return;
   const input = new FormData(form);
   const next = { ...state.rules, formats: input.getAll("formats") };
-  for (const key of ["copies", "landCopies", "basics", "minShare", "threshold"])
+  for (const key of [
+    "copies",
+    "landCopies",
+    "basics",
+    "minShare",
+    "minDecks",
+    "threshold",
+  ])
     next[key] = Number(input.get(key));
   for (const key of [
     "formatMode",
@@ -243,6 +258,9 @@ function filteredRows() {
     .filter(
       (row) =>
         (filter === "all" || row[filter] > 0) &&
+        (!minDecksFilter ||
+          (row.tournamentDecks !== null &&
+            row.tournamentDecks >= minDecksFilter)) &&
         (compiled.requiresRemote
           ? remoteHits?.has(row.card?.id)
           : matchesQuery(row, compiled)) &&
@@ -261,17 +279,19 @@ function filteredRows() {
 }
 function compareRows(a, b) {
   const diff =
-    sort === "played"
-      ? (b.tournamentShare ?? -1) - (a.tournamentShare ?? -1)
-      : sort === "price"
-        ? (b.price ?? -1) - (a.price ?? -1)
-        : sort === "quantity"
-          ? b.quantity - a.quantity
-          : sort === "bulk"
-            ? b.bulk - a.bulk
-            : sort === "review"
-              ? b.review - a.review
-              : 0;
+    sort === "decks"
+      ? (b.tournamentDecks ?? -1) - (a.tournamentDecks ?? -1)
+      : sort === "played"
+        ? (b.tournamentShare ?? -1) - (a.tournamentShare ?? -1)
+        : sort === "price"
+          ? (b.price ?? -1) - (a.price ?? -1)
+          : sort === "quantity"
+            ? b.quantity - a.quantity
+            : sort === "bulk"
+              ? b.bulk - a.bulk
+              : sort === "review"
+                ? b.review - a.review
+                : 0;
   return (
     diff ||
     a.name.localeCompare(b.name) ||
@@ -435,12 +455,26 @@ function showSearchHelp() {
       )}</div><div class="info-copy"><p>Common type, rules text, mana value, color, identity, stats, rarity, format, set, artist, flavor, price, and sorting terms run locally. Refresh card data if your saved cards lack a field. Unknown metadata does not satisfy a negative filter.</p><p>Other Scryfall syntax (such as lore: or mana-cost comparisons) searches online and intersects returned printing IDs with your collection. Name-only rows use their reference printing. Online errors and overly broad searches are shown explicitly; incomplete results are never presented as complete.</p><p>Set search uses your imported set or a verified printing; it never assumes the reference set is the set you own. <a href="https://scryfall.com/docs/syntax" target="_blank" rel="noopener noreferrer">Full Scryfall syntax</a></p></div>`,
   );
 }
+function deckCountPeriod() {
+  if (!deckCounts) return "Deck counts unavailable; reload to retry.";
+  const stale = Date.now() - Date.parse(deckCounts.fetchedAt) >= 35 * 86400000;
+  return `${deckCounts.window} · ${date(deckCounts.from + "T12:00:00Z")}–${date(deckCounts.through + "T12:00:00Z")} · MTGTop8.${stale ? " Counts are over 35 days old." : ""}`;
+}
+function deckCountLink(row, format) {
+  const hit = evidenceFor(row, format, countEvidence);
+  if (hit?.url) return safeURL(hit.url);
+  const source = safeURL(deckCounts?.formats?.[format]?.url);
+  if (!source) return "";
+  const url = new URL(source);
+  url.searchParams.set("cards", hit?.name || row.card?.name || row.name);
+  return url.href;
+}
 function tournamentLabel(row) {
-  if (row.tournamentShare === null) return '<span class="muted">—</span>';
-  const hit = row.played.find(
+  const share = row.played.find(
     (h) => Math.max(h.mainboard, h.sideboard) === row.tournamentShare,
   );
-  return `<span class="number">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[hit.format])} · ${hit.sideboard > hit.mainboard ? "sideboard" : "mainboard"}</span>`;
+  const decks = row.deckHits.find((h) => h.decks === row.tournamentDecks);
+  return `${share ? `<span class="number" title="${e(snapshot?.window || "Percentage snapshot")}">${row.tournamentShare}%</span><span class="price-note">${e(FORMATS[share.format])} · ${share.sideboard > share.mainboard ? "sideboard" : "mainboard"}</span>` : '<span class="muted">No share indexed</span>'}${decks ? `<span class="deck-count-number">${count(decks.decks)} decks</span><span class="price-note">${e(FORMATS[decks.format])} · last 365 days</span>` : '<span class="price-note">Deck count not indexed</span>'}`;
 }
 
 function displayedRows() {
@@ -467,6 +501,10 @@ function formatMatrix(row) {
       const status = row.card?.legalities?.[format] || "unknown";
       const playable = ["legal", "restricted"].includes(status);
       const hit = evidenceFor(row, format, evidence);
+      const deckHit = evidenceFor(row, format, countEvidence);
+      const countTag = deckHit
+        ? `<a class="format-decks" href="${e(deckCountLink(row, format))}" target="_blank" rel="noopener noreferrer"><strong>${count(deckHit.decks)} decks</strong><span class="format-breakdown">Last 365 days · mainboard or sideboard</span></a>`
+        : `<span class="format-breakdown">${deckCounts?.formats?.[format] ? "Deck count not indexed" : "Deck counts unavailable"}</span>`;
       const statusLabel = status.replaceAll("_", " ");
       const source = safeURL(snapshot?.formats?.[format]?.url);
       const sourceURL = source ? new URL(source) : null;
@@ -478,7 +516,7 @@ function formatMatrix(row) {
       const usage = hit
         ? `Mainboard ${hit.mainboard > 0 ? hit.mainboard + "%" : "—"}${snapshot.formats[format].sections?.includes("sideboard") === false ? "" : ` · Sideboard ${hit.sideboard > 0 ? hit.sideboard + "%" : "—"}`}`
         : "";
-      return `<div class="format-tag ${playable ? "is-legal" : ""}"><span class="format-name"><i class="legality-dot" aria-hidden="true"></i>${e(label)}</span><span class="format-status">${e(statusLabel)}</span>${hit ? `<a class="format-share" href="${e(sourceURL?.href)}" target="_blank" rel="noopener noreferrer" title="${e(usage)}"><strong>${Math.max(hit.mainboard, hit.sideboard)}%</strong> of decks<span class="format-breakdown">${e(usage)}</span><span class="sr-only">${e(label)} source</span></a>` : `<span class="format-share muted">${snapshot?.formats?.[format] ? "No sampled play" : "No usage data"}</span>`}</div>`;
+      return `<div class="format-tag ${playable ? "is-legal" : ""}"><span class="format-name"><i class="legality-dot" aria-hidden="true"></i>${e(label)}</span><span class="format-status">${e(statusLabel)}</span>${hit ? `<a class="format-share" href="${e(sourceURL?.href)}" target="_blank" rel="noopener noreferrer" title="${e(usage)}"><strong>${Math.max(hit.mainboard, hit.sideboard)}%</strong> of decks<span class="format-breakdown">${e(snapshot?.window || "")}</span><span class="format-breakdown">${e(usage)}</span><span class="sr-only">${e(label)} source</span></a>` : `<span class="format-share muted">${snapshot?.formats?.[format] ? "No sampled play" : "No usage data"}</span>`}${countTag}</div>`;
     })
     .join("")}</div>`;
 }
@@ -602,7 +640,14 @@ function versionsHTML(row) {
 }
 
 function render() {
-  results = analyze(state.rows, state.rules, snapshot, Date.now(), j25);
+  results = analyze(
+    state.rows,
+    state.rules,
+    snapshot,
+    Date.now(),
+    j25,
+    deckCounts,
+  );
   const sets = new Map();
   for (const row of state.rows) {
     const code = row.set || (isExact(row) ? row.card?.set : "");
@@ -641,7 +686,7 @@ function render() {
       ? "Saved on this device"
       : "Ready for your collection";
   $("#collection-subtitle").textContent = state.rows.length
-    ? `${state.rules.formatMode === "played" ? "Tournament evidence" : "Format legality"} · ${state.rules.copies} copies per playset · Prices in ${state.rules.currency.toUpperCase()}`
+    ? `${state.rules.formatMode === "legal" ? "Format legality" : "Tournament evidence"} · ${state.rules.copies} copies per playset · Prices in ${state.rules.currency.toUpperCase()}`
     : "A clear reason behind every decision.";
   $("#sync-button").disabled =
     busy || !state.rows.length || Boolean(previousState);
@@ -1027,6 +1072,7 @@ function showDetail(id, options = {}) {
     printing(row),
     `<div class="detail-layout"><div><div class="detail-art ${isFoil(row) ? "foil-image" : ""}">${img ? `<img class="detail-image" src="${e(img)}" alt="${e(row.name)}">` : '<div class="no-image">Card image unavailable</div>'}${isFoil(row) ? `<span class="foil-label">✦ ${e(finishName(row.finish))}</span>` : ""}</div><div class="detail-price">${money(row.price)}</div><p class="hint">${row.exact ? "Exact printing" : "Reference printing"} · ${e(finishName(row.finish))}<br>${c ? `Scryfall price · ${date(row.fetchedAt)}` : "Refresh card data to look up this card."}</p>${cardLinks(row)}</div><div><div class="detail-meta">${e(c?.type_line || "Card details unavailable")}<br>${e(c?.mana_cost || "")} ${c ? " · " + e(c.rarity) : ""} · ${count(row.quantity)} owned in this finish</div>${pills(row)}<h3>Why these copies go here</h3><ul class="detail-reasons">${[...new Set(row.reasons)].map((reason) => `<li>${e(reason)}</li>`).join("")}${row.review ? row.uncertainties.map((reason) => `<li>${e(reason)}</li>`).join("") : ""}</ul>
     <h3>Formats &amp; tournament use</h3>${formatMatrix(row)}<p class="hint">Green: legal or restricted · gray: not legal or unknown. Status is also written on each tag.</p><p class="hint">Usage is the higher of mainboard / sideboard deck share; sections are never added. ${snapshot ? `MTGTop8 · ${e(snapshot.window)} · fetched ${date(snapshot.fetchedAt)}.` : "Tournament data unavailable."} A dash means no qualifying evidence in that section, not 0%. All formats are shown, independently of your keep rules.</p>
+    <p class="hint">Deck counts: ${e(deckCountPeriod())} Each matching deck counts once, even if the card appears in both sections. Counts cover indexed card names; not indexed does not mean zero. Current legality is required for count-based Keep rules and collection filtering.</p>
     <h3>Your decision</h3><label class="field">Override for this printing and finish<select id="row-override"><option value="" ${!row.override ? "selected" : ""}>Follow my keep rules</option><option value="keep" ${row.override === "keep" ? "selected" : ""}>Keep every copy</option><option value="bulk" ${row.override === "bulk" ? "selected" : ""}>Put every copy in bulk</option></select></label><div class="detail-actions"><button class="button quiet small" data-action="edit-card">Edit card / quantity</button><button class="button quiet small" data-action="copy-card">Copy decklist line</button></div></div></div>
     ${versionsHTML(row)}${deckMembership(row)}
     ${c ? `<details class="native-details"><summary>Card text</summary><p class="oracle-text" style="margin:15px 0">${e(c.oracle_text)}</p></details>` : ""}`,
@@ -1086,6 +1132,7 @@ function showSources() {
           `<div class="source-row"><div>${label}<small>${snapshot?.formats?.[format] ? count(snapshot.formats[format].cards.length) + " sampled card names" : "No tournament source bundled · legality mode available"}</small></div>${snapshot?.formats?.[format] ? `<a href="${e(safeURL(snapshot.formats[format].url))}" target="_blank" rel="noopener noreferrer">View MTGTop8 ${icon("external")}</a>` : ""}</div>`,
       )
       .join("")}
+    <div class="info-copy" style="margin-top:24px"><h3>Deck counts · MTGTop8</h3><p>${e(deckCountPeriod())} Exact totals from dated card searches, with mainboard and sideboard enabled together. A matching deck is counted once. This index covers the card names in our annual statistics snapshot, not all Magic cards. Unindexed counts stay unknown and can require review. The minimum applies within any one selected, currently legal format; counts are never added across formats. The collection minimum filters the view independently of Keep rules.</p></div>
     <div class="info-copy" style="margin-top:24px"><h3>Tournament archetypes · MTGTop8</h3><p>Up to 25 recent decklists per format from the preceding 60 days, labeled with MTGTop8’s archetype names. Card details show matching lists, section-specific copy counts, dates, and event links. This sample provides examples of use; it does not measure archetype popularity or change your keep rules. ${archetypes ? `Snapshot fetched: ${date(archetypes.fetchedAt)}.` : "Archetype data unavailable; reload to retry."}</p></div>
     <div class="info-copy" style="margin-top:24px"><h3>J25 deck membership · Jumpstart Atlas</h3><p>${j25 ? `${j25.names.length} unique English card names from ${j25.decks} Foundations Jumpstart decks. Updated ${date(j25.fetchedAt)}.` : "Membership data unavailable; reload to retry."} Membership matches names across all printings, including cards you own from other sets. It qualifies a card for the playset reserve, rather than protecting unlimited duplicates. The catalog is derived automatically from <a href="https://github.com/hugooliveirad/jumpstart-atlas" target="_blank" rel="noopener noreferrer">Jumpstart Atlas</a>.</p></div><div class="info-copy" style="margin-top:24px"><h3>Card details · Scryfall</h3><p>Names, images, rarity, legality, and USD / EUR prices come from <a href="https://scryfall.com/docs/api" target="_blank" rel="noopener noreferrer">Scryfall</a>. Refresh card data to update prices and legality. Data is cached for 24 hours; data older than 7 days requires review before bulk recommendations.</p><p>Prices describe the selected printing and finish. They are market references, not a quote for the condition or language of your copy. Missing prices are never treated as zero. Set + collector number or Scryfall ID identifies a printing; a name alone gives a reference printing.</p><p>Collection files, quantities, and preferences stay in this browser. Scryfall receives card identifiers during lookup and any online search query, and its image host receives image requests. Export a backup before clearing browser storage. Other tabs and devices do not automatically sync.</p><p>Magic: The Gathering and card imagery belong to Wizards of the Coast. Card Sift is an independent fan project, inspired by <a href="https://hugobessa.com.br/jumpstart-atlas/">Jumpstart Atlas</a>.</p></div>`,
   );
@@ -1097,7 +1144,7 @@ function showGuide() {
     `<div class="guide-steps">${[
       [
         "Choose what you play",
-        "Select your formats. Tournament mode requires actual mainboard or sideboard evidence. Legality mode also keeps cards with no recorded tournament use. Commander has legality support; no Commander play statistics are bundled.",
+        "Select your formats. Tournament mode requires actual mainboard or sideboard evidence. Choose minimum percentage or at least X decks in the last 365 days. Either criterion applies within any one selected legal format. Legality mode also keeps cards with no recorded tournament use. Commander has legality support; no Commander play statistics are bundled.",
       ],
       [
         "Reserve copies by card or land printing",
@@ -1113,7 +1160,7 @@ function showGuide() {
       ],
       [
         "Export your sorting plan",
-        "Table and grid share type inclusion/exclusion, set search, and advanced queries. Most tournament play sorts by the highest deck share in your selected formats. Card dialogs follow the entire filtered, sorted list with Previous/Next and arrow keys. Back and Escape return from editing to the same card and scroll position. Export the full plan or current view as CSV; backups preserve rules and decisions.",
+        "Table and grid share type inclusion/exclusion, set search, and advanced queries. Most tournament play sorts by the highest deck share in your selected formats. Minimum decks filters the view independently of Keep rules; Most decks sorts by the highest count in a selected legal format. Card dialogs follow the entire filtered, sorted list with Previous/Next and arrow keys. Back and Escape return from editing to the same card and scroll position. Export the full plan or current view as CSV; backups preserve rules and decisions.",
       ],
     ]
       .map(
@@ -1153,6 +1200,11 @@ function exportPlan(scope) {
     "Evidence date",
     "Override",
     "Tournament share (%)",
+    "Maximum decks in a selected legal format",
+    "Deck counts by selected legal format",
+    "Deck count window start",
+    "Deck count window end",
+    "Deck count fetched",
     "J25 deck member",
     "Reasons",
     "Review notes",
@@ -1177,6 +1229,11 @@ function exportPlan(scope) {
         snapshot?.fetchedAt || "",
         r.override || "",
         r.tournamentShare,
+        r.tournamentDecks,
+        r.deckHits.map((h) => `${FORMATS[h.format]}: ${h.decks}`).join("; "),
+        deckCounts?.from || "",
+        deckCounts?.through || "",
+        deckCounts?.fetchedAt || "",
         r.j25 === null ? "unknown" : r.j25 ? "yes" : "no",
         r.reasons.join("; "),
         r.uncertainties.join("; "),
@@ -1187,6 +1244,8 @@ function exportPlan(scope) {
   closeModal();
 }
 function resetFilters() {
+  minDecksFilter = 0;
+  $("#min-decks-filter").value = "";
   setQuery = "";
   typeInclude = [];
   typeExclude = [];
@@ -1411,6 +1470,12 @@ document.addEventListener("change", async (event) => {
     renderResults();
   }
 });
+$("#min-decks-filter").addEventListener("input", (event) => {
+  if (!event.target.checkValidity()) return;
+  minDecksFilter = Number(event.target.value) || 0;
+  page = 1;
+  renderResults();
+});
 $("#search").addEventListener("input", (event) => {
   query = event.target.value;
   updateSearch();
@@ -1542,6 +1607,10 @@ async function init() {
       if (!r.ok) throw new Error();
       return r.json();
     }),
+    fetch("./data/deck-counts.json").then((r) => {
+      if (!r.ok) throw new Error();
+      return r.json();
+    }),
   ]);
   if (loaded[0].status === "fulfilled" && loaded[0].value) {
     try {
@@ -1569,6 +1638,10 @@ async function init() {
     }
   } else if (loaded[0].status === "rejected")
     storageWarning(loaded[0].reason.message);
+  if (loaded[5].status === "fulfilled") {
+    deckCounts = loaded[5].value;
+    countEvidence = buildEvidence(deckCounts);
+  }
   if (loaded[1].status === "fulfilled") snapshot = loaded[1].value;
   if (loaded[2].status === "fulfilled") j25 = loaded[2].value;
   if (loaded[4].status === "fulfilled") {

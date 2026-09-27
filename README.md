@@ -9,8 +9,8 @@ Inspired by [Jumpstart Atlas](https://hugobessa.com.br/jumpstart-atlas/). A sepa
 ## Use it
 
 1. Import a CSV, TSV, text decklist, Card Sift backup, or Jumpstart Atlas JSON backup. Review column mappings and excluded rows before applying it. Replace a full collection or add new copies. The previous inventory can be restored with Undo last import until you leave the page.
-2. Choose formats and whether you want tournament evidence (default) or any legal card. Set a minimum deck share, a playset target, separate reserves per land printing, J25 deck membership, protected rarities, and a USD/EUR price floor.
-3. Review the table or image grid. Search names or use advanced query syntax; include/exclude card types, search owned sets, and filter by recommendation, color, or rarity. Sort by tournament play, name, price, quantity, bulk, or review.
+2. Choose formats and whether you want tournament evidence (default) or any legal card. Choose minimum deck share or minimum deck count over the last 365 days, a playset target, separate reserves per land printing, J25 deck membership, protected rarities, and a USD/EUR price floor.
+3. Review the table or image grid. Search names or use advanced query syntax; include/exclude card types, search owned sets, and filter by recommendation, color, or rarity. Filter by minimum decks in any selected legal format, or sort by deck counts, tournament play, name, price, quantity, bulk, or review.
 4. Open a card for all owned versions, a format matrix with legality and tournament usage, named J25 decks and tournament archetypes, and links to matching decklists. Each owned version has a link menu for Scryfall printing/set pages, LigaMagic prices, and MTGTop8. Select a version to edit its quantity or override that printing and finish. Previous/Next and arrow keys follow the filtered, sorted collection across pages; switching owned versions preserves your position. Back or Escape from editing restores the card and scroll position.
 5. Export a CSV sorting plan for your current view or the entire collection. Export a JSON backup to preserve your inventory, rules, and decisions.
 
@@ -38,6 +38,18 @@ The table joins finishes of the same known printing, showing separate finish qua
 Commander supports legality mode. There is no bundled Commander tournament source. Tournament mode treats legal Commander cards without evidence as uncertain.
 
 Card details show every supported format, independently of the keep-rule selections. Green circles indicate legal/restricted status; gray circles indicate nonlegal/unknown status, with text labels distinguishing each. Usage is the higher section share, with both mainboard and sideboard figures visible and links to the source. A dash marks a section without qualifying sampled evidence; it is never displayed as 0%.
+
+### Exact deck counts
+
+`data/deck-counts.json` adds exact MTGTop8 search totals for a rolling **365 inclusive calendar days**, ending at the snapshot date. Each search selects one card, one format, and both mainboard and sideboard. Its result count counts matching decklists once, even when a card is in both sections. Counts are not extrapolated from rounded percentages or the small archetype example sample. MTGDecks was considered, but its pages rejected automated access.
+
+The index covers the card names already collected in the annual mainboard/sideboard statistics snapshot for each of the eight formats. **It is not a complete catalog of every played card.** Unindexed cards have an unknown count, not zero; basic lands use the separate reserve and Commander has no count source. Card details link to the exact dated search and show each format's count, independently of format selection. Count windows and percentage windows are labeled separately.
+
+Choose **Appear in at least X decks** in Keep rules to reserve a playset when the card meets that count in at least one selected, currently legal/restricted format. This is an alternative to the percentage criterion; rarity, price, J25, land reserves, and overrides retain their existing behavior. Missing counts or old negative evidence require review; known positive counts can still protect copies and are marked when old. Existing saved rules and backups default the new `minDecks` field to 10 and retain their previous mode.
+
+The collection's **Minimum decks · last 365 days** filters the table/grid independently of Keep rules. Unindexed cards are excluded while a minimum is active. **Most decks** sorts by the highest indexed count in a selected legal format, with unknown counts last. Counts are never summed across formats. CSV exports include counts by selected format and their window and fetch date.
+
+Run `python3 scripts/update-deck-counts.py` to refresh. It validates echoed source filters, checkpoints progress locally, starts card lookups at least one second apart with at most three in flight, and publishes atomically only after all counts finish. Complete snapshots are reused for up to seven days; Actions caches them to avoid a full crawl on every UI deploy. A refresh failure prevents publication. The rolling window always refers to the displayed snapshot dates, not live browser time.
 
 **Named tournament archetypes** come from `data/archetypes.json`, refreshed by `scripts/update-archetypes.py`. For each of the eight supported tournament formats it reads the first 25 results of MTGTop8's recent deck search, restricted to the preceding 60 days, then reads those actual decklists and their source-assigned archetypes. It publishes only after every requested page succeeds and passes identity, format, date, and decklist checks. Commander entries in Duel Commander are distinguished from mainboard and sideboard cards using the source's section headings.
 
@@ -69,6 +81,7 @@ python3 -m http.server 8001
 npm test
 python3 scripts/update-metagame.py
 python3 scripts/update-archetypes.py
+python3 scripts/update-deck-counts.py
 python3 scripts/update-j25.py
 node scripts/update-example.mjs
 ```
@@ -87,7 +100,7 @@ No package install or bundler needed. Native ES modules require HTTP rather than
 
 ## Deployment
 
-GitHub Pages uses [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Pushes to `main`, manual dispatches, and a weekly Monday schedule run tests, refresh tournament statistics, archetype decklists, J25 membership, and example prices, and deploy a static artifact. The source repo does not accumulate automated data commits. A failed source refresh fails the deployment and leaves the previous site available. GitHub may suspend scheduled workflows after 60 days without repository activity; re-enable a suspended workflow in Actions or with `gh workflow enable pages.yml`. Old evidence is labeled and handled conservatively in the app.
+GitHub Pages uses [`.github/workflows/pages.yml`](.github/workflows/pages.yml). Pushes to `main`, manual dispatches, and a weekly Monday schedule run tests, refresh tournament statistics, annual deck counts, archetype decklists, J25 membership, and example prices, and deploy a static artifact. The source repo does not accumulate automated data commits. A failed source refresh fails the deployment and leaves the previous site available. GitHub may suspend scheduled workflows after 60 days without repository activity; re-enable a suspended workflow in Actions or with `gh workflow enable pages.yml`. Old evidence is labeled and handled conservatively in the app.
 
 The committed snapshots support immediate local use. The deployed snapshots are generated afresh by the workflow, so their timestamps may differ from the files in git.
 

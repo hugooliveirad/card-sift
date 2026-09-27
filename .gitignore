@@ -3,3 +3,5 @@ node_modules/
 test-results/
 playwright-report/
 __pycache__/
+data/*.progress.json
+data/*.progress.tmp

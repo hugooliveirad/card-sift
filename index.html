@@ -47,6 +47,7 @@
             <label class="field"
               >Keep cards that<select name="formatMode">
                 <option value="played">See tournament play</option>
+                <option value="decks">Appear in at least X decks</option>
                 <option value="legal">Are legal in these formats</option>
               </select></label
             >
@@ -63,6 +64,17 @@
                 /><span>%</span>
               </div></label
             >
+            <label class="field" id="deck-count-field" hidden>
+              Minimum decks · last 365 days
+              <input
+                name="minDecks"
+                type="number"
+                value="10"
+                min="1"
+                max="10000000"
+                step="1"
+              />
+            </label>
             <p class="hint" id="format-hint">
               Mainboard or sideboard usage qualifies for your playset reserve.
             </p>
@@ -375,6 +387,7 @@
                 <option value="price">Price: high to low</option>
                 <option value="quantity">Most owned</option>
                 <option value="played">Most tournament play</option>
+                <option value="decks">Most decks · last 365 days</option>
                 <option value="bulk">Most bulk</option>
                 <option value="review">Needs review first</option>
               </select>
@@ -410,6 +423,24 @@
               <button class="text-button" data-action="clear-filters">
                 Clear filters
               </button>
+            </div>
+            <div class="deck-count-filter">
+              <label class="field" for="min-decks-filter"
+                >Minimum decks · last 365 days
+                <input
+                  id="min-decks-filter"
+                  type="number"
+                  min="0"
+                  max="10000000"
+                  step="1"
+                  placeholder="No minimum"
+                />
+              </label>
+              <p class="hint" id="deck-count-hint">
+                In any one of your selected formats, mainboard or sideboard.
+                Cards without indexed counts are excluded when a minimum is set.
+                This filters the view; Keep rules are separate.
+              </p>
             </div>
             <details id="advanced-search" class="native-details">
               <summary>Advanced search filters</summary>

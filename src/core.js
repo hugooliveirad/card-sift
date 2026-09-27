@@ -14,6 +14,7 @@ export const DEFAULT_RULES = {
   formats: ["pauper", "modern", "premodern"],
   formatMode: "played",
   minShare: 1,
+  minDecks: 10,
   playsets: "matched",
   copies: 4,
   landCopies: 4,
@@ -107,12 +108,25 @@ export function evidenceFor(row, format, evidence) {
   const name = row.card?.name || row.name;
   return (
     evidence[format]?.get(norm(name)) ||
+    evidence[format]?.get(norm(name.replace(/\s*\/\/\s*/g, " / "))) ||
     evidence[format]?.get(norm(name.split(" // ")[0]))
   );
 }
-export function analyze(rows, rules, snapshot, now = Date.now(), j25 = null) {
+export function analyze(
+  rows,
+  rules,
+  snapshot,
+  now = Date.now(),
+  j25 = null,
+  deckCounts = null,
+) {
   const j25Names = new Set((j25?.names || []).map(norm));
   const evidence = buildEvidence(snapshot);
+  const countEvidence = buildEvidence(deckCounts);
+  const countsFresh =
+    deckCounts &&
+    Number.isFinite(Date.parse(deckCounts.fetchedAt)) &&
+    now - Date.parse(deckCounts.fetchedAt) < 35 * 86400000;
   const evidenceFresh =
     snapshot &&
     Number.isFinite(Date.parse(snapshot.fetchedAt)) &&
@@ -132,6 +146,18 @@ export function analyze(rows, rules, snapshot, now = Date.now(), j25 = null) {
       exact: isExact(row),
     };
     item.j25 = j25 ? j25Names.has(norm(row.card?.name || row.name)) : null;
+    item.deckHits = rules.formats.flatMap((format) => {
+      const hit = evidenceFor(row, format, countEvidence);
+      return hit &&
+        Number.isSafeInteger(hit.decks) &&
+        hit.decks >= 0 &&
+        ["legal", "restricted"].includes(row.card?.legalities?.[format])
+        ? [{ ...hit, format }]
+        : [];
+    });
+    item.tournamentDecks = item.deckHits.length
+      ? Math.max(...item.deckHits.map((hit) => hit.decks))
+      : null;
     if (rules.keepJ25 && !row.override) {
       if (!j25)
         item.uncertainties.push(
@@ -200,6 +226,24 @@ export function analyze(rows, rules, snapshot, now = Date.now(), j25 = null) {
           if (rules.formatMode === "legal") {
             item.eligible = true;
             item.reasons.push(`Legal in ${FORMATS[format]}`);
+          } else if (rules.formatMode === "decks") {
+            // Basics have their own unconditional reserve and are not indexed.
+            if (/\bBasic\b/.test(row.card.type_line || "") && isLand(row))
+              continue;
+            const hit = item.deckHits.find((entry) => entry.format === format);
+            if (
+              hit &&
+              hit.decks >= (rules.minDecks ?? DEFAULT_RULES.minDecks)
+            ) {
+              item.eligible = true;
+              item.reasons.push(
+                `${FORMATS[format]}: ${hit.decks} decks · ${deckCounts.window} · mainboard or sideboard${countsFresh ? "" : " (older evidence)"}`,
+              );
+            } else if (!hit || !countsFresh) {
+              item.uncertainties.push(
+                `${FORMATS[format]} deck count ${!hit ? "not indexed" : "needs refreshing"}`,
+              );
+            }
           } else {
             const hit = evidenceFor(row, format, evidence);
             if (
@@ -326,7 +370,7 @@ export function validateRules(input) {
   )
     throw new Error("Unsupported format in rules.");
   for (const [key, allowed] of Object.entries({
-    formatMode: ["played", "legal"],
+    formatMode: ["played", "legal", "decks"],
     playsets: ["all", "matched", "off"],
     rarity: ["none", ...RARITIES],
     currency: ["usd", "eur"],
@@ -339,18 +383,20 @@ export function validateRules(input) {
     landCopies: 10000,
     basics: 10000,
     minShare: 100,
+    minDecks: 10000000,
     threshold: 1000000,
   })) {
     if (
       !Number.isFinite(r[key]) ||
       r[key] < 0 ||
       r[key] > max ||
-      (["copies", "landCopies", "basics"].includes(key) &&
+      (["copies", "landCopies", "basics", "minDecks"].includes(key) &&
         !Number.isInteger(r[key]))
     )
       throw new Error(`Invalid ${key} rule.`);
   }
   if (r.minShare < 1) throw new Error("Minimum deck share is 1%.");
+  if (r.minDecks < 1) throw new Error("Minimum deck count is 1.");
   for (const key of ["priceEnabled", "trustReference", "keepJ25"])
     if (typeof r[key] !== "boolean") throw new Error(`Invalid ${key} rule.`);
   return r;

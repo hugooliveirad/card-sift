@@ -2482,3 +2482,31 @@ dialog::backdrop {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.deck-count-filter {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 18px 0;
+  flex-wrap: wrap;
+}
+.deck-count-filter .field {
+  margin: 0;
+  max-width: 260px;
+}
+.deck-count-filter .hint {
+  flex: 1 1 240px;
+  margin: 0;
+}
+.deck-count-number {
+  display: block;
+  margin-top: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.format-decks {
+  display: block;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
